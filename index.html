@@ -166,6 +166,143 @@
 @media(max-width:700px){.v5-head{padding:12px 14px}.v5-path{letter-spacing:.2px;font-size:9px}.v5-layout{display:grid;grid-template-columns:1fr 1fr;grid-template-areas:'art art' 'left right';min-height:0;gap:9px;padding:62px 12px 15px}.v5-stage-title{font-size:35px;top:13px}.v5-stage-title small{font-size:7px}.v5-art{grid-area:art;min-height:560px;height:560px;overflow:hidden}.v5-art>.asset-img{height:560px}.v5-art .slot-label{height:450px;margin:70px 0 0}.v5-art-count{bottom:8px}.v5-aside{padding:0;display:flex;justify-content:flex-start;gap:8px}.v5-aside-left{grid-area:left}.v5-aside-right{grid-area:right}.v5-panel{padding:11px 10px;flex:0 0 auto}.v5-tier{margin:0;padding:5px 0 9px}.v5-tier b{font-size:30px}.v5-hero-foot{font-size:9px;padding:11px 12px}.v5-summary{padding:23px 14px}.v5-summary-top{grid-template-columns:1fr;gap:13px}.v5-info-grid{grid-template-columns:1fr;gap:8px}.v5-info{padding:13px}.v5-trait-section{padding:22px 14px 42px}.v5-traits{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}}
 @media(max-width:370px){.v5-art{min-height:470px;height:470px}.v5-art>.asset-img{height:470px}.v5-traits{grid-template-columns:1fr}.v5-panel p{font-size:9px}}
 
+
+/* V5 캐릭터 상세 레이아웃 조정 (버전은 V5 유지)
+   사용자 배치 참조: 좌측 정보 / 큼직한 중앙 사진 / 우측 버프 / 하단 그라디언트 정보 */
+@media (min-width: 701px) {
+  .profile-v5 .v5-layout {
+    width:100%; max-width:1560px;
+    grid-template-columns:minmax(0,23%) minmax(0,54%) minmax(0,23%);
+    column-gap:0;
+    min-height:0;
+    padding:72px clamp(12px,2.1vw,32px) 0;
+    align-items:stretch;
+  }
+  .profile-v5 .v5-art {
+    width:100%; min-height:0;
+    height:clamp(550px,50vw,720px);
+    overflow:hidden!important;
+    border:0;
+    background:transparent!important;
+  }
+  .profile-v5 .v5-art > .asset-img {
+    position:absolute!important; inset:0!important;
+    width:100%; max-width:100%; height:100%;
+    display:block; object-fit:cover!important;
+    object-position:center 0%!important;
+    filter:none;
+    z-index:2;
+  }
+  .profile-v5 .v5-art::after {
+    content:""; position:absolute; inset:0; z-index:3;
+    pointer-events:none;
+    background:linear-gradient(to bottom,transparent 62%,#0a0d150d 71%,#090c15a6 88%,#090d14 100%);
+  }
+  .profile-v5 .v5-art .slot-label {
+    width:100%; height:100%; margin:0; min-height:0;
+    padding:20px;display:flex;flex-direction:column;justify-content:center;
+    border:1px dashed #8e6875;background:#211a24a3;
+  }
+  .profile-v5 .v5-art.loaded .slot-label{display:none}
+  .profile-v5 .v5-art-count{bottom:24px;right:20px;z-index:4}
+  .profile-v5 .v5-aside {justify-content:center;padding:32px 16px 26px;gap:11px}
+  .profile-v5 .v5-aside-left {padding-left:0;padding-right:17px}
+  .profile-v5 .v5-aside-right {padding-top:120px;padding-left:17px;padding-right:0;justify-content:center}
+  .profile-v5 .v5-panel{padding:12px 13px;min-width:0}
+  .profile-v5 .v5-panel .en{font-size:9px}
+  .profile-v5 .v5-panel h4{font-size:13px;margin:5px 0}
+  .profile-v5 .v5-panel p{font-size:11px;line-height:1.55}
+  .profile-v5 .v5-panel-mark{font-size:16px;margin-bottom:5px}
+  .profile-v5 .v5-tier{margin:0 0 8px;padding:8px 6px 12px}
+  .profile-v5 .v5-tier b{font-size:clamp(46px,5vw,79px)}
+  .profile-v5 .v5-tier small{font-size:10px}
+  .profile-v5 .v5-hero-foot{margin-top:0;min-height:36px}
+}
+.profile-v5 .v5-summary {
+  position:relative;z-index:4;
+  margin-top:-13px;
+  border-top:1px solid #a6425388;
+  background:linear-gradient(180deg,#0a0d14ee 0%,#11151f 20%,#090d14 100%);
+  padding-top:23px;
+}
+.profile-v5 .v5-info-grid{gap:8px;margin-top:14px}
+.profile-v5 .v5-info{padding:11px 13px 13px}
+.profile-v5 .v5-info p{line-height:1.65}
+.profile-v5 .v5-trait-section{padding-top:17px;padding-bottom:27px}
+.profile-v5 .v5-traits{gap:7px;margin:12px 0 8px}
+.profile-v5 .v5-traits .trait-cell{min-height:55px;padding:10px}
+@media (max-width: 700px) {
+  .profile-v5 .v5-layout{padding:48px 12px 12px}
+  .profile-v5 .v5-stage-title{font-size:32px;top:9px}
+  .profile-v5 .v5-art{height:520px;min-height:520px;overflow:hidden!important}
+  .profile-v5 .v5-art > .asset-img {
+    position:absolute!important;inset:0!important;width:100%;height:100%;
+    object-fit:cover!important;object-position:center 0%!important;
+  }
+  .profile-v5 .v5-art::after{
+    content:"";position:absolute;inset:0;z-index:3;pointer-events:none;
+    background:linear-gradient(180deg,transparent 60%,#090d14e8 100%);
+  }
+  .profile-v5 .v5-art .slot-label{height:100%;margin:0;min-height:0}
+  .profile-v5 .v5-art.loaded .slot-label{display:none}
+  .profile-v5 .v5-aside{gap:8px}
+  .profile-v5 .v5-aside-right{padding-top:0}
+  .profile-v5 .v5-aside .v5-panel{padding:9px}
+  .profile-v5 .v5-summary{margin-top:0}
+}
+@media(max-width:370px){.profile-v5 .v5-art{height:440px;min-height:440px}}
+
+
+/* =====================================================
+   AVALON v5 — 중앙 세로형 상세 팝업 / 내부 스크롤 방식
+   별도 좌우 패널 없이 카드 안에서 아래로 계속 열람합니다.
+   ===================================================== */
+#page-detail{min-height:calc(100dvh - 75px);background:radial-gradient(ellipse at 50% 26%,#32181f 0%,#100e16 42%,#05060b 85%)}
+.v5-scroll-backdrop{min-height:calc(100dvh - 75px);display:flex;justify-content:center;align-items:flex-start;padding:clamp(13px,2.3vh,26px) 15px 30px;background:radial-gradient(circle at 50% 25%,rgba(145,42,57,.13),transparent 56%)}
+.v5-scroll-dialog{position:relative;width:min(480px,100%);height:min(860px,calc(100dvh - 124px));min-height:330px;flex:none;border:1px solid #81515a;border-radius:19px;background:#0b0b11;overflow:hidden;box-shadow:0 22px 80px #000b,0 0 80px #ad304018;color:#f5f3f5;--line:rgba(255,130,145,.16)}
+.v5-fixed-top{position:absolute;inset:0 0 auto;height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 13px 0 18px;z-index:20;background:linear-gradient(180deg,#08080de8,#08080da8 68%,transparent);pointer-events:none}
+.v5-fixed-top .v5-scroll-brand{font-size:10px;letter-spacing:4px;font-weight:800;color:var(--accent-soft);border:1px solid #98576280;background:#090b10c7;padding:7px 12px;line-height:1}
+.v5-fixed-top button{pointer-events:auto;width:31px;height:31px;border-radius:50%;border:1px solid #bd869076;background:#07080cc9;color:#fff;font-size:19px;cursor:pointer;display:grid;place-items:center}
+.v5-fixed-top button:hover{border-color:var(--accent);background:#512028}
+.v5-dialog-scroll{height:100%;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#8d4653 #0a0b10;scroll-behavior:smooth}
+.v5-dialog-scroll::-webkit-scrollbar{width:5px}.v5-dialog-scroll::-webkit-scrollbar-thumb{background:#8d4653;border-radius:20px}
+.v5-scroll-cover{position:relative;min-height:520px;display:flex;align-items:stretch;justify-content:flex-end;flex-direction:column;isolation:isolate;background:linear-gradient(130deg,#37151e,#090b16)!important;overflow:hidden}
+.v5-scroll-cover::before{display:none!important}
+.v5-scroll-cover::after{content:"";position:absolute;inset:auto 0 0;height:300px;background:linear-gradient(180deg,transparent 0%,#0b0b11a8 49%,#0b0b11 100%);pointer-events:none;z-index:3}
+.v5-scroll-cover>.asset-img{position:static!important;inset:auto!important;height:auto!important;width:100%!important;max-height:none!important;object-fit:contain!important;object-position:center top!important;display:block;flex:none;z-index:1}
+.v5-scroll-cover .slot-label{min-height:520px;width:100%;padding:80px 28px;position:relative;z-index:1;box-sizing:border-box}
+.v5-scroll-cover.loaded .slot-label{display:none!important}
+.v5-cover-title{position:absolute;bottom:19px;left:22px;right:22px;z-index:5;text-shadow:0 2px 11px #000b}
+.v5-cover-code{color:var(--accent-soft);font-size:10px;letter-spacing:2px;font-weight:850}
+.v5-cover-name-row{display:flex;align-items:end;gap:12px;margin:9px 0 5px}
+.v5-cover-name-row h2{font-size:clamp(28px,5vw,33px);margin:0;line-height:1.15;flex:1;word-break:keep-all;letter-spacing:-1.2px}
+.v5-cover-tier{border:1px solid var(--accent);padding:5px 9px;color:var(--accent-soft);font-size:18px;font-weight:950;border-radius:5px;background:#10080bc9}
+.v5-cover-affiliation{font-size:12px;color:#e9d8dc;line-height:1.6;margin:4px 0 0;word-break:keep-all}
+.v5-scroll-body{padding:0 18px 26px;background:#0b0b11}
+.v5-scroll-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding:12px 0 15px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:0 0 18px}
+.v5-scroll-stats>div{text-align:center;padding:0 5px;border-right:1px solid var(--line)}.v5-scroll-stats>div:last-child{border:0}
+.v5-scroll-stats b{font-size:18px;color:var(--accent-soft);display:block;letter-spacing:.3px}.v5-scroll-stats span{font-size:10px;color:#a5a3af;display:block;margin-top:4px;letter-spacing:1px}
+.v5-data-line{border-bottom:1px solid var(--line);padding-bottom:15px;margin-bottom:15px}
+.v5-data-line .v5-data-label{color:var(--accent-soft);font-size:11px;font-weight:900;letter-spacing:1px;display:block;margin:0 0 6px}
+.v5-data-line p{font-size:13px;line-height:1.7;color:#d6d4da;margin:0;white-space:pre-line;word-break:keep-all}
+.v5-scroll-section-heading{display:flex;justify-content:space-between;align-items:baseline;gap:6px;color:#fff;font-size:15px;font-weight:900;margin:22px 0 11px;padding:0 0 9px;border-bottom:1px solid var(--line)}
+.v5-scroll-section-heading em{font-size:10px;color:var(--accent-soft);font-style:normal;letter-spacing:1px}
+.v5-stack{display:flex;flex-direction:column;gap:9px}
+.v5-trait-row,.v5-bonus-row{display:flex;align-items:flex-start;gap:12px;border:1px solid #68464b;background:linear-gradient(115deg,#1a151b,#100f15);border-radius:9px;padding:12px 13px;min-width:0}
+.v5-row-mark{width:34px;min-width:34px;height:34px;display:grid;place-items:center;border:1px solid #8b4752;background:#4b1c2580;color:var(--accent-soft);border-radius:7px;font-size:15px;font-weight:850}
+.v5-row-copy{min-width:0;flex:1}.v5-row-copy small{font-size:10px;color:var(--accent-soft);font-weight:900;letter-spacing:.4px}.v5-row-copy strong{display:block;font-size:13px;margin:3px 0 5px}.v5-row-copy p{font-size:12px;color:#bdbbc6;line-height:1.65;word-break:keep-all;white-space:pre-line;margin:0}
+.v5-scroll-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:22px}
+.v5-scroll-actions button{cursor:pointer;border-radius:7px;padding:12px 6px;background:#100d12;border:1px solid var(--accent);color:var(--accent-soft);font:inherit;font-size:12px;font-weight:900}
+.v5-scroll-actions button:last-child{background:var(--accent);color:#fff}
+.v5-scroll-foot{text-align:center;letter-spacing:2px;font-size:9px;color:#787681;padding:24px 0 5px}
+@media(max-width:650px){
+ #page-detail{min-height:calc(100dvh - 70px)}
+ .v5-scroll-backdrop{min-height:calc(100dvh - 70px);padding:8px 6px 12px}
+ .v5-scroll-dialog{width:min(480px,100%);height:calc(100dvh - 91px);border-radius:15px}
+ .v5-cover-title{left:17px;right:17px}
+ .v5-scroll-body{padding:0 15px 20px}
+}
+
 </style>
 </head>
 <body>
@@ -204,43 +341,33 @@
   <div class="inner-banner art-block" data-art="charactersBackground"><div class="slot-label"><small>images/characters-bg.webp</small></div><div class="inner-title container"><div class="eyebrow">01 / CHARACTER DATABASE</div><h1>MATE ARCHIVE</h1><p>다차원에서 소환된 메이트들의 가치 등급별 정보</p></div></div>
   <div class="container content-area"><div class="filter-bar"><div class="tier-controls"><button class="tier-btn active" data-tier="ALL" onclick="filterTier('ALL')">ALL</button><button class="tier-btn" data-tier="N" onclick="filterTier('N')">N</button><button class="tier-btn" data-tier="R" onclick="filterTier('R')">R</button><button class="tier-btn" data-tier="SR" onclick="filterTier('SR')">SR</button><button class="tier-btn" data-tier="SSR" onclick="filterTier('SSR')">SSR</button><button class="tier-btn" data-tier="UR" onclick="filterTier('UR')">UR</button></div><div class="filter-note" id="characterCount">50 SLOTS</div></div><div class="character-grid" id="characterGrid"></div></div>
 </section>
-<!-- 캐릭터 상세 V5: 원본 전체 사이트 유지 / 1캐릭터 1이미지 / 중앙70% / 좌우15% -->
+<!-- 캐릭터 상세 V5 유지: 좌측 정보 23% / 중앙 이미지 54% / 우측 버프 23%, 이미지 하단 그라디언트 -->
 <section id="page-detail" class="page">
- <div class="profile-v5" id="detailStage" data-tier="UR">
-  <div class="v5-head"><button class="v5-back" onclick="showPage('characters')">← 캐릭터 도감</button><span class="v5-path">AVALON / CHARACTER FILE / <span id="detailCodeTop">MATE-001</span></span></div>
-  <div class="v5-hero">
-   <div class="v5-bg-mark">A</div>
-   <div class="v5-stage-title">AVALON<small>CENTRAL ARCHIVE · DIMENSIONAL SUMMONING</small></div>
-   <div class="v5-layout">
-    <aside class="v5-aside v5-aside-left">
-     <div class="v5-tier"><b id="detailTierShort">UR</b><small id="detailTierEn">ULTIMATE</small></div>
-     <div class="v5-panel"><div class="v5-panel-mark">✦</div><span class="en">MATE / DATA</span><h4>고유 등급</h4><p id="detailTier">UR · ULTIMATE</p></div>
-     <div class="v5-panel"><div class="v5-panel-mark">◇</div><span class="en">CHARACTER TRAIT</span><h4>대표 특성</h4><p id="detailPrimaryTrait">실제 캐릭터의 고유 특성이 등록될 영역입니다.</p></div>
-     <div class="v5-panel"><div class="v5-panel-mark">⌁</div><span class="en">BACKGROUND</span><h4>출신 차원</h4><p id="detailOrigin">출신 세계관 정보</p></div>
-    </aside>
-    <div id="detailPortrait" class="v5-art art-block" data-fit="contain" aria-label="캐릭터 일러스트">
-     <div class="slot-label"><div class="slot-icon"><span>◇</span></div><b>캐릭터 전신 일러스트</b><small>images/characters/mate-01.webp</small></div>
-     <div class="v5-art-count" id="detailCode">MATE-001 / ILLUSTRATION</div>
+ <div class="v5-scroll-backdrop">
+  <div class="profile-v5 v5-scroll-dialog" id="detailStage" data-tier="UR" role="dialog" aria-label="캐릭터 상세 정보">
+   <div class="v5-fixed-top"><span class="v5-scroll-brand">AVALON</span><button type="button" onclick="showPage('characters')" aria-label="도감으로 돌아가기">×</button></div>
+   <div class="v5-dialog-scroll" id="detailScroll" tabindex="0">
+    <div id="detailPortrait" class="v5-scroll-cover art-block" aria-label="캐릭터 전신 일러스트">
+     <div class="slot-label"><b>캐릭터 전신 일러스트</b><small>images/characters/mate-01.webp</small></div>
+     <div class="v5-cover-title"><div class="v5-cover-code" id="detailCode">MATE-001 / CENTRAL ARCHIVE</div><div class="v5-cover-name-row"><h2 id="detailName">미등록 01</h2><span class="v5-cover-tier" id="detailTierShort">UR</span></div><p class="v5-cover-affiliation" id="detailAffiliation">출신 및 소속</p></div>
     </div>
-    <aside class="v5-aside v5-aside-right" id="detailSideStats" aria-label="특화 및 버프"><div class="v5-panel"><span class="en">SYSTEM BONUS</span><h4>버프 정보</h4><p>등급별 효과 표시 영역</p></div></aside>
+    <div class="v5-scroll-body">
+     <div class="v5-scroll-stats">
+      <div><b id="detailTier">UR</b><span>VALUE GRADE</span></div>
+      <div><b id="detailTraitCountStat">05</b><span>고유 특성</span></div>
+      <div><b id="detailCodeSummary">001</b><span>ARCHIVE ID</span></div>
+     </div>
+     <div class="v5-data-line"><span class="v5-data-label">출신 차원 / ORIGIN</span><p id="detailOrigin">출신 설정</p></div>
+     <div class="v5-data-line"><span class="v5-data-label">신체 · 외형 / APPEARANCE</span><p id="detailBody">외형 설명</p></div>
+     <div class="v5-data-line"><span class="v5-data-label">성격 / PERSONALITY</span><p id="detailPersonality">성격 설명</p></div>
+     <div class="v5-data-line"><span class="v5-data-label">성벽 및 함락 반응 / CHARACTER RESPONSE</span><p id="detailReaction">성향 설명</p></div>
+     <div class="v5-scroll-section-heading"><span>고유 특성</span><em id="traitCount">05 / 05</em></div>
+     <div class="v5-stack" id="detailTraitGrid"></div>
+     <div id="detailBuffArea"></div>
+     <div class="v5-scroll-actions"><button type="button" onclick="document.getElementById('detailScroll').scrollTo({top:0,behavior:'smooth'})">↑ 맨 위로</button><button type="button" onclick="showPage('characters')">캐릭터 도감</button></div>
+     <div class="v5-scroll-foot">AVALON · EVE CENTRAL ARCHIVE</div>
+    </div>
    </div>
-   <div class="v5-hero-foot"><span>✦ EVE / CENTRAL ARCHIVE</span><span>CHARACTER DATA · <strong>AUTHORIZED</strong></span></div>
-  </div>
-  <div class="v5-summary">
-   <div class="v5-summary-top">
-    <div><div class="v5-kicker">MATE PERSONAL FILE / CHARACTER PROFILE</div><h2 id="detailName">미등록 01</h2><p class="v5-affiliation" id="detailAffiliation">소속 및 출신 정보</p><p class="v5-origin">각 차원에서 소환된 메이트의 프로필을 열람합니다.</p></div>
-    <div class="v5-stats"><div class="v5-stat"><strong id="detailTierSummary">UR</strong><span>VALUE GRADE</span></div><div class="v5-stat"><strong id="detailCodeSummary">MATE-001</strong><span>ARCHIVE ID</span></div></div>
-   </div>
-   <div class="v5-info-grid">
-    <div class="v5-info"><h3>01 / 신체 · 외형</h3><p id="detailBody">외형 소개 영역</p></div>
-    <div class="v5-info"><h3>02 / 성격</h3><p id="detailPersonality">성격 소개 영역</p></div>
-    <div class="v5-info"><h3>03 / 성벽 및 함락 반응</h3><p id="detailReaction">캐릭터별 소개 영역</p></div>
-   </div>
-  </div>
-  <div class="v5-trait-section">
-   <div class="v5-trait-head"><h3>고유 특성 <em id="traitCount">05 / 05</em></h3><span>PERSONAL ATTRIBUTES</span></div>
-   <div class="v5-traits" id="detailTraitGrid"></div>
-   <p class="v5-remark">※ 현재는 50명 분량의 임시 데이터입니다. N / R / SR / SSR / UR 등급에 따라 특성과 추가 버프 항목이 다르게 표시됩니다.</p>
   </div>
  </div>
 </section>
@@ -370,48 +497,50 @@ function renderCharacters(){
 }
 function openCharacter(index){
  const ch=characters[index];
- const set=(id,value)=>document.getElementById(id).textContent=value || '내용 준비 중';
+ if(!ch)return;
+ const set=(id,value)=>{const el=document.getElementById(id);if(el)el.textContent=(value===undefined||value===null||value==='')?'내용 준비 중':String(value)};
  const stage=document.getElementById('detailStage');stage.dataset.tier=ch.tier;
- set('detailName',ch.name);set('detailTier',ch.tier+' · '+tierNames[ch.tier]);
- set('detailCode',ch.code+' / DOSSIER');set('detailCodeTop',ch.code);
- set('detailAffiliation',ch.affiliation);set('detailBody',ch.body);
- set('detailPersonality',ch.personality);set('detailOrigin',ch.origin);set('detailReaction',ch.reaction);
- const portrait=document.getElementById('detailPortrait');portrait.querySelector('.slot-label small').textContent=ch.full;
+ set('detailName',ch.name);set('detailCode',ch.code+' / CENTRAL ARCHIVE');
+ set('detailTierShort',ch.tier);set('detailTier',ch.tier+' · '+tierNames[ch.tier]);
+ set('detailCodeSummary',ch.code.replace('MATE-',''));
+ set('detailAffiliation',ch.affiliation);set('detailOrigin',ch.origin);
+ set('detailBody',ch.body);set('detailPersonality',ch.personality);set('detailReaction',ch.reaction);
+ const portrait=document.getElementById('detailPortrait');
+ portrait.querySelector('.slot-label small').textContent=ch.full;
  attachArt(portrait,ch.full,'contain');
- document.getElementById('detailTierShort').textContent=ch.tier;
- document.getElementById('detailTierEn').textContent=tierNames[ch.tier];
- document.getElementById('detailTierSummary').textContent=ch.tier;
- document.getElementById('detailCodeSummary').textContent=ch.code;
- document.getElementById('detailPrimaryTrait').textContent=ch.traitList?.[0] ? (ch.traitList[0].name+' · '+ch.traitList[0].desc) : '해당 캐릭터의 등록된 특성이 없습니다.';
- const side=document.getElementById('detailSideStats');side.replaceChildren();
- const bonusFields=[];
- if(['SR','SSR','UR'].includes(ch.tier))bonusFields.push(['특화 구역 강점',ch.specialty,'SPECIAL AREA']);
- if(['SSR','UR'].includes(ch.tier))bonusFields.push(['영지 전체 버프',ch.estateBuff,'ESTATE BUFF']);
- if(ch.tier==='UR')bonusFields.push(['입성자 전속 버프',ch.entrantBuff,'ENTRANT BUFF']);
- if(!bonusFields.length)bonusFields.push(['시스템 분류', 'N·R 등급은 특화 구역 및 영지 버프가 별도로 개방되지 않습니다.', 'BASE CLASS']);
- for(const [name,detail,label] of bonusFields){
-   const panel=document.createElement('div');panel.className='v5-panel';
-   const marker=document.createElement('div');marker.className='v5-panel-mark';marker.textContent='✧';
-   const small=document.createElement('span');small.className='en';small.textContent=label;
-   const strong=document.createElement('h4');strong.textContent=name;
-   const p=document.createElement('p');p.textContent=detail;
-   panel.append(marker,small,strong,p);side.append(panel);
- }
- const grid=document.getElementById('detailTraitGrid');grid.replaceChildren();
  const traits=ch.traitList||[];
+ set('detailTraitCountStat',String(traits.length).padStart(2,'0'));
  set('traitCount',String(traits.length).padStart(2,'0')+' / '+String(traitsCount[ch.tier]).padStart(2,'0'));
- if(traits.length===0){
-   const empty=document.createElement('div');empty.className='profile-box';empty.textContent='고유 특성 없음';grid.append(empty);
- }
- traits.forEach((t,i)=>{
-   const row=document.createElement('div');row.className='trait-cell';
-   const num=document.createElement('div');num.className='trait-number';num.textContent=String(i+1).padStart(2,'0');
-   const copy=document.createElement('div');copy.className='trait-description';
-   const name=document.createElement('strong');name.textContent=t.name;
-   const desc=document.createElement('span');desc.textContent=t.desc;
-   copy.append(name,desc);row.append(num,copy);grid.append(row);
+ const grid=document.getElementById('detailTraitGrid');grid.replaceChildren();
+ if(!traits.length){const empty=document.createElement('div');empty.className='v5-bonus-row';empty.textContent='등록된 고유 특성이 없습니다.';grid.append(empty)}
+ traits.forEach((trait,i)=>{
+  const row=document.createElement('article');row.className='v5-trait-row';
+  const mark=document.createElement('div');mark.className='v5-row-mark';mark.textContent=String(i+1).padStart(2,'0');
+  const copy=document.createElement('div');copy.className='v5-row-copy';
+  const title=document.createElement('strong');title.textContent=trait.name;
+  const desc=document.createElement('p');desc.textContent=trait.desc;
+  copy.append(title,desc);row.append(mark,copy);grid.append(row);
  });
+ const bonus=document.getElementById('detailBuffArea');bonus.replaceChildren();
+ const rows=[];
+ if(['SR','SSR','UR'].includes(ch.tier))rows.push(['특화 구역 강점','✦',ch.specialty]);
+ if(['SSR','UR'].includes(ch.tier))rows.push(['영지 전체 버프','♜',ch.estateBuff]);
+ if(ch.tier==='UR')rows.push(['입성자 전속 버프','♥',ch.entrantBuff]);
+ if(rows.length){
+  const title=document.createElement('div');title.className='v5-scroll-section-heading';title.textContent='특화 · 버프';bonus.append(title);
+  const list=document.createElement('div');list.className='v5-stack';
+  rows.forEach(([name,markText,desc])=>{
+    const row=document.createElement('article');row.className='v5-bonus-row';
+    const mark=document.createElement('div');mark.className='v5-row-mark';mark.textContent=markText;
+    const copy=document.createElement('div');copy.className='v5-row-copy';
+    const strong=document.createElement('strong');strong.textContent=name;
+    const p=document.createElement('p');p.textContent=desc||'내용 준비 중';
+    copy.append(strong,p);row.append(mark,copy);list.append(row);
+  });
+  bonus.append(list);
+ }
  showPage('detail');
+ document.getElementById('detailScroll').scrollTop=0;
 }
 
 function makeFeature(record,label,index,extraClass='facility-card'){
