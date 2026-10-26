@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AVALON | Central System</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#080d18;color:#e8ecf5;font-family:Arial,"Malgun Gothic",sans-serif}
+.screen{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;text-align:center}
+.hidden{display:none}
+.logo{font-size:clamp(36px,8vw,76px);font-weight:800;letter-spacing:9px;color:#e6c785}
+.sub{color:#8293ae;letter-spacing:3px;font-size:12px}
+.bar{width:min(360px,85vw);height:5px;background:#273449;margin:30px 0 12px;border-radius:8px;overflow:hidden}
+.fill{height:100%;width:0;background:linear-gradient(90deg,#638de8,#e6c785);transition:width .1s}
+#percent{color:#e6c785}
+.eve{width:110px;height:110px;border-radius:50%;border:2px solid #80a8e9;box-shadow:0 0 35px #356aba66;display:grid;place-items:center;color:#b4d1ff;font-size:27px;margin-bottom:30px;background:radial-gradient(circle,#243d64,#0b1427)}
+.message{max-width:560px;line-height:2;color:#bfcbe0}
+button{background:#17243a;color:#e9d49d;border:1px solid #746443;padding:14px 28px;border-radius:6px;cursor:pointer;font-size:14px}
+button:hover{background:#293d5d}
+h2{color:#e6c785}
+.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;width:min(800px,100%);margin-top:30px}
+.menu button{min-height:110px;font-size:17px}
+.panel{margin-top:30px;max-width:700px;line-height:1.9;color:#cad3e4}
+footer{margin-top:55px;color:#65748c;font-size:12px}
+</style>
+</head>
+<body>
+
+<section id="loading" class="screen">
+  <div class="logo">AVALON</div>
+  <p class="sub">CENTRAL SYSTEM CONNECTING</p>
+  <div class="bar"><div id="fill" class="fill"></div></div>
+  <div id="percent">0%</div>
+  <p class="sub">ESTABLISHING SECURE CONNECTION</p>
+</section>
+
+<section id="intro" class="screen hidden">
+  <div class="eve">EVE</div>
+  <p class="sub">MAIN ARTIFICIAL INTELLIGENCE</p>
+  <h2>접속이 완료되었습니다.</h2>
+  <div class="message">
+    환영합니다, 입성자님.<br>
+    아발론 중앙 관리 시스템 EVE입니다.<br><br>
+    이곳은 모든 가능성이 자본으로 환산되는 세계,<br>
+    무한한 기회와 경쟁이 공존하는 특구 아발론입니다.<br><br>
+    입성자님의 방문을 진심으로 환영합니다.
+  </div>
+  <p><button onclick="enterAvalon()">아발론 입장하기</button></p>
+</section>
+
+<section id="main" class="screen hidden">
+  <div class="logo">AVALON</div>
+  <p class="sub">CENTRAL INFORMATION ARCHIVE</p>
+  <h2>아발론 중앙 정보 시스템</h2>
+  <p style="color:#a5b5cc">원하시는 항목을 선택해 주십시오.</p>
+
+  <div class="menu">
+    <button onclick="openMenu('world')">세계관 소개</button>
+    <button onclick="openMenu('characters')">캐릭터 도감</button>
+    <button onclick="openMenu('system')">시스템 안내</button>
+  </div>
+
+  <div id="content" class="panel">
+    EVE 시스템이 정상적으로 가동 중입니다.
+  </div>
+  <footer>AVALON CENTRAL SYSTEM · EVE</footer>
+</section>
+
+<script>
+let progress = 0;
+const timer = setInterval(() => {
+  progress = Math.min(100, progress + 2);
+  document.getElementById("fill").style.width = progress + "%";
+  document.getElementById("percent").textContent = progress + "%";
+  if(progress >= 100){
+    clearInterval(timer);
+    setTimeout(() => {
+      document.getElementById("loading").classList.add("hidden");
+      document.getElementById("intro").classList.remove("hidden");
+    }, 650);
+  }
+}, 65);
+
+function enterAvalon(){
+  document.getElementById("intro").classList.add("hidden");
+  document.getElementById("main").classList.remove("hidden");
+}
+
+function openMenu(type){
+  const pages = {
+    world: "<h2>아발론 세계관</h2><p>외부 간섭이 차단된 폐쇄형 상업·유흥 특구 아발론. 중앙 AI 이브의 통제 아래 모든 활동은 시스템 규칙과 크레딧을 기반으로 운영됩니다.</p>",
+    characters: "<h2>캐릭터 도감</h2><p>다차원에서 소환된 메이트들의 정보를 열람하는 공간입니다.<br>캐릭터 프로필은 추후 추가됩니다.</p>",
+    system: "<h2>시스템 안내</h2><p>다차원 소환, 크레딧 경제, 영지 운영, 랭킹 시스템 등의 자료가 등록될 예정입니다.</p>"
+  };
+  document.getElementById("content").innerHTML = pages[type];
+}
+</script>
+
+</body>
+</html>
