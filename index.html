@@ -45,6 +45,127 @@
 @media(max-width:720px){.site-header{height:66px}.brand{min-width:118px}.brand strong{font-size:23px}.brand small{font-size:6px}.nav-btn{padding:0 9px;font-size:10px}.page{min-height:calc(100vh - 66px)}.entry-content{padding:18px}.eve-intro{grid-template-columns:1fr;gap:0;min-height:auto;text-align:center}.eve-intro-copy{padding:20px 0}.eve-intro-copy h2{margin:12px 0;font-size:36px}.eve-intro-copy p{font-size:13px}.eve-intro-portrait{min-height:180px;max-height:220px;width:70%;margin:auto;order:-1}.eve-intro-portrait .slot-label{min-height:190px}.home-hero{min-height:660px}.hero-inner{padding:30px 20px 65px;display:block;min-height:660px}.hero-copy{padding-top:42px;max-width:95%}.hero-title{font-size:clamp(65px,14vw,95px);margin:12px 0}.hero-slogan{font-size:22px}.hero-copy p{font-size:12px;max-width:340px}.hero-buttons{margin-top:20px}.action{min-height:43px;padding:12px 15px;font-size:10px}.hero-figure{position:absolute;right:-6%;bottom:0;width:73%;height:400px;opacity:.72;z-index:-1}.hero-figure .slot-label{opacity:.45}.hero-back:after{background:linear-gradient(90deg,#060b13f5 0%,#070d17c5 53%,#070e1842 100%),linear-gradient(0deg,#060b13e3,transparent 60%)}.hero-meta{left:20px;bottom:18px}.menu-row{grid-template-columns:repeat(2,1fr)}.menu-art{height:155px}.menu-copy{left:16px;bottom:13px}.menu-copy strong{font-size:17px}.home-showcase{padding-top:46px;padding-bottom:55px}.showcase-grid,.feature-list{grid-template-columns:1fr}.showcase-card{height:230px}.showcase-copy{left:20px;bottom:20px}.showcase-copy h3{font-size:25px}.feature,.wide-feature{grid-column:auto;min-height:290px}.inner-banner{height:300px}.inner-title{padding-bottom:25px}.inner-title h1{letter-spacing:-2px;font-size:clamp(45px,11vw,72px)}.content-area{padding-top:25px;padding-bottom:65px}.character-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.tier-btn{min-width:49px;padding:0 9px;height:36px}.filter-bar{gap:8px}.char-info{padding:8px 6px}.char-info strong{font-size:12px}.detail-inner{grid-template-columns:1fr;min-height:800px}.detail-copy{padding:10px 0;justify-content:flex-start}.detail-copy h2{font-size:56px}.detail-portrait{position:absolute;right:0;bottom:0;width:100%;height:60%;min-height:0;z-index:-1;opacity:.45}.detail-portrait .slot-label{min-height:100%}.detail-copy{position:relative;z-index:4}.detail-table{background:#08101ac4;padding:0 13px}.resource-grid{grid-template-columns:1fr}.resource{min-height:280px}.facility-grid{grid-template-columns:repeat(2,1fr)}.facility-card{height:230px}.facility-card .feature-body{padding:13px}.facility-card h3{font-size:15px!important}.facility-card p{font-size:10px}}
 @media(max-width:380px){.character-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.facility-grid{grid-template-columns:1fr}.site-header{gap:5px}.hero-title{font-size:61px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* V4: 캐릭터 상세 — 세로형 포스터 + 컴팩트 정보 UI. 나머지 화면은 v3 그대로 */
+.detail-stage{background:#0b111a;overflow:visible;--tier-accent:#e9c981}
+.detail-stage[data-tier="SSR"]{--tier-accent:#f2b66d}.detail-stage[data-tier="SR"]{--tier-accent:#bc9af5}.detail-stage[data-tier="R"]{--tier-accent:#8cbff3}.detail-stage[data-tier="N"]{--tier-accent:#bac3cd}
+.detail-stage .detail-background{display:none}
+.profile-topbar{padding:20px clamp(16px,4.2vw,72px);display:flex;justify-content:space-between;align-items:center;background:#0b121c;gap:15px}
+.profile-back{background:transparent;border:1px solid #536174;color:#dfe6ed;padding:11px 15px;font-size:12px;font-weight:800}
+.profile-back:hover{border-color:var(--tier-accent);color:var(--tier-accent)}
+.profile-topbar-id{font-size:10px;letter-spacing:2.4px;color:#8092a7}
+.poster{position:relative;min-height:630px;isolation:isolate;overflow:hidden;background:linear-gradient(145deg,#f0f0ef,#d8dce0 60%,#cad1d6);color:#11151b;border-bottom:5px solid var(--tier-accent)}
+.poster-grid{position:absolute;inset:0;opacity:.45;background-image:linear-gradient(#5d697523 1px,transparent 1px),linear-gradient(90deg,#5d697523 1px,transparent 1px);background-size:27px 27px}
+.poster-art-bg{position:absolute;inset:0;opacity:.35;background:transparent}.poster-art-bg:before{display:none}
+.poster-deco{position:absolute;inset:-15% 10% -20% 31%;background:linear-gradient(110deg,transparent 13%,var(--tier-accent) 13%,var(--tier-accent) 30%,transparent 30%,transparent 43%,#768da52b 43%,#768da52b 56%,transparent 56%);transform:skewX(-10deg);opacity:.47}
+.poster-brand{position:absolute;right:clamp(22px,4vw,70px);top:24px;font-size:clamp(29px,4vw,57px);font-weight:1000;letter-spacing:-2px;z-index:4}
+.poster-brand small{display:block;letter-spacing:3px;font-size:9px;text-align:right;font-weight:800;color:#415267}
+.poster-glyph{position:absolute;right:0;bottom:-100px;font-size:clamp(300px,45vw,700px);line-height:1;letter-spacing:-40px;opacity:.08;font-weight:1000;pointer-events:none}
+.poster-layout{position:relative;z-index:5;max-width:1600px;padding:24px clamp(16px,4.2vw,72px) 28px;min-height:630px;margin:auto;display:grid;grid-template-columns:minmax(230px,27%) minmax(250px,1fr) minmax(225px,24%);column-gap:clamp(10px,2vw,35px);align-items:stretch}
+.poster-left{display:flex;flex-direction:column;justify-content:flex-end;min-width:0;padding-bottom:22px;z-index:8}
+.poster-code{font-size:10px;letter-spacing:2px;font-weight:950;color:#4f6273}
+.poster-name{font-size:clamp(38px,5vw,76px);line-height:1.03;letter-spacing:-2px;margin:12px 0 13px;overflow-wrap:anywhere;font-weight:1000;text-shadow:0 2px 0 #fffd}
+.poster-tag{font-weight:1000;font-style:italic;font-size:clamp(17px,2.3vw,29px);background:#111a25;color:#fff;width:max-content;max-width:100%;padding:10px 18px;border-left:7px solid var(--tier-accent);margin-bottom:16px}
+.poster-info{background:#fffdf6ec;border-top:2px solid #253644;padding:14px 15px;box-shadow:6px 6px 0 #23364818;margin-top:8px;max-width:330px}
+.poster-info strong{font-size:11px;letter-spacing:1px;color:#526679}.poster-info p{font-size:13px;line-height:1.65;word-break:keep-all;margin:5px 0 0;color:#202e3c}
+.poster-image{position:relative;z-index:6;align-self:stretch;min-height:570px;overflow:visible;background:transparent;isolation:auto}
+.poster-image:before{display:none}
+.poster-image>.asset-img{object-fit:contain;object-position:center bottom;inset:auto 0 -25px;width:100%;height:calc(100% + 40px);filter:drop-shadow(0 8px 17px #11263846)}
+.poster-image .slot-label{border:2px dashed #7e95aa80;background:#dce4ed36;min-height:420px;margin:95px auto 45px;color:#3c5063;max-width:400px}
+.poster-image .slot-label small{color:#5e7284}
+.poster-image.loaded .slot-label{display:none}
+.poster-right{display:flex;flex-direction:column;align-items:stretch;justify-content:center;z-index:7;gap:10px;padding-top:110px}
+.poster-side-heading{font-size:10px;letter-spacing:2px;font-weight:1000;color:#3c5265;text-align:right;padding:0 0 10px;border-bottom:2px solid #53667566}
+.side-stat{background:#131c28ee;color:#f2f5f7;padding:14px 15px;border-left:4px solid var(--tier-accent);box-shadow:6px 6px 0 #0e1b2826;min-width:0}
+.side-stat small{display:block;color:var(--tier-accent);font-size:10px;letter-spacing:1px;font-weight:950}
+.side-stat strong{display:block;font-size:13px;margin:7px 0 2px}
+.side-stat p{color:#c8d4dd;line-height:1.6;font-size:11px;margin:4px 0 0;overflow-wrap:anywhere}
+.side-stat.no-data{opacity:.7}
+.profile-brief{background:#111a25;color:#e7ebf0;padding:24px clamp(16px,4.2vw,72px);display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:16px;border-bottom:1px solid #39485a}
+.brief-item{min-width:0;padding:0 18px;border-left:2px solid var(--tier-accent)}.brief-item:first-child{padding-left:0;border-left:0}
+.brief-item small{font-size:10px;color:#9daebc;letter-spacing:1.3px;font-weight:900}.brief-item p{font-size:13px;line-height:1.6;color:#e1e9ef;word-break:keep-all;margin:8px 0 0}
+.profile-content{max-width:1460px;padding:26px clamp(16px,4.2vw,72px) 72px;margin:auto}
+.profile-content-heading{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:15px}
+.profile-content-heading h3{font-size:clamp(22px,2.8vw,34px);margin:0;letter-spacing:-.5px}
+.profile-content-heading span{font-size:10px;color:var(--tier-accent);letter-spacing:1.5px;font-weight:900}
+.profile-box{background:#151f2b;border:1px solid #3a4757;padding:18px 20px;min-width:0}
+.profile-box h4{font-size:12px;margin:0 0 10px;color:var(--tier-accent);letter-spacing:1px}
+.profile-box p{color:#cfdae5;font-size:13px;line-height:1.8;word-break:keep-all;margin:0}
+.profile-traits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0 25px}
+.trait-cell{display:flex;align-items:center;gap:12px;background:#1a2634;border:1px solid #33465a;padding:15px 13px;min-height:74px;min-width:0}
+.trait-number{font-size:21px;color:var(--tier-accent);font-weight:1000;font-style:italic;flex:0 0 33px}
+.trait-description strong{display:block;font-size:12px;line-height:1.45;color:#ecf2f6;overflow-wrap:anywhere}.trait-description span{display:block;color:#8194a8;font-size:10px;margin-top:5px}
+.profile-lower{display:grid;grid-template-columns:1fr 1fr;gap:12px}.profile-lower .profile-box{min-height:130px}
+.profile-note{margin-top:18px;color:#8595a7;font-size:11px}
+@media(max-width:1050px){.poster-layout{grid-template-columns:minmax(205px,31%) minmax(190px,1fr) minmax(175px,25%);gap:6px}.poster-image{min-height:530px}.poster{min-height:600px}.poster-layout{min-height:600px}.poster-info{padding:10px 12px}.poster-info p{font-size:12px}.side-stat{padding:11px}.side-stat p{font-size:10px}}
+@media(max-width:720px){.profile-topbar{padding:13px 16px}.profile-topbar-id{font-size:9px;letter-spacing:1px}.poster{min-height:0}.poster-layout{padding:16px 15px 0;min-height:0;display:grid;grid-template-columns:1fr;grid-template-areas:"photo" "name" "sides";gap:0}.poster-brand{font-size:29px;top:12px;right:16px}.poster-brand small{font-size:7px}.poster-glyph{font-size:320px;bottom:190px}.poster-image{grid-area:photo;width:100%;height:450px;min-height:0;z-index:3}.poster-image .slot-label{min-height:260px;margin:80px 30px 0}.poster-image>.asset-img{inset:auto 0 0;height:100%}.poster-left{grid-area:name;padding:9px 0 15px}.poster-code{font-size:10px}.poster-name{font-size:45px;margin:6px 0}.poster-tag{margin-bottom:6px;font-size:20px;padding:6px 11px}.poster-info{max-width:none;margin-top:7px;padding:9px 12px}.poster-info p{font-size:12px}.poster-right{grid-area:sides;padding:12px 0 22px;display:grid;grid-template-columns:1fr 1fr;gap:8px}.poster-side-heading{grid-column:1/-1;text-align:left;font-size:9px}.side-stat{padding:10px 11px}.side-stat small{font-size:9px}.side-stat strong{font-size:11px}.side-stat p{font-size:10px}.profile-brief{padding:18px 16px;grid-template-columns:1fr 1fr;gap:12px}.brief-item{padding-left:12px}.brief-item:first-child{grid-column:1/-1;padding-bottom:6px}.brief-item p{font-size:12px}.profile-content{padding:24px 16px 48px}.profile-traits{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.trait-cell{min-height:66px;padding:12px 9px;gap:7px}.trait-number{font-size:17px;flex-basis:25px}.trait-description strong{font-size:11px}.profile-lower{grid-template-columns:1fr}.profile-content-heading{align-items:end}.profile-box{padding:15px}}
+@media(max-width:350px){.poster-image{height:380px}.poster-name{font-size:37px}.profile-traits{grid-template-columns:1fr}}
+
+
+/* V5 final design: dark red/black single-illustration character dossier */
+.profile-v5{--accent:#ed4659;--accent-soft:#ec6472;--dim:#98a1ac;--surface:#0f151e;--edge:#454044;background:#080b12;color:#f0eef0;font-family:"Pretendard","Malgun Gothic",Arial,sans-serif}
+.profile-v5[data-tier="N"]{--accent:#afb7c1;--accent-soft:#c7cfd6}
+.profile-v5[data-tier="R"]{--accent:#63aef7;--accent-soft:#87c2ff}
+.profile-v5[data-tier="SR"]{--accent:#b68cf7;--accent-soft:#d1b5ff}
+.profile-v5[data-tier="SSR"]{--accent:#f6bf6c;--accent-soft:#f5d99d}
+.profile-v5[data-tier="UR"]{--accent:#ed4659;--accent-soft:#ff7385}
+.v5-head{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#090d14;border-bottom:1px solid #36383e;padding:15px clamp(14px,3vw,48px)}
+.v5-back{border:1px solid #554850;background:#121922;color:#e8e8ed;padding:10px 16px;font-size:12px;font-weight:700;cursor:pointer;border-radius:2px}
+.v5-back:hover{border-color:var(--accent);color:var(--accent-soft)}
+.v5-path{font-size:10px;color:#88919f;letter-spacing:1.7px;text-align:right}
+.v5-hero{position:relative;isolation:isolate;background:radial-gradient(ellipse at 50% 33%,#3c2630 0%,#19151e 32%,#090d14 76%);overflow:hidden}
+.v5-hero::before{content:"";position:absolute;inset:0;opacity:.23;background:repeating-linear-gradient(90deg,transparent 0 93px,#9b8b8833 94px,#9b8b8833 95px),repeating-linear-gradient(0deg,transparent 0 92px,#9b8b8833 93px,#9b8b8833 94px);pointer-events:none}
+.v5-hero::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 70px 120px #090c14a6,inset 0 -115px 125px #090b13c9}
+.v5-bg-mark{position:absolute;left:50%;top:45%;transform:translate(-50%,-50%);font-size:clamp(260px,48vw,760px);line-height:1;font-weight:1000;color:var(--accent);opacity:.055;letter-spacing:-40px;pointer-events:none}
+.v5-stage-title{position:absolute;top:19px;left:50%;transform:translateX(-50%);color:#e8d9d8a9;text-align:center;font-weight:800;letter-spacing:clamp(5px,2vw,20px);font-size:clamp(26px,4.1vw,64px);z-index:4;white-space:nowrap;text-shadow:0 5px 18px #000}
+.v5-stage-title small{display:block;letter-spacing:4px;font-size:9px;color:#979aa2;margin-top:7px}
+.v5-layout{position:relative;z-index:2;display:grid;grid-template-columns:15% minmax(0,70%) 15%;max-width:1520px;min-height:890px;margin:0 auto;padding:clamp(66px,8vw,104px) 16px 14px;align-items:stretch}
+.v5-aside{min-width:0;align-self:stretch;z-index:3;display:flex;flex-direction:column;gap:12px;padding:35px 4px 38px}
+.v5-aside-left{justify-content:center}.v5-aside-right{justify-content:center}
+.v5-tier{margin:0 0 14px;padding:12px 4px 14px;border-bottom:1px solid #c7b3a94d;text-align:center;background:#0004}
+.v5-tier b{display:block;font-size:clamp(31px,4vw,61px);line-height:1;color:var(--accent);font-weight:1000}
+.v5-tier small{font-size:9px;letter-spacing:1.6px;color:#b8b6bc}
+.v5-panel{background:linear-gradient(155deg,#121722f2,#101018e9);border:1px solid #66616a85;border-left:2px solid var(--accent);padding:12px 10px;box-shadow:0 9px 24px #0008;min-width:0;max-height:none}
+.v5-panel .en{display:block;color:var(--accent-soft);font-size:9px;font-weight:850;letter-spacing:.7px}
+.v5-panel h4{font-size:12px;color:#fff;margin:8px 0 6px;word-break:keep-all;line-height:1.45}
+.v5-panel p{font-size:10px;line-height:1.65;word-break:keep-all;margin:0;color:#bfc1c8;overflow-wrap:anywhere}
+.v5-panel-mark{font-size:21px;line-height:1;color:var(--accent);opacity:.85;margin-bottom:8px}
+.v5-art{position:relative;min-height:795px;display:flex;align-items:flex-end;justify-content:center;z-index:2;min-width:0;overflow:visible;background:transparent!important}
+.v5-art.art-block{background:transparent!important;overflow:visible!important}
+.v5-art.art-block::before{display:none}
+.v5-art:before{content:"";width:74%;height:82%;border-radius:50%;background:radial-gradient(ellipse,#bd464031,transparent 72%);position:absolute;inset:12% 13% auto;filter:blur(20px)}
+.v5-art > .asset-img{position:relative!important;inset:auto!important;display:block;width:100%;height:795px;max-width:100%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 12px 22px #0009);z-index:2}
+.v5-art .slot-label{width:min(80%,520px);height:570px;border:1px dashed #a4777b;min-height:0;background:#19212b99;margin:100px 0 0;position:relative;z-index:2}
+.v5-art.loaded .slot-label{display:none}
+.v5-art-count{position:absolute;right:6%;bottom:20px;color:#f0e3e9b7;font-size:10px;letter-spacing:2.4px;z-index:4;text-shadow:0 2px 9px #000}
+.v5-hero-foot{position:relative;z-index:3;margin-top:-9px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(90deg,#17141cde,#0f1017d6);border-top:1px solid #876b6896;padding:10px clamp(18px,3vw,46px);color:#c8b8bc;font-size:10px;letter-spacing:1px}
+.v5-hero-foot strong{color:var(--accent-soft);font-size:12px}
+.v5-summary{border-top:2px solid var(--accent);background:linear-gradient(145deg,#151821,#090d14 65%);padding:26px clamp(15px,3vw,48px) 28px}
+.v5-summary-top{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(220px,.65fr);gap:24px;align-items:center;max-width:1380px;margin:auto}
+.v5-kicker{font-size:10px;font-weight:900;letter-spacing:2px;color:var(--accent-soft);margin-bottom:9px}
+.v5-summary h2{font-size:clamp(31px,4vw,54px);margin:0 0 11px;line-height:1.15;letter-spacing:-1px;word-break:keep-all}
+.v5-summary h2 small{color:var(--accent);font-size:16px;letter-spacing:1px;vertical-align:middle}
+.v5-affiliation{font-size:13px;color:#c9ced9;word-break:keep-all;margin:0 0 8px}
+.v5-origin{font-size:12px;color:#9fa8b5;line-height:1.7;word-break:keep-all;margin:0}
+.v5-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.v5-stat{border:1px solid #6a4a4e;background:#181920;padding:13px 11px;text-align:center}
+.v5-stat strong{font-size:15px;display:block;color:#fff;margin-bottom:6px}.v5-stat span{font-size:9px;letter-spacing:.7px;color:#8d949f}
+.v5-info-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:1380px;margin:22px auto 0}
+.v5-info{min-width:0;background:#141b26;border-top:2px solid #5d5359;padding:15px 15px 19px}
+.v5-info h3{font-size:12px;color:var(--accent-soft);margin:0 0 10px}.v5-info p{font-size:12px;color:#c8cbd4;line-height:1.8;word-break:keep-all;margin:0;white-space:pre-line}
+.v5-trait-section{padding:26px clamp(15px,3vw,48px) 55px;background:#0b111b;max-width:1460px;margin:0 auto}
+.v5-trait-head{display:flex;align-items:end;justify-content:space-between;gap:8px;border-bottom:1px solid #4a3b42;padding-bottom:15px}
+.v5-trait-head h3{font-size:26px;margin:0;color:#fff}.v5-trait-head em{font-size:13px;color:var(--accent-soft);font-style:normal}
+.v5-trait-head span{font-size:10px;color:#a6a4ae;letter-spacing:1px}
+.v5-traits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0 18px}
+.v5-traits .trait-cell{background:#141b26;border:1px solid #625259;border-left:2px solid var(--accent);min-height:76px}
+.v5-traits .trait-number{color:var(--accent)}
+.v5-traits .trait-description strong{color:#f1eced}.v5-traits .trait-description span{color:#9da5b0;line-height:1.45}
+.v5-remark{font-size:11px;color:#80909b;line-height:1.8}
+@media(max-width:980px){.v5-layout{min-height:740px;grid-template-columns:18% minmax(0,64%) 18%;padding-left:8px;padding-right:8px}.v5-art{min-height:680px}.v5-art>.asset-img{height:680px}.v5-panel{padding:9px 7px}.v5-panel h4{font-size:11px}.v5-panel p{font-size:10px}.v5-aside{gap:8px}.v5-tier b{font-size:37px}}
+@media(max-width:700px){.v5-head{padding:12px 14px}.v5-path{letter-spacing:.2px;font-size:9px}.v5-layout{display:grid;grid-template-columns:1fr 1fr;grid-template-areas:'art art' 'left right';min-height:0;gap:9px;padding:62px 12px 15px}.v5-stage-title{font-size:35px;top:13px}.v5-stage-title small{font-size:7px}.v5-art{grid-area:art;min-height:560px;height:560px;overflow:hidden}.v5-art>.asset-img{height:560px}.v5-art .slot-label{height:450px;margin:70px 0 0}.v5-art-count{bottom:8px}.v5-aside{padding:0;display:flex;justify-content:flex-start;gap:8px}.v5-aside-left{grid-area:left}.v5-aside-right{grid-area:right}.v5-panel{padding:11px 10px;flex:0 0 auto}.v5-tier{margin:0;padding:5px 0 9px}.v5-tier b{font-size:30px}.v5-hero-foot{font-size:9px;padding:11px 12px}.v5-summary{padding:23px 14px}.v5-summary-top{grid-template-columns:1fr;gap:13px}.v5-info-grid{grid-template-columns:1fr;gap:8px}.v5-info{padding:13px}.v5-trait-section{padding:22px 14px 42px}.v5-traits{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}}
+@media(max-width:370px){.v5-art{min-height:470px;height:470px}.v5-art>.asset-img{height:470px}.v5-traits{grid-template-columns:1fr}.v5-panel p{font-size:9px}}
+
 </style>
 </head>
 <body>
@@ -81,10 +202,48 @@
 <!-- 도감 -->
 <section id="page-characters" class="page">
   <div class="inner-banner art-block" data-art="charactersBackground"><div class="slot-label"><small>images/characters-bg.webp</small></div><div class="inner-title container"><div class="eyebrow">01 / CHARACTER DATABASE</div><h1>MATE ARCHIVE</h1><p>다차원에서 소환된 메이트들의 가치 등급별 정보</p></div></div>
-  <div class="container content-area"><div class="filter-bar"><div class="tier-controls"><button class="tier-btn active" data-tier="ALL" onclick="filterTier('ALL')">ALL</button><button class="tier-btn" data-tier="N" onclick="filterTier('N')">N</button><button class="tier-btn" data-tier="R" onclick="filterTier('R')">R</button><button class="tier-btn" data-tier="SR" onclick="filterTier('SR')">SR</button><button class="tier-btn" data-tier="SSR" onclick="filterTier('SSR')">SSR</button><button class="tier-btn" data-tier="UR" onclick="filterTier('UR')">UR</button></div><div class="filter-note" id="characterCount">45 SLOTS</div></div><div class="character-grid" id="characterGrid"></div></div>
+  <div class="container content-area"><div class="filter-bar"><div class="tier-controls"><button class="tier-btn active" data-tier="ALL" onclick="filterTier('ALL')">ALL</button><button class="tier-btn" data-tier="N" onclick="filterTier('N')">N</button><button class="tier-btn" data-tier="R" onclick="filterTier('R')">R</button><button class="tier-btn" data-tier="SR" onclick="filterTier('SR')">SR</button><button class="tier-btn" data-tier="SSR" onclick="filterTier('SSR')">SSR</button><button class="tier-btn" data-tier="UR" onclick="filterTier('UR')">UR</button></div><div class="filter-note" id="characterCount">50 SLOTS</div></div><div class="character-grid" id="characterGrid"></div></div>
 </section>
-<!-- 캐릭터 상세 -->
-<section id="page-detail" class="page"><div class="detail-stage"><div class="detail-background art-block" data-art="detailBackground"><div class="slot-label"><small>images/detail-bg.webp</small></div></div><div class="detail-inner"><div class="detail-copy"><button class="back-btn" onclick="showPage('characters')">← 캐릭터 도감으로</button><div class="eyebrow">MATE PROFILE / CENTRAL DATABASE</div><h2 id="detailName">미등록 캐릭터</h2><span class="detail-tier" id="detailTier">SSR / LIMITED</span><div class="detail-table"><div class="detail-line"><b>CHARACTER / 개요</b><p id="detailIntro">캐릭터 상세 설명이 표시됩니다.</p></div><div class="detail-line"><b>TRAITS / 성격</b><p id="detailTraits">캐릭터 특성이 표시됩니다.</p></div><div class="detail-line"><b>ORIGIN / 출신</b><p id="detailOrigin">출신 정보가 표시됩니다.</p></div></div></div><div class="detail-portrait art-block" id="detailPortrait" data-fit="contain"><div class="slot-label"><div class="slot-icon"><span>◇</span></div><b>캐릭터 전신 이미지</b><small>images/characters/mate-01-full.png</small></div></div></div></div></section>
+<!-- 캐릭터 상세 V5: 원본 전체 사이트 유지 / 1캐릭터 1이미지 / 중앙70% / 좌우15% -->
+<section id="page-detail" class="page">
+ <div class="profile-v5" id="detailStage" data-tier="UR">
+  <div class="v5-head"><button class="v5-back" onclick="showPage('characters')">← 캐릭터 도감</button><span class="v5-path">AVALON / CHARACTER FILE / <span id="detailCodeTop">MATE-001</span></span></div>
+  <div class="v5-hero">
+   <div class="v5-bg-mark">A</div>
+   <div class="v5-stage-title">AVALON<small>CENTRAL ARCHIVE · DIMENSIONAL SUMMONING</small></div>
+   <div class="v5-layout">
+    <aside class="v5-aside v5-aside-left">
+     <div class="v5-tier"><b id="detailTierShort">UR</b><small id="detailTierEn">ULTIMATE</small></div>
+     <div class="v5-panel"><div class="v5-panel-mark">✦</div><span class="en">MATE / DATA</span><h4>고유 등급</h4><p id="detailTier">UR · ULTIMATE</p></div>
+     <div class="v5-panel"><div class="v5-panel-mark">◇</div><span class="en">CHARACTER TRAIT</span><h4>대표 특성</h4><p id="detailPrimaryTrait">실제 캐릭터의 고유 특성이 등록될 영역입니다.</p></div>
+     <div class="v5-panel"><div class="v5-panel-mark">⌁</div><span class="en">BACKGROUND</span><h4>출신 차원</h4><p id="detailOrigin">출신 세계관 정보</p></div>
+    </aside>
+    <div id="detailPortrait" class="v5-art art-block" data-fit="contain" aria-label="캐릭터 일러스트">
+     <div class="slot-label"><div class="slot-icon"><span>◇</span></div><b>캐릭터 전신 일러스트</b><small>images/characters/mate-01.webp</small></div>
+     <div class="v5-art-count" id="detailCode">MATE-001 / ILLUSTRATION</div>
+    </div>
+    <aside class="v5-aside v5-aside-right" id="detailSideStats" aria-label="특화 및 버프"><div class="v5-panel"><span class="en">SYSTEM BONUS</span><h4>버프 정보</h4><p>등급별 효과 표시 영역</p></div></aside>
+   </div>
+   <div class="v5-hero-foot"><span>✦ EVE / CENTRAL ARCHIVE</span><span>CHARACTER DATA · <strong>AUTHORIZED</strong></span></div>
+  </div>
+  <div class="v5-summary">
+   <div class="v5-summary-top">
+    <div><div class="v5-kicker">MATE PERSONAL FILE / CHARACTER PROFILE</div><h2 id="detailName">미등록 01</h2><p class="v5-affiliation" id="detailAffiliation">소속 및 출신 정보</p><p class="v5-origin">각 차원에서 소환된 메이트의 프로필을 열람합니다.</p></div>
+    <div class="v5-stats"><div class="v5-stat"><strong id="detailTierSummary">UR</strong><span>VALUE GRADE</span></div><div class="v5-stat"><strong id="detailCodeSummary">MATE-001</strong><span>ARCHIVE ID</span></div></div>
+   </div>
+   <div class="v5-info-grid">
+    <div class="v5-info"><h3>01 / 신체 · 외형</h3><p id="detailBody">외형 소개 영역</p></div>
+    <div class="v5-info"><h3>02 / 성격</h3><p id="detailPersonality">성격 소개 영역</p></div>
+    <div class="v5-info"><h3>03 / 성벽 및 함락 반응</h3><p id="detailReaction">캐릭터별 소개 영역</p></div>
+   </div>
+  </div>
+  <div class="v5-trait-section">
+   <div class="v5-trait-head"><h3>고유 특성 <em id="traitCount">05 / 05</em></h3><span>PERSONAL ATTRIBUTES</span></div>
+   <div class="v5-traits" id="detailTraitGrid"></div>
+   <p class="v5-remark">※ 현재는 50명 분량의 임시 데이터입니다. N / R / SR / SSR / UR 등급에 따라 특성과 추가 버프 항목이 다르게 표시됩니다.</p>
+  </div>
+ </div>
+</section>
 <!-- 세계관 -->
 <section id="page-world" class="page"><div class="inner-banner art-block" data-art="worldBackground"><div class="slot-label"><small>images/world-bg.webp</small></div><div class="inner-title container"><div class="eyebrow">02 / THE WORLD</div><h1>WELCOME TO AVALON.</h1><p>자본과 데이터가 모든 가치를 결정하는 폐쇄형 특구</p></div></div><div class="container content-area"><p class="world-brief">아발론은 외부의 간섭이 완전히 차단된 거대 상업·유흥 특구입니다. 중앙 AI 이브의 통제 아래 입성자들은 각자의 영지를 운영하고, 다차원 소환과 다양한 비즈니스를 통해 크레딧과 랭킹을 쌓아갑니다.</p><div class="feature-list"><article class="feature wide-feature art-block" data-art="worldCity"><div class="slot-label"><b>도시 전경</b><small>images/world-city.webp</small></div><div class="feature-body"><small>01 / CENTRAL DISTRICT</small><h3>아발론 중앙 특구</h3><p>멈추지 않는 조명과 크레딧 정산음으로 가득한 24시간 운영 구역.</p></div></article><article class="feature art-block" data-art="worldEve"><div class="slot-label"><b>중앙 AI 이브</b><small>images/world-eve.webp</small></div><div class="feature-body"><small>02 / MAIN ARTIFICIAL INTELLIGENCE</small><h3>EVE</h3><p>아발론 전역을 관리하며 정중한 안내와 완벽한 시스템 조율을 수행하는 중앙 AI.</p></div></article><article class="feature art-block" data-art="worldElevator"><div class="slot-label"><b>다차원 엘리베이터</b><small>images/world-elevator.webp</small></div><div class="feature-body"><small>03 / DIMENSIONAL SUMMONING</small><h3>다차원 소환</h3><p>엘리베이터를 통해 이계의 메이트를 불러들이는 아발론의 상징적인 시스템.</p></div></article></div></div></section>
 <!-- 경제 -->
@@ -124,19 +283,30 @@ const IMAGES = {
 };
 
 /* ============================================================
-   [2] 캐릭터 45개 임시 슬롯. 실제로 등록할 때 이름/등급/이미지/소개 변경.
-   기본 이미지 이름 예시: images/characters/mate-01-card.webp
-   상세 이미지는 투명 PNG 권장: images/characters/mate-01-full.png
+   [2] 캐릭터 50개 임시 슬롯. 모든 설정은 설명용 자리표시자.
+   UR 8항목 / SSR 7 / SR 6 / R·N 5항목 표시.
    ============================================================ */
 const tierNames={N:'NORMAL',R:'PRIVATE',SR:'EXCLUSIVE',SSR:'LIMITED',UR:'ULTIMATE'};
 const tierCycle=['UR','SSR','SR','R','N'];
-const characters=Array.from({length:45},(_,index)=>{
+const traitsCount={N:1,R:2,SR:3,SSR:4,UR:5};
+const characters=Array.from({length:50},(_,index)=>{
   const n=String(index+1).padStart(2,'0');
-  return {name:'미등록 '+n,tier:tierCycle[index%5],code:'MATE-'+String(index+1).padStart(3,'0'),
-    card:`images/characters/mate-${n}-card.webp`,
-    full:`images/characters/mate-${n}-full.png`,
-    intro:'캐릭터의 배경과 이야기를 소개할 공간입니다.',
-    traits:'캐릭터 성격과 특징을 입력할 공간입니다.',origin:'출신 세계 및 소속 정보를 입력할 공간입니다.'};
+  const tier=tierCycle[index%5];
+  const traitNum=traitsCount[tier];
+  return {
+    name:'미등록 '+n,tier,code:'MATE-'+String(index+1).padStart(3,'0'),
+    card:`images/characters/mate-${n}.webp`,
+    full:`images/characters/mate-${n}.webp`,
+    affiliation:'이름 / 소속 정보가 들어갈 자리',
+    origin:'출신 차원과 이전 신분에 대한 설명 자리',
+    body:'외모 및 신체적 특징을 적는 자리입니다. 실제 프로필에 맞춰 교체됩니다.',
+    personality:'성격과 행동 방식에 관한 소개가 들어갑니다.',
+    reaction:'캐릭터 고유의 성향과 반응에 대한 소개 자리입니다.',
+    traitList:Array.from({length:traitNum},(_,i)=>({name:'고유 특성 '+String(i+1).padStart(2,'0'),desc:'설명 입력 예정'})),
+    specialty:'특화 시설 및 강점 설명이 들어갈 자리입니다.',
+    estateBuff:'영지 전체에 적용되는 효과가 들어갈 자리입니다.',
+    entrantBuff:'입성자 전속 효과가 들어갈 자리입니다.'
+  };
 });
 
 /* ============================================================
@@ -199,12 +369,51 @@ function renderCharacters(){
  document.getElementById('characterCount').textContent=String(count)+' / '+characters.length+' SLOTS';
 }
 function openCharacter(index){
- const ch=characters[index];document.getElementById('detailName').textContent=ch.name;
- document.getElementById('detailTier').textContent=ch.tier+' / '+tierNames[ch.tier];
- document.getElementById('detailIntro').textContent=ch.intro;document.getElementById('detailTraits').textContent=ch.traits;document.getElementById('detailOrigin').textContent=ch.origin;
- const target=document.getElementById('detailPortrait');target.querySelector('small').textContent=ch.full;
- attachArt(target,ch.full,'contain');showPage('detail');
+ const ch=characters[index];
+ const set=(id,value)=>document.getElementById(id).textContent=value || '내용 준비 중';
+ const stage=document.getElementById('detailStage');stage.dataset.tier=ch.tier;
+ set('detailName',ch.name);set('detailTier',ch.tier+' · '+tierNames[ch.tier]);
+ set('detailCode',ch.code+' / DOSSIER');set('detailCodeTop',ch.code);
+ set('detailAffiliation',ch.affiliation);set('detailBody',ch.body);
+ set('detailPersonality',ch.personality);set('detailOrigin',ch.origin);set('detailReaction',ch.reaction);
+ const portrait=document.getElementById('detailPortrait');portrait.querySelector('.slot-label small').textContent=ch.full;
+ attachArt(portrait,ch.full,'contain');
+ document.getElementById('detailTierShort').textContent=ch.tier;
+ document.getElementById('detailTierEn').textContent=tierNames[ch.tier];
+ document.getElementById('detailTierSummary').textContent=ch.tier;
+ document.getElementById('detailCodeSummary').textContent=ch.code;
+ document.getElementById('detailPrimaryTrait').textContent=ch.traitList?.[0] ? (ch.traitList[0].name+' · '+ch.traitList[0].desc) : '해당 캐릭터의 등록된 특성이 없습니다.';
+ const side=document.getElementById('detailSideStats');side.replaceChildren();
+ const bonusFields=[];
+ if(['SR','SSR','UR'].includes(ch.tier))bonusFields.push(['특화 구역 강점',ch.specialty,'SPECIAL AREA']);
+ if(['SSR','UR'].includes(ch.tier))bonusFields.push(['영지 전체 버프',ch.estateBuff,'ESTATE BUFF']);
+ if(ch.tier==='UR')bonusFields.push(['입성자 전속 버프',ch.entrantBuff,'ENTRANT BUFF']);
+ if(!bonusFields.length)bonusFields.push(['시스템 분류', 'N·R 등급은 특화 구역 및 영지 버프가 별도로 개방되지 않습니다.', 'BASE CLASS']);
+ for(const [name,detail,label] of bonusFields){
+   const panel=document.createElement('div');panel.className='v5-panel';
+   const marker=document.createElement('div');marker.className='v5-panel-mark';marker.textContent='✧';
+   const small=document.createElement('span');small.className='en';small.textContent=label;
+   const strong=document.createElement('h4');strong.textContent=name;
+   const p=document.createElement('p');p.textContent=detail;
+   panel.append(marker,small,strong,p);side.append(panel);
+ }
+ const grid=document.getElementById('detailTraitGrid');grid.replaceChildren();
+ const traits=ch.traitList||[];
+ set('traitCount',String(traits.length).padStart(2,'0')+' / '+String(traitsCount[ch.tier]).padStart(2,'0'));
+ if(traits.length===0){
+   const empty=document.createElement('div');empty.className='profile-box';empty.textContent='고유 특성 없음';grid.append(empty);
+ }
+ traits.forEach((t,i)=>{
+   const row=document.createElement('div');row.className='trait-cell';
+   const num=document.createElement('div');num.className='trait-number';num.textContent=String(i+1).padStart(2,'0');
+   const copy=document.createElement('div');copy.className='trait-description';
+   const name=document.createElement('strong');name.textContent=t.name;
+   const desc=document.createElement('span');desc.textContent=t.desc;
+   copy.append(name,desc);row.append(num,copy);grid.append(row);
+ });
+ showPage('detail');
 }
+
 function makeFeature(record,label,index,extraClass='facility-card'){
   const art=document.createElement('article');art.className=extraClass+' art-block';art.appendChild(makeFallback('IMAGE SLOT',record.image));
   const copy=document.createElement('div');copy.className='feature-body';const small=document.createElement('small');small.textContent=String(index+1).padStart(2,'0')+' / '+label;
@@ -217,7 +426,7 @@ function makeContent(){resources.forEach((r,i)=>document.getElementById('resourc
 function enterSite(){document.getElementById('intro').classList.add('hidden');document.getElementById('app').classList.remove('hidden');showPage('home')}
 function start(){
   const preview=new URLSearchParams(location.search).get('preview');
-  if(preview){document.getElementById('loading').classList.add('hidden');document.getElementById('app').classList.remove('hidden');showPage(['home','characters','world','economy','territory'].includes(preview)?preview:'home');return}
+  if(preview){document.getElementById('loading').classList.add('hidden');document.getElementById('app').classList.remove('hidden');if(preview==='detail'){openCharacter(0)}else{showPage(['home','characters','world','economy','territory'].includes(preview)?preview:'home')}return}
   let value=0;const fill=document.getElementById('progressFill'),number=document.getElementById('progressNumber');
   const ticker=setInterval(()=>{value=Math.min(100,value+2);fill.style.width=value+'%';number.textContent=value+'%';if(value>=100){clearInterval(ticker);setTimeout(()=>{document.getElementById('loading').classList.add('hidden');document.getElementById('intro').classList.remove('hidden')},450)}},38);
 }
