@@ -303,6 +303,269 @@
  .v5-scroll-body{padding:0 15px 20px}
 }
 
+
+
+/* =====================================================
+   AVALON v5 — 등급 색상 시스템 (카드 + 상세 공통)
+   N 화이트 / R 블루 / SR 퍼플 / SSR 골드 / UR 프리즘
+   ===================================================== */
+:root{
+  --tier-n:#e5e7eb;
+  --tier-r:#4ea0ff;
+  --tier-sr:#b57cff;
+  --tier-ssr:#ffc857;
+  --tier-ur-1:#8ee7ff;
+  --tier-ur-2:#c4a7ff;
+  --tier-ur-3:#ffd76e;
+  --tier-ur-4:#ff89c6;
+}
+@keyframes avalonPrismFlow{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+/* 필터 버튼 */
+.tier-btn[data-tier="N"]{border-color:#d4d9df;color:var(--tier-n)}
+.tier-btn[data-tier="R"]{border-color:#3c77c5;color:var(--tier-r)}
+.tier-btn[data-tier="SR"]{border-color:#6a49a7;color:var(--tier-sr)}
+.tier-btn[data-tier="SSR"]{border-color:#9f7a22;color:var(--tier-ssr)}
+.tier-btn[data-tier="UR"]{position:relative;border-color:#7d6ac8;color:#f7f7ff;background:linear-gradient(90deg,#0f1520,#171323)}
+.tier-btn[data-tier="UR"]::before{content:"";position:absolute;inset:-1px;border-radius:0;pointer-events:none;background:linear-gradient(90deg,var(--tier-ur-1),var(--tier-ur-2),var(--tier-ur-3),var(--tier-ur-4),var(--tier-ur-1));background-size:300% 100%;animation:avalonPrismFlow 5s linear infinite;opacity:.9;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);padding:1px;-webkit-mask-composite:xor;mask-composite:exclude}
+.tier-btn.active[data-tier="N"]{background:var(--tier-n);color:#0b1018;border-color:var(--tier-n)}
+.tier-btn.active[data-tier="R"]{background:var(--tier-r);color:#07111b;border-color:var(--tier-r)}
+.tier-btn.active[data-tier="SR"]{background:var(--tier-sr);color:#120d1d;border-color:var(--tier-sr)}
+.tier-btn.active[data-tier="SSR"]{background:var(--tier-ssr);color:#191305;border-color:var(--tier-ssr)}
+.tier-btn.active[data-tier="UR"]{background:linear-gradient(90deg,var(--tier-ur-1),var(--tier-ur-2),var(--tier-ur-3),var(--tier-ur-4),var(--tier-ur-1));background-size:250% 100%;animation:avalonPrismFlow 6s linear infinite;color:#0a0b10;border-color:transparent}
+
+/* 도감 카드 */
+.character-card{position:relative;overflow:hidden}
+.character-card::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .2s ease}
+.character-card:hover::before{opacity:1}
+.character-card.tier-n{border-color:#dce2ea;background:linear-gradient(180deg,#151d28,#0f151f)}
+.character-card.tier-r{border-color:#3b6eaf;background:linear-gradient(180deg,#111b2b,#0c131d)}
+.character-card.tier-sr{border-color:#6a4fa1;background:linear-gradient(180deg,#171328,#100f1d)}
+.character-card.tier-ssr{border-color:#9a7b29;background:linear-gradient(180deg,#1d1910,#12100d)}
+.character-card.tier-ur{border-color:#8e92c9;background:linear-gradient(180deg,#16121f,#100e17)}
+.character-card.tier-n:hover{box-shadow:0 10px 24px #0008, 0 0 0 1px #e5e7eb2e inset}
+.character-card.tier-r:hover{box-shadow:0 10px 24px #0008, 0 0 0 1px #4ea0ff2f inset}
+.character-card.tier-sr:hover{box-shadow:0 10px 24px #0008, 0 0 0 1px #b57cff38 inset}
+.character-card.tier-ssr:hover{box-shadow:0 10px 24px #0008, 0 0 0 1px #ffc8573d inset}
+.character-card.tier-ur:hover{box-shadow:0 10px 24px #0008, 0 0 18px #b6b1ff2f}
+.character-card.tier-r .char-image::after,
+.character-card.tier-sr .char-image::after,
+.character-card.tier-ssr .char-image::after,
+.character-card.tier-n .char-image::after,
+.character-card.tier-ur .char-image::after{content:"";position:absolute;inset:auto 0 0 0;height:40%;pointer-events:none}
+.character-card.tier-n .char-image::after{background:linear-gradient(to top,#e5e7eb14,transparent)}
+.character-card.tier-r .char-image::after{background:linear-gradient(to top,#4ea0ff18,transparent)}
+.character-card.tier-sr .char-image::after{background:linear-gradient(to top,#b57cff18,transparent)}
+.character-card.tier-ssr .char-image::after{background:linear-gradient(to top,#ffc8571c,transparent)}
+.character-card.tier-ur .char-image::after{background:linear-gradient(to top,rgba(196,167,255,.22),rgba(142,231,255,.08),transparent)}
+
+.tier-badge{box-shadow:0 6px 16px rgba(0,0,0,.25)}
+.tier-n .tier-badge{background:var(--tier-n);color:#0f141d}
+.tier-r .tier-badge{background:var(--tier-r);color:#06111c}
+.tier-sr .tier-badge{background:var(--tier-sr);color:#150d1f}
+.tier-ssr .tier-badge{background:var(--tier-ssr);color:#1d1608}
+.tier-ur .tier-badge{background:linear-gradient(90deg,var(--tier-ur-1),var(--tier-ur-2),var(--tier-ur-3),var(--tier-ur-4),var(--tier-ur-1));background-size:240% 100%;animation:avalonPrismFlow 6s linear infinite;color:#0c0d12}
+
+.char-info{border-top:2px solid #6b7684}
+.tier-n .char-info{border-top-color:var(--tier-n)}
+.tier-r .char-info{border-top-color:var(--tier-r)}
+.tier-sr .char-info{border-top-color:var(--tier-sr)}
+.tier-ssr .char-info{border-top-color:var(--tier-ssr)}
+.tier-ur .char-info{border-top-color:#c3adff;background:linear-gradient(180deg,#171223,#0e121b)}
+.tier-ur .char-info strong{background:linear-gradient(90deg,var(--tier-ur-1),var(--tier-ur-2),var(--tier-ur-3),var(--tier-ur-4));background-size:220% 100%;animation:avalonPrismFlow 6s linear infinite;-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* 상세 페이지 v5 */
+.profile-v5[data-tier="N"]{--accent:#e5e7eb;--accent-soft:#f7f8fb;--edge:#7d8793}
+.profile-v5[data-tier="R"]{--accent:#4ea0ff;--accent-soft:#b6dcff;--edge:#355f8d}
+.profile-v5[data-tier="SR"]{--accent:#b57cff;--accent-soft:#ddc4ff;--edge:#69479a}
+.profile-v5[data-tier="SSR"]{--accent:#ffc857;--accent-soft:#ffe6ae;--edge:#9c7620}
+.profile-v5[data-tier="UR"]{--accent:#c4a7ff;--accent-soft:#eff8ff;--edge:#7e6fc0}
+.profile-v5[data-tier="N"] .v5-cover-tier,
+.profile-v5[data-tier="N"] .v5-scroll-brand,
+.profile-v5[data-tier="N"] .v5-tier b,
+.profile-v5[data-tier="N"] .v5-kicker,
+.profile-v5[data-tier="N"] .v5-row-copy small,
+.profile-v5[data-tier="N"] .v5-info h3{color:var(--accent)}
+.profile-v5[data-tier="R"] .v5-cover-tier,
+.profile-v5[data-tier="R"] .v5-scroll-brand,
+.profile-v5[data-tier="R"] .v5-tier b,
+.profile-v5[data-tier="R"] .v5-kicker,
+.profile-v5[data-tier="R"] .v5-row-copy small,
+.profile-v5[data-tier="R"] .v5-info h3{color:var(--accent)}
+.profile-v5[data-tier="SR"] .v5-cover-tier,
+.profile-v5[data-tier="SR"] .v5-scroll-brand,
+.profile-v5[data-tier="SR"] .v5-tier b,
+.profile-v5[data-tier="SR"] .v5-kicker,
+.profile-v5[data-tier="SR"] .v5-row-copy small,
+.profile-v5[data-tier="SR"] .v5-info h3{color:var(--accent)}
+.profile-v5[data-tier="SSR"] .v5-cover-tier,
+.profile-v5[data-tier="SSR"] .v5-scroll-brand,
+.profile-v5[data-tier="SSR"] .v5-tier b,
+.profile-v5[data-tier="SSR"] .v5-kicker,
+.profile-v5[data-tier="SSR"] .v5-row-copy small,
+.profile-v5[data-tier="SSR"] .v5-info h3{color:var(--accent)}
+
+/* UR 프리즘 특수효과 */
+.profile-v5[data-tier="UR"] .v5-cover-tier,
+.profile-v5[data-tier="UR"] .v5-scroll-brand,
+.profile-v5[data-tier="UR"] .v5-tier b,
+.profile-v5[data-tier="UR"] .v5-kicker,
+.profile-v5[data-tier="UR"] .v5-cover-code,
+.profile-v5[data-tier="UR"] .v5-row-copy small,
+.profile-v5[data-tier="UR"] .v5-info h3,
+.profile-v5[data-tier="UR"] .v5-trait-head em{
+  background:linear-gradient(90deg,var(--tier-ur-1),var(--tier-ur-2),var(--tier-ur-3),var(--tier-ur-4),var(--tier-ur-1));
+  background-size:260% 100%;animation:avalonPrismFlow 6.5s linear infinite;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.profile-v5[data-tier="UR"] .v5-cover-tier,
+.profile-v5[data-tier="UR"] .v5-scroll-brand{border-color:#c1b7ff}
+.profile-v5[data-tier="UR"] .v5-cover-tier{box-shadow:0 0 22px rgba(196,167,255,.18) inset, 0 0 18px rgba(142,231,255,.10)}
+.profile-v5[data-tier="UR"] .v5-row-mark,
+.profile-v5[data-tier="UR"] .v5-scroll-actions button:last-child{
+  background:linear-gradient(90deg,var(--tier-ur-1),var(--tier-ur-2),var(--tier-ur-3),var(--tier-ur-4),var(--tier-ur-1));
+  background-size:260% 100%;animation:avalonPrismFlow 6.5s linear infinite;
+  color:#0b0d12;border-color:#d0c0ff;
+}
+.profile-v5[data-tier="UR"] .v5-scroll-actions button:first-child,
+.profile-v5[data-tier="UR"] .v5-panel,
+.profile-v5[data-tier="UR"] .v5-info,
+.profile-v5[data-tier="UR"] .trait-cell{border-color:#5f5f7c}
+.profile-v5[data-tier="UR"] .v5-summary,
+.profile-v5[data-tier="UR"] .v5-scroll-shell{box-shadow:0 0 0 1px rgba(196,167,255,.12), 0 0 28px rgba(142,231,255,.05)}
+
+
+
+/* ============================================================
+   AVALON v5 — 상세 팝업 FULL RARITY THEME
+   별도 UI를 새로 만들지 않고 현재 세로형 스크롤 구조에 전체 적용.
+   색상 변수만 티어별로 교체: 배경, 광원, 그라디언트, 틀, 버프, 버튼.
+   ============================================================ */
+#page-detail{--page-rgb:196 167 255;background:radial-gradient(ellipse at 50% 28%,rgb(var(--page-rgb) / .14) 0%,#0c1019 48%,#05070e 86%);transition:background .3s}
+#page-detail[data-tier="N"]{--page-rgb:229 231 235}
+#page-detail[data-tier="R"]{--page-rgb:78 160 255}
+#page-detail[data-tier="SR"]{--page-rgb:181 124 255}
+#page-detail[data-tier="SSR"]{--page-rgb:255 200 87}
+#page-detail[data-tier="UR"]{--page-rgb:196 167 255}
+#page-detail .v5-scroll-backdrop{background:radial-gradient(ellipse at 50% 29%,rgb(var(--page-rgb) / .09),transparent 60%)}
+
+.profile-v5[data-tier="N"]{--rarity-rgb:229 231 235;--tone-deep:#0e151d;--tone-mid:#17212b;--tier-glow:#e5e7eb}
+.profile-v5[data-tier="R"]{--rarity-rgb:78 160 255;--tone-deep:#0b1322;--tone-mid:#11233b;--tier-glow:#4ea0ff}
+.profile-v5[data-tier="SR"]{--rarity-rgb:181 124 255;--tone-deep:#141022;--tone-mid:#211934;--tier-glow:#b57cff}
+.profile-v5[data-tier="SSR"]{--rarity-rgb:255 200 87;--tone-deep:#16130d;--tone-mid:#282115;--tier-glow:#ffc857}
+.profile-v5[data-tier="UR"]{--rarity-rgb:196 167 255;--tone-deep:#111223;--tone-mid:#1b1a32;--tier-glow:#c4a7ff}
+
+/* 카드 외곽과 내부 스크롤까지 선택 등급의 색으로 */
+#page-detail .v5-scroll-dialog{
+  background:var(--tone-deep);border:1px solid rgb(var(--rarity-rgb) / .58);
+  box-shadow:0 22px 80px #000b,0 0 42px rgb(var(--rarity-rgb) / .15),0 0 1px rgb(var(--rarity-rgb) / .50) inset;
+  --line:rgb(var(--rarity-rgb) / .20)
+}
+#page-detail .v5-dialog-scroll{scrollbar-color:var(--accent) var(--tone-deep)}
+#page-detail .v5-dialog-scroll::-webkit-scrollbar-thumb{background:var(--accent)}
+#page-detail .v5-fixed-top{background:linear-gradient(180deg,var(--tone-deep) 0%,rgb(5 7 13 / .76) 75%,transparent)}
+#page-detail .v5-fixed-top .v5-scroll-brand{background:rgb(var(--rarity-rgb) / .12);border-color:rgb(var(--rarity-rgb) / .54)}
+#page-detail .v5-fixed-top button{border-color:rgb(var(--rarity-rgb) / .48);background:var(--tone-deep)}
+#page-detail .v5-fixed-top button:hover{background:var(--tone-mid);border-color:var(--accent)}
+
+/* 상단 전신 이미지: 등급별 은은한 광원 + 하단 자연스러운 연결 */
+#page-detail .v5-scroll-cover{
+  background:radial-gradient(ellipse at 50% 30%,rgb(var(--rarity-rgb) / .34),transparent 62%),
+             linear-gradient(150deg,var(--tone-mid),var(--tone-deep) 73%)!important;
+}
+#page-detail .v5-scroll-cover::after{
+  background:linear-gradient(180deg,transparent 0%,rgb(8 10 16 / .32) 28%,var(--tone-deep) 100%);
+}
+#page-detail .v5-scroll-cover .slot-label{
+  border-color:rgb(var(--rarity-rgb) / .44);background:linear-gradient(145deg,var(--tone-mid),var(--tone-deep));color:#f1f4f8;
+}
+#page-detail .v5-cover-tier{background:rgb(var(--rarity-rgb) / .13);border-color:var(--accent);color:var(--accent-soft)}
+#page-detail .v5-cover-affiliation{color:#e0dfe8}
+
+/* 프로필 통계 / 아래 정보 블록 */
+#page-detail .v5-scroll-body{background:linear-gradient(180deg,var(--tone-deep),#0b0e16 70%)}
+#page-detail .v5-scroll-stats{
+  background:linear-gradient(90deg,rgb(var(--rarity-rgb) / .06),transparent 50%,rgb(var(--rarity-rgb) / .06));
+  border-top-color:rgb(var(--rarity-rgb) / .3);border-bottom-color:rgb(var(--rarity-rgb) / .3)
+}
+#page-detail .v5-scroll-stats>div{border-color:rgb(var(--rarity-rgb) / .18)}
+#page-detail .v5-data-line{border-color:rgb(var(--rarity-rgb) / .19)}
+#page-detail .v5-scroll-section-heading{border-color:rgb(var(--rarity-rgb) / .35)}
+#page-detail .v5-trait-row,#page-detail .v5-bonus-row{
+  border:1px solid rgb(var(--rarity-rgb) / .38);
+  border-left:3px solid var(--accent);
+  background:linear-gradient(115deg,rgb(var(--rarity-rgb) / .13),var(--tone-mid) 43%,var(--tone-deep));
+  box-shadow:0 4px 14px #0004;
+}
+#page-detail .v5-row-mark{
+  color:var(--accent-soft);border-color:rgb(var(--rarity-rgb) / .55);
+  background:rgb(var(--rarity-rgb) / .14)
+}
+#page-detail .v5-row-copy small{color:var(--accent-soft)}
+#page-detail .v5-scroll-actions button{
+  border-color:var(--accent);color:var(--accent-soft);
+  background:linear-gradient(110deg,rgb(var(--rarity-rgb) / .12),var(--tone-deep))
+}
+#page-detail .v5-scroll-actions button:last-child{
+  color:#10111a;background:var(--accent);
+}
+#page-detail .v5-scroll-actions button:hover{filter:brightness(1.13)}
+#page-detail .v5-scroll-foot{color:rgb(var(--rarity-rgb) / .6)}
+
+/* UR만 이미지·상세 프로필 영역 전체에 홀로그램/프리즘 효과 */
+#page-detail .profile-v5[data-tier="UR"] .v5-scroll-dialog{}
+#page-detail .profile-v5[data-tier="UR"]{
+  border:2px solid transparent;
+  background:linear-gradient(var(--tone-deep),var(--tone-deep)) padding-box,
+  linear-gradient(110deg,#91eeff,#b6a3ff,#ffa6d3,#ffdf91,#91eeff) border-box;
+  background-size:100% 100%,350% 100%;
+  animation:avalonPrismFlow 7s linear infinite;
+  box-shadow:0 22px 80px #000b,0 0 36px #a89eff38,0 0 60px #8ee7ff15
+}
+#page-detail .profile-v5[data-tier="UR"] .v5-scroll-cover{
+  background:radial-gradient(ellipse at 24% 34%,#8ee7ff33,transparent 58%),
+             radial-gradient(ellipse at 80% 26%,#ff89c626,transparent 52%),
+             linear-gradient(150deg,#211b39,#0a111e 72%)!important
+}
+#page-detail .profile-v5[data-tier="UR"] .v5-scroll-body{
+  background:linear-gradient(180deg,#121326,#0b101c 65%);
+}
+#page-detail .profile-v5[data-tier="UR"] .v5-scroll-stats{
+  background:linear-gradient(95deg,#8ee7ff16,#c4a7ff18,#ff89c618,#ffd76e12);
+}
+#page-detail .profile-v5[data-tier="UR"] .v5-trait-row,
+#page-detail .profile-v5[data-tier="UR"] .v5-bonus-row{
+  border:1px solid #b7adff68;border-left:3px solid #c4a7ff;
+  background:linear-gradient(110deg,#8ee7ff16,#c4a7ff12 43%,#ff89c60c 76%,#0d1120);
+}
+#page-detail .profile-v5[data-tier="UR"] .v5-cover-tier{
+  border-color:#b6a3ff;background:linear-gradient(130deg,#8ee7ff23,#c4a7ff21,#ff89c61d);
+}
+#page-detail .profile-v5[data-tier="UR"] .v5-scroll-actions button:last-child{
+  background:linear-gradient(110deg,#91eeff,#c4a7ff,#ff89c6,#ffdf91,#91eeff);
+  background-size:300% 100%;animation:avalonPrismFlow 7s linear infinite;color:#10111a;
+}
+#page-detail .profile-v5[data-tier="UR"] .v5-scroll-stats b{
+  background:linear-gradient(90deg,#8ee7ff,#c4a7ff,#ff89c6,#ffdf91);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+@media (prefers-reduced-motion: reduce){
+  #page-detail .profile-v5[data-tier="UR"],
+  #page-detail .profile-v5[data-tier="UR"] .v5-scroll-actions button:last-child,
+  #page-detail .profile-v5[data-tier="UR"] .v5-row-copy small{animation:none}
+}
+
+
+/* UR 상단 로고는 프리즘 테두리 안에서 항상 또렷하게 */
+#page-detail .profile-v5[data-tier="UR"] .v5-fixed-top .v5-scroll-brand{
+  background:linear-gradient(110deg,#29233a,#101824)!important;
+  background-clip:border-box!important;-webkit-background-clip:border-box!important;
+  color:#f1e9ff!important;-webkit-text-fill-color:#f1e9ff!important;
+  animation:none!important;border-color:#acbfff8c!important;
+}
+#page-detail .v5-fixed-top{
+  background:linear-gradient(180deg,var(--tone-deep) 0%,var(--tone-deep) 80%,rgb(9 11 17 / .90) 100%)
+}
 </style>
 </head>
 <body>
@@ -499,7 +762,7 @@ function openCharacter(index){
  const ch=characters[index];
  if(!ch)return;
  const set=(id,value)=>{const el=document.getElementById(id);if(el)el.textContent=(value===undefined||value===null||value==='')?'내용 준비 중':String(value)};
- const stage=document.getElementById('detailStage');stage.dataset.tier=ch.tier;
+ const stage=document.getElementById('detailStage');stage.dataset.tier=ch.tier;document.getElementById('page-detail').dataset.tier=ch.tier;
  set('detailName',ch.name);set('detailCode',ch.code+' / CENTRAL ARCHIVE');
  set('detailTierShort',ch.tier);set('detailTier',ch.tier+' · '+tierNames[ch.tier]);
  set('detailCodeSummary',ch.code.replace('MATE-',''));
