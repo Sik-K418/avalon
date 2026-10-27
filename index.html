@@ -734,6 +734,26 @@
 @media(max-width:1100px){.estate-facility-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.estate-facility-image{aspect-ratio:5/4}.estate-plan{grid-template-columns:1fr;padding:35px}.estate-plan-art,.estate-plan-art .slot-label{min-height:500px}}
 @media(max-width:720px){.estate-hero{height:620px;min-height:620px}.estate-hero-center h1{font-size:clamp(75px,15vw,117px)}.estate-hero-top,.estate-hero-foot{font-size:8px;letter-spacing:1px}.estate-introduction{grid-template-columns:1fr;gap:24px;padding:70px 0}.estate-introduction h2{letter-spacing:-2px}.estate-intro-right p{font-size:13px;margin-bottom:23px}.estate-services{padding:70px 0}.estate-block-heading{display:block}.estate-block-heading h2{letter-spacing:-1.5px}.estate-block-heading p{text-align:left;margin-top:18px}.estate-facility-grid{gap:24px 12px}.estate-facility-image{aspect-ratio:3/4}.estate-facility-index{font-size:27px}.estate-facility h3{font-size:13px}.estate-facility p{font-size:10px}.estate-plan{padding:22px;gap:24px;min-height:0}.estate-plan-list{grid-template-columns:1fr}.estate-plan-art,.estate-plan-art .slot-label{min-height:340px}.estate-bottom{flex-direction:column;align-items:start}.estate-layout{padding-bottom:60px}}
 @media(max-width:390px){.estate-facility-grid{grid-template-columns:1fr}.estate-facility-image{aspect-ratio:5/3}.estate-hero-center h1{font-size:70px}}
+/* V7 / 콘텐츠 전용: 이브 안내형 어드벤처 쇼케이스 */
+.contents-v7{background:#e8ece9;color:#17272b}.contents-hero{min-height:700px;position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 76% 24%,#235449 0%,#102f32 48%,#071a25 100%);color:#fff}
+.contents-hero-background{position:absolute;inset:0;z-index:-1;opacity:.35}.contents-hero-background>.slot-label{opacity:.25;align-items:flex-start;padding:8vw}.contents-hero-tint{position:absolute;inset:0;background:linear-gradient(90deg,#091d25da 0%,#092b2c96 62%,#09202790);pointer-events:none}
+.contents-hero-inner{min-height:700px;position:relative;z-index:2;display:grid;grid-template-columns:55% 45%;align-items:center;padding-top:56px;padding-bottom:25px}
+.contents-hero-copy{position:relative;z-index:5;padding-bottom:18px}.contents-hero-copy .eyebrow{color:#a6e0d5}.contents-hero-copy h1{font-weight:1000;font-size:clamp(64px,7.3vw,116px);line-height:.91;letter-spacing:-.075em;margin:23px 0 26px}.contents-hero-copy h1 span{color:#ffc36e}.contents-hero-copy>p{font-size:15px;font-weight:650;line-height:2;color:#e4f3f0;word-break:keep-all;max-width:520px}
+.contents-primary-button{margin-top:30px;display:inline-flex;align-items:center;justify-content:center;gap:26px;border:0;background:#f4a94d;color:#17221e;padding:16px 23px;font-size:12px;letter-spacing:.6px;font-weight:950;transition:background .2s,transform .2s}.contents-primary-button:hover{background:#ffc67f;transform:translateY(-2px)}.contents-primary-button span{font-size:20px}
+.contents-hero-meta{display:flex;gap:24px;flex-wrap:wrap;margin-top:70px;color:#a7d2cf;font-size:10px;font-weight:900;letter-spacing:2px}
+.contents-eve-visual,.contents-guide-art{position:relative;overflow:visible!important;background:transparent!important}.contents-eve-visual{height:580px;align-self:end}.contents-eve-visual::before,.contents-guide-art::before{display:none}.contents-eve-visual>.asset-img,.contents-guide-art>.asset-img{z-index:2;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 25px 25px #0019)}
+.contents-eve-disc{position:absolute;z-index:1;width:min(94%,540px);aspect-ratio:1;border-radius:50%;background:linear-gradient(135deg,#f2a74e,#d17d32);bottom:12%;left:50%;transform:translateX(-50%);box-shadow:0 0 0 22px #e5ab4730,0 0 90px #f3a54630}
+.contents-eve-visual .slot-label,.contents-guide-art .slot-label{position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;gap:8px;background:transparent;text-shadow:0 3px 9px #000a}.contents-eve-visual .slot-label small,.contents-guide-art .slot-label small{color:#e1eee8}.contents-eve-visual.loaded .slot-label,.contents-guide-art.loaded .slot-label{display:none}
+.contents-eve-tag{position:absolute;z-index:4;right:0;bottom:22px;background:#071b25da;border:1px solid #c7e4d063;padding:12px 16px;color:#caefe5;font-size:9px;letter-spacing:1.5px;font-weight:900}
+.contents-light-area{background:#eef0ed}.contents-section-kicker{color:#bd752a;font-size:10px;letter-spacing:2.5px;font-weight:950}.contents-explore{padding-top:104px;padding-bottom:100px}.contents-section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:31px}.contents-section-head h2{font-size:clamp(42px,5.3vw,80px);letter-spacing:-.075em;line-height:1;margin:13px 0 0;color:#182d2b}.contents-section-head h2 span{color:#c97826}.contents-section-head p{font-size:13px;line-height:1.8;color:#64716e;margin:0 0 5px;text-align:right;word-break:keep-all}
+.contents-showcase-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:19px}.contents-card{background:#fff;min-width:0;box-shadow:0 14px 31px #1336330d;border:1px solid #18353116;transition:transform .2s,border-color .2s}.contents-card:hover{transform:translateY(-5px);border-color:#c7843f}.contents-card.selected{border-color:#c7843f;box-shadow:0 0 0 2px #c7843f4d,0 14px 31px #13363315}
+.contents-card-art{aspect-ratio:4/3;background:linear-gradient(130deg,#234843,#13252c 75%)}.contents-card-art .slot-label{padding:10px}.contents-card-art .slot-label b{font-size:10px}.contents-card-art .slot-label small{font-size:9px}.contents-card-body{padding:20px 18px 22px}.contents-card-code{color:#c47c37;font-size:9px;letter-spacing:1.8px;font-weight:950}.contents-card h3{font-size:19px;line-height:1.4;letter-spacing:-.5px;margin:8px 0}.contents-card p{font-size:11px;line-height:1.7;color:#63716e;min-height:42px;margin:0 0 16px;word-break:keep-all}.contents-card-button{background:#f8f3ea;color:#a35d1a;border:1px solid #d2a16c;padding:9px 15px;font-size:11px;font-weight:900}.contents-card-button:hover{background:#f7e1c7}
+.contents-guide{display:grid;grid-template-columns:44% 56%;align-items:center;gap:35px;padding-top:35px;padding-bottom:112px}.contents-guide-art{height:600px}.contents-guide-art .contents-eve-disc{background:linear-gradient(135deg,#eea856,#e2a56b);bottom:10%;width:87%;box-shadow:0 0 0 18px #db9e5d32}.contents-guide-art .slot-label{color:#163138;text-shadow:0 2px 8px #fff5}.contents-guide-art .slot-label small{color:#334b4b}
+.contents-guide-copy{padding:10px 35px}.contents-guide-copy h2{font-size:clamp(49px,6vw,91px);line-height:.95;letter-spacing:-.078em;margin:18px 0 21px;color:#142b2a}.contents-guide-copy h2 span{color:#c87930}.contents-guide-intro{font-size:14px;color:#60716b;line-height:1.95;word-break:keep-all;max-width:550px}.contents-active-info{margin-top:30px;border-top:2px solid #d4a36d;border-bottom:1px solid #bcc8c0;padding:22px 0 23px}.contents-active-info small{font-size:10px;color:#b27033;letter-spacing:2px;font-weight:950}.contents-active-info h3{font-size:29px;letter-spacing:-1px;margin:9px 0}.contents-active-info p{font-size:13px;line-height:1.8;color:#5e6b65;margin:0}.contents-guide-meta{display:grid;grid-template-columns:1fr 1fr;gap:25px;margin-top:27px}.contents-guide-meta div{display:flex;flex-direction:column;gap:5px}.contents-guide-meta strong{font-size:37px;letter-spacing:-2px;color:#cd7b2d}.contents-guide-meta span{font-size:9px;letter-spacing:1.4px;color:#697976;font-weight:900}
+.contents-final{background:#0a2026;color:#fff;padding:100px 0 120px;position:relative;overflow:hidden}.contents-final::after{content:"";position:absolute;right:-120px;top:-220px;width:620px;height:620px;border:1px solid #c4a27036;border-radius:50%;box-shadow:0 0 0 95px #db95570c,0 0 0 190px #db955708;pointer-events:none}.contents-final-inner{position:relative;z-index:2}.contents-final h2{font-size:clamp(55px,7.6vw,115px);line-height:.93;letter-spacing:-.07em;margin:22px 0}.contents-final h2 span{color:#efac61}.contents-final p{font-size:14px;color:#bed1cf;line-height:1.8}
+@media(max-width:1100px){.contents-hero-inner{grid-template-columns:57% 43%}.contents-hero-copy h1{font-size:clamp(54px,7.5vw,86px)}.contents-showcase-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.contents-guide-copy{padding:0 12px}}
+@media(max-width:720px){.contents-hero{min-height:690px}.contents-hero-inner{display:block;min-height:690px;padding-top:48px}.contents-hero-copy h1{font-size:clamp(47px,10vw,72px);margin:18px 0}.contents-hero-copy>p{font-size:12px;max-width:290px}.contents-primary-button{padding:12px 16px;font-size:11px;margin-top:14px}.contents-hero-meta{margin-top:24px;gap:10px;font-size:8px;max-width:290px}.contents-eve-visual{position:absolute;right:-14%;bottom:0;width:75%;height:390px;opacity:.82;z-index:-1}.contents-eve-disc{bottom:7%}.contents-eve-tag{font-size:7px;right:10%;bottom:16px}.contents-explore{padding-top:70px;padding-bottom:60px}.contents-section-head{display:block}.contents-section-head h2{font-size:45px}.contents-section-head p{text-align:left;margin-top:18px}.contents-showcase-grid{gap:10px}.contents-card-body{padding:14px 12px}.contents-card h3{font-size:15px}.contents-card p{font-size:10px;min-height:65px}.contents-card-button{font-size:10px}.contents-guide{grid-template-columns:1fr;gap:0;padding-bottom:70px}.contents-guide-art{height:400px}.contents-guide-copy{padding:20px 0}.contents-guide-copy h2{font-size:60px}.contents-final{padding:70px 0}.contents-final h2{font-size:56px}}
+@media(max-width:370px){.contents-showcase-grid{grid-template-columns:1fr}.contents-card p{min-height:0}.contents-hero-copy h1{font-size:45px}}
 </style>
 </head>
 <body>
@@ -926,7 +946,21 @@
   </div>
 </section>
 <!-- 콘텐츠: 기존 4대 비즈니스를 별도 페이지에 보존, 추후 참고 디자인을 받아 교체 -->
-<section id="page-contents" class="page"><div class="inner-banner art-block" data-art="contentsBackground"><div class="slot-label"><small>images/contents-bg.webp</small></div><div class="inner-title container"><div class="eyebrow">05 / CONTENTS ARCHIVE</div><h1>CONTENTS.</h1><p>아발론의 사업 및 활동 콘텐츠를 소개합니다.</p></div></div><div class="container content-area"><p class="small-disclaimer">콘텐츠 페이지는 추후 전용 UI 디자인으로 확장할 예정입니다.</p><div class="facility-heading"><h2>4대 비즈니스</h2><div class="eyebrow">BUSINESS CATEGORIES</div></div><div class="facility-grid" id="businessGrid"></div></div></section>
+<section id="page-contents" class="page contents-v7">
+  <div class="contents-hero">
+    <div class="contents-hero-background art-block" data-art="contentsBackground"><div class="slot-label"><small>images/contents-bg.webp</small></div></div>
+    <div class="contents-hero-tint"></div>
+    <div class="container contents-hero-inner">
+      <div class="contents-hero-copy"><div class="eyebrow">05 / EVE CONTENTS GUIDE</div><h1>CHOOSE YOUR<br><span>EXPERIENCE.</span></h1><p>어서 오세요, 입성자님.<br>아발론에서 즐길 수 있는 다양한 활동과 사업을 안내해 드리겠습니다.</p><button class="contents-primary-button" onclick="document.getElementById('contentsExplore').scrollIntoView({behavior:'smooth'})">콘텐츠 둘러보기 <span>↗</span></button><div class="contents-hero-meta"><span>04 CONTENTS</span><span>EVE GUIDE / SYSTEM ONLINE</span></div></div>
+      <div class="contents-eve-visual art-block" data-art="contentsEve" data-fit="contain"><div class="contents-eve-disc"></div><div class="slot-label"><b>중앙 관리 AI · EVE</b><small>images/contents-eve.png</small><small>v8 이미지 적용 예정</small></div><div class="contents-eve-tag">EVE / CENTRAL ADMINISTRATOR</div></div>
+    </div>
+  </div>
+  <div class="contents-light-area">
+    <section id="contentsExplore" class="container contents-explore" aria-labelledby="contentsExploreHeading"><div class="contents-section-head"><div><div class="contents-section-kicker">EXPLORE AVALON / 01</div><h2 id="contentsExploreHeading">DISCOVER <span>CONTENTS.</span></h2></div><p>원하는 콘텐츠를 선택해 보세요.<br>이브가 각 시설과 활동을 소개합니다.</p></div><div class="contents-showcase-grid" id="businessGrid"></div></section>
+    <section class="container contents-guide" aria-labelledby="contentsGuideHeading"><div class="contents-guide-art art-block" data-art="contentsEve" data-fit="contain"><div class="contents-eve-disc"></div><div class="slot-label"><b>이브 일러스트 공용 영역</b><small>images/contents-eve.png</small></div></div><div class="contents-guide-copy"><div class="contents-section-kicker">EVE / PERSONAL BRIEFING</div><h2 id="contentsGuideHeading">LET ME<br><span>GUIDE YOU.</span></h2><p class="contents-guide-intro">선택하신 콘텐츠에 관해 이브가 안내합니다. 아래 정보는 현재 세계관 설정을 기준으로 한 소개입니다.</p><div class="contents-active-info"><small id="contentsActiveNumber">01 / CONTENTS</small><h3 id="contentsActiveName">가상 던전</h3><p id="contentsActiveDescription">채굴 및 마물 토벌을 통한 수익 활동</p></div><div class="contents-guide-meta"><div><strong>04</strong><span>AVAILABLE CATEGORIES</span></div><div><strong>EVE</strong><span>CENTRAL AI GUIDE</span></div></div></div></section>
+    <section class="contents-final"><div class="container contents-final-inner"><div class="contents-section-kicker">AVALON / NEXT DESTINATION</div><h2>YOUR NEXT<br><span>DESTINATION.</span></h2><p>콘텐츠를 살펴보셨다면, 이제 당신의 영지를 만나보세요.</p><button class="contents-primary-button" onclick="showPage('territory')">영지 페이지로 이동 <span>↗</span></button></div></section>
+  </div>
+</section>
 </main><footer class="site-footer">AVALON / CENTRAL ARCHIVE — FIRST PERSONAL WORLD INTRODUCTION PROJECT · ARTWORK SLOTS ARE TEMPORARY</footer>
 </div>
 <script>
@@ -958,7 +992,8 @@ const IMAGES = {
   settlementBackground:'images/settlement.webp',
   territoryBackground:'images/territory-bg.webp',
   estateBlueprint:'images/estate-blueprint.webp',
-  contentsBackground:'images/contents-bg.webp'
+  contentsBackground:'images/contents-bg.webp',
+  contentsEve:'images/contents-eve.png'
 };
 
 /* ============================================================
@@ -1010,10 +1045,10 @@ const facilities=[
   {title:'자산 승급 센터',image:'images/facilities/upgrade.webp',desc:'규정 내 등급 상승을 위한 시설'}
 ];
 const businesses=[
-  {title:'가상 던전',image:'images/business/dungeon.webp',desc:'채굴 및 마물 토벌을 통한 수익 활동'},
-  {title:'미디어 스튜디오',image:'images/business/studio.webp',desc:'방송과 콘텐츠 제작 구역'},
-  {title:'프라이빗 렌탈 라운지',image:'images/business/rental.webp',desc:'세계관 속 프라이빗 대여 사업'},
-  {title:'자산 거래소 / 옥션',image:'images/business/auction.webp',desc:'자산 거래 및 경매 시설'}
+  {title:'가상 던전',image:'images/business/dungeon.webp',desc:'채굴 및 마물 토벌을 통한 수익 활동',eveLine:'가상 던전에서는 채굴과 마물 토벌을 통해 수익 활동을 진행할 수 있습니다. 입성자님에게 맞는 활동을 확인해 보세요.'},
+  {title:'미디어 스튜디오',image:'images/business/studio.webp',desc:'방송과 콘텐츠 제작 구역',eveLine:'미디어 스튜디오는 방송과 다양한 콘텐츠 제작을 위한 공간입니다. 아발론에서 자신만의 활동을 펼치는 또 다른 방법이지요.'},
+  {title:'프라이빗 렌탈 라운지',image:'images/business/rental.webp',desc:'세계관 속 프라이빗 대여 사업',eveLine:'프라이빗 렌탈 라운지는 아발론의 대여 사업 콘텐츠를 담당하는 시설입니다. 세부 이용 방식은 해당 콘텐츠의 설정에 따라 안내됩니다.'},
+  {title:'자산 거래소 / 옥션',image:'images/business/auction.webp',desc:'자산 거래 및 경매 시설',eveLine:'이곳에서는 자산을 거래하거나 경매에 참여할 수 있습니다. 거래와 정산은 아발론의 경제 시스템과 연결되어 있습니다.'}
 ];
 
 /* 이미지를 불러오지 못했을 때 깨진 사진 대신 안내 문구를 유지합니다. */
@@ -1130,6 +1165,28 @@ function makeEstateFacility(record,index){
   const desc=document.createElement('p');desc.textContent=record.desc;
   card.append(art,indexLabel,title,desc);return card;
 }
+function makeContentsCard(record,index){
+  const card=document.createElement('article');card.className='contents-card';card.dataset.contentIndex=index;
+  const art=document.createElement('div');art.className='contents-card-art art-block';art.appendChild(makeFallback('CONTENTS IMAGE',record.image));attachArt(art,record.image);
+  const body=document.createElement('div');body.className='contents-card-body';
+  const code=document.createElement('div');code.className='contents-card-code';code.textContent='0'+(index+1)+' / AVALON CONTENTS';
+  const title=document.createElement('h3');title.textContent=record.title;
+  const desc=document.createElement('p');desc.textContent=record.desc;
+  const button=document.createElement('button');button.className='contents-card-button';button.textContent='이브의 안내 보기 ↗';button.type='button';button.setAttribute('aria-pressed','false');button.onclick=()=>selectContent(index,true);
+  body.append(code,title,desc,button);card.append(art,body);return card;
+}
+function selectContent(index,scroll=false){
+  const record=businesses[index];if(!record)return;
+  document.getElementById('contentsActiveNumber').textContent=String(index+1).padStart(2,'0')+' / AVALON CONTENTS';
+  document.getElementById('contentsActiveName').textContent=record.title;
+  document.getElementById('contentsActiveDescription').textContent=record.eveLine||record.desc;
+  document.querySelectorAll('.contents-card').forEach(card=>{
+    const chosen=Number(card.dataset.contentIndex)===index;
+    card.classList.toggle('selected',chosen);
+    const btn=card.querySelector('button');if(btn)btn.setAttribute('aria-pressed',String(chosen));
+  });
+  if(scroll)document.getElementById('contentsGuideHeading').scrollIntoView({behavior:'smooth',block:'center'});
+}
 function makeContent(){resources.forEach((r,i)=>document.getElementById('resourceGrid').append(makeFeature(r,r.en,i,'resource')));
  facilities.forEach((r,i)=>{
    document.getElementById('facilitiesGrid').append(makeEstateFacility(r,i));
@@ -1138,7 +1195,8 @@ function makeContent(){resources.forEach((r,i)=>document.getElementById('resourc
    const index=document.createElement('b');index.textContent=String(i+1).padStart(2,'0');
    line.append(title,index);document.getElementById('estatePlanList').append(line);
  });
- businesses.forEach((r,i)=>document.getElementById('businessGrid').append(makeFeature(r,'BUSINESS',i)));
+ businesses.forEach((r,i)=>document.getElementById('businessGrid').append(makeContentsCard(r,i)));
+ selectContent(0);
 }
 const WORLD_TOPICS={
  avalon:{id:"01 / WORLD DATABASE",title:"아발론이란?",desc:"아발론은 외부 세계의 간섭이 차단된 폐쇄형 상업·유흥 특구입니다. 입성자들은 영지를 운영하고 다차원 소환을 통해 메이트를 확보하며, 다양한 활동과 거래로 자신의 입지를 넓혀갑니다."},
