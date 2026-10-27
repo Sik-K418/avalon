@@ -767,6 +767,91 @@
 .economy-tail{background:linear-gradient(140deg,#d9dde0 0%,#f0f0ef 50%,#e84c1b 50%,#e84c1b 100%);padding:85px 0 105px}.economy-tail-inner{display:flex;align-items:center;justify-content:space-between;gap:40px}.economy-tail small{color:#d64a25;font-size:10px;letter-spacing:2px;font-weight:900}.economy-tail h2{font-size:clamp(35px,4.5vw,65px);line-height:1.15;letter-spacing:-2px;margin:15px 0;color:#141617}.economy-tail p{font-size:12px;line-height:1.8;color:#414847;max-width:490px}.economy-tail .economy-dark-button{background:#121719;white-space:nowrap}
 @media(max-width:1160px){.economy-credit-copy h1{font-size:clamp(70px,8vw,108px)}.economy-coin-inner{grid-template-columns:30% 43% 27%}.economy-usage-inner{grid-template-columns:1fr}.economy-usage-intro{margin-bottom:25px}.economy-usage-intro h2{max-width:680px}.economy-usage-cards{gap:14px}}
 @media(max-width:760px){.economy-credit-hero,.economy-credit-inner{min-height:790px}.economy-credit-inner{display:block;padding-top:68px}.economy-credit-copy h1{font-size:clamp(68px,14vw,108px);margin:24px 0}.economy-credit-copy>p{font-size:12px;max-width:300px}.economy-credit-mini{margin-top:25px;max-width:310px}.economy-credit-art{position:absolute;right:-18%;bottom:0;width:73%;height:360px;opacity:.88}.economy-credit-art .slot-label{background:linear-gradient(110deg,transparent,#bec4c6a8)}.economy-coin-inner{display:grid;grid-template-columns:1fr 1fr;min-height:0}.economy-coin-title{grid-column:1/-1;padding:50px 0 25px}.economy-coin-title h2{font-size:56px;margin:20px 0}.economy-coin-title p{font-size:12px;max-width:450px}.economy-coin-caption{margin-top:20px}.economy-coin-art{min-height:310px}.economy-coin-facts{padding-left:16px}.economy-coin-facts strong{font-size:19px}.economy-coin-facts small,.economy-coin-facts span{font-size:9px}.economy-usage{padding:70px 0}.economy-usage-intro h2{font-size:57px}.economy-usage-cards{grid-template-columns:1fr}.economy-usage-card summary{height:270px}.economy-usage-art{height:75%;left:47%;top:0;bottom:0}.economy-usage-card summary>p{max-width:48%}.economy-tail{background:linear-gradient(145deg,#e4e5e5 0%,#f2f0ed 68%,#e95324 68%);padding:60px 0}.economy-tail-inner{display:block}.economy-tail .economy-dark-button{margin-top:14px}}
+/* ===== AVALON v7 FINAL / 통합 UI 컬러 시스템 =====
+   레이아웃, 문구, 반응형 치수는 유지합니다.
+   공통 강조: 샴페인 골드 · EVE/시스템 보조: 아이스 시안 · 바탕: 네이비/실버.
+   캐릭터 N/R/SR/SSR/UR 고유 등급 색상은 변경하지 않습니다. */
+:root{--avalon-gold:var(--gold);--avalon-gold-hover:#ffe2ae;--avalon-gold-ink:#876336;--avalon-silver:#edf1f4;--avalon-navy:#0b1725;--avalon-slate:#182b3e}
+
+/* 콘텐츠 / 그린과 오렌지에서 아발론 네이비·실버·골드로 */
+.contents-v7{background:var(--avalon-silver);color:#172638}
+.contents-hero{background:radial-gradient(ellipse at 76% 24%,#284962 0%,#122c42 48%,#081520 100%)}
+.contents-hero-tint{background:linear-gradient(90deg,#07121eeb 0%,#0c253ac9 62%,#0a1d30a3)}
+.contents-hero-copy .eyebrow{color:var(--cyan)}
+.contents-hero-copy h1 span,.contents-final h2 span{color:var(--avalon-gold)}
+.contents-hero-copy>p{color:#dce8f0}
+.contents-primary-button{background:var(--avalon-gold);color:#14202d}
+.contents-primary-button:hover{background:var(--avalon-gold-hover)}
+.contents-hero-meta{color:#a8c6d8}
+.contents-eve-disc{background:linear-gradient(135deg,#eacb90,#ae8956);box-shadow:0 0 0 22px #eecb8226,0 0 90px #eecb822c}
+.contents-eve-tag{background:#091826e6;border-color:#9bbbc878;color:#d1e9ee}
+.contents-light-area{background:var(--avalon-silver)}
+.contents-section-kicker{color:var(--avalon-gold-ink)}
+.contents-section-head h2,.contents-guide-copy h2{color:#172738}
+.contents-section-head h2 span,.contents-guide-copy h2 span{color:var(--avalon-gold-ink)}
+.contents-section-head p,.contents-card p,.contents-guide-intro,.contents-active-info p{color:#566a78}
+.contents-card{border-color:#a7b5c250;box-shadow:0 14px 31px #142a400d}
+.contents-card:hover,.contents-card.selected{border-color:#b59662}
+.contents-card.selected{box-shadow:0 0 0 2px #b5966248,0 14px 31px #142a4015}
+.contents-card-art{background:linear-gradient(130deg,#253f54,#101e30 75%)}
+.contents-card-code{color:var(--avalon-gold-ink)}
+.contents-card-button{background:#f5f0e6;color:#76552c;border-color:#bda77e}
+.contents-card-button:hover{background:#ece0c9}
+.contents-guide-art .contents-eve-disc{background:linear-gradient(135deg,#e8ce9b,#bd9966);box-shadow:0 0 0 18px #eecb8226}
+.contents-guide-art .slot-label{color:#213c4c}
+.contents-guide-art .slot-label small{color:#3b5665}
+.contents-active-info{border-top-color:#bda275;border-bottom-color:#c4ced5}
+.contents-active-info small{color:var(--avalon-gold-ink)}
+.contents-guide-meta strong{color:var(--avalon-gold-ink)}
+.contents-guide-meta span{color:#657b8b}
+.contents-final{background:var(--avalon-navy)}
+.contents-final::after{border-color:#eecb8238;box-shadow:0 0 0 95px #eecb820c,0 0 0 190px #eecb8208}
+.contents-final p{color:#b8cddb}
+
+/* 경제 / 밝은 크레딧→어두운 코인→실버 카드 구성은 유지 */
+.economy-v7{background:var(--avalon-silver);color:#172330}
+.economy-credit-hero{background:linear-gradient(115deg,#f5f7f8 0%,#edf1f4 57%,#ced9e2 100%)}
+.economy-credit-hero::before{background:repeating-linear-gradient(90deg,transparent 0 159px,#607b9325 160px,#607b9325 161px)}
+.economy-overline{color:#556572}
+.economy-overline span+span{border-left-color:#8796a3}
+.economy-credit-copy h1{color:#111c29}
+.economy-credit-copy h1 em{color:#97a5ae}
+.economy-credit-copy>p{color:#485967}
+.economy-credit-copy>p strong{color:#111d29}
+.economy-dark-button{background:#132334;color:#f8fafc}
+.economy-dark-button:hover{background:#29435b}
+.economy-credit-mini{border-top-color:#8798a7;color:#526575}
+.economy-credit-mini b{color:var(--avalon-gold-ink)}
+.economy-credit-art .slot-label{border-color:#788e9d66;background:radial-gradient(ellipse at 50% 46%,#b7c6d0a6,#e6edf163 64%,transparent);color:#354d5c}
+.economy-credit-art .slot-label small{color:#5b7381}
+.economy-art-annotation{color:#627888}
+.economy-coin{background:#0b1420}
+.economy-coin .economy-overline,.economy-coin-facts small{color:var(--avalon-gold)}
+.economy-coin-title h2 span{color:#c4d1dc}
+.economy-coin-title p{color:#c4d3dc}
+.economy-coin-caption{color:#8399a8}
+.economy-coin-art{background:radial-gradient(ellipse at 49% 48%,#344c5c,#111f2d 70%)}
+.economy-coin-art .slot-label{color:#e8f0f5}
+.economy-coin-art .slot-label small{color:#bed3df}
+.economy-coin-facts{border-left-color:#92a7b744}
+.economy-coin-facts span{color:#afc0ce}
+.economy-usage{background:#edf1f4;color:#152333}
+.economy-usage-intro h2 span{color:#9cabb8}
+.economy-usage-intro p{color:#526777}
+.economy-usage-card{background:#e3e9ed;border-color:#cbd6de}
+.economy-usage-card[open]{border-color:#ab8c57}
+.economy-usage-card summary>small{color:var(--avalon-gold-ink)}
+.economy-usage-card summary>p{color:#526575}
+.economy-usage-art{background:linear-gradient(120deg,#a5b9c6,#7f9cac 60%,#2c4558)}
+.economy-card-arrow{background:#f0f4f5;border-color:#698293;color:#172c3d}
+.economy-usage-card[open] .economy-card-arrow{border-color:#ab8c57}
+.economy-card-detail{background:#f7f9fa;color:#475c6c;border-top-color:#ab8c57}
+.economy-tail{background:linear-gradient(140deg,#dbe4e9 0%,#f1f5f6 50%,#c9d6df 50%,#c9d6df 100%)}
+.economy-tail small{color:var(--avalon-gold-ink)}
+.economy-tail h2{color:#142334}
+.economy-tail p{color:#485d6d}
+.economy-tail .economy-dark-button{background:#132334}
+@media(max-width:760px){.economy-credit-art .slot-label{background:linear-gradient(110deg,transparent,#bbcad5a8)}.economy-tail{background:linear-gradient(145deg,#e0e9ee 0%,#f3f6f7 68%,#c9d6df 68%)}}
 </style>
 </head>
 <body>
