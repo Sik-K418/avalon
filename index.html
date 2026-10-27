@@ -650,21 +650,95 @@
 @media(max-width:700px){.v6-world-page{padding:22px 0 55px}.v6-world-head{align-items:start}.v6-world-head h1{font-size:32px}.v6-online{display:none}.v6-world-layout{grid-template-columns:1fr 1fr;grid-template-areas:"eve eve" "left right";gap:9px}.v6-eve-stage{grid-area:eve;height:450px;max-width:460px;width:100%;margin:0 auto}.v6-world-side-left{grid-area:left}.v6-world-side-right{grid-area:right}.v6-world-side{justify-content:start;gap:9px}.v6-world-tile{padding:12px;min-height:150px}.v6-world-tile strong{font-size:14px}.v6-tile-index{font-size:8px}.v6-tile-desc{font-size:10px}.v6-tile-more{font-size:9px}.v6-tier-chips i{font-size:8px;padding:3px}.v6-world-reader{padding:19px 17px}.v6-world-reader-label{font-size:8px;letter-spacing:1px}.v6-world-shortcuts{grid-template-columns:1fr}.v6-world-shortcut{min-height:105px;padding:17px}}
 @media(max-width:360px){.v6-world-tile{padding:9px}.v6-world-tile strong{font-size:13px}.v6-eve-stage{height:400px}}
 
+
+/* ===== AVALON v6 / 엘리베이터 로딩 → 문 열림 → 대형 메인 인트로 → 홈 ===== */
+.v6-elevator{z-index:100;background:#08111d}
+.v6-elevator-door{background:
+ linear-gradient(90deg,transparent 0%,#e8f4ff0a 48%,transparent 52%),
+ repeating-linear-gradient(90deg,#101b29 0,#25384a 4px,#172634 14px,#0b1523 34px,#263c50 58px,#101b29 66px);
+ border-top:6px solid #6c8ca1;border-bottom:6px solid #6c8ca1}
+.v6-elevator-door::before{inset:4% 6%;border:1px solid #7e9db648;border-block:3px solid #a8c2d34e;box-shadow:inset 0 0 32px #0308139a}
+.v6-elevator-console{position:absolute;z-index:7;top:48%;left:50%;transform:translate(-50%,-50%);
+ width:min(620px,calc(100vw - 48px));padding:21px clamp(20px,4vw,42px) 28px;
+ border:1px solid #81abc8d4;background:linear-gradient(160deg,#0c1929ef,#081321f5);
+ color:#f1f6ff;box-shadow:0 15px 55px #000c,inset 0 0 22px #b7d9ff15,0 0 42px #b8e2fd2b;
+ text-shadow:0 2px 12px #000;transition:opacity .35s ease,transform .35s ease}
+.v6-console-top{display:flex;justify-content:space-between;font-size:10px;letter-spacing:2px;color:#9fd1e1;border-bottom:1px solid #7193a056;padding-bottom:11px}
+.v6-console-label{text-align:center;margin:26px 0 6px;font-size:11px;letter-spacing:5px;font-weight:850;color:#bed7e2}
+.v6-console-brand{text-align:center;font-weight:1000;font-size:clamp(48px,9vw,88px);letter-spacing:.04em;line-height:1.1}
+.v6-console-progress{height:5px;background:#50667a70;margin:35px 0 13px;overflow:hidden;border:1px solid #acccdb45}
+.v6-console-progress>div{width:0%;height:100%;background:linear-gradient(90deg,#4d93be,#b2ecff,#eecb82);box-shadow:0 0 18px #b8ebf9}
+.v6-console-bottom{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:9px;letter-spacing:1.2px;color:#c4d7e7}
+.v6-console-bottom strong{font-size:26px;color:#fff;letter-spacing:1px}
+.v6-elevator.opening .v6-elevator-console{opacity:0;transform:translate(-50%,-57%);pointer-events:none}
+.v6-elevator.opening{background:transparent}
+.v6-elevator.opening .v6-elevator-glow{opacity:0}
+.v6-arrival-splash{position:fixed;inset:0;z-index:80;isolation:isolate;overflow:hidden;opacity:1;transition:opacity 1.1s ease;background:#09131f}
+.v6-arrival-splash.leaving{opacity:0;pointer-events:none}
+.v6-arrival-background{position:absolute;inset:0;z-index:0;background:
+ radial-gradient(ellipse at 76% 55%,#4c789077,transparent 52%),
+ radial-gradient(ellipse at 60% 95%,#ad86502c,transparent 65%),
+ repeating-linear-gradient(90deg,#0d2333 0,#182c40 3px,#0d1825 44px,#1b3043 48px),#0b1828}
+.v6-arrival-bg-img{position:absolute;inset:0;width:100%;height:100%;z-index:1;object-fit:cover;object-position:center}
+.v6-arrival-city{position:absolute;inset:30% 0 0;z-index:2;opacity:.34;background:
+ linear-gradient(0deg,#040a14,#08132488 55%,transparent 95%),
+ repeating-linear-gradient(90deg,transparent 0,transparent 36px,#080f1b 36px,#080f1b 80px,transparent 80px,transparent 120px),
+ repeating-linear-gradient(90deg,#7ebad318 0,#7ebad318 2px,transparent 2px,transparent 28px);
+ clip-path:polygon(0 48%,4% 48%,4% 29%,10% 29%,10% 57%,15% 57%,15% 36%,22% 36%,22% 49%,31% 49%,31% 17%,37% 17%,37% 43%,44% 43%,44% 30%,51% 30%,51% 52%,56% 52%,56% 14%,62% 14%,62% 44%,69% 44%,69% 26%,75% 26%,75% 48%,81% 48%,81% 33%,87% 33%,87% 53%,92% 53%,92% 25%,96% 25%,96% 42%,100% 42%,100% 100%,0 100%)}
+.v6-arrival-figure-glow{position:absolute;z-index:3;right:1%;top:4%;width:54%;height:95%;background:radial-gradient(ellipse,#d8d6bd16,transparent 62%);filter:blur(11px)}
+.v6-arrival-eve{position:absolute;z-index:4;right:5%;bottom:0;width:min(52vw,820px);height:95%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 17px 20px #000b)}
+.v6-arrival-screen-shade{position:absolute;inset:0;z-index:5;background:linear-gradient(90deg,#050c18f5 0%,#07111fe9 25%,#08121d4b 72%,#07111e77 100%),linear-gradient(0deg,#060b17ae,transparent 47%)}
+.v6-arrival-content{position:absolute;z-index:8;top:50%;left:clamp(23px,7vw,128px);transform:translateY(-50%);text-shadow:0 10px 40px #000c}
+.v6-arrival-kicker{color:#eecb82;font-size:clamp(10px,1.1vw,15px);font-weight:850;letter-spacing:4px}
+.v6-arrival-content h1{font-size:clamp(64px,13.5vw,210px);font-weight:1000;letter-spacing:-.065em;line-height:1;margin:20px 0 12px;color:#f8fbff}
+.v6-arrival-line{width:min(540px,80vw);height:2px;background:linear-gradient(90deg,#eecb82,#abc9d1,transparent)}
+.v6-arrival-content p{font-weight:900;font-size:clamp(22px,3.1vw,44px);margin:26px 0 10px;letter-spacing:-1px;word-break:keep-all}
+.v6-arrival-sub{font-size:clamp(12px,1.3vw,18px);color:#d4dfe9;line-height:1.6;word-break:keep-all}
+.v6-arrival-footer{position:absolute;z-index:9;bottom:25px;left:clamp(23px,7vw,128px);font-size:10px;font-weight:800;letter-spacing:2px;color:#a9c5d1}
+.v6-arrival-footer span{color:var(--gold);padding:0 7px}
+@media(max-width:700px){
+ .v6-elevator-console{width:calc(100vw - 30px);padding:16px 17px 20px}.v6-console-top{font-size:8px;letter-spacing:1px}
+ .v6-console-brand{font-size:clamp(44px,12.6vw,76px)}.v6-console-bottom{font-size:8px;letter-spacing:.2px}.v6-console-bottom strong{font-size:23px}
+ .v6-elevator-door span{opacity:.55}.v6-arrival-eve{right:-21%;width:104%;opacity:.55}
+ .v6-arrival-screen-shade{background:linear-gradient(90deg,#07101dea,#07111e88 80%),linear-gradient(0deg,#060b17ae,transparent 47%)}
+ .v6-arrival-content{left:23px;right:18px;top:48%}.v6-arrival-content h1{font-size:clamp(64px,17vw,100px)}
+ .v6-arrival-content p{font-size:25px}.v6-arrival-footer{left:23px;font-size:8px}
+}
+@media(prefers-reduced-motion:reduce){.v6-arrival-splash{transition-duration:.01ms}}
+
 </style>
 </head>
 <body>
-<!-- 0~100% 접속 연출 -->
-<section id="loading" class="entry">
-  <div class="entry-bg art-block img-tint" data-art="loadingBackground"><div class="slot-label"><small>images/loading-bg.webp</small></div></div>
-  <div class="entry-content"><div class="eyebrow">◇ AVALON CENTRAL SYSTEM ◇</div><h1 class="entry-brand">AVALON</h1><div class="entry-caption">ESTABLISHING SECURE CONNECTION</div><div class="progress-track"><div id="progressFill"></div></div><div class="progress-info"><span id="progressStatus">VERIFYING INVITATION...</span><strong id="progressNumber">0%</strong></div></div>
-</section>
-<!-- 로딩 100% 도달 시 홈 화면 위에서 열리는 다차원 엘리베이터 -->
-<section id="elevatorReveal" class="v6-elevator hidden" aria-label="아발론 도착, 엘리베이터 문 열림">
+<!-- 처음부터 닫힌 다차원 엘리베이터: 문 전면에 0~100% 진행률을 표시 -->
+<section id="elevatorReveal" class="v6-elevator" aria-label="다차원 엘리베이터 이동 중" aria-live="polite">
   <div class="v6-elevator-glow"></div>
-  <div class="v6-elevator-door v6-elevator-left"><div class="v6-door-grooves"></div><span>AVALON // GATE A</span></div>
-  <div class="v6-elevator-door v6-elevator-right"><div class="v6-door-grooves"></div><span>DIMENSIONAL TRANSIT</span></div>
+  <div class="v6-elevator-door v6-elevator-left"><div class="v6-door-grooves"></div><span>AVALON // TRANSIT 001</span></div>
+  <div class="v6-elevator-door v6-elevator-right"><div class="v6-door-grooves"></div><span>DIMENSIONAL ACCESS</span></div>
   <div class="v6-elevator-seam"></div>
-  <div class="v6-elevator-label"><small>FLOOR ∞ / ARRIVAL CONFIRMED</small><strong>AVALON</strong><span>중앙 특구에 도착했습니다</span></div>
+  <div class="v6-elevator-console" id="elevatorConsole">
+    <div class="v6-console-top"><span>◇ CENTRAL SYSTEM</span><span>GATE · ∞</span></div>
+    <div class="v6-console-label">차원 이동 중</div>
+    <div class="v6-console-brand">AVALON</div>
+    <div class="v6-console-progress"><div id="progressFill"></div></div>
+    <div class="v6-console-bottom"><span id="progressStatus">DIMENSIONAL TRANSIT IN PROGRESS</span><strong id="progressNumber">0%</strong></div>
+  </div>
+</section>
+<!-- 문 너머에 나타나는 큰 시네마틱 메인 화면. 이후 일반 아발론 홈으로 전환 -->
+<section id="arrivalSplash" class="v6-arrival-splash hidden" aria-label="아발론 입성 환영 화면">
+  <div class="v6-arrival-background"></div>
+  <img class="v6-arrival-bg-img" src="images/home-bg.webp" alt="" onerror="this.style.display='none'">
+  <div class="v6-arrival-city" aria-hidden="true"></div>
+  <div class="v6-arrival-figure-glow" aria-hidden="true"></div>
+  <img class="v6-arrival-eve" src="images/home-character.png" alt="" onerror="this.style.display='none'">
+  <div class="v6-arrival-screen-shade"></div>
+  <div class="v6-arrival-content">
+    <div class="v6-arrival-kicker">CENTRAL DISTRICT · WELCOME TO</div>
+    <h1>AVALON</h1>
+    <div class="v6-arrival-line"></div>
+    <p>모든 가치가 거래되는 세계.</p>
+    <div class="v6-arrival-sub">다차원 특구 아발론에 오신 것을 환영합니다.</div>
+  </div>
+  <div class="v6-arrival-footer">ARRIVAL AUTHORIZED <span>◆</span> EVE CENTRAL SYSTEM</div>
 </section>
 <div id="app" class="hidden">
 <header class="site-header"><button class="brand" onclick="showPage('home')" aria-label="메인 화면으로"><strong>AVALON</strong><small>CENTRAL ARCHIVE / EVE</small></button><nav class="top-nav" aria-label="메뉴"><button class="nav-btn active" data-nav="home" onclick="showPage('home')">HOME</button><button class="nav-btn" data-nav="characters" onclick="showPage('characters')">캐릭터 도감</button><button class="nav-btn" data-nav="world" onclick="showPage('world')">세계관</button><button class="nav-btn" data-nav="territory" onclick="showPage('territory')">영지 · 콘텐츠</button><button class="nav-btn" data-nav="economy" onclick="showPage('economy')">경제 · 재화</button></nav><div class="on-air"><i></i>SYSTEM ONLINE</div></header>
@@ -1018,21 +1092,43 @@ function selectWorldTopic(name){
  document.getElementById('worldTopicDescription').textContent=record.desc;
 }
 function enterSite(){
- document.getElementById('loading').classList.add('hidden');
- document.getElementById('app').classList.remove('hidden');
- showPage('home');
- const elevator=document.getElementById('elevatorReveal');
- elevator.classList.remove('hidden');
- // 문을 먼저 닫힌 상태로 보여준 다음 중앙에서 좌우로 엽니다.
- window.setTimeout(()=>elevator.classList.add('opening'),350);
- window.setTimeout(()=>elevator.classList.add('hidden'),2750);
+  const elevator=document.getElementById('elevatorReveal');
+  const splash=document.getElementById('arrivalSplash');
+  // 목적지 환영 화면을 엘리베이터 '뒤'에 먼저 세팅하고, 양쪽 문을 연다.
+  splash.classList.remove('hidden');
+  document.getElementById('progressStatus').textContent='ARRIVAL CONFIRMED · DOORS OPENING';
+  elevator.setAttribute('aria-label','아발론 도착, 엘리베이터 문 열림');
+  window.setTimeout(()=>elevator.classList.add('opening'),320);
+  // 문이 완전히 열린 다음부터 큰 AVALON 인트로 화면을 잠시 감상.
+  window.setTimeout(()=>elevator.classList.add('hidden'),2540);
+  // 시네마틱 환영 화면 → 실제 메인 홈 화면으로 부드럽게 전환.
+  window.setTimeout(()=>{
+    document.getElementById('app').classList.remove('hidden');
+    showPage('home');
+    splash.classList.add('leaving');
+  },4350);
+  window.setTimeout(()=>splash.classList.add('hidden'),5580);
 }
-
 function start(){
   const preview=new URLSearchParams(location.search).get('preview');
-  if(preview){document.getElementById('loading').classList.add('hidden');document.getElementById('app').classList.remove('hidden');if(preview==='detail'){openCharacter(0)}else{showPage(['home','characters','world','economy','territory'].includes(preview)?preview:'home')}return}
-  let value=0;const fill=document.getElementById('progressFill'),number=document.getElementById('progressNumber');
-  const ticker=setInterval(()=>{value=Math.min(100,value+2);fill.style.width=value+'%';number.textContent=value+'%';if(value>=100){clearInterval(ticker);document.getElementById('progressStatus').textContent='ARRIVAL CONFIRMED — DOORS OPENING';setTimeout(enterSite,650)}},38);
+  if(preview){
+    if(preview==='elevator'){document.getElementById('progressFill').style.width='65%';document.getElementById('progressNumber').textContent='65%';return}
+    document.getElementById('elevatorReveal').classList.add('hidden');
+    if(preview==='arrival'){document.getElementById('arrivalSplash').classList.remove('hidden');return}
+    document.getElementById('app').classList.remove('hidden');
+    if(preview==='detail'){openCharacter(0)}
+    else{showPage(['home','characters','world','economy','territory'].includes(preview)?preview:'home')}
+    return;
+  }
+  let value=0;
+  const fill=document.getElementById('progressFill');
+  const number=document.getElementById('progressNumber');
+  // 0~100% 동안 문은 닫힌 상태. 100%가 되어야만 열림을 시작한다.
+  const ticker=window.setInterval(()=>{
+    value=Math.min(100,value+2);
+    fill.style.width=value+'%';number.textContent=value+'%';
+    if(value>=100){window.clearInterval(ticker);window.setTimeout(enterSite,480)}
+  },48);
 }
 makeContent();applyFixedImages();renderCharacters();selectWorldTopic('avalon');start();
 </script>
