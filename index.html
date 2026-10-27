@@ -566,6 +566,13 @@
 #page-detail .v5-fixed-top{
   background:linear-gradient(180deg,var(--tone-deep) 0%,var(--tone-deep) 80%,rgb(9 11 17 / .90) 100%)
 }
+
+/* v6 — 캐릭터 도감 등급 정렬 버튼 + 경제 메뉴 우측 배치 */
+.archive-tools{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-left:auto}
+.tier-sort-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:105px;height:40px;padding:0 13px;background:linear-gradient(120deg,#1a2636,#111924);border:1px solid #7b8ba0;color:#d8e5f0;font-size:12px;font-weight:850;white-space:nowrap;transition:background .2s,border-color .2s}
+.tier-sort-toggle:hover{border-color:#eecb82;background:#253448}
+.tier-sort-arrow{color:#eecb82;font-size:16px}
+@media(max-width:720px){.archive-tools{gap:8px}.tier-sort-toggle{height:36px;min-width:95px;padding:0 9px;font-size:11px}}
 </style>
 </head>
 <body>
@@ -583,7 +590,7 @@
   </div></div>
 </section>
 <div id="app" class="hidden">
-<header class="site-header"><button class="brand" onclick="showPage('home')" aria-label="메인 화면으로"><strong>AVALON</strong><small>CENTRAL ARCHIVE / EVE</small></button><nav class="top-nav" aria-label="메뉴"><button class="nav-btn active" data-nav="home" onclick="showPage('home')">HOME</button><button class="nav-btn" data-nav="characters" onclick="showPage('characters')">캐릭터 도감</button><button class="nav-btn" data-nav="world" onclick="showPage('world')">세계관</button><button class="nav-btn" data-nav="economy" onclick="showPage('economy')">경제 · 재화</button><button class="nav-btn" data-nav="territory" onclick="showPage('territory')">영지 · 콘텐츠</button></nav><div class="on-air"><i></i>SYSTEM ONLINE</div></header>
+<header class="site-header"><button class="brand" onclick="showPage('home')" aria-label="메인 화면으로"><strong>AVALON</strong><small>CENTRAL ARCHIVE / EVE</small></button><nav class="top-nav" aria-label="메뉴"><button class="nav-btn active" data-nav="home" onclick="showPage('home')">HOME</button><button class="nav-btn" data-nav="characters" onclick="showPage('characters')">캐릭터 도감</button><button class="nav-btn" data-nav="world" onclick="showPage('world')">세계관</button><button class="nav-btn" data-nav="territory" onclick="showPage('territory')">영지 · 콘텐츠</button><button class="nav-btn" data-nav="economy" onclick="showPage('economy')">경제 · 재화</button></nav><div class="on-air"><i></i>SYSTEM ONLINE</div></header>
 <main>
 <section id="page-home" class="page active">
   <div class="home-hero">
@@ -594,15 +601,15 @@
   <div class="menu-row" aria-label="주요 메뉴">
     <button class="menu-art art-block" data-art="menuCharacters" onclick="showPage('characters')"><div class="slot-label"><small>images/menu-characters.webp</small></div><div class="menu-copy"><small>01 / DATABASE</small><strong>캐릭터 도감</strong><em>↗</em></div></button>
     <button class="menu-art art-block" data-art="menuWorld" onclick="showPage('world')"><div class="slot-label"><small>images/menu-world.webp</small></div><div class="menu-copy"><small>02 / WORLD</small><strong>세계관 소개</strong><em>↗</em></div></button>
-    <button class="menu-art art-block" data-art="menuEconomy" onclick="showPage('economy')"><div class="slot-label"><small>images/menu-economy.webp</small></div><div class="menu-copy"><small>03 / ECONOMY</small><strong>경제 · 재화</strong><em>↗</em></div></button>
-    <button class="menu-art art-block" data-art="menuTerritory" onclick="showPage('territory')"><div class="slot-label"><small>images/menu-territory.webp</small></div><div class="menu-copy"><small>04 / ESTATE</small><strong>영지 · 콘텐츠</strong><em>↗</em></div></button>
+    <button class="menu-art art-block" data-art="menuTerritory" onclick="showPage('territory')"><div class="slot-label"><small>images/menu-territory.webp</small></div><div class="menu-copy"><small>03 / ESTATE</small><strong>영지 · 콘텐츠</strong><em>↗</em></div></button>
+    <button class="menu-art art-block" data-art="menuEconomy" onclick="showPage('economy')"><div class="slot-label"><small>images/menu-economy.webp</small></div><div class="menu-copy"><small>04 / ECONOMY</small><strong>경제 · 재화</strong><em>↗</em></div></button>
   </div>
   <div class="container home-showcase"><div class="showcase-head"><div><div class="eyebrow">AVALON ARCHIVE / FEATURED</div><h2 class="section-heading" style="margin-top:12px">EXPLORE THE SYSTEM.</h2></div></div><div class="showcase-grid"><button class="showcase-card art-block" data-art="promoSummon" onclick="showPage('world')"><div class="slot-label"><b>엘리베이터 프로모 이미지</b><small>images/promo-summon.webp</small></div><div class="showcase-copy"><small>DIMENSIONAL SUMMONING</small><h3>다차원 소환 시스템 ↗</h3></div></button><button class="showcase-card art-block" data-art="promoEstate" onclick="showPage('territory')"><div class="slot-label"><b>영지 프로모 이미지</b><small>images/promo-estate.webp</small></div><div class="showcase-copy"><small>ESTATE MANAGEMENT</small><h3>영지 운영 시스템 ↗</h3></div></button></div></div>
 </section>
 <!-- 도감 -->
 <section id="page-characters" class="page">
   <div class="inner-banner art-block" data-art="charactersBackground"><div class="slot-label"><small>images/characters-bg.webp</small></div><div class="inner-title container"><div class="eyebrow">01 / CHARACTER DATABASE</div><h1>MATE ARCHIVE</h1><p>다차원에서 소환된 메이트들의 가치 등급별 정보</p></div></div>
-  <div class="container content-area"><div class="filter-bar"><div class="tier-controls"><button class="tier-btn active" data-tier="ALL" onclick="filterTier('ALL')">ALL</button><button class="tier-btn" data-tier="N" onclick="filterTier('N')">N</button><button class="tier-btn" data-tier="R" onclick="filterTier('R')">R</button><button class="tier-btn" data-tier="SR" onclick="filterTier('SR')">SR</button><button class="tier-btn" data-tier="SSR" onclick="filterTier('SSR')">SSR</button><button class="tier-btn" data-tier="UR" onclick="filterTier('UR')">UR</button></div><div class="filter-note" id="characterCount">50 SLOTS</div></div><div class="character-grid" id="characterGrid"></div></div>
+  <div class="container content-area"><div class="filter-bar"><div class="tier-controls" id="tierControls"><button class="tier-btn active" data-tier="ALL" onclick="filterTier('ALL')">ALL</button><button class="tier-btn" data-tier="UR" onclick="filterTier('UR')">UR</button><button class="tier-btn" data-tier="SSR" onclick="filterTier('SSR')">SSR</button><button class="tier-btn" data-tier="SR" onclick="filterTier('SR')">SR</button><button class="tier-btn" data-tier="R" onclick="filterTier('R')">R</button><button class="tier-btn" data-tier="N" onclick="filterTier('N')">N</button></div><div class="archive-tools"><button class="tier-sort-toggle" id="tierSortToggle" type="button" onclick="toggleTierSort()" aria-label="캐릭터 등급 정렬 방향 바꾸기" aria-pressed="false"><span class="tier-sort-arrow">↕</span> <span id="tierSortLabel">UR → N</span></button><div class="filter-note" id="characterCount">50 SLOTS</div></div></div><div class="character-grid" id="characterGrid"></div></div>
 </section>
 <!-- 캐릭터 상세 V5 유지: 좌측 정보 23% / 중앙 이미지 54% / 우측 버프 23%, 이미지 하단 그라디언트 -->
 <section id="page-detail" class="page">
@@ -673,13 +680,16 @@ const IMAGES = {
 };
 
 /* ============================================================
-   [2] 캐릭터 50개 임시 슬롯. 모든 설정은 설명용 자리표시자.
+   [2] 캐릭터 임시 슬롯. 실제 캐릭터 정보가 완성되면 배열을 교체/추가.
+   도감 수는 characters.length 를 통해 자동 계산됩니다.
    UR 8항목 / SSR 7 / SR 6 / R·N 5항목 표시.
    ============================================================ */
 const tierNames={N:'NORMAL',R:'PRIVATE',SR:'EXCLUSIVE',SSR:'LIMITED',UR:'ULTIMATE'};
 const tierCycle=['UR','SSR','SR','R','N'];
 const traitsCount={N:1,R:2,SR:3,SSR:4,UR:5};
-const characters=Array.from({length:50},(_,index)=>{
+// 등록 준비 중인 임시 슬롯 수. 캐릭터 제작 상황에 맞춰 이 숫자만 변경할 수 있습니다.
+const TEMP_CHARACTER_SLOTS=50;
+const characters=Array.from({length:TEMP_CHARACTER_SLOTS},(_,index)=>{
   const n=String(index+1).padStart(2,'0');
   const tier=tierCycle[index%5];
   const traitNum=traitsCount[tier];
@@ -743,12 +753,31 @@ function showPage(name){
   window.scrollTo({top:0,behavior:'instant'});
 }
 let activeTier='ALL';
+let ascendingTierSort=false; // 기본 UR → SSR → SR → R → N
 function filterTier(tier){activeTier=tier;document.querySelectorAll('.tier-btn').forEach(btn=>btn.classList.toggle('active',btn.dataset.tier===tier));renderCharacters()}
+function toggleTierSort(){
+ ascendingTierSort=!ascendingTierSort;
+ const button=document.getElementById('tierSortToggle');
+ const label=document.getElementById('tierSortLabel');
+ button.setAttribute('aria-pressed',String(ascendingTierSort));
+ label.textContent=ascendingTierSort?'N → UR':'UR → N';
+ // 필터의 시각적 순서도 정렬 방향과 함께 변경
+ const controls=document.getElementById('tierControls');
+ const order=ascendingTierSort?['ALL','N','R','SR','SSR','UR']:['ALL','UR','SSR','SR','R','N'];
+ order.forEach(tier=>controls.appendChild(controls.querySelector('[data-tier="'+tier+'"]')));
+ renderCharacters();
+}
 function makeFallback(label,filename){const wrap=document.createElement('div');wrap.className='slot-label';const a=document.createElement('b');a.textContent=label;const b=document.createElement('small');b.textContent=filename;wrap.append(a,b);return wrap}
 function renderCharacters(){
  const grid=document.getElementById('characterGrid');grid.replaceChildren();
- let count=0;
- characters.forEach((ch,index)=>{if(activeTier!=='ALL'&&ch.tier!==activeTier)return;count++;
+ const gradeOrder=['N','R','SR','SSR','UR'];
+ const ordered=characters.map((ch,index)=>({ch,index})).filter(({ch})=>activeTier==='ALL'||ch.tier===activeTier)
+  .sort((a,b)=>{
+    const aGrade=gradeOrder.indexOf(a.ch.tier),bGrade=gradeOrder.indexOf(b.ch.tier);
+    if(aGrade!==bGrade)return ascendingTierSort?aGrade-bGrade:bGrade-aGrade;
+    return a.index-b.index; // 같은 등급 안에서는 입력 순서 유지
+  });
+ ordered.forEach(({ch,index})=>{
   const btn=document.createElement('button');btn.type='button';btn.className='character-card tier-'+ch.tier.toLowerCase();
   const art=document.createElement('div');art.className='char-image art-block';art.appendChild(makeFallback('CHARACTER ART',ch.card));
   const tier=document.createElement('span');tier.className='tier-badge';tier.textContent=ch.tier;art.appendChild(tier);
@@ -756,7 +785,7 @@ function renderCharacters(){
   const name=document.createElement('strong');name.textContent=ch.name;const hint=document.createElement('span');hint.textContent='프로필 열기 ↗';info.append(code,name,hint);
   btn.append(art,info);btn.addEventListener('click',()=>openCharacter(index));grid.appendChild(btn);attachArt(art,ch.card);
  });
- document.getElementById('characterCount').textContent=String(count)+' / '+characters.length+' SLOTS';
+ document.getElementById('characterCount').textContent=String(ordered.length)+' / '+characters.length+' SLOTS';
 }
 function openCharacter(index){
  const ch=characters[index];
