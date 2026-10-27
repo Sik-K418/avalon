@@ -706,6 +706,34 @@
 }
 @media(prefers-reduced-motion:reduce){.v6-arrival-splash{transition-duration:.01ms}}
 
+/* V7 / 영지 전용: 부동산 쇼케이스형 긴 스크롤 레이아웃 */
+.estate-v7{background:linear-gradient(180deg,#0a1018 0%,#10191d 48%,#0b1218 100%)}
+.estate-hero{height:clamp(610px,72vh,850px);min-height:610px;background:linear-gradient(125deg,#243943,#0b1823 60%,#0a1018);border-bottom:1px solid #ffffff26}
+.estate-hero .slot-label{position:absolute;inset:0;opacity:.48;align-items:flex-end;padding-right:11vw}
+.estate-hero-shade{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,#050a0fca 0%,#07101864 55%,#070d14a3 100%),linear-gradient(0deg,#060b12df 0%,transparent 44%,#050a0e7d 100%);pointer-events:none}
+.estate-hero-inside{height:100%;position:relative;z-index:3;display:flex;flex-direction:column;justify-content:space-between;padding-top:30px;padding-bottom:31px}
+.estate-hero-top,.estate-hero-foot{display:flex;justify-content:space-between;align-items:center;gap:15px;color:#e6f0f4ad;font-size:10px;font-weight:800;letter-spacing:2px}
+.estate-hero-top{border-top:1px solid #ffffff57;padding-top:15px}.estate-hero-foot{border-bottom:1px solid #ffffff57;padding-bottom:15px}
+.estate-hero-center{margin-top:30px}.estate-hero-center h1{font-size:clamp(86px,14vw,224px);font-weight:1000;letter-spacing:-.085em;line-height:.83;margin:24px 0 30px;color:#fff;text-shadow:0 11px 44px #0009}
+.estate-hero-center p{font-size:clamp(14px,1.35vw,19px);font-weight:750;color:#e0ebf2;line-height:1.9;word-break:keep-all}
+.estate-layout{max-width:1540px;padding-bottom:105px}.estate-introduction{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;padding:115px 0 100px;border-bottom:1px solid #ffffff30}
+.estate-introduction h2{font-size:clamp(40px,5.3vw,78px);line-height:1.15;letter-spacing:-3px;margin:18px 0 0}.estate-introduction h2 span{color:#9eafb9}
+.estate-intro-right{display:flex;flex-direction:column;justify-content:flex-end}.estate-intro-right p{font-size:16px;line-height:2.1;color:#bac8d2;word-break:keep-all;max-width:480px;margin:0 0 30px}
+.estate-intro-meta{display:flex;gap:42px;border-top:1px solid #ffffff30;padding-top:20px}.estate-intro-meta span{font-size:43px;letter-spacing:-2px;font-weight:900;line-height:1}.estate-intro-meta small{display:block;font-size:9px;letter-spacing:1.8px;font-weight:800;color:#8195a5;margin-top:11px}
+.estate-services{padding:100px 0}.estate-block-heading{display:flex;justify-content:space-between;gap:26px;align-items:end;margin-bottom:30px}.estate-block-heading h2{margin:12px 0 0;font-size:clamp(41px,5.2vw,76px);font-weight:950;letter-spacing:-3px;line-height:1}
+.estate-block-heading p{margin:0 0 3px;color:#a8b8c4;font-size:12px;line-height:1.8;text-align:right;word-break:keep-all}
+.estate-facility-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px 17px}
+.estate-facility{min-width:0}.estate-facility-image{aspect-ratio:4/4.2;border:1px solid #ffffff38;background:linear-gradient(150deg,#304851,#19262f 50%,#0e1822);transition:border-color .22s,transform .22s}
+.estate-facility:hover .estate-facility-image{border-color:#abd5e3;transform:translateY(-4px)}.estate-facility-image .slot-label{padding:10px;gap:9px;min-height:100%;color:#cadbe5}.estate-facility-image .slot-label b{font-size:11px}.estate-facility-image .slot-label small{font-size:9px}
+.estate-facility-index{font-weight:950;font-size:34px;letter-spacing:-1.5px;color:#f0f5f8;margin:17px 0 8px;line-height:1}.estate-facility h3{font-size:16px;margin:0 0 10px;line-height:1.4;word-break:keep-all}.estate-facility p{font-size:11px;line-height:1.7;color:#8fa1af;margin:0;word-break:keep-all}
+.estate-plan{background:#151f24;border:1px solid #ffffff1e;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:46px;padding:48px;margin:0 0 80px;min-height:580px}
+.estate-plan-copy{min-width:0}.estate-plan-copy h2{font-size:clamp(39px,4.7vw,68px);letter-spacing:-3px;line-height:1;margin:16px 0 10px}.estate-plan-copy>p{font-size:14px;color:#c8d4dd;margin-bottom:28px}
+.estate-plan-list{display:grid;grid-template-columns:1fr 1fr;column-gap:22px}.estate-plan-item{display:flex;align-items:start;justify-content:space-between;gap:8px;border-bottom:1px solid #ffffff2c;padding:11px 0;font-size:11px;color:#cbd6de;line-height:1.45}.estate-plan-item b{color:#80ccd9;font-size:10px;letter-spacing:1px}
+.estate-plan-notice{display:block;font-size:10px;color:#7d929e;line-height:1.7;margin-top:22px}.estate-plan-art{min-height:520px;background:linear-gradient(145deg,#3d514d,#162b32 48%,#0e1924)}.estate-plan-art .slot-label{border:1px dashed #a2ced082;min-height:520px}.estate-plan-corner{position:absolute;z-index:3;bottom:17px;right:18px;font-size:9px;font-weight:850;letter-spacing:2px;color:#e1edf0bd;text-shadow:0 2px 8px #000c}
+.estate-bottom{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:27px 0;border-top:1px solid #ffffff30}.estate-bottom span{font-size:10px;color:#7dcfe0;font-weight:900;letter-spacing:2px}.estate-bottom h3{margin:9px 0 0;font-size:clamp(19px,2.3vw,30px);letter-spacing:-.5px}
+@media(max-width:1100px){.estate-facility-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.estate-facility-image{aspect-ratio:5/4}.estate-plan{grid-template-columns:1fr;padding:35px}.estate-plan-art,.estate-plan-art .slot-label{min-height:500px}}
+@media(max-width:720px){.estate-hero{height:620px;min-height:620px}.estate-hero-center h1{font-size:clamp(75px,15vw,117px)}.estate-hero-top,.estate-hero-foot{font-size:8px;letter-spacing:1px}.estate-introduction{grid-template-columns:1fr;gap:24px;padding:70px 0}.estate-introduction h2{letter-spacing:-2px}.estate-intro-right p{font-size:13px;margin-bottom:23px}.estate-services{padding:70px 0}.estate-block-heading{display:block}.estate-block-heading h2{letter-spacing:-1.5px}.estate-block-heading p{text-align:left;margin-top:18px}.estate-facility-grid{gap:24px 12px}.estate-facility-image{aspect-ratio:3/4}.estate-facility-index{font-size:27px}.estate-facility h3{font-size:13px}.estate-facility p{font-size:10px}.estate-plan{padding:22px;gap:24px;min-height:0}.estate-plan-list{grid-template-columns:1fr}.estate-plan-art,.estate-plan-art .slot-label{min-height:340px}.estate-bottom{flex-direction:column;align-items:start}.estate-layout{padding-bottom:60px}}
+@media(max-width:390px){.estate-facility-grid{grid-template-columns:1fr}.estate-facility-image{aspect-ratio:5/3}.estate-hero-center h1{font-size:70px}}
 </style>
 </head>
 <body>
@@ -741,7 +769,7 @@
   <div class="v6-arrival-footer">ARRIVAL AUTHORIZED <span>◆</span> EVE CENTRAL SYSTEM</div>
 </section>
 <div id="app" class="hidden">
-<header class="site-header"><button class="brand" onclick="showPage('home')" aria-label="메인 화면으로"><strong>AVALON</strong><small>CENTRAL ARCHIVE / EVE</small></button><nav class="top-nav" aria-label="메뉴"><button class="nav-btn active" data-nav="home" onclick="showPage('home')">HOME</button><button class="nav-btn" data-nav="characters" onclick="showPage('characters')">캐릭터 도감</button><button class="nav-btn" data-nav="world" onclick="showPage('world')">세계관</button><button class="nav-btn" data-nav="territory" onclick="showPage('territory')">영지 · 콘텐츠</button><button class="nav-btn" data-nav="economy" onclick="showPage('economy')">경제 · 재화</button></nav><div class="on-air"><i></i>SYSTEM ONLINE</div></header>
+<header class="site-header"><button class="brand" onclick="showPage('home')" aria-label="메인 화면으로"><strong>AVALON</strong><small>CENTRAL ARCHIVE / EVE</small></button><nav class="top-nav" aria-label="메뉴"><button class="nav-btn active" data-nav="home" onclick="showPage('home')">HOME</button><button class="nav-btn" data-nav="characters" onclick="showPage('characters')">캐릭터 도감</button><button class="nav-btn" data-nav="world" onclick="showPage('world')">세계관</button><button class="nav-btn" data-nav="territory" onclick="showPage('territory')">영지</button><button class="nav-btn" data-nav="contents" onclick="showPage('contents')">콘텐츠</button><button class="nav-btn" data-nav="economy" onclick="showPage('economy')">경제 · 재화</button></nav><div class="on-air"><i></i>SYSTEM ONLINE</div></header>
 <main>
 <section id="page-home" class="page active">
   <div class="home-hero">
@@ -752,7 +780,7 @@
   <div class="menu-row" aria-label="주요 메뉴">
     <button class="menu-art art-block" data-art="menuCharacters" onclick="showPage('characters')"><div class="slot-label"><small>images/menu-characters.webp</small></div><div class="menu-copy"><small>01 / DATABASE</small><strong>캐릭터 도감</strong><em>↗</em></div></button>
     <button class="menu-art art-block" data-art="menuWorld" onclick="showPage('world')"><div class="slot-label"><small>images/menu-world.webp</small></div><div class="menu-copy"><small>02 / WORLD</small><strong>세계관 소개</strong><em>↗</em></div></button>
-    <button class="menu-art art-block" data-art="menuTerritory" onclick="showPage('territory')"><div class="slot-label"><small>images/menu-territory.webp</small></div><div class="menu-copy"><small>03 / ESTATE</small><strong>영지 · 콘텐츠</strong><em>↗</em></div></button>
+    <button class="menu-art art-block" data-art="menuTerritory" onclick="showPage('territory')"><div class="slot-label"><small>images/menu-territory.webp</small></div><div class="menu-copy"><small>03 / ESTATE</small><strong>영지</strong><em>↗</em></div></button>
     <button class="menu-art art-block" data-art="menuEconomy" onclick="showPage('economy')"><div class="slot-label"><small>images/menu-economy.webp</small></div><div class="menu-copy"><small>04 / ECONOMY</small><strong>경제 · 재화</strong><em>↗</em></div></button>
   </div>
   <div class="container home-showcase"><div class="showcase-head"><div><div class="eyebrow">AVALON ARCHIVE / FEATURED</div><h2 class="section-heading" style="margin-top:12px">EXPLORE THE SYSTEM.</h2></div></div><div class="showcase-grid"><button class="showcase-card art-block" data-art="promoSummon" onclick="showPage('world')"><div class="slot-label"><b>엘리베이터 프로모 이미지</b><small>images/promo-summon.webp</small></div><div class="showcase-copy"><small>DIMENSIONAL SUMMONING</small><h3>다차원 소환 시스템 ↗</h3></div></button><button class="showcase-card art-block" data-art="promoEstate" onclick="showPage('territory')"><div class="slot-label"><b>영지 프로모 이미지</b><small>images/promo-estate.webp</small></div><div class="showcase-copy"><small>ESTATE MANAGEMENT</small><h3>영지 운영 시스템 ↗</h3></div></button></div></div>
@@ -866,7 +894,7 @@
     <div class="v6-world-shortcuts">
       <button type="button" class="v6-world-shortcut" onclick="showPage('territory')">
         <span class="v6-shortcut-icon">▣</span>
-        <span><small>ESTATE & CONTENTS</small><strong>영지 · 콘텐츠</strong><em>시설과 비즈니스 둘러보기</em></span>
+        <span><small>ESTATE ARCHIVE</small><strong>영지</strong><em>영지 시설과 구조 둘러보기</em></span>
         <span class="v6-shortcut-arrow">↗</span>
       </button>
       <button type="button" class="v6-world-shortcut" onclick="showPage('economy')">
@@ -879,8 +907,26 @@
 </section>
 <!-- 경제 -->
 <section id="page-economy" class="page"><div class="inner-banner art-block" data-art="economyBackground"><div class="slot-label"><small>images/economy-bg.webp</small></div><div class="inner-title container"><div class="eyebrow">03 / CREDIT & CURRENCY</div><h1>ECONOMY SYSTEM.</h1><p>아발론의 모든 시설은 크레딧 기반 경제로 운영됩니다.</p></div></div><div class="container content-area"><p class="small-disclaimer">※ 이 페이지의 재화는 세계관 속 가상 설정입니다. 실제 결제 기능은 없습니다.</p><div class="resource-grid" id="resourceGrid"></div><div class="feature-list"><article class="feature wide-feature art-block" data-art="settlementBackground"><div class="slot-label"><b>정산 시스템 이미지</b><small>images/settlement.webp</small></div><div class="feature-body"><small>DAILY SETTLEMENT / 00:00</small><h3>일일 정산 및 파산</h3><p>매일 자정, 영지 규모와 보유 자산에 따른 유지비가 차감됩니다. 잔고 부족 시 파산 절차가 개시됩니다.</p></div></article></div></div></section>
-<!-- 영지 및 콘텐츠 -->
-<section id="page-territory" class="page"><div class="inner-banner art-block" data-art="territoryBackground"><div class="slot-label"><small>images/territory-bg.webp</small></div><div class="inner-title container"><div class="eyebrow">04 / ESTATE & BUSINESS</div><h1>ESTATE SYSTEM.</h1><p>영지 시설과 아발론의 주요 비즈니스 콘텐츠를 소개합니다.</p></div></div><div class="container content-area"><div class="facility-heading"><h2>영지 8대 핵심 시설</h2><div class="eyebrow">ESTATE FACILITIES</div></div><div class="facility-grid" id="facilitiesGrid"></div><div class="facility-heading"><h2>4대 비즈니스</h2><div class="eyebrow">BUSINESS CATEGORIES</div></div><div class="facility-grid" id="businessGrid"></div></div></section>
+<!-- 영지: 전경 → 시설 사진 카드 → 배치도. 콘텐츠 페이지와 완전히 분리 -->
+<section id="page-territory" class="page estate-v7">
+  <div class="estate-hero art-block" data-art="territoryBackground">
+    <div class="slot-label"><b>영지 메인 전경 이미지</b><small>images/territory-bg.webp</small></div>
+    <div class="estate-hero-shade"></div>
+    <div class="container estate-hero-inside">
+      <div class="estate-hero-top"><span>AVALON / ESTATE ARCHIVE</span><span>PRIVATE DOMAIN · 01</span></div>
+      <div class="estate-hero-center"><div class="eyebrow">04 / TERRITORY MANAGEMENT</div><h1>YOUR<br>ESTATE.</h1><p>당신의 공간, 당신의 영지.<br>아발론의 여덟 핵심 시설을 만나보세요.</p></div>
+      <div class="estate-hero-foot"><span>PERSONAL TERRITORY / AVALON</span><span>SCROLL TO EXPLORE ↓</span></div>
+    </div>
+  </div>
+  <div class="container estate-layout">
+    <div class="estate-introduction"><div><div class="eyebrow">ESTATE MANAGEMENT / OVERVIEW</div><h2>영지는 입성자의<br><span>기반이 되는 공간.</span></h2></div><div class="estate-intro-right"><p>집무실과 메이트 기숙사, 각종 관리·지원 시설이 모인 개인 영역입니다. 이곳에서 시설을 관리하고 영지의 기반을 확장할 수 있습니다.</p><div class="estate-intro-meta"><span>8<br><small>CORE FACILITIES</small></span><span>01<br><small>PERSONAL DOMAIN</small></span></div></div></div>
+    <section class="estate-services" aria-labelledby="estateFacilitiesHeading"><div class="estate-block-heading"><div><div class="eyebrow">01 / FACILITY COLLECTION</div><h2 id="estateFacilitiesHeading">OUR FACILITIES.</h2></div><p>여덟 개의 핵심 시설을 이미지 중심으로 소개합니다.<br>시설 일러스트는 제작 후 순서대로 교체할 수 있습니다.</p></div><div id="facilitiesGrid" class="estate-facility-grid"></div></section>
+    <section class="estate-plan" aria-labelledby="estatePlanHeading"><div class="estate-plan-copy"><div class="eyebrow">02 / TERRITORY BLUEPRINT</div><h2 id="estatePlanHeading">ESTATE PLAN.</h2><p>영지 전체 배치도와 시설 구성</p><div class="estate-plan-list" id="estatePlanList"></div><small class="estate-plan-notice">※ 시설 배치와 구조 이미지는 향후 확정될 설정에 맞춰 교체됩니다.</small></div><div class="estate-plan-art art-block" data-art="estateBlueprint"><div class="slot-label"><div class="slot-icon"><span>◇</span></div><b>영지 배치도 · 평면도 이미지</b><small>images/estate-blueprint.webp</small></div><div class="estate-plan-corner">AVALON / ESTATE MAP</div></div></section>
+    <div class="estate-bottom"><div><span>AVALON / CENTRAL ARCHIVE</span><h3>다음은 아발론의 콘텐츠를 살펴보세요.</h3></div><button class="action outline" onclick="showPage('contents')">콘텐츠 페이지로 이동 ↗</button></div>
+  </div>
+</section>
+<!-- 콘텐츠: 기존 4대 비즈니스를 별도 페이지에 보존, 추후 참고 디자인을 받아 교체 -->
+<section id="page-contents" class="page"><div class="inner-banner art-block" data-art="contentsBackground"><div class="slot-label"><small>images/contents-bg.webp</small></div><div class="inner-title container"><div class="eyebrow">05 / CONTENTS ARCHIVE</div><h1>CONTENTS.</h1><p>아발론의 사업 및 활동 콘텐츠를 소개합니다.</p></div></div><div class="container content-area"><p class="small-disclaimer">콘텐츠 페이지는 추후 전용 UI 디자인으로 확장할 예정입니다.</p><div class="facility-heading"><h2>4대 비즈니스</h2><div class="eyebrow">BUSINESS CATEGORIES</div></div><div class="facility-grid" id="businessGrid"></div></div></section>
 </main><footer class="site-footer">AVALON / CENTRAL ARCHIVE — FIRST PERSONAL WORLD INTRODUCTION PROJECT · ARTWORK SLOTS ARE TEMPORARY</footer>
 </div>
 <script>
@@ -910,7 +956,9 @@ const IMAGES = {
   worldElevator:'images/world-elevator.webp',
   economyBackground:'images/economy-bg.webp',
   settlementBackground:'images/settlement.webp',
-  territoryBackground:'images/territory-bg.webp'
+  territoryBackground:'images/territory-bg.webp',
+  estateBlueprint:'images/estate-blueprint.webp',
+  contentsBackground:'images/contents-bg.webp'
 };
 
 /* ============================================================
@@ -1074,8 +1122,22 @@ function makeFeature(record,label,index,extraClass='facility-card'){
   const copy=document.createElement('div');copy.className='feature-body';const small=document.createElement('small');small.textContent=String(index+1).padStart(2,'0')+' / '+label;
   const h=document.createElement('h3');h.textContent=record.title;const p=document.createElement('p');p.textContent=record.desc;copy.append(small,h,p);art.append(copy);attachArt(art,record.image);return art;
 }
+function makeEstateFacility(record,index){
+  const card=document.createElement('article');card.className='estate-facility';
+  const art=document.createElement('div');art.className='estate-facility-image art-block';art.appendChild(makeFallback('FACILITY IMAGE',record.image));attachArt(art,record.image);
+  const indexLabel=document.createElement('div');indexLabel.className='estate-facility-index';indexLabel.textContent=String(index+1).padStart(2,'0');
+  const title=document.createElement('h3');title.textContent=record.title;
+  const desc=document.createElement('p');desc.textContent=record.desc;
+  card.append(art,indexLabel,title,desc);return card;
+}
 function makeContent(){resources.forEach((r,i)=>document.getElementById('resourceGrid').append(makeFeature(r,r.en,i,'resource')));
- facilities.forEach((r,i)=>document.getElementById('facilitiesGrid').append(makeFeature(r,'FACILITY',i)));
+ facilities.forEach((r,i)=>{
+   document.getElementById('facilitiesGrid').append(makeEstateFacility(r,i));
+   const line=document.createElement('div');line.className='estate-plan-item';
+   const title=document.createElement('span');title.textContent=r.title;
+   const index=document.createElement('b');index.textContent=String(i+1).padStart(2,'0');
+   line.append(title,index);document.getElementById('estatePlanList').append(line);
+ });
  businesses.forEach((r,i)=>document.getElementById('businessGrid').append(makeFeature(r,'BUSINESS',i)));
 }
 const WORLD_TOPICS={
@@ -1117,7 +1179,7 @@ function start(){
     if(preview==='arrival'){document.getElementById('arrivalSplash').classList.remove('hidden');return}
     document.getElementById('app').classList.remove('hidden');
     if(preview==='detail'){openCharacter(0)}
-    else{showPage(['home','characters','world','economy','territory'].includes(preview)?preview:'home')}
+    else{showPage(['home','characters','world','economy','territory','contents'].includes(preview)?preview:'home')}
     return;
   }
   let value=0;
