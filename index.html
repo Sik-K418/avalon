@@ -987,6 +987,34 @@
 }
 /* V8: Keep the full blueprint visible inside its panel (avoid cover-crop). */
 .estate-plan-art.loaded>.asset-img{object-fit:contain;object-position:center;background:#0e1635;}
+
+/* V8 CONTENT GUIDE PATCH: 선택한 콘텐츠의 전체 브리핑을 보여주는 영역 */
+.contents-guide{grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);align-items:start;gap:24px}
+.contents-guide-art{position:sticky;top:104px;align-self:start}
+.contents-guide-copy{min-width:0;padding:20px 6px 0 12px}
+.contents-active-info{scroll-margin-top:104px;position:relative;background:linear-gradient(155deg,#122437 0%,#071321 100%);border:1px solid #bba0788a;box-shadow:0 18px 40px #07142524;padding:27px 28px 24px;margin-top:28px;color:#f3f6fb;min-width:0}
+.contents-active-info::before{content:"";position:absolute;top:0;left:0;width:140px;height:3px;background:linear-gradient(90deg,#dfbd80,#8dc1d4)}
+.contents-brief-overline{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.contents-brief-overline small{color:#e6c992;font-size:10px;letter-spacing:1.2px;font-weight:900}
+.contents-brief-overline span{color:#94c1d4;font-size:9px;letter-spacing:1px;font-weight:850}
+.contents-active-info h3{color:#fff;font-size:clamp(23px,2.6vw,35px);margin:16px 0 13px;line-height:1.26}
+.contents-active-info>#contentsActiveDescription{color:#dae8ef;font-size:13px;line-height:2;word-break:keep-all;margin-bottom:22px}
+.contents-detail-grid{display:grid;grid-template-columns:1fr;gap:9px;margin:0 0 24px}
+.contents-detail-item{background:#ffffff0b;border:1px solid #dcefff19;padding:13px 15px;display:grid;grid-template-columns:82px minmax(0,1fr);align-items:start;gap:13px}
+.contents-detail-item>span{color:#e7c98d;font-size:11px;font-weight:850;padding-top:2px;word-break:keep-all}
+.contents-detail-item>p{font-size:12px;line-height:1.75;color:#d6e5ef;margin:0;word-break:keep-all}
+.contents-brief-process{border-top:1px solid #8ab0c344;padding-top:18px}
+.contents-brief-process h4{font-size:13px;font-weight:900;letter-spacing:.2px;margin:0 0 15px;color:#f3f6fb}
+.contents-brief-process h4 span{font-size:9px;letter-spacing:1.2px;font-weight:750;color:#9ac2d5;margin-left:8px}
+.contents-brief-process ol{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+.contents-brief-process li{display:flex;align-items:flex-start;gap:12px;color:#d1e2eb;line-height:1.65;font-size:12px}
+.contents-brief-process li b{font-size:11px;flex:none;color:#dcbf89;border:1px solid #b8a1785c;padding:4px 6px;line-height:1.2}
+.contents-brief-footer{margin-top:25px;padding-top:16px;display:flex;gap:9px;flex-wrap:wrap;justify-content:space-between;border-top:1px solid #8ab0c333;color:#789bac;font-size:9px;letter-spacing:.7px}
+.contents-brief-footer span{color:#b8d7b9}
+.contents-card.selected .contents-card-button{background:#1c3648;color:#fff;border-color:#497287}
+@media(max-width:900px){.contents-guide{grid-template-columns:minmax(0,40%) minmax(0,60%);gap:10px}.contents-guide-copy{padding:10px 0}.contents-guide-art{height:470px}.contents-active-info{padding:20px 18px}.contents-detail-item{grid-template-columns:1fr;gap:5px}}
+@media(max-width:720px){.contents-guide{grid-template-columns:1fr;gap:4px}.contents-guide-art{position:relative;top:auto;height:390px}.contents-guide-copy{padding:12px 0 0}.contents-active-info{padding:19px 16px;scroll-margin-top:82px}.contents-detail-item{grid-template-columns:1fr}.contents-brief-process li{font-size:11px}}
+
 </style>
 </head>
 <body>
@@ -1224,7 +1252,7 @@
   </div>
   <div class="contents-light-area">
     <section id="contentsExplore" class="container contents-explore" aria-labelledby="contentsExploreHeading"><div class="contents-section-head"><div><div class="contents-section-kicker">EXPLORE AVALON / 01</div><h2 id="contentsExploreHeading">DISCOVER <span>CONTENTS.</span></h2></div><p>원하는 콘텐츠를 선택해 보세요.<br>이브가 각 시설과 활동을 소개합니다.</p></div><div class="contents-showcase-grid" id="businessGrid"></div></section>
-    <section class="container contents-guide" aria-labelledby="contentsGuideHeading"><div class="contents-guide-art art-block" data-art="contentsGuideEve" data-fit="contain"><div class="contents-eve-disc"></div><div class="slot-label"><b>이브의 콘텐츠 안내</b><small>images/eve-guide.webp</small></div></div><div class="contents-guide-copy"><div class="contents-section-kicker">EVE / PERSONAL BRIEFING</div><h2 id="contentsGuideHeading">LET ME<br><span>GUIDE YOU.</span></h2><p class="contents-guide-intro">선택하신 콘텐츠에 관해 이브가 안내합니다. 아래 정보는 현재 세계관 설정을 기준으로 한 소개입니다.</p><div class="contents-active-info"><small id="contentsActiveNumber">01 / CONTENTS</small><h3 id="contentsActiveName">가상 던전</h3><p id="contentsActiveDescription">채굴 및 마물 토벌을 통한 수익 활동</p></div><div class="contents-guide-meta"><div><strong>04</strong><span>AVAILABLE CATEGORIES</span></div><div><strong>EVE</strong><span>CENTRAL AI GUIDE</span></div></div></div></section>
+    <section class="container contents-guide" aria-labelledby="contentsGuideHeading"><div class="contents-guide-art art-block" data-art="contentsGuideEve" data-fit="contain"><div class="contents-eve-disc"></div><div class="slot-label"><b>이브의 콘텐츠 안내</b><small>images/eve-guide.webp</small></div></div><div class="contents-guide-copy"><div class="contents-section-kicker">EVE / PERSONAL BRIEFING</div><h2 id="contentsGuideHeading">LET ME<br><span>GUIDE YOU.</span></h2><p class="contents-guide-intro">원하시는 콘텐츠를 선택하시면, 해당 활동의 운영 방식과 수익 구조를 안내해 드리겠습니다.</p><div class="contents-active-info" id="contentsActiveInfo" aria-live="polite" aria-atomic="true"><div class="contents-brief-overline"><small id="contentsActiveNumber">01 / AVALON CONTENTS</small><span id="contentsActiveCategory">DUNGEON FARMING</span></div><h3 id="contentsActiveName">가상 던전</h3><p id="contentsActiveDescription">가상 던전의 안내 정보가 표시됩니다.</p><div class="contents-detail-grid" id="contentsActiveDetails"></div><div class="contents-brief-process"><h4>이용 흐름 <span>OPERATING FLOW</span></h4><ol id="contentsActiveSteps"></ol></div><div class="contents-brief-footer">EVE / CENTRAL INFORMATION SERVICE <span>● SYSTEM ONLINE</span></div></div><div class="contents-guide-meta"><div><strong>04</strong><span>AVAILABLE CATEGORIES</span></div><div><strong>EVE</strong><span>CENTRAL AI GUIDE</span></div></div></div></section>
     <section class="contents-final"><div class="container contents-final-inner"><div class="contents-section-kicker">AVALON / NEXT DESTINATION</div><h2>YOUR NEXT<br><span>DESTINATION.</span></h2><p>콘텐츠를 살펴보셨다면, 이제 당신의 영지를 만나보세요.</p><button class="contents-primary-button" onclick="showPage('territory')">영지 페이지로 이동 <span>↗</span></button></div></section>
   </div>
 </section>
@@ -1351,10 +1379,50 @@ const facilities=[
   }
 ];
 const businesses=[
-  {title:'가상 던전',image:'images/business/dungeon.webp',desc:'채굴 및 마물 토벌을 통한 수익 활동',eveLine:'가상 던전에서는 채굴과 마물 토벌을 통해 수익 활동을 진행할 수 있습니다. 입성자님에게 맞는 활동을 확인해 보세요.'},
-  {title:'미디어 스튜디오',image:'images/business/studio.webp',desc:'방송과 콘텐츠 제작 구역',eveLine:'미디어 스튜디오는 방송과 다양한 콘텐츠 제작을 위한 공간입니다. 아발론에서 자신만의 활동을 펼치는 또 다른 방법이지요.'},
-  {title:'프라이빗 렌탈 라운지',image:'images/business/rental.webp',desc:'세계관 속 프라이빗 대여 사업',eveLine:'프라이빗 렌탈 라운지는 아발론의 대여 사업 콘텐츠를 담당하는 시설입니다. 세부 이용 방식은 해당 콘텐츠의 설정에 따라 안내됩니다.'},
-  {title:'자산 거래소 / 옥션',image:'images/business/auction.webp',desc:'자산 거래 및 경매 시설',eveLine:'이곳에서는 자산을 거래하거나 경매에 참여할 수 있습니다. 거래와 정산은 아발론의 경제 시스템과 연결되어 있습니다.'}
+  {
+    title:'가상 던전',image:'images/business/dungeon.webp',category:'DUNGEON FARMING',
+    desc:'마물 토벌과 자원 채굴로 크레딧·강화 부품을 확보하는 기본 수익 콘텐츠',
+    eveLine:'입성자님, 가장 기본적이고 확실한 자본 확보 수단은 가상 던전입니다. 메이트를 전투 부대로 편성해 차원 던전에 투입하면 마물 토벌과 광물·자원 채굴을 통해 크레딧과 강화 부품을 확보할 수 있습니다.',
+    details:[
+      {label:'주요 활동',value:'차원 던전 탐색 · 마물 토벌 · 자원 채굴'},
+      {label:'핵심 보상',value:'크레딧 · 강화 부품 · 채굴 자원'},
+      {label:'연계 시설',value:'다이브 포드 증설과 생체 수복실을 통해 운영 효율을 관리합니다.'}
+    ],
+    steps:['메이트 전투 부대를 편성합니다.','다이브 포드를 통해 차원 던전에 투입합니다.','토벌·채굴 성과를 정산하고 시설과 장비를 보강합니다.']
+  },
+  {
+    title:'미디어 스튜디오',image:'images/business/studio.webp',category:'MEDIA & STREAMING',
+    desc:'VVIP 실시간 방송과 VOD 제작을 통해 후원 수익을 얻는 미디어 사업',
+    eveLine:'미디어 스튜디오는 입성자님의 활동을 수익으로 전환하는 또 하나의 창구입니다. 메이트의 방송을 실시간으로 송출하거나 특별 제작 영상을 VOD로 제공하며, 시청자 후원과 영상 판매 수익이 영지의 크레딧으로 연결됩니다.',
+    details:[
+      {label:'주요 활동',value:'실시간 스트리밍 · 기획 영상 제작 · VOD 제공'},
+      {label:'수익 구조',value:'VVIP 시청자 후원 · 영상 콘텐츠 판매'},
+      {label:'연계 시설',value:'수익 인프라 증축소에서 4D 송출 카메라와 방송 장비를 강화할 수 있습니다.'}
+    ],
+    steps:['방송에 적합한 메이트와 프로그램을 준비합니다.','라이브 송출 또는 VOD 콘텐츠를 제작합니다.','후원·판매 수익을 정산하고 설비를 업그레이드합니다.']
+  },
+  {
+    title:'프라이빗 렌탈 라운지',image:'images/business/rental.webp',category:'PRIVATE RENTAL',
+    desc:'상위 고객과 다른 입성자를 대상으로 하는 기간제 메이트 대여 서비스',
+    eveLine:'프라이빗 렌탈 라운지는 선별된 메이트를 일정 기간 이용할 수 있도록 연결하는 고급 서비스입니다. 고객은 최상위 스폰서와 다른 입성자들이며, 메이트의 등급과 매력도, 이용 시간에 따라 렌탈 가치가 달라집니다.',
+    details:[
+      {label:'주요 활동',value:'메이트 선별 · 단기 대여 · VIP 서비스 운영'},
+      {label:'수익 구조',value:'계약 기간에 따른 대여료 · 등급 및 매력도에 따른 가치 차등'},
+      {label:'운영 포인트',value:'메이트의 상태와 계약 조건을 관리하는 고급형 수익 사업입니다.'}
+    ],
+    steps:['대여 대상 메이트와 서비스 조건을 정합니다.','스폰서 또는 다른 입성자와 기간제 계약을 체결합니다.','대여료를 정산하고 메이트 상태를 관리합니다.']
+  },
+  {
+    title:'자산 거래소 / 옥션',image:'images/business/auction.webp',category:'EXCHANGE & AUCTION',
+    desc:'메이트와 희귀 자산을 직접 거래하거나 경매에 출품하는 자산 유통 콘텐츠',
+    eveLine:'자산 거래소에서는 영지에서 육성한 메이트와 다양한 자산을 다른 입성자에게 매각하거나, 그랜드 옥션에 출품할 수 있습니다. 희소성과 수요에 따라 거래 가치가 달라지며, 거래 대금은 아발론의 크레딧 경제와 연결됩니다.',
+    details:[
+      {label:'주요 활동',value:'직접 매매 · 그랜드 옥션 출품 · 희귀 자산 거래'},
+      {label:'수익 구조',value:'매각 대금 · 경매 낙찰가 · 자산 가치 상승'},
+      {label:'연계 시스템',value:'VIP 거래소와 그랜드 옥션 하우스를 통해 거래를 진행합니다.'}
+    ],
+    steps:['거래할 자산의 등급과 가치를 검토합니다.','직접 거래 또는 경매 출품 방식을 선택합니다.','거래 완료 후 소유권과 크레딧을 정산합니다.']
+  }
 ];
 
 /* 이미지를 불러오지 못했을 때 깨진 사진 대신 안내 문구를 유지합니다. */
@@ -1488,15 +1556,32 @@ function makeContentsCard(record,index){
 }
 function selectContent(index,scroll=false){
   const record=businesses[index];if(!record)return;
+  const section=document.getElementById('contentsActiveInfo');
   document.getElementById('contentsActiveNumber').textContent=String(index+1).padStart(2,'0')+' / AVALON CONTENTS';
+  document.getElementById('contentsActiveCategory').textContent=record.category;
   document.getElementById('contentsActiveName').textContent=record.title;
   document.getElementById('contentsActiveDescription').textContent=record.eveLine||record.desc;
+  const detailGrid=document.getElementById('contentsActiveDetails');
+  detailGrid.replaceChildren();
+  (record.details||[]).forEach(detail=>{
+    const item=document.createElement('div');item.className='contents-detail-item';
+    const label=document.createElement('span');label.textContent=detail.label;
+    const value=document.createElement('p');value.textContent=detail.value;
+    item.append(label,value);detailGrid.append(item);
+  });
+  const flow=document.getElementById('contentsActiveSteps');flow.replaceChildren();
+  (record.steps||[]).forEach((step,i)=>{
+    const item=document.createElement('li');
+    const mark=document.createElement('b');mark.textContent=String(i+1).padStart(2,'0');
+    const copy=document.createElement('span');copy.textContent=step;
+    item.append(mark,copy);flow.append(item);
+  });
   document.querySelectorAll('.contents-card').forEach(card=>{
     const chosen=Number(card.dataset.contentIndex)===index;
     card.classList.toggle('selected',chosen);
-    const btn=card.querySelector('button');if(btn)btn.setAttribute('aria-pressed',String(chosen));
+    const btn=card.querySelector('button');if(btn){btn.setAttribute('aria-pressed',String(chosen));btn.textContent=chosen?'선택됨 · 이브의 안내 ↗':'이브의 안내 보기 ↗';}
   });
-  if(scroll)document.getElementById('contentsGuideHeading').scrollIntoView({behavior:'smooth',block:'center'});
+  if(scroll){section.scrollIntoView({behavior:'smooth',block:'start'});}
 }
 function makeContent(){const resourceGrid=document.getElementById('resourceGrid');if(resourceGrid)resources.forEach((r,i)=>resourceGrid.append(makeFeature(r,r.en,i,'resource')));
  facilities.forEach((r,i)=>{
