@@ -968,6 +968,19 @@
  .economy-prism-feature{padding:20px}
 }
 
+
+/* V8 / EVE: 네 개의 투명 일러스트를 각 페이지에 최적화 */
+.hero-figure.loaded>.asset-img{object-fit:contain;object-position:center bottom;filter:drop-shadow(0 13px 34px rgba(64,136,244,.30));}
+.v6-arrival-eve{z-index:7;filter:drop-shadow(0 15px 38px rgba(100,171,255,.38));}
+.v6-eve-art.loaded>.asset-img{object-position:center bottom;filter:drop-shadow(0 12px 26px rgba(85,155,238,.25));}
+.contents-eve-visual.loaded>.asset-img{filter:drop-shadow(0 12px 30px rgba(51,116,197,.23));}
+.contents-guide-art.loaded>.asset-img{object-position:center bottom;filter:drop-shadow(0 14px 30px rgba(50,109,180,.20));}
+@media(max-width:720px){
+  .v6-arrival-eve{right:-15%;width:90%;height:88%;opacity:.78;}
+  .hero-figure.loaded{opacity:.78;height:310px;width:85%;right:-3%;}
+  .contents-eve-visual.loaded{opacity:.9;width:95%;right:-2%;height:345px;}
+  .contents-eve-visual.loaded .contents-eve-tag{right:3%;}
+}
 </style>
 </head>
 <body>
@@ -991,7 +1004,7 @@
   <img class="v6-arrival-bg-img" src="images/home-bg.webp" alt="" onerror="this.style.display='none'">
   <div class="v6-arrival-city" aria-hidden="true"></div>
   <div class="v6-arrival-figure-glow" aria-hidden="true"></div>
-  <img class="v6-arrival-eve" src="images/home-character.png" alt="" onerror="this.style.display='none'">
+  <img class="v6-arrival-eve" src="images/eve-home.webp" alt="" onerror="this.style.display='none'">
   <div class="v6-arrival-screen-shade"></div>
   <div class="v6-arrival-content">
     <div class="v6-arrival-kicker">CENTRAL DISTRICT · WELCOME TO</div>
@@ -1008,7 +1021,7 @@
 <section id="page-home" class="page active">
   <div class="home-hero">
     <div class="hero-back art-block" data-art="heroBackground"><div class="slot-label"><div class="slot-icon"><span>◇</span></div><b>MAIN BACKGROUND</b><small>images/home-bg.webp</small></div></div>
-    <div class="hero-inner"><div class="hero-copy"><div class="eyebrow">YOU HAVE BEEN INVITED ━━</div><h1 class="hero-title">AVA<span>L</span>ON</h1><div class="hero-slogan">모든 가치가 거래되는 세계.</div><p>외부 간섭이 차단된 상업 특구 아발론.<br>중앙 AI 이브가 안내하는 세계관과 메이트, 영지의 모든 정보를 확인해 보세요.</p><div class="hero-buttons"><button class="action" onclick="showPage('characters')">캐릭터 도감 보기 ↗</button><button class="action outline" onclick="showPage('world')">아발론 소개 ↗</button></div></div><div class="hero-figure art-block" data-art="heroFigure" data-fit="contain"><div class="slot-label"><div class="slot-icon"><span>◇</span></div><b>메인 캐릭터 / EVE</b><small>images/home-character.png</small></div></div></div>
+    <div class="hero-inner"><div class="hero-copy"><div class="eyebrow">YOU HAVE BEEN INVITED ━━</div><h1 class="hero-title">AVA<span>L</span>ON</h1><div class="hero-slogan">모든 가치가 거래되는 세계.</div><p>외부 간섭이 차단된 상업 특구 아발론.<br>중앙 AI 이브가 안내하는 세계관과 메이트, 영지의 모든 정보를 확인해 보세요.</p><div class="hero-buttons"><button class="action" onclick="showPage('characters')">캐릭터 도감 보기 ↗</button><button class="action outline" onclick="showPage('world')">아발론 소개 ↗</button></div></div><div class="hero-figure art-block" data-art="heroFigure" data-fit="contain"><div class="slot-label"><div class="slot-icon"><span>◇</span></div><b>메인 캐릭터 / EVE</b><small>images/eve-home.webp</small></div></div></div>
     <div class="hero-meta">ENTRANCE 001 / AVALON CENTRAL LOBBY</div>
   </div>
   <div class="menu-row" aria-label="주요 메뉴">
@@ -1200,12 +1213,12 @@
     <div class="contents-hero-tint"></div>
     <div class="container contents-hero-inner">
       <div class="contents-hero-copy"><div class="eyebrow">05 / EVE CONTENTS GUIDE</div><h1>CHOOSE YOUR<br><span>EXPERIENCE.</span></h1><p>어서 오세요, 입성자님.<br>아발론에서 즐길 수 있는 다양한 활동과 사업을 안내해 드리겠습니다.</p><button class="contents-primary-button" onclick="document.getElementById('contentsExplore').scrollIntoView({behavior:'smooth'})">콘텐츠 둘러보기 <span>↗</span></button><div class="contents-hero-meta"><span>04 CONTENTS</span><span>EVE GUIDE / SYSTEM ONLINE</span></div></div>
-      <div class="contents-eve-visual art-block" data-art="contentsEve" data-fit="contain"><div class="contents-eve-disc"></div><div class="slot-label"><b>중앙 관리 AI · EVE</b><small>images/contents-eve.png</small><small>v8 이미지 적용 예정</small></div><div class="contents-eve-tag">EVE / CENTRAL ADMINISTRATOR</div></div>
+      <div class="contents-eve-visual art-block" data-art="contentsEve" data-fit="contain"><div class="contents-eve-disc"></div><div class="slot-label"><b>중앙 관리 AI · EVE</b><small>images/eve-contents.webp</small></div><div class="contents-eve-tag">EVE / CENTRAL ADMINISTRATOR</div></div>
     </div>
   </div>
   <div class="contents-light-area">
     <section id="contentsExplore" class="container contents-explore" aria-labelledby="contentsExploreHeading"><div class="contents-section-head"><div><div class="contents-section-kicker">EXPLORE AVALON / 01</div><h2 id="contentsExploreHeading">DISCOVER <span>CONTENTS.</span></h2></div><p>원하는 콘텐츠를 선택해 보세요.<br>이브가 각 시설과 활동을 소개합니다.</p></div><div class="contents-showcase-grid" id="businessGrid"></div></section>
-    <section class="container contents-guide" aria-labelledby="contentsGuideHeading"><div class="contents-guide-art art-block" data-art="contentsEve" data-fit="contain"><div class="contents-eve-disc"></div><div class="slot-label"><b>이브 일러스트 공용 영역</b><small>images/contents-eve.png</small></div></div><div class="contents-guide-copy"><div class="contents-section-kicker">EVE / PERSONAL BRIEFING</div><h2 id="contentsGuideHeading">LET ME<br><span>GUIDE YOU.</span></h2><p class="contents-guide-intro">선택하신 콘텐츠에 관해 이브가 안내합니다. 아래 정보는 현재 세계관 설정을 기준으로 한 소개입니다.</p><div class="contents-active-info"><small id="contentsActiveNumber">01 / CONTENTS</small><h3 id="contentsActiveName">가상 던전</h3><p id="contentsActiveDescription">채굴 및 마물 토벌을 통한 수익 활동</p></div><div class="contents-guide-meta"><div><strong>04</strong><span>AVAILABLE CATEGORIES</span></div><div><strong>EVE</strong><span>CENTRAL AI GUIDE</span></div></div></div></section>
+    <section class="container contents-guide" aria-labelledby="contentsGuideHeading"><div class="contents-guide-art art-block" data-art="contentsGuideEve" data-fit="contain"><div class="contents-eve-disc"></div><div class="slot-label"><b>이브의 콘텐츠 안내</b><small>images/eve-guide.webp</small></div></div><div class="contents-guide-copy"><div class="contents-section-kicker">EVE / PERSONAL BRIEFING</div><h2 id="contentsGuideHeading">LET ME<br><span>GUIDE YOU.</span></h2><p class="contents-guide-intro">선택하신 콘텐츠에 관해 이브가 안내합니다. 아래 정보는 현재 세계관 설정을 기준으로 한 소개입니다.</p><div class="contents-active-info"><small id="contentsActiveNumber">01 / CONTENTS</small><h3 id="contentsActiveName">가상 던전</h3><p id="contentsActiveDescription">채굴 및 마물 토벌을 통한 수익 활동</p></div><div class="contents-guide-meta"><div><strong>04</strong><span>AVAILABLE CATEGORIES</span></div><div><strong>EVE</strong><span>CENTRAL AI GUIDE</span></div></div></div></section>
     <section class="contents-final"><div class="container contents-final-inner"><div class="contents-section-kicker">AVALON / NEXT DESTINATION</div><h2>YOUR NEXT<br><span>DESTINATION.</span></h2><p>콘텐츠를 살펴보셨다면, 이제 당신의 영지를 만나보세요.</p><button class="contents-primary-button" onclick="showPage('territory')">영지 페이지로 이동 <span>↗</span></button></div></section>
   </div>
 </section>
@@ -1221,9 +1234,9 @@
 const IMAGES = {
   loadingBackground:'images/loading-bg.webp',
   introBackground:'images/intro-bg.webp',
-  evePortrait:'images/eve.png',
+  evePortrait:'images/eve-home.webp',
   heroBackground:'images/home-bg.webp',
-  heroFigure:'images/home-character.png',
+  heroFigure:'images/eve-home.webp',
   menuCharacters:'images/facilities/trophy.webp',
   menuWorld:'images/home-bg.webp',
   menuEconomy:'images/economy-coin.webp',
@@ -1234,7 +1247,7 @@ const IMAGES = {
   detailBackground:'images/detail-bg.webp',
   worldBackground:'images/home-bg.webp',
   worldCity:'images/home-bg.webp',
-  worldEve:'images/home-character.png',
+  worldEve:'images/eve-world.webp',
   worldElevator:'images/elevator-door.webp',
   economyBackground:'images/economy-coin.webp',
   settlementBackground:'images/economy-credit.webp',
@@ -1247,7 +1260,8 @@ const IMAGES = {
   territoryBackground:'images/territory-bg.webp',
   estateBlueprint:'images/estate-blueprint.webp',
   contentsBackground:'images/home-bg.webp',
-  contentsEve:'images/contents-eve.png'
+  contentsEve:'images/eve-contents.webp',
+  contentsGuideEve:'images/eve-guide.webp'
 };
 
 /* ============================================================
