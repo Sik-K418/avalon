@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#090d13">
-<meta name="description" content="AVALON — 중앙 AI EVE가 안내하는 세계관과 캐릭터 도감">
+<meta name="description" content="AVALON v8 — 중앙 AI EVE가 안내하는 세계관, 영지, 콘텐츠, 경제와 메이트 도감">
 <title>AVALON — CENTRAL ARCHIVE</title>
 <style>
 :root{--bg:#080c13;--panel:#0f1824;--panel2:#182333;--ink:#f1f4f7;--mute:#a6b0bd;--line:#ffffff30;--gold:#eecb82;--cyan:#79d7e7;--red:#f57573}
@@ -852,6 +852,44 @@
 .economy-tail p{color:#485d6d}
 .economy-tail .economy-dark-button{background:#132334}
 @media(max-width:760px){.economy-credit-art .slot-label{background:linear-gradient(110deg,transparent,#bbcad5a8)}.economy-tail{background:linear-gradient(145deg,#e0e9ee 0%,#f3f6f7 68%,#c9d6df 68%)}}
+
+/* AVALON v8 — image fitting. v7 layout / functional components retained. */
+.v6-elevator-door{
+  background-image:url('images/elevator-door.webp')!important;
+  background-size:200% 100%!important;
+  background-repeat:no-repeat!important;
+  border:0!important;
+  box-shadow:0 0 32px #0009!important;
+}
+.v6-elevator-left{background-position:left center!important}
+.v6-elevator-right{background-position:right center!important}
+.v6-elevator-door::before,.v6-elevator-door::after,.v6-door-grooves,.v6-elevator-door>span{display:none!important}
+.v6-elevator-seam{width:2px;background:linear-gradient(#1b2935,#8faebc,#192f42);box-shadow:0 0 10px #a6c9e75a}
+/* Keep bright architecture legible while preserving the existing white-on-dark hero text. */
+.home-hero .hero-back.loaded::after{
+ content:"";position:absolute;z-index:1;inset:0;pointer-events:none;
+ background:linear-gradient(90deg,#070e1de8 0%,#0a1120c7 35%,#080c15a1 62%,#090f1da5 100%),linear-gradient(0deg,#09111ac9,transparent 45%);
+}
+.home-hero .hero-back.loaded>.asset-img{object-position:center 47%}
+.estate-hero.loaded>.asset-img{object-position:center 42%}
+.contents-hero-background.loaded>.asset-img{object-position:center 52%}
+.contents-card-art.loaded>.asset-img,.estate-facility-image.loaded>.asset-img{object-position:center 45%}
+/* The credit illustration comes on a dark navy plate; intentionally frame it on the light section. */
+.economy-credit-art.loaded{
+ overflow:hidden!important;border-radius:13px;background:#0e1928!important;
+ box-shadow:0 22px 55px #1022373b;border:1px solid #6486a145
+}
+.economy-credit-art.loaded>.asset-img{object-fit:cover;object-position:center center;z-index:2}
+.economy-credit-art.loaded .economy-art-annotation{color:#c6e0f1;text-shadow:0 1px 8px #000}
+.economy-coin-art.loaded>.asset-img{object-position:center center}
+.economy-usage-art.loaded>.asset-img{object-position:center 46%}
+/* Avoid repeating checkerboard lines over detailed artwork. */
+.art-block.loaded::before{opacity:.12}
+@media(max-width:760px){
+  .economy-credit-art.loaded{right:-8%;width:77%;height:350px;border-radius:12px 0 0 12px}
+  .estate-hero.loaded>.asset-img{object-position:52% center}
+}
+
 </style>
 </head>
 <body>
@@ -1028,11 +1066,11 @@
   <!-- 01: 밝은 크레딧 소개 / 메인 크레딧 이미지 -->
   <section class="economy-credit-hero" aria-labelledby="economyCreditHeading">
     <div class="container economy-credit-inner"><div class="economy-credit-copy"><div class="economy-overline"><span>AVALON / CURRENCY SYSTEM</span><span>01 / CREDIT</span></div><h1 id="economyCreditHeading">VALUE<br>RUNS THE<br><em>WORLD.</em></h1><p>아발론의 모든 거래와 시설 운영을 움직이는 기본 재화, <strong>크레딧</strong>. 영지의 유지와 증축부터 다양한 자산 거래까지, 입성자의 경제 활동을 책임집니다.</p><button class="economy-dark-button" onclick="document.getElementById('economyCoin').scrollIntoView({behavior:'smooth'})">코인 시스템 살펴보기 <span>↗</span></button><div class="economy-credit-mini"><b>CREDIT / CR</b><span>시설 증축 · 유지비 · 거래 · 경매</span></div></div>
-      <div class="economy-credit-art art-block" data-art="creditHero"><div class="slot-label"><b>크레딧 메인 일러스트</b><small>images/economy-credit.webp</small><small>v8 이미지 적용 예정</small></div><div class="economy-art-annotation">AVALON<br>FINANCIAL SYSTEM</div></div>
+      <div class="economy-credit-art art-block" data-art="creditHero"><div class="slot-label"><b>크레딧 메인 일러스트</b><small>images/economy-credit.webp</small></div><div class="economy-art-annotation">AVALON<br>FINANCIAL SYSTEM</div></div>
     </div>
   </section>
   <!-- 02: 검은색 코인 소개 구간 -->
-  <section id="economyCoin" class="economy-coin" aria-labelledby="economyCoinHeading"><div class="container economy-coin-inner"><div class="economy-coin-title"><div class="economy-overline"><span>02 / SPECIAL CURRENCY</span></div><h2 id="economyCoinHeading">COIN.<br><span>SUMMON<br>THE UNKNOWN.</span></h2><p>코인은 다차원 엘리베이터의 일반 소환에 사용되는 재화입니다. 크레딧 환전이나 특수 임무를 통해 획득할 수 있습니다.</p><div class="economy-coin-caption">DIMENSIONAL SUMMONING / AVALON</div></div><div class="economy-coin-art art-block" data-art="coinHero"><div class="slot-label"><b>코인 메인 일러스트</b><small>images/economy-coin.webp</small><small>v8 이미지 적용 예정</small></div></div><div class="economy-coin-facts"><div><small>USE / 01</small><strong>일반 소환</strong><span>다차원 엘리베이터</span></div><div><small>GET / 01</small><strong>크레딧 환전</strong><span>코인 획득 경로</span></div><div><small>GET / 02</small><strong>특수 임무</strong><span>코인 획득 경로</span></div></div></div></section>
+  <section id="economyCoin" class="economy-coin" aria-labelledby="economyCoinHeading"><div class="container economy-coin-inner"><div class="economy-coin-title"><div class="economy-overline"><span>02 / SPECIAL CURRENCY</span></div><h2 id="economyCoinHeading">COIN.<br><span>SUMMON<br>THE UNKNOWN.</span></h2><p>코인은 다차원 엘리베이터의 일반 소환에 사용되는 재화입니다. 크레딧 환전이나 특수 임무를 통해 획득할 수 있습니다.</p><div class="economy-coin-caption">DIMENSIONAL SUMMONING / AVALON</div></div><div class="economy-coin-art art-block" data-art="coinHero"><div class="slot-label"><b>코인 메인 일러스트</b><small>images/economy-coin.webp</small></div></div><div class="economy-coin-facts"><div><small>USE / 01</small><strong>일반 소환</strong><span>다차원 엘리베이터</span></div><div><small>GET / 01</small><strong>크레딧 환전</strong><span>코인 획득 경로</span></div><div><small>GET / 02</small><strong>특수 임무</strong><span>코인 획득 경로</span></div></div></div></section>
   <!-- 03: 사용처 한 가지와 획득 경로 두 가지를 구분 -->
   <section class="economy-usage" aria-labelledby="economyUsageHeading"><div class="container economy-usage-inner"><div class="economy-usage-intro"><div class="economy-overline"><span>03 / UTILITY & ACQUISITION</span></div><h2 id="economyUsageHeading">WHERE<br>COINS<br><span>GO.</span></h2><p>코인의 사용처와 획득 방법을 살펴보세요. 현재 확정된 설정을 기준으로 정리했습니다.</p></div><div class="economy-usage-cards">
       <details class="economy-usage-card"><summary><small>01 / USE</small><h3>일반 다차원 소환</h3><p>코인을 사용하여 엘리베이터 소환을 진행하는 주요 사용처</p><div class="economy-usage-art art-block" data-art="coinUseSummon"><div class="slot-label"><small>images/economy-use-summon.webp</small></div></div><span class="economy-card-arrow">＋</span></summary><div class="economy-card-detail">다차원 엘리베이터에서 일반 소환에 코인을 사용합니다. 다양한 등급의 메이트를 만날 수 있는 아발론의 핵심 시스템입니다.</div></details>
@@ -1090,28 +1128,28 @@ const IMAGES = {
   evePortrait:'images/eve.png',
   heroBackground:'images/home-bg.webp',
   heroFigure:'images/home-character.png',
-  menuCharacters:'images/menu-characters.webp',
-  menuWorld:'images/menu-world.webp',
-  menuEconomy:'images/menu-economy.webp',
-  menuTerritory:'images/menu-territory.webp',
-  promoSummon:'images/promo-summon.webp',
-  promoEstate:'images/promo-estate.webp',
+  menuCharacters:'images/facilities/trophy.webp',
+  menuWorld:'images/home-bg.webp',
+  menuEconomy:'images/economy-coin.webp',
+  menuTerritory:'images/territory-bg.webp',
+  promoSummon:'images/business/dungeon.webp',
+  promoEstate:'images/territory-bg.webp',
   charactersBackground:'images/characters-bg.webp',
   detailBackground:'images/detail-bg.webp',
-  worldBackground:'images/world-bg.webp',
-  worldCity:'images/world-city.webp',
+  worldBackground:'images/home-bg.webp',
+  worldCity:'images/home-bg.webp',
   worldEve:'images/home-character.png',
-  worldElevator:'images/world-elevator.webp',
-  economyBackground:'images/economy-bg.webp',
-  settlementBackground:'images/settlement.webp',
+  worldElevator:'images/elevator-door.webp',
+  economyBackground:'images/economy-coin.webp',
+  settlementBackground:'images/economy-credit.webp',
   creditHero:'images/economy-credit.webp',
   coinHero:'images/economy-coin.webp',
-  coinUseSummon:'images/economy-use-summon.webp',
-  coinGetExchange:'images/economy-get-exchange.webp',
+  coinUseSummon:'images/business/dungeon.webp',
+  coinGetExchange:'images/economy-credit.webp',
   coinGetMission:'images/economy-get-mission.webp',
   territoryBackground:'images/territory-bg.webp',
   estateBlueprint:'images/estate-blueprint.webp',
-  contentsBackground:'images/contents-bg.webp',
+  contentsBackground:'images/home-bg.webp',
   contentsEve:'images/contents-eve.png'
 };
 
@@ -1149,9 +1187,9 @@ const characters=Array.from({length:TEMP_CHARACTER_SLOTS},(_,index)=>{
    [3] 재화 / 영지 / 비즈니스 이미지  (텍스트는 세계관 설정 기준)
    ============================================================ */
 const resources=[
-  {title:'크레딧',en:'CREDIT',image:'images/currency-credit.webp',desc:'아발론 전역에서 사용되는 범용 화폐. 시설 증축과 유지비, 경매 등에 사용됩니다.'},
-  {title:'코인',en:'COIN',image:'images/currency-coin.webp',desc:'일반 다차원 소환에 사용하는 재화. 크레딧 환전이나 특수 임무로 획득합니다.'},
-  {title:'프리즘 코인',en:'PRISM COIN',image:'images/currency-prism.webp',desc:'타겟 픽업 소환과 특별한 코스튬 등에 사용되는 최상위 특수 재화입니다.'}
+  {title:'크레딧',en:'CREDIT',image:'images/economy-credit.webp',desc:'아발론 전역에서 사용되는 범용 화폐. 시설 증축과 유지비, 경매 등에 사용됩니다.'},
+  {title:'코인',en:'COIN',image:'images/economy-coin.webp',desc:'일반 다차원 소환에 사용하는 재화. 크레딧 환전이나 특수 임무로 획득합니다.'},
+  {title:'프리즘 코인',en:'PRISM COIN',image:'images/economy-prism.webp',desc:'타겟 픽업 소환과 특별한 코스튬 등에 사용되는 최상위 특수 재화입니다.'}
 ];
 const facilities=[
   {title:'입성자 집무실 / 침실',image:'images/facilities/office.webp',desc:'영지 운영과 개인 업무를 수행하는 공간'},
