@@ -970,16 +970,20 @@
 
 
 /* V8 / EVE: 네 개의 투명 일러스트를 각 페이지에 최적화 */
-.hero-figure.loaded>.asset-img{object-fit:contain;object-position:center bottom;filter:drop-shadow(0 13px 34px rgba(64,136,244,.30));}
+.hero-figure.loaded{overflow:visible;isolation:isolate;}
+.hero-figure.loaded::after{content:"";position:absolute;inset:8% -2% 2% 12%;z-index:0;pointer-events:none;background:radial-gradient(ellipse at 58% 46%,rgba(133,196,255,.22) 0%,rgba(58,102,170,.16) 26%,rgba(8,15,28,.08) 44%,transparent 72%);filter:blur(12px);}
+.hero-figure.loaded>.asset-img{object-fit:contain;object-position:center bottom;transform:scale(1.08);transform-origin:center bottom;filter:drop-shadow(0 18px 42px rgba(8,16,34,.60)) drop-shadow(0 0 24px rgba(97,174,255,.28)) drop-shadow(0 0 65px rgba(88,139,230,.18));}
 .v6-arrival-eve{z-index:7;filter:drop-shadow(0 15px 38px rgba(100,171,255,.38));}
-.v6-eve-art.loaded>.asset-img{object-position:center bottom;filter:drop-shadow(0 12px 26px rgba(85,155,238,.25));}
+.v6-eve-art.loaded>.asset-img{object-position:center bottom;transform:translateY(-34px) scale(1.03);transform-origin:center bottom;filter:drop-shadow(0 16px 34px rgba(12,18,34,.58)) drop-shadow(0 0 26px rgba(85,155,238,.22));}
 .contents-eve-visual.loaded>.asset-img{filter:drop-shadow(0 12px 30px rgba(51,116,197,.23));}
 .contents-guide-art.loaded>.asset-img{object-position:center bottom;filter:drop-shadow(0 14px 30px rgba(50,109,180,.20));}
 @media(max-width:720px){
   .v6-arrival-eve{right:-15%;width:90%;height:88%;opacity:.78;}
-  .hero-figure.loaded{opacity:.78;height:310px;width:85%;right:-3%;}
-  .contents-eve-visual.loaded{opacity:.9;width:95%;right:-2%;height:345px;}
-  .contents-eve-visual.loaded .contents-eve-tag{right:3%;}
+  .hero-figure.loaded{opacity:.92;right:-4%;width:79%;height:430px;}
+  .hero-figure.loaded::after{inset:13% -8% 8% 18%;filter:blur(10px);}
+  .hero-figure.loaded>.asset-img{transform:scale(1.13);filter:drop-shadow(0 15px 34px rgba(8,16,34,.68)) drop-shadow(0 0 18px rgba(97,174,255,.25));}
+  .v6-eve-art.loaded>.asset-img{transform:translateY(-20px) scale(1.04);}
+  .contents-eve-visual.loaded{opacity:.88;}
 }
 </style>
 </head>
