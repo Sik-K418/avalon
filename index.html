@@ -890,6 +890,84 @@
   .estate-hero.loaded>.asset-img{object-position:52% center}
 }
 
+
+/* AVALON v8.1 — readable home hero typography on very bright city artwork. */
+.home-hero .hero-back.loaded::after{
+  background:linear-gradient(90deg,rgba(5,12,24,.84) 0%,rgba(5,12,24,.64) 37%,rgba(7,15,27,.17) 75%,rgba(7,15,27,.08) 100%),linear-gradient(0deg,rgba(5,12,24,.53),transparent 50%);
+}
+.home-hero .hero-copy{
+  background:linear-gradient(90deg,rgba(5,12,25,.93),rgba(5,12,25,.84) 70%,rgba(5,12,25,.24));
+  padding:35px 34px 35px 29px;
+  border-left:3px solid #ead19c;
+  border-radius:0 17px 17px 0;
+  box-shadow:14px 16px 42px rgba(5,9,18,.28);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  max-width:760px;
+}
+.home-hero .hero-copy .eyebrow{color:#ffe3a7;text-shadow:0 2px 8px #000}
+.home-hero .hero-title{color:#fff;letter-spacing:-.07em;text-shadow:0 3px 7px #000,0 13px 33px #02060ec9}
+.home-hero .hero-title span{color:#f4d28b}
+.home-hero .hero-slogan{color:#fff;text-shadow:0 3px 13px #000}
+.home-hero .hero-copy p{font-size:15px;color:#f0f5fd;line-height:1.85;text-shadow:0 2px 8px #000b;max-width:520px}
+.home-hero .hero-meta{color:#f1e4cd;text-shadow:0 3px 8px #000,0 1px 1px #000}
+/* Estate lore disclosure cards preserve original 4-column desktop design. */
+.estate-facility{padding-bottom:12px;display:flex;flex-direction:column;align-items:stretch}
+.estate-facility-index{margin-bottom:10px}
+.estate-facility h3{font-size:17px;min-height:44px;margin-bottom:4px}
+.estate-facility-label{color:#ddc28b;font-size:9px;font-weight:900;letter-spacing:1px;line-height:1.5;min-height:29px;margin:1px 0 10px;overflow-wrap:anywhere}
+.estate-facility>p{font-size:12px;line-height:1.9;color:#d6e0e9;margin:0 0 15px;word-break:keep-all}
+.estate-facility-details{margin-top:auto;border-top:1px solid #b7cbdb45;padding:9px 0 0;color:#dce5ed;min-width:0}
+.estate-facility-details summary{list-style:none;color:#eed4a0;font-weight:800;font-size:11px;letter-spacing:.2px;cursor:pointer;padding:8px 0 9px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.estate-facility-details summary::-webkit-details-marker{display:none}
+.estate-facility-details summary::after{content:'＋';font-size:15px;line-height:1}
+.estate-facility-details[open] summary::after{content:'−'}
+.estate-facility-details p{font-size:12px;color:#c7d5e1;line-height:1.85;word-break:keep-all;margin:0 0 6px;padding-top:9px;border-top:1px dashed #6c829452}
+.estate-facility-details summary:focus-visible{outline:2px solid #eed4a0;outline-offset:4px}
+/* Third currency: premium prism, the source image is already packed in v8. */
+.economy-prism{position:relative;overflow:hidden;background:radial-gradient(ellipse at 92% 10%,#3c3564 0%,#18273f 46%,#0b1425 85%);color:#f7f7fc;padding:100px 0 100px;border-top:1px solid #e2d5fb25}
+.economy-prism::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(90deg,transparent 0 174px,#ffffff06 175px,#ffffff06 176px)}
+.economy-prism-inner{position:relative;display:grid;grid-template-columns:1fr minmax(0,1fr);gap:clamp(30px,6vw,90px);align-items:center}
+.economy-prism-copy{min-width:0}
+.economy-prism-eyebrow{display:flex;flex-wrap:wrap;gap:18px;color:#ead59c;font-size:10px;font-weight:900;letter-spacing:1.6px}
+.economy-prism h2{font-size:clamp(75px,10vw,145px);line-height:.87;letter-spacing:-.075em;margin:30px 0 34px;font-weight:1000;color:#fff;text-shadow:0 8px 35px #0006}
+.economy-prism h2 span{background:linear-gradient(105deg,#f6cf8f,#c7bdfb 51%,#a0d7f5);color:transparent;background-clip:text;-webkit-background-clip:text}
+.economy-prism-lead{font-size:clamp(17px,2vw,22px);line-height:1.6;color:#e2e5fb;word-break:keep-all;margin:0 0 21px}
+.economy-prism-lead strong{color:#fff}
+.economy-prism-desc{font-size:13px;line-height:2.1;color:#c7d3e4;word-break:keep-all;max-width:540px}
+.economy-prism-note{margin-top:24px;padding:16px 17px;display:flex;gap:13px;align-items:start;background:#131e32c7;border-left:3px solid #e9c88a;border-radius:0 10px 10px 0;box-shadow:0 7px 22px #0003}
+.economy-prism-note span{font-size:24px;color:#eed5a4;line-height:1}
+.economy-prism-note p{margin:0;font-size:12px;line-height:1.9;color:#d2deef;word-break:keep-all}
+.economy-prism-note strong{color:#fff}
+.economy-prism-art{min-height:540px;border:1px solid #d7c7ff49;border-radius:18px;background:#0d172a;box-shadow:0 29px 70px #0006}
+.economy-prism-art .asset-img{object-fit:cover;object-position:center}
+.economy-prism-art-tag{position:absolute;bottom:16px;right:18px;z-index:3;color:#f5efff;font-size:9px;font-weight:900;letter-spacing:1.8px;text-shadow:0 3px 12px #000}
+.economy-prism-art.loaded::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(0deg,#070e1ac7,transparent 28%)}
+.economy-prism-features{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-top:44px}
+.economy-prism-feature{padding:26px 24px;background:linear-gradient(130deg,#18263c,#101b2c);border:1px solid #d3c0e72e;border-top:2px solid #dbc8a3}
+.economy-prism-feature small{font-size:9px;color:#e4cca0;font-weight:900;letter-spacing:1.5px}
+.economy-prism-feature h3{font-size:21px;line-height:1.4;margin:17px 0 10px;color:#fff;word-break:keep-all}
+.economy-prism-feature p{font-size:12px;color:#c8d5e2;line-height:1.8;margin:0;word-break:keep-all}
+.economy-coin-caption a{color:#f3d6a3;text-decoration:none;border-bottom:1px solid #f3d6a3a3}
+.economy-coin-caption a:hover{color:#fff}
+@media(max-width:1100px){.economy-prism-inner{grid-template-columns:1fr 1fr;gap:30px}.economy-prism-art{min-height:440px}.economy-prism h2{font-size:clamp(70px,9vw,108px)}}
+@media(max-width:760px){
+ .home-hero .hero-copy{padding:26px 18px 25px 19px;max-width:min(96%,510px);background:linear-gradient(90deg,#071120ef,#071120dd 85%,#0711209c);backdrop-filter:blur(4px)}
+ .home-hero .hero-copy p{font-size:12px;line-height:1.8}
+ .home-hero .hero-title{font-size:clamp(60px,13vw,90px);letter-spacing:-.06em}
+ .home-hero .hero-meta{font-size:9px}
+ .estate-facility h3{min-height:auto;font-size:14px}
+ .estate-facility-label{min-height:auto;font-size:8px}
+ .estate-facility>p,.estate-facility-details p{font-size:11px}
+ .estate-facility-details summary{font-size:10px}
+ .economy-prism{padding:66px 0 74px}
+ .economy-prism-inner{grid-template-columns:1fr}
+ .economy-prism h2{font-size:clamp(69px,16vw,99px);margin:24px 0}
+ .economy-prism-art{min-height:350px;max-height:490px}
+ .economy-prism-features{grid-template-columns:1fr;gap:11px;margin-top:28px}
+ .economy-prism-feature{padding:20px}
+}
+
 </style>
 </head>
 <body>
@@ -1070,13 +1148,31 @@
     </div>
   </section>
   <!-- 02: 검은색 코인 소개 구간 -->
-  <section id="economyCoin" class="economy-coin" aria-labelledby="economyCoinHeading"><div class="container economy-coin-inner"><div class="economy-coin-title"><div class="economy-overline"><span>02 / SPECIAL CURRENCY</span></div><h2 id="economyCoinHeading">COIN.<br><span>SUMMON<br>THE UNKNOWN.</span></h2><p>코인은 다차원 엘리베이터의 일반 소환에 사용되는 재화입니다. 크레딧 환전이나 특수 임무를 통해 획득할 수 있습니다.</p><div class="economy-coin-caption">DIMENSIONAL SUMMONING / AVALON</div></div><div class="economy-coin-art art-block" data-art="coinHero"><div class="slot-label"><b>코인 메인 일러스트</b><small>images/economy-coin.webp</small></div></div><div class="economy-coin-facts"><div><small>USE / 01</small><strong>일반 소환</strong><span>다차원 엘리베이터</span></div><div><small>GET / 01</small><strong>크레딧 환전</strong><span>코인 획득 경로</span></div><div><small>GET / 02</small><strong>특수 임무</strong><span>코인 획득 경로</span></div></div></div></section>
+  <section id="economyCoin" class="economy-coin" aria-labelledby="economyCoinHeading"><div class="container economy-coin-inner"><div class="economy-coin-title"><div class="economy-overline"><span>02 / SPECIAL CURRENCY</span></div><h2 id="economyCoinHeading">COIN.<br><span>SUMMON<br>THE UNKNOWN.</span></h2><p>코인은 다차원 엘리베이터의 일반 소환에 사용되는 재화입니다. 크레딧 환전이나 특수 임무를 통해 획득할 수 있습니다.</p><div class="economy-coin-caption">DIMENSIONAL SUMMONING / AVALON · <a href="#economyPrism">프리즘 코인 ↓</a></div></div><div class="economy-coin-art art-block" data-art="coinHero"><div class="slot-label"><b>코인 메인 일러스트</b><small>images/economy-coin.webp</small></div></div><div class="economy-coin-facts"><div><small>USE / 01</small><strong>일반 소환</strong><span>다차원 엘리베이터</span></div><div><small>GET / 01</small><strong>크레딧 환전</strong><span>코인 획득 경로</span></div><div><small>GET / 02</small><strong>특수 임무</strong><span>코인 획득 경로</span></div></div></div></section>
   <!-- 03: 사용처 한 가지와 획득 경로 두 가지를 구분 -->
   <section class="economy-usage" aria-labelledby="economyUsageHeading"><div class="container economy-usage-inner"><div class="economy-usage-intro"><div class="economy-overline"><span>03 / UTILITY & ACQUISITION</span></div><h2 id="economyUsageHeading">WHERE<br>COINS<br><span>GO.</span></h2><p>코인의 사용처와 획득 방법을 살펴보세요. 현재 확정된 설정을 기준으로 정리했습니다.</p></div><div class="economy-usage-cards">
       <details class="economy-usage-card"><summary><small>01 / USE</small><h3>일반 다차원 소환</h3><p>코인을 사용하여 엘리베이터 소환을 진행하는 주요 사용처</p><div class="economy-usage-art art-block" data-art="coinUseSummon"><div class="slot-label"><small>images/economy-use-summon.webp</small></div></div><span class="economy-card-arrow">＋</span></summary><div class="economy-card-detail">다차원 엘리베이터에서 일반 소환에 코인을 사용합니다. 다양한 등급의 메이트를 만날 수 있는 아발론의 핵심 시스템입니다.</div></details>
       <details class="economy-usage-card"><summary><small>02 / GET</small><h3>크레딧 환전</h3><p>아발론의 범용 재화를 코인으로 환전하는 획득 경로</p><div class="economy-usage-art art-block" data-art="coinGetExchange"><div class="slot-label"><small>images/economy-get-exchange.webp</small></div></div><span class="economy-card-arrow">＋</span></summary><div class="economy-card-detail">크레딧을 이용해 코인을 획득할 수 있습니다. 구체적인 환전 비율은 추후 세계관 설정에 맞춰 안내합니다.</div></details>
       <details class="economy-usage-card"><summary><small>03 / GET</small><h3>특수 임무</h3><p>아발론의 특정 임무를 통해 코인을 얻는 획득 경로</p><div class="economy-usage-art art-block" data-art="coinGetMission"><div class="slot-label"><small>images/economy-get-mission.webp</small></div></div><span class="economy-card-arrow">＋</span></summary><div class="economy-card-detail">특수 임무 보상으로 코인을 획득할 수 있습니다. 임무의 종류와 보상량은 현재 공개되지 않은 설정으로 남겨둡니다.</div></details>
     </div></div></section>
+  <!-- 04: 프리즘 코인 — 고등급 무작위 소환·서약·코스튬 -->
+  <section id="economyPrism" class="economy-prism" aria-labelledby="economyPrismHeading">
+    <div class="container economy-prism-inner">
+      <div class="economy-prism-copy">
+        <div class="economy-prism-eyebrow"><span>04 / PREMIUM CURRENCY</span><span>AVALON · PRISM SYSTEM</span></div>
+        <h2 id="economyPrismHeading">PRISM<br><span>COIN.</span></h2>
+        <p class="economy-prism-lead">일반 코인보다 높은 등급의 가능성을 여는<br><strong>아발론의 최상위 특수 재화.</strong></p>
+        <p class="economy-prism-desc">프리즘 코인은 외부 자본 충전 또는 극히 희귀한 특별 보상으로 획득합니다. 높은 등급의 메이트를 노리는 프리미엄 소환뿐 아니라, 영구 서약과 최고급 코스튬 같은 특별 서비스에 쓰입니다.</p>
+        <div class="economy-prism-note"><span>✧</span><p>프리미엄 소환은 <strong>SR·SSR·UR 등급 출현 확률을 높이는 무작위 소환</strong>입니다. 특정 메이트를 지정하는 타겟 픽업 방식은 아니며, 확정·천장 규칙은 별도 규정을 따릅니다.</p></div>
+      </div>
+      <div class="economy-prism-art art-block" data-art="prismHero"><div class="slot-label"><b>프리즘 코인 일러스트</b><small>images/economy-prism.webp</small></div><span class="economy-prism-art-tag">AVALON / ULTIMATE CURRENCY</span></div>
+    </div>
+    <div class="container economy-prism-features">
+      <div class="economy-prism-feature"><small>01 / ACQUISITION</small><h3>외부 자본 · 특별 보상</h3><p>외부 자본으로 충전하거나, 극히 희귀한 특별 보상을 통해 획득하는 재화입니다.</p></div>
+      <div class="economy-prism-feature"><small>02 / PREMIUM SUMMON</small><h3>고등급 확률 상승</h3><p>SR·SSR·UR 등장 가능성이 높아지는 무작위 소환에 사용됩니다. 특정 인물 지정 소환은 아닙니다.</p></div>
+      <div class="economy-prism-feature"><small>03 / SPECIAL SERVICES</small><h3>영구 서약 · 코스튬</h3><p>맹세의 초커를 통한 영구 서약, 최고급 코스튬 등 희소한 특수 서비스에도 사용됩니다.</p></div>
+    </div>
+  </section>
   <div class="economy-tail"><div class="container economy-tail-inner"><div><small>AVALON / CENTRAL ARCHIVE</small><h2>모든 가치는<br>아발론에서 이어집니다.</h2><p>매일 자정 영지 규모와 보유 자산에 따른 유지비가 정산됩니다. 이 페이지는 세계관 소개용이며 실제 결제 기능은 없습니다.</p></div><button class="economy-dark-button" onclick="showPage('world')">세계관 살펴보기 <span>↗</span></button></div></div>
 </section>
 <!-- 영지: 전경 → 시설 사진 카드 → 배치도. 콘텐츠 페이지와 완전히 분리 -->
@@ -1092,7 +1188,7 @@
   </div>
   <div class="container estate-layout">
     <div class="estate-introduction"><div><div class="eyebrow">ESTATE MANAGEMENT / OVERVIEW</div><h2>영지는 입성자의<br><span>기반이 되는 공간.</span></h2></div><div class="estate-intro-right"><p>집무실과 메이트 기숙사, 각종 관리·지원 시설이 모인 개인 영역입니다. 이곳에서 시설을 관리하고 영지의 기반을 확장할 수 있습니다.</p><div class="estate-intro-meta"><span>8<br><small>CORE FACILITIES</small></span><span>01<br><small>PERSONAL DOMAIN</small></span></div></div></div>
-    <section class="estate-services" aria-labelledby="estateFacilitiesHeading"><div class="estate-block-heading"><div><div class="eyebrow">01 / FACILITY COLLECTION</div><h2 id="estateFacilitiesHeading">OUR FACILITIES.</h2></div><p>여덟 개의 핵심 시설을 이미지 중심으로 소개합니다.<br>시설 일러스트는 제작 후 순서대로 교체할 수 있습니다.</p></div><div id="facilitiesGrid" class="estate-facility-grid"></div></section>
+    <section class="estate-services" aria-labelledby="estateFacilitiesHeading"><div class="estate-block-heading"><div><div class="eyebrow">01 / FACILITY COLLECTION</div><h2 id="estateFacilitiesHeading">OUR FACILITIES.</h2></div><p>여덟 개 시설의 주요 역할과 운영 효과를 소개합니다.<br>‘시설 상세 설명’을 누르면 업그레이드와 제한 규칙까지 확인할 수 있습니다.</p></div><div id="facilitiesGrid" class="estate-facility-grid"></div></section>
     <section class="estate-plan" aria-labelledby="estatePlanHeading"><div class="estate-plan-copy"><div class="eyebrow">02 / TERRITORY BLUEPRINT</div><h2 id="estatePlanHeading">ESTATE PLAN.</h2><p>영지 전체 배치도와 시설 구성</p><div class="estate-plan-list" id="estatePlanList"></div><small class="estate-plan-notice">※ 시설 배치와 구조 이미지는 향후 확정될 설정에 맞춰 교체됩니다.</small></div><div class="estate-plan-art art-block" data-art="estateBlueprint"><div class="slot-label"><div class="slot-icon"><span>◇</span></div><b>영지 배치도 · 평면도 이미지</b><small>images/estate-blueprint.webp</small></div><div class="estate-plan-corner">AVALON / ESTATE MAP</div></div></section>
     <div class="estate-bottom"><div><span>AVALON / CENTRAL ARCHIVE</span><h3>다음은 아발론의 콘텐츠를 살펴보세요.</h3></div><button class="action outline" onclick="showPage('contents')">콘텐츠 페이지로 이동 ↗</button></div>
   </div>
@@ -1144,6 +1240,7 @@ const IMAGES = {
   settlementBackground:'images/economy-credit.webp',
   creditHero:'images/economy-credit.webp',
   coinHero:'images/economy-coin.webp',
+  prismHero:'images/economy-prism.webp',
   coinUseSummon:'images/business/dungeon.webp',
   coinGetExchange:'images/economy-credit.webp',
   coinGetMission:'images/economy-get-mission.webp',
@@ -1189,17 +1286,49 @@ const characters=Array.from({length:TEMP_CHARACTER_SLOTS},(_,index)=>{
 const resources=[
   {title:'크레딧',en:'CREDIT',image:'images/economy-credit.webp',desc:'아발론 전역에서 사용되는 범용 화폐. 시설 증축과 유지비, 경매 등에 사용됩니다.'},
   {title:'코인',en:'COIN',image:'images/economy-coin.webp',desc:'일반 다차원 소환에 사용하는 재화. 크레딧 환전이나 특수 임무로 획득합니다.'},
-  {title:'프리즘 코인',en:'PRISM COIN',image:'images/economy-prism.webp',desc:'타겟 픽업 소환과 특별한 코스튬 등에 사용되는 최상위 특수 재화입니다.'}
+  {title:'프리즘 코인',en:'PRISM COIN',image:'images/economy-prism.webp',desc:'고등급 출현 확률을 높이는 무작위 프리미엄 소환, 영구 서약, 최고급 코스튬에 사용되는 최상위 재화입니다.'}
 ];
 const facilities=[
-  {title:'입성자 집무실 / 침실',image:'images/facilities/office.webp',desc:'영지 운영과 개인 업무를 수행하는 공간'},
-  {title:'메이트 기숙사',image:'images/facilities/dorm.webp',desc:'메이트의 거주 및 유지 관리 시설'},
-  {title:'수익 인프라 증축소',image:'images/facilities/infrastructure.webp',desc:'던전 및 미디어 장비 증축 구역'},
-  {title:'자산 교정실',image:'images/facilities/training.webp',desc:'아발론의 자산 관리·교육 시설'},
-  {title:'관제 단말기 / VIP 거래소',image:'images/facilities/control.webp',desc:'이브 호출과 경제 관리 구역'},
-  {title:'생체 수복실',image:'images/facilities/repair.webp',desc:'손상된 신체를 재생시키는 시설'},
-  {title:'트로피 전시실',image:'images/facilities/trophy.webp',desc:'전리품과 특별 자산을 전시하는 공간'},
-  {title:'자산 승급 센터',image:'images/facilities/upgrade.webp',desc:'규정 내 등급 상승을 위한 시설'}
+  {
+    title:'입성자 집무실 / 침실', image:'images/facilities/office.webp', label:"MASTER’S PENTHOUSE",
+    desc:'영지 전체를 관리하는 입성자 전용 공간입니다. 인프라 결재와 메이트 호출이 이곳에서 이루어집니다.',
+    detail:'초기에는 비좁고 단출한 집무실에서 출발하지만, 크레딧을 투자할수록 공간을 확장할 수 있습니다. 최종적으로는 아발론의 도시 전경을 내려다보는 초호화 펜트하우스로 발전하며, 업무와 휴식을 모두 책임지는 개인 거점이 됩니다.'
+  },
+  {
+    title:'메이트 기숙사', image:'images/facilities/dorm.webp', label:'MATE DORMITORY',
+    desc:'메이트의 거주 환경과 컨디션을 관리하는 구역입니다. 등급과 시설 수준에 따라 생활 공간과 대우가 달라집니다.',
+    detail:'하위 등급은 좁은 캡슐형 거주 시설에서 시작하며, 영지의 증축 및 상위 등급 전용 구역 개방에 따라 고급 스위트룸과 전속 시스템 메이드 서비스를 이용할 수 있습니다. 기숙사 수준이 높아지면 스트레스 감소와 자산 유지 효율이 함께 개선됩니다.'
+  },
+  {
+    title:'수익 인프라 증축소', image:'images/facilities/infrastructure.webp', label:'PROFIT INFRASTRUCTURE HUB',
+    desc:'던전 파밍과 미디어 사업에 필요한 설비를 강화하는 투자 구역입니다. 장비를 확장해 단위 시간당 크레딧 생산력을 높입니다.',
+    detail:'다이브 포드(Dive Pod)의 동시 접속 수를 늘려 던전 투입 규모를 확장할 수 있습니다. VVIP 스트리밍 스튜디오의 4D 송출 장비와 카메라 시스템도 업그레이드할 수 있어, 두 핵심 수익망의 처리 능력과 생산 효율에 직접 영향을 미칩니다.'
+  },
+  {
+    title:'자산 교정실', image:'images/facilities/training.webp', label:'ASSET CORRECTION ROOM',
+    desc:'아발론의 규칙에 적응하지 못하거나 반항하는 메이트를 대상으로 하는 폐쇄형 교정 시설입니다. 행동과 순종도를 관리합니다.',
+    detail:'원래 세계의 자존심과 가치관을 고수하는 메이트에게 아발론의 질서를 강압적으로 각인시키는 시설입니다. 육체적·심리적 교정이 이루어지는 어두운 시스템으로, 설정상 순종도가 높아질수록 프라이빗 렌탈과 거래 시장에서의 자산 평가가 상승합니다.'
+  },
+  {
+    title:'관제 단말기 / VIP 거래소', image:'images/facilities/control.webp', label:'SYSTEM TERMINAL & EXCHANGE',
+    desc:'AI 이브를 호출하고 영지 재정을 관리하는 중앙 통제 시설입니다. 자산 거래와 VIP 옥션 기능도 연결됩니다.',
+    detail:'중앙 관제 데스크에서 이브의 홀로그램을 불러 경제 동향과 영지 운영 현황을 확인하고 유지비를 결재할 수 있습니다. 육성과 관리가 완료된 메이트를 다른 입성자에게 매각하거나 경매에 출품하는 사설 거래소 역할도 맡습니다.'
+  },
+  {
+    title:'생체 수복실', image:'images/facilities/repair.webp', label:'BIO-RESTORATION CHAMBER',
+    desc:'던전이나 방송 활동으로 손상된 메이트의 신체를 재생하는 시설입니다. 설비를 강화할수록 수복 시간이 단축됩니다.',
+    detail:'특수 배양액이 채워진 수복 튜브를 이용하여 큰 부상을 입은 메이트의 신체를 단기간에 회복시킵니다. 시설 수준이 높아질수록 복구 속도가 빨라져, 손상된 자산이 다시 활동에 복귀할 때까지 필요한 대기 시간을 줄일 수 있습니다.'
+  },
+  {
+    title:'트로피 전시실', image:'images/facilities/trophy.webp', label:'TROPHY EXHIBITION HALL',
+    desc:'희귀 전리품과 에이스 메이트의 기록을 전시하는 공간입니다. 영지의 성과와 소유자의 자본력을 보여줍니다.',
+    detail:'고난도 던전에서 얻은 전설적인 전리품과 1군 메이트의 황금빛 홀로그램 등을 특별 전시물로 보관합니다. 다른 상위 랭커가 방문했을 때 영지의 업적, 수집품, 경제력을 한눈에 과시하는 프라이빗 갤러리입니다.'
+  },
+  {
+    title:'자산 승급 센터', image:'images/facilities/upgrade.webp', label:'ASSET TIER-UP CENTER',
+    desc:'막대한 크레딧과 희귀 재료를 사용해 하위 등급 메이트를 승급시키는 시설입니다. 승급은 메이트당 단 한 단계로 제한됩니다.',
+    detail:'메이트의 유전자와 시스템 데이터를 조정하여 N → R 또는 R → SR로 진화시키는 특수 시설입니다. 각 메이트는 평생 단 한 단계(1 Tier)만 승급할 수 있으며, SSR 이상 등급은 승급 시스템 이용 자체가 차단됩니다.'
+  }
 ];
 const businesses=[
   {title:'가상 던전',image:'images/business/dungeon.webp',desc:'채굴 및 마물 토벌을 통한 수익 활동',eveLine:'가상 던전에서는 채굴과 마물 토벌을 통해 수익 활동을 진행할 수 있습니다. 입성자님에게 맞는 활동을 확인해 보세요.'},
@@ -1319,8 +1448,13 @@ function makeEstateFacility(record,index){
   const art=document.createElement('div');art.className='estate-facility-image art-block';art.appendChild(makeFallback('FACILITY IMAGE',record.image));attachArt(art,record.image);
   const indexLabel=document.createElement('div');indexLabel.className='estate-facility-index';indexLabel.textContent=String(index+1).padStart(2,'0');
   const title=document.createElement('h3');title.textContent=record.title;
+  const label=document.createElement('div');label.className='estate-facility-label';label.textContent=record.label||'AVALON FACILITY';
   const desc=document.createElement('p');desc.textContent=record.desc;
-  card.append(art,indexLabel,title,desc);return card;
+  const details=document.createElement('details');details.className='estate-facility-details';
+  const summary=document.createElement('summary');summary.textContent='시설 상세 설명';
+  const detailText=document.createElement('p');detailText.textContent=record.detail||record.desc;
+  details.append(summary,detailText);
+  card.append(art,indexLabel,title,label,desc,details);return card;
 }
 function makeContentsCard(record,index){
   const card=document.createElement('article');card.className='contents-card';card.dataset.contentIndex=index;
