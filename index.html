@@ -985,6 +985,8 @@
   .v6-eve-art.loaded>.asset-img{transform:translateY(-20px) scale(1.04);}
   .contents-eve-visual.loaded{opacity:.88;}
 }
+/* V8: Keep the full blueprint visible inside its panel (avoid cover-crop). */
+.estate-plan-art.loaded>.asset-img{object-fit:contain;object-position:center;background:#0e1635;}
 </style>
 </head>
 <body>
@@ -1034,11 +1036,11 @@
     <button class="menu-art art-block" data-art="menuTerritory" onclick="showPage('territory')"><div class="slot-label"><small>images/menu-territory.webp</small></div><div class="menu-copy"><small>03 / ESTATE</small><strong>영지</strong><em>↗</em></div></button>
     <button class="menu-art art-block" data-art="menuEconomy" onclick="showPage('economy')"><div class="slot-label"><small>images/menu-economy.webp</small></div><div class="menu-copy"><small>04 / ECONOMY</small><strong>경제 · 재화</strong><em>↗</em></div></button>
   </div>
-  <div class="container home-showcase"><div class="showcase-head"><div><div class="eyebrow">AVALON ARCHIVE / FEATURED</div><h2 class="section-heading" style="margin-top:12px">EXPLORE THE SYSTEM.</h2></div></div><div class="showcase-grid"><button class="showcase-card art-block" data-art="promoSummon" onclick="showPage('world')"><div class="slot-label"><b>엘리베이터 프로모 이미지</b><small>images/promo-summon.webp</small></div><div class="showcase-copy"><small>DIMENSIONAL SUMMONING</small><h3>다차원 소환 시스템 ↗</h3></div></button><button class="showcase-card art-block" data-art="promoEstate" onclick="showPage('territory')"><div class="slot-label"><b>영지 프로모 이미지</b><small>images/promo-estate.webp</small></div><div class="showcase-copy"><small>ESTATE MANAGEMENT</small><h3>영지 운영 시스템 ↗</h3></div></button></div></div>
+  <div class="container home-showcase"><div class="showcase-head"><div><div class="eyebrow">AVALON ARCHIVE / FEATURED</div><h2 class="section-heading" style="margin-top:12px">EXPLORE THE SYSTEM.</h2></div></div><div class="showcase-grid"><button class="showcase-card art-block" data-art="promoSummon" onclick="showPage('world')"><div class="slot-label"><b>엘리베이터 프로모 이미지</b><small>images/promo-summon.webp</small></div><div class="showcase-copy"><small>DIMENSIONAL SUMMONING</small><h3>다차원 소환 시스템 ↗</h3></div></button><button class="showcase-card art-block" data-art="promoContents" onclick="showPage('contents')"><div class="slot-label"><b>콘텐츠 프로모 이미지</b><small>images/business/studio.webp</small></div><div class="showcase-copy"><small>AVALON CONTENTS</small><h3>콘텐츠 ↗</h3></div></button></div></div>
 </section>
 <!-- 도감 -->
 <section id="page-characters" class="page">
-  <div class="inner-banner art-block" data-art="charactersBackground"><div class="slot-label"><small>images/characters-bg.webp</small></div><div class="inner-title container"><div class="eyebrow">01 / CHARACTER DATABASE</div><h1>MATE ARCHIVE</h1><p>다차원에서 소환된 메이트들의 가치 등급별 정보</p></div></div>
+  <div class="inner-banner art-block" data-art="charactersBackground"><div class="slot-label"><small>images/menu-characters.webp</small></div><div class="inner-title container"><div class="eyebrow">01 / CHARACTER DATABASE</div><h1>MATE ARCHIVE</h1><p>다차원에서 소환된 메이트들의 가치 등급별 정보</p></div></div>
   <div class="container content-area"><div class="filter-bar"><div class="tier-controls" id="tierControls"><button class="tier-btn active" data-tier="ALL" onclick="filterTier('ALL')">ALL</button><button class="tier-btn" data-tier="UR" onclick="filterTier('UR')">UR</button><button class="tier-btn" data-tier="SSR" onclick="filterTier('SSR')">SSR</button><button class="tier-btn" data-tier="SR" onclick="filterTier('SR')">SR</button><button class="tier-btn" data-tier="R" onclick="filterTier('R')">R</button><button class="tier-btn" data-tier="N" onclick="filterTier('N')">N</button></div><div class="archive-tools"><button class="tier-sort-toggle" id="tierSortToggle" type="button" onclick="toggleTierSort()" aria-label="캐릭터 등급 정렬 방향 바꾸기" aria-pressed="false"><span class="tier-sort-arrow">↕</span> <span id="tierSortLabel">UR → N</span></button><div class="filter-note" id="characterCount">50 SLOTS</div></div></div><div class="character-grid" id="characterGrid"></div></div>
 </section>
 <!-- 캐릭터 상세 V5 유지: 좌측 정보 23% / 중앙 이미지 54% / 우측 버프 23%, 이미지 하단 그라디언트 -->
@@ -1206,7 +1208,7 @@
   <div class="container estate-layout">
     <div class="estate-introduction"><div><div class="eyebrow">ESTATE MANAGEMENT / OVERVIEW</div><h2>영지는 입성자의<br><span>기반이 되는 공간.</span></h2></div><div class="estate-intro-right"><p>집무실과 메이트 기숙사, 각종 관리·지원 시설이 모인 개인 영역입니다. 이곳에서 시설을 관리하고 영지의 기반을 확장할 수 있습니다.</p><div class="estate-intro-meta"><span>8<br><small>CORE FACILITIES</small></span><span>01<br><small>PERSONAL DOMAIN</small></span></div></div></div>
     <section class="estate-services" aria-labelledby="estateFacilitiesHeading"><div class="estate-block-heading"><div><div class="eyebrow">01 / FACILITY COLLECTION</div><h2 id="estateFacilitiesHeading">OUR FACILITIES.</h2></div><p>여덟 개 시설의 주요 역할과 운영 효과를 소개합니다.<br>‘시설 상세 설명’을 누르면 업그레이드와 제한 규칙까지 확인할 수 있습니다.</p></div><div id="facilitiesGrid" class="estate-facility-grid"></div></section>
-    <section class="estate-plan" aria-labelledby="estatePlanHeading"><div class="estate-plan-copy"><div class="eyebrow">02 / TERRITORY BLUEPRINT</div><h2 id="estatePlanHeading">ESTATE PLAN.</h2><p>영지 전체 배치도와 시설 구성</p><div class="estate-plan-list" id="estatePlanList"></div><small class="estate-plan-notice">※ 시설 배치와 구조 이미지는 향후 확정될 설정에 맞춰 교체됩니다.</small></div><div class="estate-plan-art art-block" data-art="estateBlueprint"><div class="slot-label"><div class="slot-icon"><span>◇</span></div><b>영지 배치도 · 평면도 이미지</b><small>images/estate-blueprint.webp</small></div><div class="estate-plan-corner">AVALON / ESTATE MAP</div></div></section>
+    <section class="estate-plan" aria-labelledby="estatePlanHeading"><div class="estate-plan-copy"><div class="eyebrow">02 / TERRITORY BLUEPRINT</div><h2 id="estatePlanHeading">ESTATE PLAN.</h2><p>영지 전체 배치도와 시설 구성</p><div class="estate-plan-list" id="estatePlanList"></div><small class="estate-plan-notice">※ 영지 배치도는 콘셉트 시안이며, 개별 시설 위치는 추후 설정에 맞춰 확정됩니다.</small></div><div class="estate-plan-art art-block" data-art="estateBlueprint"><div class="slot-label"><div class="slot-icon"><span>◇</span></div><b>영지 배치도 · 평면도 이미지</b><small>images/estate-blueprint.webp</small></div><div class="estate-plan-corner">AVALON / ESTATE MAP</div></div></section>
     <div class="estate-bottom"><div><span>AVALON / CENTRAL ARCHIVE</span><h3>다음은 아발론의 콘텐츠를 살펴보세요.</h3></div><button class="action outline" onclick="showPage('contents')">콘텐츠 페이지로 이동 ↗</button></div>
   </div>
 </section>
@@ -1241,13 +1243,13 @@ const IMAGES = {
   evePortrait:'images/eve-home.webp',
   heroBackground:'images/home-bg.webp',
   heroFigure:'images/eve-home.webp',
-  menuCharacters:'images/facilities/trophy.webp',
-  menuWorld:'images/home-bg.webp',
-  menuEconomy:'images/economy-coin.webp',
-  menuTerritory:'images/territory-bg.webp',
-  promoSummon:'images/business/dungeon.webp',
-  promoEstate:'images/territory-bg.webp',
-  charactersBackground:'images/characters-bg.webp',
+  menuCharacters:'images/menu-characters.webp',
+  menuWorld:'images/menu-world.webp',
+  menuEconomy:'images/menu-economy.webp',
+  menuTerritory:'images/menu-territory.webp',
+  promoSummon:'images/promo-summon.webp',
+  promoContents:'images/business/studio.webp',
+  charactersBackground:'images/menu-characters.webp',
   detailBackground:'images/detail-bg.webp',
   worldBackground:'images/home-bg.webp',
   worldCity:'images/home-bg.webp',
