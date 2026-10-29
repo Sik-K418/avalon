@@ -1038,6 +1038,13 @@
   .contents-guide-copy h2{font-size:clamp(42px,10vw,60px)}
   .contents-final h2{font-size:clamp(48px,12vw,64px)}
 }
+
+/* V8 영지 설명 확장: 기존 카드 디자인 유지, 펼친 설명만 읽기 쉽게 정리 */
+.estate-facility-longtext{padding:8px 0 2px;border-top:1px dashed #6c829452;}
+.estate-facility-longtext p{margin:0 0 13px;padding:0;border:0;font-size:12px;line-height:1.92;color:#d3deea;word-break:keep-all;overflow-wrap:break-word;}
+.estate-facility-longtext p + p{padding-top:12px;border-top:1px solid #97adc320;}
+.estate-facility-details[open] summary{color:#fff1ca;}
+@media(max-width:720px){.estate-facility:has(> .estate-facility-details[open]){grid-column:1/-1}.estate-facility-longtext p{font-size:12px;line-height:1.95;}}
 </style>
 </head>
 <body>
@@ -1258,7 +1265,7 @@
   </div>
   <div class="container estate-layout">
     <div class="estate-introduction"><div><div class="eyebrow">영지 관리 / 개요</div><h2>영지는 입성자의<br><span>기반이 되는 공간.</span></h2></div><div class="estate-intro-right"><p>집무실과 메이트 기숙사, 각종 관리·지원 시설이 모인 개인 영역입니다. 이곳에서 시설을 관리하고 영지의 기반을 확장할 수 있습니다.</p><div class="estate-intro-meta"><span>8<br><small>핵심 시설</small></span><span>01<br><small>개인 영지</small></span></div></div></div>
-    <section class="estate-services" aria-labelledby="estateFacilitiesHeading"><div class="estate-block-heading"><div><div class="eyebrow">01 / 시설 소개</div><h2 id="estateFacilitiesHeading">영지의 핵심 시설.</h2></div><p>여덟 개 시설의 주요 역할과 운영 효과를 소개합니다.<br>‘시설 상세 설명’을 누르면 업그레이드와 제한 규칙까지 확인할 수 있습니다.</p></div><div id="facilitiesGrid" class="estate-facility-grid"></div></section>
+    <section class="estate-services" aria-labelledby="estateFacilitiesHeading"><div class="estate-block-heading"><div><div class="eyebrow">01 / 시설 소개</div><h2 id="estateFacilitiesHeading">영지의 핵심 시설.</h2></div><p>여덟 개 시설의 역할과 운영 방식을 소개합니다.<br>‘시설 상세 설명’을 누르면 증축, 관리 효과와 제한 규칙을 자세히 확인할 수 있습니다.</p></div><div id="facilitiesGrid" class="estate-facility-grid"></div></section>
     <section class="estate-plan" aria-labelledby="estatePlanHeading"><div class="estate-plan-copy"><div class="eyebrow">02 / 영지 설계도</div><h2 id="estatePlanHeading">영지 배치도.</h2><p>영지 전체 배치도와 시설 구성</p><div class="estate-plan-list" id="estatePlanList"></div><small class="estate-plan-notice">※ 영지 배치도는 콘셉트 시안이며, 개별 시설 위치는 추후 설정에 맞춰 확정됩니다.</small></div><div class="estate-plan-art art-block" data-art="estateBlueprint"><div class="slot-label"><div class="slot-icon"><span>◇</span></div><b>영지 배치도 · 평면도 이미지</b><small>images/estate-blueprint.webp</small></div><div class="estate-plan-corner">아발론 / 영지 배치도</div></div></section>
     <div class="estate-bottom"><div><span>아발론 / 중앙 기록관</span><h3>다음은 아발론의 콘텐츠를 살펴보세요.</h3></div><button class="action outline" onclick="showPage('contents')">콘텐츠 페이지로 이동 ↗</button></div>
   </div>
@@ -1361,44 +1368,92 @@ const resources=[
 ];
 const facilities=[
   {
-    title:'입성자 집무실 / 침실', image:'images/facilities/office.webp', label:'입성자 전용 펜트하우스',
-    desc:'영지 전체를 관리하는 입성자 전용 공간입니다. 인프라 결재와 메이트 호출이 이곳에서 이루어집니다.',
-    detail:'초기에는 비좁고 단출한 집무실에서 출발하지만, 크레딧을 투자할수록 공간을 확장할 수 있습니다. 최종적으로는 아발론의 도시 전경을 내려다보는 초호화 펜트하우스로 발전하며, 업무와 휴식을 모두 책임지는 개인 거점이 됩니다.'
+    "title": "입성자 집무실 / 침실",
+    "image": "images/facilities/office.webp",
+    "label": "입성자 전용 펜트하우스",
+    "desc": "영지 운영의 중심으로, 모든 주요 지시와 결재를 처리하며 입성자의 사적인 생활까지 지원하는 전용 공간입니다.",
+    "detail": [
+      "입성자 집무실/침실은 아발론 영지의 중심이자 영지 소유주인 입성자만의 전용 생활·관리 공간입니다. 집무 구역에서는 메이트 배치·수익 보고·시설 증축·계약 결재·이브 호출 등 모든 주요 지시를 처리합니다.",
+      "침실과 사적 라운지는 외부 방문객의 접근을 제한하는 휴식 및 개인 롤플레잉 공간으로, 입성자의 취향에 따라 설비와 분위기를 바꿀 수 있습니다. 처음에는 실용적인 거점이지만 크레딧을 투자할수록 넓은 전망, 고급 가구, 전용 편의 시설을 갖춘 초호화 펜트하우스로 진화합니다.",
+      "이브는 요청 즉시 홀로그램 패널을 띄워 재산 현황과 예약 일정을 안내하며, 시설의 품격은 영지의 지배력과 자본력을 상징합니다. 내부의 접근 권한과 연출 설정은 입성자가 지정하고, 이브는 외부 일정과 영지 업무가 사적 시간에 충돌하지 않도록 조율합니다."
+    ]
   },
   {
-    title:'메이트 기숙사', image:'images/facilities/dorm.webp', label:'메이트 전용 기숙사',
-    desc:'메이트의 거주 환경과 컨디션을 관리하는 구역입니다. 등급과 시설 수준에 따라 생활 공간과 대우가 달라집니다.',
-    detail:'하위 등급은 좁은 캡슐형 거주 시설에서 시작하며, 영지의 증축 및 상위 등급 전용 구역 개방에 따라 고급 스위트룸과 전속 시스템 메이드 서비스를 이용할 수 있습니다. 기숙사 수준이 높아지면 스트레스 감소와 자산 유지 효율이 함께 개선됩니다.'
+    "title": "메이트 기숙사",
+    "image": "images/facilities/dorm.webp",
+    "label": "메이트 전용 기숙사",
+    "desc": "메이트의 거주·휴식·대기와 컨디션을 관리하며, 시설 증축에 따라 생활 환경과 운영 효율이 달라집니다.",
+    "detail": [
+      "메이트 기숙사는 영지에 소속된 메이트의 거주·휴식·대기와 일상 컨디션을 관리하는 핵심 복지 시설입니다. 초기에는 좁은 캡슐형 숙소와 집단 생활 구역으로 운영되지만, 크레딧을 투입해 개인실·고급 가구·온욕 설비·정원과 편의 시설을 갖춘 최고급 스위트룸까지 확장할 수 있습니다.",
+      "숙소 수준이 높을수록 임무 후 피로와 스트레스 회복이 빨라지고 질병·불만·업무 공백을 줄여 장기 유지 효율이 높아집니다. 특히 상위 등급 메이트의 명성·개인적 취향에 맞는 공간을 제공하면 생활 만족도와 매력 가치에도 긍정적인 영향을 줍니다.",
+      "이브는 입주자 명단·방 배정·관리비·컨디션과 시설 수용 인원을 일괄 관리합니다. 수용 인원을 초과하거나 운영비를 과도하게 절감하면 거주 환경이 악화되어 메이트의 컨디션과 장기 업무 성과에 불리해질 수 있습니다."
+    ]
   },
   {
-    title:'수익 인프라 증축소', image:'images/facilities/infrastructure.webp', label:'수익 설비 증축 구역',
-    desc:'던전 파밍과 미디어 사업에 필요한 설비를 강화하는 투자 구역입니다. 장비를 확장해 단위 시간당 크레딧 생산력을 높입니다.',
-    detail:'다이브 포드(Dive Pod)의 동시 접속 수를 늘려 던전 투입 규모를 확장할 수 있습니다. VVIP 스트리밍 스튜디오의 4D 송출 장비와 카메라 시스템도 업그레이드할 수 있어, 두 핵심 수익망의 처리 능력과 생산 효율에 직접 영향을 미칩니다.'
+    "title": "수익 인프라 증축소",
+    "image": "images/facilities/infrastructure.webp",
+    "label": "수익 설비 증축 구역",
+    "desc": "던전·방송 등 주요 사업의 설비를 업그레이드하여 생산량을 높이고, 장비 유지비와 투자 회수까지 관리합니다.",
+    "detail": [
+      "수익 인프라 증축소는 영지의 생산량을 장기적으로 끌어올리는 장비 투자·개조·유지 시설입니다. 가상 던전 접속용 다이브 포드, 채굴 보조 장비, 방송 카메라·조명·편집 시스템 등 4대 비즈니스와 연결된 핵심 설비를 업그레이드합니다.",
+      "시설 수준이 오르면 동일한 시간에 수행할 수 있는 작업량과 방송 품질이 높아져 단위 시간당 크레딧 생산량이 증가하고, 잦은 고장과 교체 손실은 줄어듭니다. 고급 소재·기술자·생성 능력 보유 메이트를 배치하면 설비 구축과 정밀 부품 제작에서 특화 시너지가 발생할 수 있습니다.",
+      "증축에는 크레딧과 재료가 필요하므로 투자 비용과 회수 기간을 함께 계산해야 합니다. 고성능 설비가 늘수록 유지·수리비도 발생하므로 초기 투자와 실제 파밍·스트리밍 수익을 비교하는 것이 필수입니다."
+    ]
   },
   {
-    title:'자산 교정실', image:'images/facilities/training.webp', label:'자산 교정 시설',
-    desc:'아발론의 규칙에 적응하지 못하거나 반항하는 메이트를 대상으로 하는 폐쇄형 교정 시설입니다. 행동과 순종도를 관리합니다.',
-    detail:'원래 세계의 자존심과 가치관을 고수하는 메이트에게 아발론의 질서를 강압적으로 각인시키는 시설입니다. 육체적·심리적 교정이 이루어지는 어두운 시스템으로, 설정상 순종도가 높아질수록 프라이빗 렌탈과 거래 시장에서의 자산 평가가 상승합니다.'
+    "title": "자산 교정실",
+    "image": "images/facilities/training.webp",
+    "label": "자산 교정 시설",
+    "desc": "메이트의 규칙 준수와 업무 적응을 관리하는 폐쇄형 시설로, 교정 과정과 관계의 변화가 주요 서사 요소입니다.",
+    "detail": [
+      "자산 교정실은 아발론이 메이트의 행동 규칙·업무 적응·순종도를 관리하기 위해 마련한 폐쇄형 교육 시설입니다. 명령에 대한 반발이 강하거나 영지 운영을 방해하는 개체를 분리해 시스템 규정·직무 절차·대응 방식 등을 반복 학습시키며, 이브가 과정과 평가 수치를 기록합니다.",
+      "세계관 내부에서는 자율성과 과거 지위를 억압하는 냉혹한 통제 공간으로 인식되어 권력과 자존심의 충돌이 극적으로 드러납니다. 교정이 진행되면 아발론 시장에서 순종도와 계약 적합성이 높게 평가되어 렌탈·매매 가치가 상승할 수 있습니다.",
+      "실제 역할 연출은 대상 인물의 성격과 기존 서사에 맞춰 달라집니다. 교정 이전의 기억과 인격이 완전히 사라지는 것은 아니며, 대상의 변화와 갈등은 이후 관계 연출의 중요한 설정으로 남을 수 있습니다."
+    ]
   },
   {
-    title:'관제 단말기 / VIP 거래소', image:'images/facilities/control.webp', label:'시스템 관제 및 거래소',
-    desc:'AI 이브를 호출하고 영지 재정을 관리하는 중앙 통제 시설입니다. 자산 거래와 VIP 옥션 기능도 연결됩니다.',
-    detail:'중앙 관제 데스크에서 이브의 홀로그램을 불러 경제 동향과 영지 운영 현황을 확인하고 유지비를 결재할 수 있습니다. 육성과 관리가 완료된 메이트를 다른 입성자에게 매각하거나 경매에 출품하는 사설 거래소 역할도 맡습니다.'
+    "title": "관제 단말기 / VIP 거래소",
+    "image": "images/facilities/control.webp",
+    "label": "시스템 관제 및 거래소",
+    "desc": "이브를 통해 영지 운영 수치를 확인하고 각종 결제를 승인하며, 희귀 자산 거래와 경매까지 관리합니다.",
+    "detail": [
+      "시스템 관제 단말기 & VIP 거래소는 아발론 메인 AI 이브를 호출해 영지 재정과 고가 자산 거래를 통합 관리하는 핵심 운영 시설입니다. 관제 단말기에서는 잔여 크레딧·유지비·시설 가동률·시장 가격·메이트 배치와 수익을 실시간 확인하고 각종 결제 및 업그레이드를 승인합니다.",
+      "연결된 VIP 거래소에서는 희귀 메이트의 가치 평가, 매각 등록, 옥션 출품, 입찰 현황 및 거래 내역을 확인합니다. 평범한 거래보다 큰 규모의 자본이 오가는 만큼 등급·희소성·고유 특성·현재 수요가 가격에 강하게 반영됩니다.",
+      "이브는 실시간 경고와 수익 전망을 제공하지만 최종 거래 여부는 입성자가 결정합니다. 거래 전후에는 재산 변동이 즉시 반영되며, 잘못된 투자나 과도한 입찰이 파산 위험을 키울 수 있음을 경고합니다."
+    ]
   },
   {
-    title:'생체 수복실', image:'images/facilities/repair.webp', label:'생체 수복 시설',
-    desc:'던전이나 방송 활동으로 손상된 메이트의 신체를 재생하는 시설입니다. 설비를 강화할수록 수복 시간이 단축됩니다.',
-    detail:'특수 배양액이 채워진 수복 튜브를 이용하여 큰 부상을 입은 메이트의 신체를 단기간에 회복시킵니다. 시설 수준이 높아질수록 복구 속도가 빨라져, 손상된 자산이 다시 활동에 복귀할 때까지 필요한 대기 시간을 줄일 수 있습니다.'
+    "title": "생체 수복실",
+    "image": "images/facilities/repair.webp",
+    "label": "생체 수복 시설",
+    "desc": "던전·전투·방송 중 다치거나 지친 메이트를 회복시키며, 수복 속도와 복귀 시간을 관리하는 의료 시설입니다.",
+    "detail": [
+      "생체 수복실은 던전 파밍·전투·방송 등 영지 활동 중 손상되거나 극도로 피로해진 메이트의 육체를 회복시키는 의료·병참 시설입니다. 대상은 특수 배양액이 채워진 수복 캡슐에 들어가며, 이브가 생체 상태·손상 부위·재생 진행률·소요 크레딧을 감시합니다.",
+      "높은 등급의 수복 설비는 심각한 부상과 상태 이상을 빠르게 치료하여 임무 복귀 시간을 단축하고 인력 공백으로 인한 손실을 줄입니다. 메이트의 재생 능력이나 치유 특성과 결합하면 회복 효율에 추가 시너지가 생길 수 있습니다.",
+      "이 시설은 육체적 손상을 수복하는 곳이므로 정신적 스트레스와 일상적인 피로 관리는 기숙사·휴식 구역의 역할도 중요합니다. 전투 전문 메이트나 치유 계열 인력을 배치하면 응급 대응과 재활 지원이 개선되어 던전 운영의 안정성을 높이는 데 도움이 됩니다."
+    ]
   },
   {
-    title:'트로피 전시실', image:'images/facilities/trophy.webp', label:'전리품 전시관',
-    desc:'희귀 전리품과 에이스 메이트의 기록을 전시하는 공간입니다. 영지의 성과와 소유자의 자본력을 보여줍니다.',
-    detail:'고난도 던전에서 얻은 전설적인 전리품과 1군 메이트의 황금빛 홀로그램 등을 특별 전시물로 보관합니다. 다른 상위 랭커가 방문했을 때 영지의 업적, 수집품, 경제력을 한눈에 과시하는 프라이빗 갤러리입니다.'
+    "title": "트로피 전시실",
+    "image": "images/facilities/trophy.webp",
+    "label": "전리품 전시관",
+    "desc": "희귀 전리품과 메이트의 홀로그램 프로필을 전시하고, 영지의 업적과 자본력을 방문객에게 보여줍니다.",
+    "detail": [
+      "트로피 전시실은 입성자의 업적과 자본력을 외부에 과시하는 영지의 상징적 전시 공간입니다. 심연 던전에서 획득한 희귀 전리품, 보스 토벌 기념물, 고가 장비, 특별한 유물과 1군 메이트의 홀로그램 프로필을 화려한 장식장과 전시 패널에 진열합니다.",
+      "시설을 증축하면 조명·보안·자동 안내·가상 전시 효과가 강화되어 방문한 타 입성자와 랭커에게 압도적인 경제력과 수집 능력을 보여 줍니다. 전시물은 영지의 역사와 수익 성과를 눈으로 확인하는 기록이기도 하며, 희귀한 전리품과 메이트의 등급이 높을수록 소장 가치를 드러냅니다.",
+      "이브는 전시 목록과 획득 경위·평가 가치를 관리합니다. 전시 대상의 소유권과 전투 능력은 별개이며, 홀로그램 전시는 원본 메이트가 실제로 그 자리에 머무른다는 뜻은 아닙니다."
+    ]
   },
   {
-    title:'자산 승급 센터', image:'images/facilities/upgrade.webp', label:'자산 등급 승급 시설',
-    desc:'막대한 크레딧과 희귀 재료를 사용해 하위 등급 메이트를 승급시키는 시설입니다. 승급은 메이트당 단 한 단계로 제한됩니다.',
-    detail:'메이트의 유전자와 시스템 데이터를 조정하여 N → R 또는 R → SR로 진화시키는 특수 시설입니다. 각 메이트는 평생 단 한 단계(1 Tier)만 승급할 수 있으며, SSR 이상 등급은 승급 시스템 이용 자체가 차단됩니다.'
+    "title": "자산 승급 센터",
+    "image": "images/facilities/upgrade.webp",
+    "label": "자산 등급 승급 시설",
+    "desc": "희귀 재료와 크레딧으로 메이트를 한 단계 승급시키는 고비용 성장 시설입니다. SSR에서 UR로의 승급은 불가능합니다.",
+    "detail": [
+      "자산 승급 센터는 크레딧과 희귀 재료를 소모해 메이트의 시스템 등급을 한 단계 높이는 영지의 고비용 성장 시설입니다. 한 번의 심사로 오직 1티어만 승급할 수 있으며, 승급 경로는 N→R, R→SR, SR→SSR입니다. SSR 이상은 승급 센터 접근이 차단되므로 SSR→UR 승급과 UR의 추가 승급은 불가능합니다.",
+      "성공률과 필요 비용은 대상 등급·육성 상태·투입 재료·적용 중인 버프에 따라 달라질 수 있으며, 이브가 심사 조건과 비용을 고지합니다. 승급에 성공하면 상위 등급의 운영 가치를 얻지만 원래 캐릭터의 이름·출신·인격·고유한 서사는 유지됩니다.",
+      "각 메이트의 승급은 단 한 단계로 제한되고, 무리한 투자는 영지 재정을 압박합니다. 상위 등급으로 승급해도 특화 구역과 버프의 개방 규칙은 새로운 티어에 따라 판정하며, 이브가 변경 사항을 안내합니다."
+    ]
   }
 ];
 const businesses=[
@@ -1563,8 +1618,10 @@ function makeEstateFacility(record,index){
   const desc=document.createElement('p');desc.textContent=record.desc;
   const details=document.createElement('details');details.className='estate-facility-details';
   const summary=document.createElement('summary');summary.textContent='시설 상세 설명';
-  const detailText=document.createElement('p');detailText.textContent=record.detail||record.desc;
-  details.append(summary,detailText);
+  const detailBody=document.createElement('div');detailBody.className='estate-facility-longtext';
+  const paragraphs=Array.isArray(record.detail)?record.detail:[record.detail||record.desc];
+  paragraphs.forEach((part)=>{const p=document.createElement('p');p.textContent=part;detailBody.append(p)});
+  details.append(summary,detailBody);
   card.append(art,indexLabel,title,label,desc,details);return card;
 }
 function makeContentsCard(record,index){
