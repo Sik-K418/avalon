@@ -1045,6 +1045,18 @@
 .estate-facility-longtext p + p{padding-top:12px;border-top:1px solid #97adc320;}
 .estate-facility-details[open] summary{color:#fff1ca;}
 @media(max-width:720px){.estate-facility:has(> .estate-facility-details[open]){grid-column:1/-1}.estate-facility-longtext p{font-size:12px;line-height:1.95;}}
+
+/* V8 도감 인원 확정: SR 전용 커뮤니티 확장 안내 카드 */
+.character-card.sr-community-card{cursor:default;border-color:#9e78d9;background:linear-gradient(165deg,#241732,#131525);box-shadow:inset 0 0 0 1px #c8a1ff12}
+.character-card.sr-community-card:hover{transform:none;border-color:#ba96f4;box-shadow:inset 0 0 0 1px #c8a1ff2e}
+.sr-community-art{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:9px;overflow:hidden;background:radial-gradient(circle at 50% 45%,#8b57c04d 0%,#49316b30 36%,transparent 68%),linear-gradient(135deg,#21192d,#141827)}
+.sr-community-art::before{content:'';position:absolute;inset:12px;border:1px dashed #c59cf46e;pointer-events:none}
+.sr-community-symbol{font-size:clamp(42px,6vw,68px);line-height:1;color:#ddc1ff;text-shadow:0 0 25px #aa85fb7d}
+.sr-community-art strong{position:relative;z-index:1;color:#f1e5ff;font-size:clamp(11px,1.2vw,16px);line-height:1.45;text-align:center;word-break:keep-all;padding:0 7px}
+.sr-community-card .char-info small{color:#c6a7ee}
+.sr-community-card .char-info strong{font-size:12px;color:#e8d6ff}
+.sr-community-card .char-info span{font-size:9px;line-height:1.5;white-space:normal;word-break:keep-all}
+@media(max-width:720px){.sr-community-art strong{font-size:11px}.sr-community-symbol{font-size:43px}}
 </style>
 </head>
 <body>
@@ -1329,18 +1341,17 @@ const IMAGES = {
 };
 
 /* ============================================================
-   [2] 캐릭터 임시 슬롯. 실제 캐릭터 정보가 완성되면 배열을 교체/추가.
-   도감 수는 characters.length 를 통해 자동 계산됩니다.
-   UR 8항목 / SSR 7 / SR 6 / R·N 5항목 표시.
+   [2] 캐릭터 도감 정원: UR 5 / SSR 15 / SR 10 / R 10 / N 10.
+   총 50개 캐릭터 슬롯. SR 뒤에 추가하는 창작 안내 카드는 인원 수에 포함하지 않습니다.
+   신규 캐릭터의 소속 등급을 바꾸려면 TIER_SLOT_COUNTS만 수정하세요.
    ============================================================ */
 const tierNames={N:'일반',R:'기본',SR:'희귀',SSR:'특별',UR:'최상위'};
-const tierCycle=['UR','SSR','SR','R','N'];
 const traitsCount={N:1,R:2,SR:3,SSR:4,UR:5};
-// 등록 준비 중인 임시 슬롯 수. 캐릭터 제작 상황에 맞춰 이 숫자만 변경할 수 있습니다.
-const TEMP_CHARACTER_SLOTS=50;
-const characters=Array.from({length:TEMP_CHARACTER_SLOTS},(_,index)=>{
+const TIER_SLOT_COUNTS={UR:5,SSR:15,SR:10,R:10,N:10};
+const characters=['UR','SSR','SR','R','N'].flatMap(tier=>
+  Array.from({length:TIER_SLOT_COUNTS[tier]},(_,slot)=>({tier,slot:slot+1}))
+).map(({tier,slot},index)=>{
   const n=String(index+1).padStart(2,'0');
-  const tier=tierCycle[index%5];
   const traitNum=traitsCount[tier];
   return {
     name:'미등록 '+n,tier,code:'MATE-'+String(index+1).padStart(3,'0'),
@@ -1537,6 +1548,24 @@ function toggleTierSort(){
  renderCharacters();
 }
 function makeFallback(label,filename){const wrap=document.createElement('div');wrap.className='slot-label';const a=document.createElement('b');a.textContent=label;const b=document.createElement('small');b.textContent=filename;wrap.append(a,b);return wrap}
+function createSrCommunityCard(){
+ // 별도의 메이트가 아니라 SR 등급의 창작 확장 안내이므로 상세 열기 버튼은 두지 않습니다.
+ const card=document.createElement('article');
+ card.className='character-card tier-sr sr-community-card';
+ card.setAttribute('aria-label','SR 등급 추가 캐릭터는 여러분이 직접 만들어 주세요');
+ const art=document.createElement('div');
+ art.className='char-image sr-community-art';
+ const badge=document.createElement('span');badge.className='tier-badge';badge.textContent='SR +';
+ const symbol=document.createElement('span');symbol.className='sr-community-symbol';symbol.textContent='＋';
+ const title=document.createElement('strong');title.textContent='여러분이 직접 만들어 주세요';
+ art.append(badge,symbol,title);
+ const info=document.createElement('div');info.className='char-info';
+ const label=document.createElement('small');label.textContent='SR · 추가 제작 안내';
+ const name=document.createElement('strong');name.textContent='새로운 메이트의 자리';
+ const caption=document.createElement('span');caption.textContent='이 다음 이야기는 여러분이 만듭니다.';
+ info.append(label,name,caption);
+ card.append(art,info);return card;
+}
 function renderCharacters(){
  const grid=document.getElementById('characterGrid');grid.replaceChildren();
  const gradeOrder=['N','R','SR','SSR','UR'];
@@ -1546,15 +1575,19 @@ function renderCharacters(){
     if(aGrade!==bGrade)return ascendingTierSort?aGrade-bGrade:bGrade-aGrade;
     return a.index-b.index; // 같은 등급 안에서는 입력 순서 유지
   });
- ordered.forEach(({ch,index})=>{
+ ordered.forEach(({ch,index},position)=>{
   const btn=document.createElement('button');btn.type='button';btn.className='character-card tier-'+ch.tier.toLowerCase();
-  const art=document.createElement('div');art.className='char-image art-block';art.appendChild(makeFallback('CHARACTER ART',ch.card));
+  const art=document.createElement('div');art.className='char-image art-block';art.appendChild(makeFallback('캐릭터 이미지 준비 중',ch.card));
   const tier=document.createElement('span');tier.className='tier-badge';tier.textContent=ch.tier;art.appendChild(tier);
   const info=document.createElement('div');info.className='char-info';const code=document.createElement('small');code.textContent=ch.code+' / '+tierNames[ch.tier];
   const name=document.createElement('strong');name.textContent=ch.name;const hint=document.createElement('span');hint.textContent='프로필 열기 ↗';info.append(code,name,hint);
   btn.append(art,info);btn.addEventListener('click',()=>openCharacter(index));grid.appendChild(btn);attachArt(art,ch.card);
+  // SR 10장 다음에 안내 카드 한 장만 배치합니다. 목록 정렬 반전에도 따라갑니다.
+  if(ch.tier==='SR' && ordered[position+1]?.ch.tier!=='SR'){
+    grid.appendChild(createSrCommunityCard());
+  }
  });
- document.getElementById('characterCount').textContent=String(ordered.length)+' / '+characters.length+'명';
+ document.getElementById('characterCount').textContent=activeTier==='SR' ? `SR ${ordered.length}명 · 추가 제작 안내 1장` : activeTier==='ALL' ? `총 ${characters.length}명 · SR 확장 안내 1장` : `${activeTier} ${ordered.length}명 · 전체 ${characters.length}명`;
 }
 function openCharacter(index){
  const ch=characters[index];
