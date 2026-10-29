@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#090d13">
 <meta name="description" content="AVALON v8 — 중앙 AI EVE가 안내하는 세계관, 영지, 콘텐츠, 경제와 메이트 도감">
-<title>AVALON — CENTRAL ARCHIVE</title>
+<title>AVALON — 아발론 중앙 기록관</title>
 <style>
 :root{--bg:#080c13;--panel:#0f1824;--panel2:#182333;--ink:#f1f4f7;--mute:#a6b0bd;--line:#ffffff30;--gold:#eecb82;--cyan:#79d7e7;--red:#f57573}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,"Pretendard","Malgun Gothic",sans-serif}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}.hidden{display:none!important}
@@ -1015,21 +1015,44 @@
 @media(max-width:900px){.contents-guide{grid-template-columns:minmax(0,40%) minmax(0,60%);gap:10px}.contents-guide-copy{padding:10px 0}.contents-guide-art{height:470px}.contents-active-info{padding:20px 18px}.contents-detail-item{grid-template-columns:1fr;gap:5px}}
 @media(max-width:720px){.contents-guide{grid-template-columns:1fr;gap:4px}.contents-guide-art{position:relative;top:auto;height:390px}.contents-guide-copy{padding:12px 0 0}.contents-active-info{padding:19px 16px;scroll-margin-top:82px}.contents-detail-item{grid-template-columns:1fr}.contents-brief-process li{font-size:11px}}
 
+
+/* V8 한국어 UI: 번역 이후 긴 한글 제목들이 화면 밖으로 밀리지 않도록 크기만 보정 */
+.economy-credit-copy h1{font-size:clamp(58px,6.6vw,104px);line-height:1.11;letter-spacing:-.068em;word-break:keep-all}
+.economy-coin-title h2{font-size:clamp(42px,4.3vw,67px);line-height:1.14;letter-spacing:-.07em;word-break:keep-all}
+.economy-coin-title h2 span{font-size:.72em}
+.economy-usage-intro h2{font-size:clamp(42px,4.3vw,64px);line-height:1.14;letter-spacing:-.075em}
+.estate-hero-center h1{font-size:clamp(77px,10.5vw,160px);line-height:1.05;letter-spacing:-.072em}
+.estate-block-heading h2{font-size:clamp(36px,4.6vw,65px);letter-spacing:-.055em}
+.estate-plan-copy h2{letter-spacing:-.065em}
+.contents-hero-copy h1{font-size:clamp(52px,6.2vw,94px);line-height:1.10;letter-spacing:-.065em;word-break:keep-all}
+.contents-section-head h2{font-size:clamp(37px,4.5vw,70px);line-height:1.12;letter-spacing:-.065em}
+.contents-guide-copy h2{font-size:clamp(44px,5.4vw,76px);line-height:1.12;letter-spacing:-.065em}
+.contents-final h2{font-size:clamp(51px,6.5vw,94px);line-height:1.13;letter-spacing:-.07em}
+@media(max-width:760px){
+  .economy-credit-copy h1{font-size:clamp(50px,10vw,76px)}
+  .economy-coin-title h2{font-size:clamp(37px,10vw,54px)}
+  .economy-usage-intro h2{font-size:clamp(42px,10vw,58px)}
+  .estate-hero-center h1{font-size:clamp(65px,14vw,99px)}
+  .contents-hero-copy h1{font-size:clamp(43px,8.4vw,62px)}
+  .contents-section-head h2{font-size:clamp(35px,9vw,49px)}
+  .contents-guide-copy h2{font-size:clamp(42px,10vw,60px)}
+  .contents-final h2{font-size:clamp(48px,12vw,64px)}
+}
 </style>
 </head>
 <body>
 <!-- 처음부터 닫힌 다차원 엘리베이터: 문 전면에 0~100% 진행률을 표시 -->
 <section id="elevatorReveal" class="v6-elevator" aria-label="다차원 엘리베이터 이동 중" aria-live="polite">
   <div class="v6-elevator-glow"></div>
-  <div class="v6-elevator-door v6-elevator-left"><div class="v6-door-grooves"></div><span>AVALON // TRANSIT 001</span></div>
-  <div class="v6-elevator-door v6-elevator-right"><div class="v6-door-grooves"></div><span>DIMENSIONAL ACCESS</span></div>
+  <div class="v6-elevator-door v6-elevator-left"><div class="v6-door-grooves"></div><span>아발론 · 차원 이동 001</span></div>
+  <div class="v6-elevator-door v6-elevator-right"><div class="v6-door-grooves"></div><span>차원 이동 승인</span></div>
   <div class="v6-elevator-seam"></div>
   <div class="v6-elevator-console" id="elevatorConsole">
-    <div class="v6-console-top"><span>◇ CENTRAL SYSTEM</span><span>GATE · ∞</span></div>
+    <div class="v6-console-top"><span>◇ 중앙 관리 시스템</span><span>차원 관문 · ∞</span></div>
     <div class="v6-console-label">차원 이동 중</div>
     <div class="v6-console-brand">AVALON</div>
     <div class="v6-console-progress"><div id="progressFill"></div></div>
-    <div class="v6-console-bottom"><span id="progressStatus">DIMENSIONAL TRANSIT IN PROGRESS</span><strong id="progressNumber">0%</strong></div>
+    <div class="v6-console-bottom"><span id="progressStatus">차원 이동 진행 중</span><strong id="progressNumber">0%</strong></div>
   </div>
 </section>
 <!-- 문 너머에 나타나는 큰 시네마틱 메인 화면. 이후 일반 아발론 홈으로 전환 -->
@@ -1041,35 +1064,35 @@
   <img class="v6-arrival-eve" src="images/eve-home.webp" alt="" onerror="this.style.display='none'">
   <div class="v6-arrival-screen-shade"></div>
   <div class="v6-arrival-content">
-    <div class="v6-arrival-kicker">CENTRAL DISTRICT · WELCOME TO</div>
+    <div class="v6-arrival-kicker">중앙 특구 · 환영합니다</div>
     <h1>AVALON</h1>
     <div class="v6-arrival-line"></div>
     <p>모든 가치가 거래되는 세계.</p>
     <div class="v6-arrival-sub">다차원 특구 아발론에 오신 것을 환영합니다.</div>
   </div>
-  <div class="v6-arrival-footer">ARRIVAL AUTHORIZED <span>◆</span> EVE CENTRAL SYSTEM</div>
+  <div class="v6-arrival-footer">입성 승인 <span>◆</span> 이브 중앙 관리 시스템</div>
 </section>
 <div id="app" class="hidden">
-<header class="site-header"><button class="brand" onclick="showPage('home')" aria-label="메인 화면으로"><strong>AVALON</strong><small>CENTRAL ARCHIVE / EVE</small></button><nav class="top-nav" aria-label="메뉴"><button class="nav-btn active" data-nav="home" onclick="showPage('home')">HOME</button><button class="nav-btn" data-nav="characters" onclick="showPage('characters')">캐릭터 도감</button><button class="nav-btn" data-nav="world" onclick="showPage('world')">세계관</button><button class="nav-btn" data-nav="territory" onclick="showPage('territory')">영지</button><button class="nav-btn" data-nav="contents" onclick="showPage('contents')">콘텐츠</button><button class="nav-btn" data-nav="economy" onclick="showPage('economy')">경제 · 재화</button></nav><div class="on-air"><i></i>SYSTEM ONLINE</div></header>
+<header class="site-header"><button class="brand" onclick="showPage('home')" aria-label="메인 화면으로"><strong>AVALON</strong><small>이브 · 중앙 기록관</small></button><nav class="top-nav" aria-label="메뉴"><button class="nav-btn active" data-nav="home" onclick="showPage('home')">홈</button><button class="nav-btn" data-nav="characters" onclick="showPage('characters')">캐릭터 도감</button><button class="nav-btn" data-nav="world" onclick="showPage('world')">세계관</button><button class="nav-btn" data-nav="territory" onclick="showPage('territory')">영지</button><button class="nav-btn" data-nav="contents" onclick="showPage('contents')">콘텐츠</button><button class="nav-btn" data-nav="economy" onclick="showPage('economy')">경제 · 재화</button></nav><div class="on-air"><i></i>시스템 가동 중</div></header>
 <main>
 <section id="page-home" class="page active">
   <div class="home-hero">
-    <div class="hero-back art-block" data-art="heroBackground"><div class="slot-label"><div class="slot-icon"><span>◇</span></div><b>MAIN BACKGROUND</b><small>images/home-bg.webp</small></div></div>
-    <div class="hero-inner"><div class="hero-copy"><div class="eyebrow">YOU HAVE BEEN INVITED ━━</div><h1 class="hero-title">AVA<span>L</span>ON</h1><div class="hero-slogan">모든 가치가 거래되는 세계.</div><p>외부 간섭이 차단된 상업 특구 아발론.<br>중앙 AI 이브가 안내하는 세계관과 메이트, 영지의 모든 정보를 확인해 보세요.</p><div class="hero-buttons"><button class="action" onclick="showPage('characters')">캐릭터 도감 보기 ↗</button><button class="action outline" onclick="showPage('world')">아발론 소개 ↗</button></div></div><div class="hero-figure art-block" data-art="heroFigure" data-fit="contain"><div class="slot-label"><div class="slot-icon"><span>◇</span></div><b>메인 캐릭터 / EVE</b><small>images/eve-home.webp</small></div></div></div>
-    <div class="hero-meta">ENTRANCE 001 / AVALON CENTRAL LOBBY</div>
+    <div class="hero-back art-block" data-art="heroBackground"><div class="slot-label"><div class="slot-icon"><span>◇</span></div><b>메인 전경</b><small>images/home-bg.webp</small></div></div>
+    <div class="hero-inner"><div class="hero-copy"><div class="eyebrow">당신을 아발론에 초대합니다 ━━</div><h1 class="hero-title">AVA<span>L</span>ON</h1><div class="hero-slogan">모든 가치가 거래되는 세계.</div><p>외부 간섭이 차단된 상업 특구 아발론.<br>중앙 AI 이브가 안내하는 세계관과 메이트, 영지의 모든 정보를 확인해 보세요.</p><div class="hero-buttons"><button class="action" onclick="showPage('characters')">캐릭터 도감 보기 ↗</button><button class="action outline" onclick="showPage('world')">아발론 소개 ↗</button></div></div><div class="hero-figure art-block" data-art="heroFigure" data-fit="contain"><div class="slot-label"><div class="slot-icon"><span>◇</span></div><b>메인 캐릭터 / EVE</b><small>images/eve-home.webp</small></div></div></div>
+    <div class="hero-meta">입구 001 / 아발론 중앙 로비</div>
   </div>
   <div class="menu-row" aria-label="주요 메뉴">
-    <button class="menu-art art-block" data-art="menuCharacters" onclick="showPage('characters')"><div class="slot-label"><small>images/menu-characters.webp</small></div><div class="menu-copy"><small>01 / DATABASE</small><strong>캐릭터 도감</strong><em>↗</em></div></button>
-    <button class="menu-art art-block" data-art="menuWorld" onclick="showPage('world')"><div class="slot-label"><small>images/menu-world.webp</small></div><div class="menu-copy"><small>02 / WORLD</small><strong>세계관 소개</strong><em>↗</em></div></button>
-    <button class="menu-art art-block" data-art="menuTerritory" onclick="showPage('territory')"><div class="slot-label"><small>images/menu-territory.webp</small></div><div class="menu-copy"><small>03 / ESTATE</small><strong>영지</strong><em>↗</em></div></button>
-    <button class="menu-art art-block" data-art="menuEconomy" onclick="showPage('economy')"><div class="slot-label"><small>images/menu-economy.webp</small></div><div class="menu-copy"><small>04 / ECONOMY</small><strong>경제 · 재화</strong><em>↗</em></div></button>
+    <button class="menu-art art-block" data-art="menuCharacters" onclick="showPage('characters')"><div class="slot-label"><small>images/menu-characters.webp</small></div><div class="menu-copy"><small>01 / 도감</small><strong>캐릭터 도감</strong><em>↗</em></div></button>
+    <button class="menu-art art-block" data-art="menuWorld" onclick="showPage('world')"><div class="slot-label"><small>images/menu-world.webp</small></div><div class="menu-copy"><small>02 / 세계관</small><strong>세계관 소개</strong><em>↗</em></div></button>
+    <button class="menu-art art-block" data-art="menuTerritory" onclick="showPage('territory')"><div class="slot-label"><small>images/menu-territory.webp</small></div><div class="menu-copy"><small>03 / 영지</small><strong>영지</strong><em>↗</em></div></button>
+    <button class="menu-art art-block" data-art="menuEconomy" onclick="showPage('economy')"><div class="slot-label"><small>images/menu-economy.webp</small></div><div class="menu-copy"><small>04 / 재화</small><strong>경제 · 재화</strong><em>↗</em></div></button>
   </div>
-  <div class="container home-showcase"><div class="showcase-head"><div><div class="eyebrow">AVALON ARCHIVE / FEATURED</div><h2 class="section-heading" style="margin-top:12px">EXPLORE THE SYSTEM.</h2></div></div><div class="showcase-grid"><button class="showcase-card art-block" data-art="promoSummon" onclick="showPage('world')"><div class="slot-label"><b>엘리베이터 프로모 이미지</b><small>images/promo-summon.webp</small></div><div class="showcase-copy"><small>DIMENSIONAL SUMMONING</small><h3>다차원 소환 시스템 ↗</h3></div></button><button class="showcase-card art-block" data-art="promoContents" onclick="showPage('contents')"><div class="slot-label"><b>콘텐츠 프로모 이미지</b><small>images/promo-contents.webp</small></div><div class="showcase-copy"><small>AVALON CONTENTS</small><h3>콘텐츠 ↗</h3></div></button></div></div>
+  <div class="container home-showcase"><div class="showcase-head"><div><div class="eyebrow">아발론 기록관 / 주요 콘텐츠</div><h2 class="section-heading" style="margin-top:12px">아발론 둘러보기.</h2></div></div><div class="showcase-grid"><button class="showcase-card art-block" data-art="promoSummon" onclick="showPage('world')"><div class="slot-label"><b>엘리베이터 프로모 이미지</b><small>images/promo-summon.webp</small></div><div class="showcase-copy"><small>다차원 소환</small><h3>다차원 소환 시스템 ↗</h3></div></button><button class="showcase-card art-block" data-art="promoContents" onclick="showPage('contents')"><div class="slot-label"><b>콘텐츠 프로모 이미지</b><small>images/promo-contents.webp</small></div><div class="showcase-copy"><small>아발론 콘텐츠</small><h3>콘텐츠 ↗</h3></div></button></div></div>
 </section>
 <!-- 도감 -->
 <section id="page-characters" class="page">
-  <div class="inner-banner art-block" data-art="charactersBackground"><div class="slot-label"><small>images/menu-characters.webp</small></div><div class="inner-title container"><div class="eyebrow">01 / CHARACTER DATABASE</div><h1>MATE ARCHIVE</h1><p>다차원에서 소환된 메이트들의 가치 등급별 정보</p></div></div>
-  <div class="container content-area"><div class="filter-bar"><div class="tier-controls" id="tierControls"><button class="tier-btn active" data-tier="ALL" onclick="filterTier('ALL')">ALL</button><button class="tier-btn" data-tier="UR" onclick="filterTier('UR')">UR</button><button class="tier-btn" data-tier="SSR" onclick="filterTier('SSR')">SSR</button><button class="tier-btn" data-tier="SR" onclick="filterTier('SR')">SR</button><button class="tier-btn" data-tier="R" onclick="filterTier('R')">R</button><button class="tier-btn" data-tier="N" onclick="filterTier('N')">N</button></div><div class="archive-tools"><button class="tier-sort-toggle" id="tierSortToggle" type="button" onclick="toggleTierSort()" aria-label="캐릭터 등급 정렬 방향 바꾸기" aria-pressed="false"><span class="tier-sort-arrow">↕</span> <span id="tierSortLabel">UR → N</span></button><div class="filter-note" id="characterCount">50 SLOTS</div></div></div><div class="character-grid" id="characterGrid"></div></div>
+  <div class="inner-banner art-block" data-art="charactersBackground"><div class="slot-label"><small>images/menu-characters.webp</small></div><div class="inner-title container"><div class="eyebrow">01 / 캐릭터 도감</div><h1>메이트 도감</h1><p>다차원에서 소환된 메이트들의 가치 등급별 정보</p></div></div>
+  <div class="container content-area"><div class="filter-bar"><div class="tier-controls" id="tierControls"><button class="tier-btn active" data-tier="ALL" onclick="filterTier('ALL')">전체</button><button class="tier-btn" data-tier="UR" onclick="filterTier('UR')">UR</button><button class="tier-btn" data-tier="SSR" onclick="filterTier('SSR')">SSR</button><button class="tier-btn" data-tier="SR" onclick="filterTier('SR')">SR</button><button class="tier-btn" data-tier="R" onclick="filterTier('R')">R</button><button class="tier-btn" data-tier="N" onclick="filterTier('N')">N</button></div><div class="archive-tools"><button class="tier-sort-toggle" id="tierSortToggle" type="button" onclick="toggleTierSort()" aria-label="캐릭터 등급 정렬 방향 바꾸기" aria-pressed="false"><span class="tier-sort-arrow">↕</span> <span id="tierSortLabel">UR → N</span></button><div class="filter-note" id="characterCount">50명 등록 예정</div></div></div><div class="character-grid" id="characterGrid"></div></div>
 </section>
 <!-- 캐릭터 상세 V5 유지: 좌측 정보 23% / 중앙 이미지 54% / 우측 버프 23%, 이미지 하단 그라디언트 -->
 <section id="page-detail" class="page">
@@ -1079,23 +1102,23 @@
    <div class="v5-dialog-scroll" id="detailScroll" tabindex="0">
     <div id="detailPortrait" class="v5-scroll-cover art-block" aria-label="캐릭터 전신 일러스트">
      <div class="slot-label"><b>캐릭터 전신 일러스트</b><small>images/characters/mate-01.webp</small></div>
-     <div class="v5-cover-title"><div class="v5-cover-code" id="detailCode">MATE-001 / CENTRAL ARCHIVE</div><div class="v5-cover-name-row"><h2 id="detailName">미등록 01</h2><span class="v5-cover-tier" id="detailTierShort">UR</span></div><p class="v5-cover-affiliation" id="detailAffiliation">출신 및 소속</p></div>
+     <div class="v5-cover-title"><div class="v5-cover-code" id="detailCode">MATE-001 / 중앙 기록관</div><div class="v5-cover-name-row"><h2 id="detailName">미등록 01</h2><span class="v5-cover-tier" id="detailTierShort">UR</span></div><p class="v5-cover-affiliation" id="detailAffiliation">출신 및 소속</p></div>
     </div>
     <div class="v5-scroll-body">
      <div class="v5-scroll-stats">
-      <div><b id="detailTier">UR</b><span>VALUE GRADE</span></div>
+      <div><b id="detailTier">UR</b><span>등급</span></div>
       <div><b id="detailTraitCountStat">05</b><span>고유 특성</span></div>
-      <div><b id="detailCodeSummary">001</b><span>ARCHIVE ID</span></div>
+      <div><b id="detailCodeSummary">001</b><span>등록 번호</span></div>
      </div>
-     <div class="v5-data-line"><span class="v5-data-label">출신 차원 / ORIGIN</span><p id="detailOrigin">출신 설정</p></div>
-     <div class="v5-data-line"><span class="v5-data-label">신체 · 외형 / APPEARANCE</span><p id="detailBody">외형 설명</p></div>
-     <div class="v5-data-line"><span class="v5-data-label">성격 / PERSONALITY</span><p id="detailPersonality">성격 설명</p></div>
-     <div class="v5-data-line"><span class="v5-data-label">성벽 및 함락 반응 / CHARACTER RESPONSE</span><p id="detailReaction">성향 설명</p></div>
+     <div class="v5-data-line"><span class="v5-data-label">출신 차원</span><p id="detailOrigin">출신 설정</p></div>
+     <div class="v5-data-line"><span class="v5-data-label">신체 · 외형</span><p id="detailBody">외형 설명</p></div>
+     <div class="v5-data-line"><span class="v5-data-label">성격</span><p id="detailPersonality">성격 설명</p></div>
+     <div class="v5-data-line"><span class="v5-data-label">성향 및 반응</span><p id="detailReaction">성향 설명</p></div>
      <div class="v5-scroll-section-heading"><span>고유 특성</span><em id="traitCount">05 / 05</em></div>
      <div class="v5-stack" id="detailTraitGrid"></div>
      <div id="detailBuffArea"></div>
      <div class="v5-scroll-actions"><button type="button" onclick="document.getElementById('detailScroll').scrollTo({top:0,behavior:'smooth'})">↑ 맨 위로</button><button type="button" onclick="showPage('characters')">캐릭터 도감</button></div>
-     <div class="v5-scroll-foot">AVALON · EVE CENTRAL ARCHIVE</div>
+     <div class="v5-scroll-foot">아발론 · 이브 중앙 기록관</div>
     </div>
    </div>
   </div>
@@ -1106,55 +1129,55 @@
 <section id="page-world" class="page v6-world-page">
   <div class="v6-world-head container">
     <div>
-      <div class="eyebrow">AVALON / CENTRAL ARCHIVE / WORLD DATABASE</div>
+      <div class="eyebrow">아발론 / 중앙 기록관 / 세계관 정보</div>
       <h1>세계관 <span>안내 시스템</span></h1>
       <p>중앙 관리 AI 이브가 아발론의 운영 체계를 안내합니다.</p>
     </div>
-    <div class="v6-online"><span></span> EVE · SYSTEM ONLINE</div>
+    <div class="v6-online"><span></span> 이브 · 시스템 가동 중</div>
   </div>
   <div class="v6-world-main container">
     <div class="v6-world-layout">
       <div class="v6-world-side v6-world-side-left" aria-label="세계관 왼쪽 메뉴">
         <button type="button" class="v6-world-tile selected" data-world-topic="avalon" onclick="selectWorldTopic('avalon')">
-          <span class="v6-tile-index">01 / WORLD</span>
+          <span class="v6-tile-index">01 / 세계관</span>
           <strong>아발론이란?</strong>
           <span class="v6-tile-desc">외부 간섭이 차단된 다차원 상업 특구</span>
           <span class="v6-tile-more">기록 열람 ↗</span>
         </button>
         <button type="button" class="v6-world-tile" data-world-topic="eve" onclick="selectWorldTopic('eve')">
-          <span class="v6-tile-index">02 / CENTRAL AI</span>
+          <span class="v6-tile-index">02 / 중앙 관리 AI</span>
           <strong>관리 AI · EVE</strong>
           <span class="v6-tile-desc">운영과 정산, 질서를 관리하는 중앙 시스템</span>
           <span class="v6-tile-more">기록 열람 ↗</span>
         </button>
       </div>
       <div class="v6-eve-stage">
-        <div class="v6-eve-header"><span>CENTRAL CONTROL</span><span>▲ EVE-001</span></div>
+        <div class="v6-eve-header"><span>중앙 관제 시스템</span><span>▲ 이브 001</span></div>
         <div class="v6-eve-glow"></div>
         <div class="v6-eve-art art-block" data-art="worldEve" data-fit="contain">
           <div class="slot-label">
             <div class="slot-icon"><span>◇</span></div>
             <b>이브 일러스트</b>
-            <small>images/home-character.png</small>
-            <small>홈과 세계관에서 같은 이미지 한 장을 사용합니다</small>
+            <small>images/eve-world.webp</small>
+            <small>세계관 안내용 이브 일러스트</small>
           </div>
         </div>
         <div class="v6-eve-gradient"></div>
         <div class="v6-eve-footer">
-          <span class="v6-eve-label">CENTRAL ADMINISTRATOR</span>
+          <span class="v6-eve-label">중앙 관리자</span>
           <strong>EVE</strong>
           <span>“환영합니다, 입성자님. 안내를 시작하겠습니다.”</span>
         </div>
       </div>
       <div class="v6-world-side v6-world-side-right" aria-label="세계관 오른쪽 메뉴">
         <button type="button" class="v6-world-tile" data-world-topic="summon" onclick="selectWorldTopic('summon')">
-          <span class="v6-tile-index">03 / DIMENSIONAL SYSTEM</span>
+          <span class="v6-tile-index">03 / 다차원 소환</span>
           <strong>다차원 소환</strong>
           <span class="v6-tile-desc">엘리베이터를 통한 메이트 소환</span>
           <span class="v6-tile-more">기록 열람 ↗</span>
         </button>
         <button type="button" class="v6-world-tile" data-world-topic="grades" onclick="selectWorldTopic('grades')">
-          <span class="v6-tile-index">04 / CLASSIFICATION</span>
+          <span class="v6-tile-index">04 / 등급 분류</span>
           <strong>메이트 등급</strong>
           <span class="v6-tier-chips"><i>N</i><i>R</i><i>SR</i><i>SSR</i><i>UR</i></span>
           <span class="v6-tile-more">기록 열람 ↗</span>
@@ -1164,23 +1187,23 @@
 
     <div class="v6-world-reader" aria-live="polite">
       <div class="v6-world-reader-label">
-        <span id="worldTopicNumber">01 / WORLD DATABASE</span>
-        <span>◇ EVE'S BRIEFING</span>
+        <span id="worldTopicNumber">01 / 세계관 정보</span>
+        <span>◇ 이브의 안내</span>
       </div>
       <h2 id="worldTopicTitle">아발론이란?</h2>
       <p id="worldTopicDescription">아발론은 외부 세계의 간섭이 차단된 폐쇄형 상업·유흥 특구입니다. 입성자들은 영지를 운영하고 다차원 소환을 통해 메이트를 확보하며, 다양한 활동과 거래로 자신의 입지를 넓혀갑니다.</p>
-      <div class="v6-world-reader-sign">— EVE / CENTRAL INFORMATION SERVICE</div>
+      <div class="v6-world-reader-sign">— 이브 / 중앙 안내 시스템</div>
     </div>
 
     <div class="v6-world-shortcuts">
       <button type="button" class="v6-world-shortcut" onclick="showPage('territory')">
         <span class="v6-shortcut-icon">▣</span>
-        <span><small>ESTATE ARCHIVE</small><strong>영지</strong><em>영지 시설과 구조 둘러보기</em></span>
+        <span><small>영지 안내</small><strong>영지</strong><em>영지 시설과 구조 둘러보기</em></span>
         <span class="v6-shortcut-arrow">↗</span>
       </button>
       <button type="button" class="v6-world-shortcut" onclick="showPage('economy')">
         <span class="v6-shortcut-icon">◇</span>
-        <span><small>ECONOMY & CURRENCY</small><strong>경제 · 재화</strong><em>크레딧, 코인과 정산 체계</em></span>
+        <span><small>경제 · 재화</small><strong>경제 · 재화</strong><em>크레딧, 코인과 정산 체계</em></span>
         <span class="v6-shortcut-arrow">↗</span>
       </button>
     </div>
@@ -1190,37 +1213,37 @@
 <section id="page-economy" class="page economy-v7">
   <!-- 01: 밝은 크레딧 소개 / 메인 크레딧 이미지 -->
   <section class="economy-credit-hero" aria-labelledby="economyCreditHeading">
-    <div class="container economy-credit-inner"><div class="economy-credit-copy"><div class="economy-overline"><span>AVALON / CURRENCY SYSTEM</span><span>01 / CREDIT</span></div><h1 id="economyCreditHeading">VALUE<br>RUNS THE<br><em>WORLD.</em></h1><p>아발론의 모든 거래와 시설 운영을 움직이는 기본 재화, <strong>크레딧</strong>. 영지의 유지와 증축부터 다양한 자산 거래까지, 입성자의 경제 활동을 책임집니다.</p><button class="economy-dark-button" onclick="document.getElementById('economyCoin').scrollIntoView({behavior:'smooth'})">코인 시스템 살펴보기 <span>↗</span></button><div class="economy-credit-mini"><b>CREDIT / CR</b><span>시설 증축 · 유지비 · 거래 · 경매</span></div></div>
-      <div class="economy-credit-art art-block" data-art="creditHero"><div class="slot-label"><b>크레딧 메인 일러스트</b><small>images/economy-credit.webp</small></div><div class="economy-art-annotation">AVALON<br>FINANCIAL SYSTEM</div></div>
+    <div class="container economy-credit-inner"><div class="economy-credit-copy"><div class="economy-overline"><span>아발론 / 재화 시스템</span><span>01 / 크레딧</span></div><h1 id="economyCreditHeading">가치를<br>움직이는<br><em>크레딧.</em></h1><p>아발론의 모든 거래와 시설 운영을 움직이는 기본 재화, <strong>크레딧</strong>. 영지의 유지와 증축부터 다양한 자산 거래까지, 입성자의 경제 활동을 책임집니다.</p><button class="economy-dark-button" onclick="document.getElementById('economyCoin').scrollIntoView({behavior:'smooth'})">코인 시스템 살펴보기 <span>↗</span></button><div class="economy-credit-mini"><b>크레딧 / CR</b><span>시설 증축 · 유지비 · 거래 · 경매</span></div></div>
+      <div class="economy-credit-art art-block" data-art="creditHero"><div class="slot-label"><b>크레딧 메인 일러스트</b><small>images/economy-credit.webp</small></div><div class="economy-art-annotation">AVALON<br>경제 관리 시스템</div></div>
     </div>
   </section>
   <!-- 02: 검은색 코인 소개 구간 -->
-  <section id="economyCoin" class="economy-coin" aria-labelledby="economyCoinHeading"><div class="container economy-coin-inner"><div class="economy-coin-title"><div class="economy-overline"><span>02 / SPECIAL CURRENCY</span></div><h2 id="economyCoinHeading">COIN.<br><span>SUMMON<br>THE UNKNOWN.</span></h2><p>코인은 다차원 엘리베이터의 일반 소환에 사용되는 재화입니다. 크레딧 환전이나 특수 임무를 통해 획득할 수 있습니다.</p><div class="economy-coin-caption">DIMENSIONAL SUMMONING / AVALON · <a href="#economyPrism">프리즘 코인 ↓</a></div></div><div class="economy-coin-art art-block" data-art="coinHero"><div class="slot-label"><b>코인 메인 일러스트</b><small>images/economy-coin.webp</small></div></div><div class="economy-coin-facts"><div><small>USE / 01</small><strong>일반 소환</strong><span>다차원 엘리베이터</span></div><div><small>GET / 01</small><strong>크레딧 환전</strong><span>코인 획득 경로</span></div><div><small>GET / 02</small><strong>특수 임무</strong><span>코인 획득 경로</span></div></div></div></section>
+  <section id="economyCoin" class="economy-coin" aria-labelledby="economyCoinHeading"><div class="container economy-coin-inner"><div class="economy-coin-title"><div class="economy-overline"><span>02 / 소환 재화</span></div><h2 id="economyCoinHeading">코인.<br><span>새로운 만남을<br>소환하다.</span></h2><p>코인은 다차원 엘리베이터의 일반 소환에 사용되는 재화입니다. 크레딧 환전이나 특수 임무를 통해 획득할 수 있습니다.</p><div class="economy-coin-caption">다차원 소환 / 아발론 · <a href="#economyPrism">프리즘 코인 ↓</a></div></div><div class="economy-coin-art art-block" data-art="coinHero"><div class="slot-label"><b>코인 메인 일러스트</b><small>images/economy-coin.webp</small></div></div><div class="economy-coin-facts"><div><small>사용 / 01</small><strong>일반 소환</strong><span>다차원 엘리베이터</span></div><div><small>획득 / 01</small><strong>크레딧 환전</strong><span>코인 획득 경로</span></div><div><small>획득 / 02</small><strong>특수 임무</strong><span>코인 획득 경로</span></div></div></div></section>
   <!-- 03: 사용처 한 가지와 획득 경로 두 가지를 구분 -->
-  <section class="economy-usage" aria-labelledby="economyUsageHeading"><div class="container economy-usage-inner"><div class="economy-usage-intro"><div class="economy-overline"><span>03 / UTILITY & ACQUISITION</span></div><h2 id="economyUsageHeading">WHERE<br>COINS<br><span>GO.</span></h2><p>코인의 사용처와 획득 방법을 살펴보세요. 현재 확정된 설정을 기준으로 정리했습니다.</p></div><div class="economy-usage-cards">
-      <details class="economy-usage-card"><summary><small>01 / USE</small><h3>일반 다차원 소환</h3><p>코인을 사용하여 엘리베이터 소환을 진행하는 주요 사용처</p><div class="economy-usage-art art-block" data-art="coinUseSummon"><div class="slot-label"><small>images/promo-summon.webp</small></div></div><span class="economy-card-arrow">＋</span></summary><div class="economy-card-detail">다차원 엘리베이터에서 일반 소환에 코인을 사용합니다. 다양한 등급의 메이트를 만날 수 있는 아발론의 핵심 시스템입니다.</div></details>
-      <details class="economy-usage-card"><summary><small>02 / GET</small><h3>크레딧 환전</h3><p>아발론의 범용 재화를 코인으로 환전하는 획득 경로</p><div class="economy-usage-art art-block" data-art="coinGetExchange"><div class="slot-label"><small>images/economy-get-exchange.webp</small></div></div><span class="economy-card-arrow">＋</span></summary><div class="economy-card-detail">크레딧을 이용해 코인을 획득할 수 있습니다. 구체적인 환전 비율은 추후 세계관 설정에 맞춰 안내합니다.</div></details>
-      <details class="economy-usage-card"><summary><small>03 / GET</small><h3>특수 임무</h3><p>아발론의 특정 임무를 통해 코인을 얻는 획득 경로</p><div class="economy-usage-art art-block" data-art="coinGetMission"><div class="slot-label"><small>images/economy-get-mission.webp</small></div></div><span class="economy-card-arrow">＋</span></summary><div class="economy-card-detail">특수 임무 보상으로 코인을 획득할 수 있습니다. 임무의 종류와 보상량은 현재 공개되지 않은 설정으로 남겨둡니다.</div></details>
+  <section class="economy-usage" aria-labelledby="economyUsageHeading"><div class="container economy-usage-inner"><div class="economy-usage-intro"><div class="economy-overline"><span>03 / 사용처와 획득 방법</span></div><h2 id="economyUsageHeading">코인은<br>어디에<br><span>쓰일까?</span></h2><p>코인의 사용처와 획득 방법을 살펴보세요. 현재 확정된 설정을 기준으로 정리했습니다.</p></div><div class="economy-usage-cards">
+      <details class="economy-usage-card"><summary><small>01 / 사용</small><h3>일반 다차원 소환</h3><p>코인을 사용하여 엘리베이터 소환을 진행하는 주요 사용처</p><div class="economy-usage-art art-block" data-art="coinUseSummon"><div class="slot-label"><small>images/promo-summon.webp</small></div></div><span class="economy-card-arrow">＋</span></summary><div class="economy-card-detail">다차원 엘리베이터에서 일반 소환에 코인을 사용합니다. 다양한 등급의 메이트를 만날 수 있는 아발론의 핵심 시스템입니다.</div></details>
+      <details class="economy-usage-card"><summary><small>02 / 획득</small><h3>크레딧 환전</h3><p>아발론의 범용 재화를 코인으로 환전하는 획득 경로</p><div class="economy-usage-art art-block" data-art="coinGetExchange"><div class="slot-label"><small>images/economy-get-exchange.webp</small></div></div><span class="economy-card-arrow">＋</span></summary><div class="economy-card-detail">크레딧을 이용해 코인을 획득할 수 있습니다. 구체적인 환전 비율은 추후 세계관 설정에 맞춰 안내합니다.</div></details>
+      <details class="economy-usage-card"><summary><small>03 / 획득</small><h3>특수 임무</h3><p>아발론의 특정 임무를 통해 코인을 얻는 획득 경로</p><div class="economy-usage-art art-block" data-art="coinGetMission"><div class="slot-label"><small>images/economy-get-mission.webp</small></div></div><span class="economy-card-arrow">＋</span></summary><div class="economy-card-detail">특수 임무 보상으로 코인을 획득할 수 있습니다. 임무의 종류와 보상량은 현재 공개되지 않은 설정으로 남겨둡니다.</div></details>
     </div></div></section>
   <!-- 04: 프리즘 코인 — 고등급 무작위 소환·서약·코스튬 -->
   <section id="economyPrism" class="economy-prism" aria-labelledby="economyPrismHeading">
     <div class="container economy-prism-inner">
       <div class="economy-prism-copy">
-        <div class="economy-prism-eyebrow"><span>04 / PREMIUM CURRENCY</span><span>AVALON · PRISM SYSTEM</span></div>
-        <h2 id="economyPrismHeading">PRISM<br><span>COIN.</span></h2>
+        <div class="economy-prism-eyebrow"><span>04 / 최상위 특수 재화</span><span>아발론 · 프리즘 시스템</span></div>
+        <h2 id="economyPrismHeading">프리즘<br><span>코인.</span></h2>
         <p class="economy-prism-lead">일반 코인보다 높은 등급의 가능성을 여는<br><strong>아발론의 최상위 특수 재화.</strong></p>
         <p class="economy-prism-desc">프리즘 코인은 외부 자본 충전 또는 극히 희귀한 특별 보상으로 획득합니다. 높은 등급의 메이트를 노리는 프리미엄 소환뿐 아니라, 영구 서약과 최고급 코스튬 같은 특별 서비스에 쓰입니다.</p>
         <div class="economy-prism-note"><span>✧</span><p>프리미엄 소환은 <strong>SR·SSR·UR 등급 출현 확률을 높이는 무작위 소환</strong>입니다. 특정 메이트를 지정하는 타겟 픽업 방식은 아니며, 확정·천장 규칙은 별도 규정을 따릅니다.</p></div>
       </div>
-      <div class="economy-prism-art art-block" data-art="prismHero"><div class="slot-label"><b>프리즘 코인 일러스트</b><small>images/economy-prism.webp</small></div><span class="economy-prism-art-tag">AVALON / ULTIMATE CURRENCY</span></div>
+      <div class="economy-prism-art art-block" data-art="prismHero"><div class="slot-label"><b>프리즘 코인 일러스트</b><small>images/economy-prism.webp</small></div><span class="economy-prism-art-tag">아발론 / 최상위 특수 재화</span></div>
     </div>
     <div class="container economy-prism-features">
-      <div class="economy-prism-feature"><small>01 / ACQUISITION</small><h3>외부 자본 · 특별 보상</h3><p>외부 자본으로 충전하거나, 극히 희귀한 특별 보상을 통해 획득하는 재화입니다.</p></div>
-      <div class="economy-prism-feature"><small>02 / PREMIUM SUMMON</small><h3>고등급 확률 상승</h3><p>SR·SSR·UR 등장 가능성이 높아지는 무작위 소환에 사용됩니다. 특정 인물 지정 소환은 아닙니다.</p></div>
-      <div class="economy-prism-feature"><small>03 / SPECIAL SERVICES</small><h3>영구 서약 · 코스튬</h3><p>맹세의 초커를 통한 영구 서약, 최고급 코스튬 등 희소한 특수 서비스에도 사용됩니다.</p></div>
+      <div class="economy-prism-feature"><small>01 / 획득 방법</small><h3>외부 자본 · 특별 보상</h3><p>외부 자본으로 충전하거나, 극히 희귀한 특별 보상을 통해 획득하는 재화입니다.</p></div>
+      <div class="economy-prism-feature"><small>02 / 고등급 소환</small><h3>고등급 확률 상승</h3><p>SR·SSR·UR 등장 가능성이 높아지는 무작위 소환에 사용됩니다. 특정 인물 지정 소환은 아닙니다.</p></div>
+      <div class="economy-prism-feature"><small>03 / 특별 서비스</small><h3>영구 서약 · 코스튬</h3><p>맹세의 초커를 통한 영구 서약, 최고급 코스튬 등 희소한 특수 서비스에도 사용됩니다.</p></div>
     </div>
   </section>
-  <div class="economy-tail"><div class="container economy-tail-inner"><div><small>AVALON / CENTRAL ARCHIVE</small><h2>모든 가치는<br>아발론에서 이어집니다.</h2><p>매일 자정 영지 규모와 보유 자산에 따른 유지비가 정산됩니다. 이 페이지는 세계관 소개용이며 실제 결제 기능은 없습니다.</p></div><button class="economy-dark-button" onclick="showPage('world')">세계관 살펴보기 <span>↗</span></button></div></div>
+  <div class="economy-tail"><div class="container economy-tail-inner"><div><small>아발론 / 중앙 기록관</small><h2>모든 가치는<br>아발론에서 이어집니다.</h2><p>매일 자정 영지 규모와 보유 자산에 따른 유지비가 정산됩니다. 이 페이지는 세계관 소개용이며 실제 결제 기능은 없습니다.</p></div><button class="economy-dark-button" onclick="showPage('world')">세계관 살펴보기 <span>↗</span></button></div></div>
 </section>
 <!-- 영지: 전경 → 시설 사진 카드 → 배치도. 콘텐츠 페이지와 완전히 분리 -->
 <section id="page-territory" class="page estate-v7">
@@ -1228,16 +1251,16 @@
     <div class="slot-label"><b>영지 메인 전경 이미지</b><small>images/territory-bg.webp</small></div>
     <div class="estate-hero-shade"></div>
     <div class="container estate-hero-inside">
-      <div class="estate-hero-top"><span>AVALON / ESTATE ARCHIVE</span><span>PRIVATE DOMAIN · 01</span></div>
-      <div class="estate-hero-center"><div class="eyebrow">04 / TERRITORY MANAGEMENT</div><h1>YOUR<br>ESTATE.</h1><p>당신의 공간, 당신의 영지.<br>아발론의 여덟 핵심 시설을 만나보세요.</p></div>
-      <div class="estate-hero-foot"><span>PERSONAL TERRITORY / AVALON</span><span>SCROLL TO EXPLORE ↓</span></div>
+      <div class="estate-hero-top"><span>아발론 / 영지 기록관</span><span>개인 영지 · 01</span></div>
+      <div class="estate-hero-center"><div class="eyebrow">04 / 영지 관리</div><h1>나만의<br>영지.</h1><p>당신의 공간, 당신의 영지.<br>아발론의 여덟 핵심 시설을 만나보세요.</p></div>
+      <div class="estate-hero-foot"><span>개인 영지 / 아발론</span><span>아래로 내려서 살펴보세요 ↓</span></div>
     </div>
   </div>
   <div class="container estate-layout">
-    <div class="estate-introduction"><div><div class="eyebrow">ESTATE MANAGEMENT / OVERVIEW</div><h2>영지는 입성자의<br><span>기반이 되는 공간.</span></h2></div><div class="estate-intro-right"><p>집무실과 메이트 기숙사, 각종 관리·지원 시설이 모인 개인 영역입니다. 이곳에서 시설을 관리하고 영지의 기반을 확장할 수 있습니다.</p><div class="estate-intro-meta"><span>8<br><small>CORE FACILITIES</small></span><span>01<br><small>PERSONAL DOMAIN</small></span></div></div></div>
-    <section class="estate-services" aria-labelledby="estateFacilitiesHeading"><div class="estate-block-heading"><div><div class="eyebrow">01 / FACILITY COLLECTION</div><h2 id="estateFacilitiesHeading">OUR FACILITIES.</h2></div><p>여덟 개 시설의 주요 역할과 운영 효과를 소개합니다.<br>‘시설 상세 설명’을 누르면 업그레이드와 제한 규칙까지 확인할 수 있습니다.</p></div><div id="facilitiesGrid" class="estate-facility-grid"></div></section>
-    <section class="estate-plan" aria-labelledby="estatePlanHeading"><div class="estate-plan-copy"><div class="eyebrow">02 / TERRITORY BLUEPRINT</div><h2 id="estatePlanHeading">ESTATE PLAN.</h2><p>영지 전체 배치도와 시설 구성</p><div class="estate-plan-list" id="estatePlanList"></div><small class="estate-plan-notice">※ 영지 배치도는 콘셉트 시안이며, 개별 시설 위치는 추후 설정에 맞춰 확정됩니다.</small></div><div class="estate-plan-art art-block" data-art="estateBlueprint"><div class="slot-label"><div class="slot-icon"><span>◇</span></div><b>영지 배치도 · 평면도 이미지</b><small>images/estate-blueprint.webp</small></div><div class="estate-plan-corner">AVALON / ESTATE MAP</div></div></section>
-    <div class="estate-bottom"><div><span>AVALON / CENTRAL ARCHIVE</span><h3>다음은 아발론의 콘텐츠를 살펴보세요.</h3></div><button class="action outline" onclick="showPage('contents')">콘텐츠 페이지로 이동 ↗</button></div>
+    <div class="estate-introduction"><div><div class="eyebrow">영지 관리 / 개요</div><h2>영지는 입성자의<br><span>기반이 되는 공간.</span></h2></div><div class="estate-intro-right"><p>집무실과 메이트 기숙사, 각종 관리·지원 시설이 모인 개인 영역입니다. 이곳에서 시설을 관리하고 영지의 기반을 확장할 수 있습니다.</p><div class="estate-intro-meta"><span>8<br><small>핵심 시설</small></span><span>01<br><small>개인 영지</small></span></div></div></div>
+    <section class="estate-services" aria-labelledby="estateFacilitiesHeading"><div class="estate-block-heading"><div><div class="eyebrow">01 / 시설 소개</div><h2 id="estateFacilitiesHeading">영지의 핵심 시설.</h2></div><p>여덟 개 시설의 주요 역할과 운영 효과를 소개합니다.<br>‘시설 상세 설명’을 누르면 업그레이드와 제한 규칙까지 확인할 수 있습니다.</p></div><div id="facilitiesGrid" class="estate-facility-grid"></div></section>
+    <section class="estate-plan" aria-labelledby="estatePlanHeading"><div class="estate-plan-copy"><div class="eyebrow">02 / 영지 설계도</div><h2 id="estatePlanHeading">영지 배치도.</h2><p>영지 전체 배치도와 시설 구성</p><div class="estate-plan-list" id="estatePlanList"></div><small class="estate-plan-notice">※ 영지 배치도는 콘셉트 시안이며, 개별 시설 위치는 추후 설정에 맞춰 확정됩니다.</small></div><div class="estate-plan-art art-block" data-art="estateBlueprint"><div class="slot-label"><div class="slot-icon"><span>◇</span></div><b>영지 배치도 · 평면도 이미지</b><small>images/estate-blueprint.webp</small></div><div class="estate-plan-corner">아발론 / 영지 배치도</div></div></section>
+    <div class="estate-bottom"><div><span>아발론 / 중앙 기록관</span><h3>다음은 아발론의 콘텐츠를 살펴보세요.</h3></div><button class="action outline" onclick="showPage('contents')">콘텐츠 페이지로 이동 ↗</button></div>
   </div>
 </section>
 <!-- 콘텐츠: 기존 4대 비즈니스를 별도 페이지에 보존, 추후 참고 디자인을 받아 교체 -->
@@ -1246,17 +1269,17 @@
     <div class="contents-hero-background art-block" data-art="contentsBackground"><div class="slot-label"><small>images/contents-bg.webp</small></div></div>
     <div class="contents-hero-tint"></div>
     <div class="container contents-hero-inner">
-      <div class="contents-hero-copy"><div class="eyebrow">05 / EVE CONTENTS GUIDE</div><h1>CHOOSE YOUR<br><span>EXPERIENCE.</span></h1><p>어서 오세요, 입성자님.<br>아발론에서 즐길 수 있는 다양한 활동과 사업을 안내해 드리겠습니다.</p><button class="contents-primary-button" onclick="document.getElementById('contentsExplore').scrollIntoView({behavior:'smooth'})">콘텐츠 둘러보기 <span>↗</span></button><div class="contents-hero-meta"><span>04 CONTENTS</span><span>EVE GUIDE / SYSTEM ONLINE</span></div></div>
-      <div class="contents-eve-visual art-block" data-art="contentsEve" data-fit="contain"><div class="contents-eve-disc"></div><div class="slot-label"><b>중앙 관리 AI · EVE</b><small>images/eve-contents.webp</small></div><div class="contents-eve-tag">EVE / CENTRAL ADMINISTRATOR</div></div>
+      <div class="contents-hero-copy"><div class="eyebrow">05 / 이브의 콘텐츠 안내</div><h1>아발론의<br><span>즐길 거리.</span></h1><p>어서 오세요, 입성자님.<br>아발론에서 즐길 수 있는 다양한 활동과 사업을 안내해 드리겠습니다.</p><button class="contents-primary-button" onclick="document.getElementById('contentsExplore').scrollIntoView({behavior:'smooth'})">콘텐츠 둘러보기 <span>↗</span></button><div class="contents-hero-meta"><span>콘텐츠 4종</span><span>이브 안내 / 시스템 가동 중</span></div></div>
+      <div class="contents-eve-visual art-block" data-art="contentsEve" data-fit="contain"><div class="contents-eve-disc"></div><div class="slot-label"><b>중앙 관리 AI · EVE</b><small>images/eve-contents.webp</small></div><div class="contents-eve-tag">이브 / 중앙 관리자</div></div>
     </div>
   </div>
   <div class="contents-light-area">
-    <section id="contentsExplore" class="container contents-explore" aria-labelledby="contentsExploreHeading"><div class="contents-section-head"><div><div class="contents-section-kicker">EXPLORE AVALON / 01</div><h2 id="contentsExploreHeading">DISCOVER <span>CONTENTS.</span></h2></div><p>원하는 콘텐츠를 선택해 보세요.<br>이브가 각 시설과 활동을 소개합니다.</p></div><div class="contents-showcase-grid" id="businessGrid"></div></section>
-    <section class="container contents-guide" aria-labelledby="contentsGuideHeading"><div class="contents-guide-art art-block" data-art="contentsGuideEve" data-fit="contain"><div class="contents-eve-disc"></div><div class="slot-label"><b>이브의 콘텐츠 안내</b><small>images/eve-guide.webp</small></div></div><div class="contents-guide-copy"><div class="contents-section-kicker">EVE / PERSONAL BRIEFING</div><h2 id="contentsGuideHeading">LET ME<br><span>GUIDE YOU.</span></h2><p class="contents-guide-intro">원하시는 콘텐츠를 선택하시면, 해당 활동의 운영 방식과 수익 구조를 안내해 드리겠습니다.</p><div class="contents-active-info" id="contentsActiveInfo" aria-live="polite" aria-atomic="true"><div class="contents-brief-overline"><small id="contentsActiveNumber">01 / AVALON CONTENTS</small><span id="contentsActiveCategory">DUNGEON FARMING</span></div><h3 id="contentsActiveName">가상 던전</h3><p id="contentsActiveDescription">가상 던전의 안내 정보가 표시됩니다.</p><div class="contents-detail-grid" id="contentsActiveDetails"></div><div class="contents-brief-process"><h4>이용 흐름 <span>OPERATING FLOW</span></h4><ol id="contentsActiveSteps"></ol></div><div class="contents-brief-footer">EVE / CENTRAL INFORMATION SERVICE <span>● SYSTEM ONLINE</span></div></div><div class="contents-guide-meta"><div><strong>04</strong><span>AVAILABLE CATEGORIES</span></div><div><strong>EVE</strong><span>CENTRAL AI GUIDE</span></div></div></div></section>
-    <section class="contents-final"><div class="container contents-final-inner"><div class="contents-section-kicker">AVALON / NEXT DESTINATION</div><h2>YOUR NEXT<br><span>DESTINATION.</span></h2><p>콘텐츠를 살펴보셨다면, 이제 당신의 영지를 만나보세요.</p><button class="contents-primary-button" onclick="showPage('territory')">영지 페이지로 이동 <span>↗</span></button></div></section>
+    <section id="contentsExplore" class="container contents-explore" aria-labelledby="contentsExploreHeading"><div class="contents-section-head"><div><div class="contents-section-kicker">아발론 둘러보기 / 01</div><h2 id="contentsExploreHeading">다양한 <span>콘텐츠.</span></h2></div><p>원하는 콘텐츠를 선택해 보세요.<br>이브가 각 시설과 활동을 소개합니다.</p></div><div class="contents-showcase-grid" id="businessGrid"></div></section>
+    <section class="container contents-guide" aria-labelledby="contentsGuideHeading"><div class="contents-guide-art art-block" data-art="contentsGuideEve" data-fit="contain"><div class="contents-eve-disc"></div><div class="slot-label"><b>이브의 콘텐츠 안내</b><small>images/eve-guide.webp</small></div></div><div class="contents-guide-copy"><div class="contents-section-kicker">이브 / 개인별 안내</div><h2 id="contentsGuideHeading">이브의<br><span>상세 안내.</span></h2><p class="contents-guide-intro">원하시는 콘텐츠를 선택하시면, 해당 활동의 운영 방식과 수익 구조를 안내해 드리겠습니다.</p><div class="contents-active-info" id="contentsActiveInfo" aria-live="polite" aria-atomic="true"><div class="contents-brief-overline"><small id="contentsActiveNumber">01 / 아발론 콘텐츠</small><span id="contentsActiveCategory">가상 던전</span></div><h3 id="contentsActiveName">가상 던전</h3><p id="contentsActiveDescription">가상 던전의 안내 정보가 표시됩니다.</p><div class="contents-detail-grid" id="contentsActiveDetails"></div><div class="contents-brief-process"><h4>이용 흐름 <span>진행 순서</span></h4><ol id="contentsActiveSteps"></ol></div><div class="contents-brief-footer">이브 / 중앙 안내 시스템 <span>● 시스템 가동 중</span></div></div><div class="contents-guide-meta"><div><strong>04</strong><span>안내 콘텐츠</span></div><div><strong>EVE</strong><span>이브 안내</span></div></div></div></section>
+    <section class="contents-final"><div class="container contents-final-inner"><div class="contents-section-kicker">아발론 / 다음 목적지</div><h2>다음은<br><span>어디로?</span></h2><p>콘텐츠를 살펴보셨다면, 이제 당신의 영지를 만나보세요.</p><button class="contents-primary-button" onclick="showPage('territory')">영지 페이지로 이동 <span>↗</span></button></div></section>
   </div>
 </section>
-</main><footer class="site-footer">AVALON / CENTRAL ARCHIVE — FIRST PERSONAL WORLD INTRODUCTION PROJECT · ARTWORK SLOTS ARE TEMPORARY</footer>
+</main><footer class="site-footer">아발론 · 중앙 기록관 — 개인 창작 세계관 소개 사이트</footer>
 </div>
 <script>
 /* ============================================================
@@ -1303,7 +1326,7 @@ const IMAGES = {
    도감 수는 characters.length 를 통해 자동 계산됩니다.
    UR 8항목 / SSR 7 / SR 6 / R·N 5항목 표시.
    ============================================================ */
-const tierNames={N:'NORMAL',R:'PRIVATE',SR:'EXCLUSIVE',SSR:'LIMITED',UR:'ULTIMATE'};
+const tierNames={N:'일반',R:'기본',SR:'희귀',SSR:'특별',UR:'최상위'};
 const tierCycle=['UR','SSR','SR','R','N'];
 const traitsCount={N:1,R:2,SR:3,SSR:4,UR:5};
 // 등록 준비 중인 임시 슬롯 수. 캐릭터 제작 상황에 맞춰 이 숫자만 변경할 수 있습니다.
@@ -1332,55 +1355,55 @@ const characters=Array.from({length:TEMP_CHARACTER_SLOTS},(_,index)=>{
    [3] 재화 / 영지 / 비즈니스 이미지  (텍스트는 세계관 설정 기준)
    ============================================================ */
 const resources=[
-  {title:'크레딧',en:'CREDIT',image:'images/economy-credit.webp',desc:'아발론 전역에서 사용되는 범용 화폐. 시설 증축과 유지비, 경매 등에 사용됩니다.'},
-  {title:'코인',en:'COIN',image:'images/economy-coin.webp',desc:'일반 다차원 소환에 사용하는 재화. 크레딧 환전이나 특수 임무로 획득합니다.'},
-  {title:'프리즘 코인',en:'PRISM COIN',image:'images/economy-prism.webp',desc:'고등급 출현 확률을 높이는 무작위 프리미엄 소환, 영구 서약, 최고급 코스튬에 사용되는 최상위 재화입니다.'}
+  {title:'크레딧',en:'크레딧',image:'images/economy-credit.webp',desc:'아발론 전역에서 사용되는 범용 화폐. 시설 증축과 유지비, 경매 등에 사용됩니다.'},
+  {title:'코인',en:'코인',image:'images/economy-coin.webp',desc:'일반 다차원 소환에 사용하는 재화. 크레딧 환전이나 특수 임무로 획득합니다.'},
+  {title:'프리즘 코인',en:'프리즘 코인',image:'images/economy-prism.webp',desc:'고등급 출현 확률을 높이는 무작위 프리미엄 소환, 영구 서약, 최고급 코스튬에 사용되는 최상위 재화입니다.'}
 ];
 const facilities=[
   {
-    title:'입성자 집무실 / 침실', image:'images/facilities/office.webp', label:"MASTER’S PENTHOUSE",
+    title:'입성자 집무실 / 침실', image:'images/facilities/office.webp', label:'입성자 전용 펜트하우스',
     desc:'영지 전체를 관리하는 입성자 전용 공간입니다. 인프라 결재와 메이트 호출이 이곳에서 이루어집니다.',
     detail:'초기에는 비좁고 단출한 집무실에서 출발하지만, 크레딧을 투자할수록 공간을 확장할 수 있습니다. 최종적으로는 아발론의 도시 전경을 내려다보는 초호화 펜트하우스로 발전하며, 업무와 휴식을 모두 책임지는 개인 거점이 됩니다.'
   },
   {
-    title:'메이트 기숙사', image:'images/facilities/dorm.webp', label:'MATE DORMITORY',
+    title:'메이트 기숙사', image:'images/facilities/dorm.webp', label:'메이트 전용 기숙사',
     desc:'메이트의 거주 환경과 컨디션을 관리하는 구역입니다. 등급과 시설 수준에 따라 생활 공간과 대우가 달라집니다.',
     detail:'하위 등급은 좁은 캡슐형 거주 시설에서 시작하며, 영지의 증축 및 상위 등급 전용 구역 개방에 따라 고급 스위트룸과 전속 시스템 메이드 서비스를 이용할 수 있습니다. 기숙사 수준이 높아지면 스트레스 감소와 자산 유지 효율이 함께 개선됩니다.'
   },
   {
-    title:'수익 인프라 증축소', image:'images/facilities/infrastructure.webp', label:'PROFIT INFRASTRUCTURE HUB',
+    title:'수익 인프라 증축소', image:'images/facilities/infrastructure.webp', label:'수익 설비 증축 구역',
     desc:'던전 파밍과 미디어 사업에 필요한 설비를 강화하는 투자 구역입니다. 장비를 확장해 단위 시간당 크레딧 생산력을 높입니다.',
     detail:'다이브 포드(Dive Pod)의 동시 접속 수를 늘려 던전 투입 규모를 확장할 수 있습니다. VVIP 스트리밍 스튜디오의 4D 송출 장비와 카메라 시스템도 업그레이드할 수 있어, 두 핵심 수익망의 처리 능력과 생산 효율에 직접 영향을 미칩니다.'
   },
   {
-    title:'자산 교정실', image:'images/facilities/training.webp', label:'ASSET CORRECTION ROOM',
+    title:'자산 교정실', image:'images/facilities/training.webp', label:'자산 교정 시설',
     desc:'아발론의 규칙에 적응하지 못하거나 반항하는 메이트를 대상으로 하는 폐쇄형 교정 시설입니다. 행동과 순종도를 관리합니다.',
     detail:'원래 세계의 자존심과 가치관을 고수하는 메이트에게 아발론의 질서를 강압적으로 각인시키는 시설입니다. 육체적·심리적 교정이 이루어지는 어두운 시스템으로, 설정상 순종도가 높아질수록 프라이빗 렌탈과 거래 시장에서의 자산 평가가 상승합니다.'
   },
   {
-    title:'관제 단말기 / VIP 거래소', image:'images/facilities/control.webp', label:'SYSTEM TERMINAL & EXCHANGE',
+    title:'관제 단말기 / VIP 거래소', image:'images/facilities/control.webp', label:'시스템 관제 및 거래소',
     desc:'AI 이브를 호출하고 영지 재정을 관리하는 중앙 통제 시설입니다. 자산 거래와 VIP 옥션 기능도 연결됩니다.',
     detail:'중앙 관제 데스크에서 이브의 홀로그램을 불러 경제 동향과 영지 운영 현황을 확인하고 유지비를 결재할 수 있습니다. 육성과 관리가 완료된 메이트를 다른 입성자에게 매각하거나 경매에 출품하는 사설 거래소 역할도 맡습니다.'
   },
   {
-    title:'생체 수복실', image:'images/facilities/repair.webp', label:'BIO-RESTORATION CHAMBER',
+    title:'생체 수복실', image:'images/facilities/repair.webp', label:'생체 수복 시설',
     desc:'던전이나 방송 활동으로 손상된 메이트의 신체를 재생하는 시설입니다. 설비를 강화할수록 수복 시간이 단축됩니다.',
     detail:'특수 배양액이 채워진 수복 튜브를 이용하여 큰 부상을 입은 메이트의 신체를 단기간에 회복시킵니다. 시설 수준이 높아질수록 복구 속도가 빨라져, 손상된 자산이 다시 활동에 복귀할 때까지 필요한 대기 시간을 줄일 수 있습니다.'
   },
   {
-    title:'트로피 전시실', image:'images/facilities/trophy.webp', label:'TROPHY EXHIBITION HALL',
+    title:'트로피 전시실', image:'images/facilities/trophy.webp', label:'전리품 전시관',
     desc:'희귀 전리품과 에이스 메이트의 기록을 전시하는 공간입니다. 영지의 성과와 소유자의 자본력을 보여줍니다.',
     detail:'고난도 던전에서 얻은 전설적인 전리품과 1군 메이트의 황금빛 홀로그램 등을 특별 전시물로 보관합니다. 다른 상위 랭커가 방문했을 때 영지의 업적, 수집품, 경제력을 한눈에 과시하는 프라이빗 갤러리입니다.'
   },
   {
-    title:'자산 승급 센터', image:'images/facilities/upgrade.webp', label:'ASSET TIER-UP CENTER',
+    title:'자산 승급 센터', image:'images/facilities/upgrade.webp', label:'자산 등급 승급 시설',
     desc:'막대한 크레딧과 희귀 재료를 사용해 하위 등급 메이트를 승급시키는 시설입니다. 승급은 메이트당 단 한 단계로 제한됩니다.',
     detail:'메이트의 유전자와 시스템 데이터를 조정하여 N → R 또는 R → SR로 진화시키는 특수 시설입니다. 각 메이트는 평생 단 한 단계(1 Tier)만 승급할 수 있으며, SSR 이상 등급은 승급 시스템 이용 자체가 차단됩니다.'
   }
 ];
 const businesses=[
   {
-    title:'가상 던전',image:'images/business/dungeon.webp',category:'DUNGEON FARMING',
+    title:'가상 던전',image:'images/business/dungeon.webp',category:'가상 던전',
     desc:'마물 토벌과 자원 채굴로 크레딧·강화 부품을 확보하는 기본 수익 콘텐츠',
     eveLine:'입성자님, 가장 기본적이고 확실한 자본 확보 수단은 가상 던전입니다. 메이트를 전투 부대로 편성해 차원 던전에 투입하면 마물 토벌과 광물·자원 채굴을 통해 크레딧과 강화 부품을 확보할 수 있습니다.',
     details:[
@@ -1391,7 +1414,7 @@ const businesses=[
     steps:['메이트 전투 부대를 편성합니다.','다이브 포드를 통해 차원 던전에 투입합니다.','토벌·채굴 성과를 정산하고 시설과 장비를 보강합니다.']
   },
   {
-    title:'미디어 스튜디오',image:'images/business/studio.webp',category:'MEDIA & STREAMING',
+    title:'미디어 스튜디오',image:'images/business/studio.webp',category:'방송 · 영상 제작',
     desc:'VVIP 실시간 방송과 VOD 제작을 통해 후원 수익을 얻는 미디어 사업',
     eveLine:'미디어 스튜디오는 입성자님의 활동을 수익으로 전환하는 또 하나의 창구입니다. 메이트의 방송을 실시간으로 송출하거나 특별 제작 영상을 VOD로 제공하며, 시청자 후원과 영상 판매 수익이 영지의 크레딧으로 연결됩니다.',
     details:[
@@ -1402,7 +1425,7 @@ const businesses=[
     steps:['방송에 적합한 메이트와 프로그램을 준비합니다.','라이브 송출 또는 VOD 콘텐츠를 제작합니다.','후원·판매 수익을 정산하고 설비를 업그레이드합니다.']
   },
   {
-    title:'프라이빗 렌탈 라운지',image:'images/business/rental.webp',category:'PRIVATE RENTAL',
+    title:'프라이빗 렌탈 라운지',image:'images/business/rental.webp',category:'프라이빗 대여 서비스',
     desc:'상위 고객과 다른 입성자를 대상으로 하는 기간제 메이트 대여 서비스',
     eveLine:'프라이빗 렌탈 라운지는 선별된 메이트를 일정 기간 이용할 수 있도록 연결하는 고급 서비스입니다. 고객은 최상위 스폰서와 다른 입성자들이며, 메이트의 등급과 매력도, 이용 시간에 따라 렌탈 가치가 달라집니다.',
     details:[
@@ -1413,7 +1436,7 @@ const businesses=[
     steps:['대여 대상 메이트와 서비스 조건을 정합니다.','스폰서 또는 다른 입성자와 기간제 계약을 체결합니다.','대여료를 정산하고 메이트 상태를 관리합니다.']
   },
   {
-    title:'자산 거래소 / 옥션',image:'images/business/auction.webp',category:'EXCHANGE & AUCTION',
+    title:'자산 거래소 / 옥션',image:'images/business/auction.webp',category:'자산 거래 · 경매',
     desc:'메이트와 희귀 자산을 직접 거래하거나 경매에 출품하는 자산 유통 콘텐츠',
     eveLine:'자산 거래소에서는 영지에서 육성한 메이트와 다양한 자산을 다른 입성자에게 매각하거나, 그랜드 옥션에 출품할 수 있습니다. 희소성과 수요에 따라 거래 가치가 달라지며, 거래 대금은 아발론의 크레딧 경제와 연결됩니다.',
     details:[
@@ -1476,7 +1499,7 @@ function renderCharacters(){
   const name=document.createElement('strong');name.textContent=ch.name;const hint=document.createElement('span');hint.textContent='프로필 열기 ↗';info.append(code,name,hint);
   btn.append(art,info);btn.addEventListener('click',()=>openCharacter(index));grid.appendChild(btn);attachArt(art,ch.card);
  });
- document.getElementById('characterCount').textContent=String(ordered.length)+' / '+characters.length+' SLOTS';
+ document.getElementById('characterCount').textContent=String(ordered.length)+' / '+characters.length+'명';
 }
 function openCharacter(index){
  const ch=characters[index];
@@ -1536,7 +1559,7 @@ function makeEstateFacility(record,index){
   const art=document.createElement('div');art.className='estate-facility-image art-block';art.appendChild(makeFallback('FACILITY IMAGE',record.image));attachArt(art,record.image);
   const indexLabel=document.createElement('div');indexLabel.className='estate-facility-index';indexLabel.textContent=String(index+1).padStart(2,'0');
   const title=document.createElement('h3');title.textContent=record.title;
-  const label=document.createElement('div');label.className='estate-facility-label';label.textContent=record.label||'AVALON FACILITY';
+  const label=document.createElement('div');label.className='estate-facility-label';label.textContent=record.label||'아발론 시설';
   const desc=document.createElement('p');desc.textContent=record.desc;
   const details=document.createElement('details');details.className='estate-facility-details';
   const summary=document.createElement('summary');summary.textContent='시설 상세 설명';
@@ -1548,7 +1571,7 @@ function makeContentsCard(record,index){
   const card=document.createElement('article');card.className='contents-card';card.dataset.contentIndex=index;
   const art=document.createElement('div');art.className='contents-card-art art-block';art.appendChild(makeFallback('CONTENTS IMAGE',record.image));attachArt(art,record.image);
   const body=document.createElement('div');body.className='contents-card-body';
-  const code=document.createElement('div');code.className='contents-card-code';code.textContent='0'+(index+1)+' / AVALON CONTENTS';
+  const code=document.createElement('div');code.className='contents-card-code';code.textContent='0'+(index+1)+' / 아발론 콘텐츠';
   const title=document.createElement('h3');title.textContent=record.title;
   const desc=document.createElement('p');desc.textContent=record.desc;
   const button=document.createElement('button');button.className='contents-card-button';button.textContent='이브의 안내 보기 ↗';button.type='button';button.setAttribute('aria-pressed','false');button.onclick=()=>selectContent(index,true);
@@ -1557,7 +1580,7 @@ function makeContentsCard(record,index){
 function selectContent(index,scroll=false){
   const record=businesses[index];if(!record)return;
   const section=document.getElementById('contentsActiveInfo');
-  document.getElementById('contentsActiveNumber').textContent=String(index+1).padStart(2,'0')+' / AVALON CONTENTS';
+  document.getElementById('contentsActiveNumber').textContent=String(index+1).padStart(2,'0')+' / 아발론 콘텐츠';
   document.getElementById('contentsActiveCategory').textContent=record.category;
   document.getElementById('contentsActiveName').textContent=record.title;
   document.getElementById('contentsActiveDescription').textContent=record.eveLine||record.desc;
@@ -1595,10 +1618,10 @@ function makeContent(){const resourceGrid=document.getElementById('resourceGrid'
  selectContent(0);
 }
 const WORLD_TOPICS={
- avalon:{id:"01 / WORLD DATABASE",title:"아발론이란?",desc:"아발론은 외부 세계의 간섭이 차단된 폐쇄형 상업·유흥 특구입니다. 입성자들은 영지를 운영하고 다차원 소환을 통해 메이트를 확보하며, 다양한 활동과 거래로 자신의 입지를 넓혀갑니다."},
- eve:{id:"02 / CENTRAL AI",title:"중앙 관리 AI · EVE",desc:"이브(EVE)는 아발론 전체의 운영을 담당하는 중앙 관리 AI입니다. 입성자 안내, 규칙 집행, 거래와 크레딧 정산, 시설 및 소환 시스템의 운영을 통합적으로 관리합니다."},
- summon:{id:"03 / DIMENSIONAL SUMMONING",title:"다차원 엘리베이터 · 소환",desc:"다차원 엘리베이터는 아발론과 다른 차원을 연결하는 소환 시스템입니다. 코인과 프리즘 코인을 사용하는 소환을 통해 다양한 등급의 메이트를 만날 수 있습니다. 이는 세계관을 소개하기 위한 연출이며 현재 사이트에 실제 결제 기능은 없습니다."},
- grades:{id:"04 / MATE CLASSIFICATION",title:"N · R · SR · SSR · UR",desc:"아발론의 메이트는 N, R, SR, SSR, UR의 다섯 등급으로 구분됩니다. 상위 등급일수록 고유 특성과 특화 효과가 다양해지며, UR은 특별한 프리즘 색상으로 표시됩니다. 캐릭터 도감에서 등급별 인물을 확인할 수 있습니다."}
+ avalon:{id:'01 / 세계관 정보',title:"아발론이란?",desc:"아발론은 외부 세계의 간섭이 차단된 폐쇄형 상업·유흥 특구입니다. 입성자들은 영지를 운영하고 다차원 소환을 통해 메이트를 확보하며, 다양한 활동과 거래로 자신의 입지를 넓혀갑니다."},
+ eve:{id:'02 / 중앙 관리 AI',title:"중앙 관리 AI · EVE",desc:"이브(EVE)는 아발론 전체의 운영을 담당하는 중앙 관리 AI입니다. 입성자 안내, 규칙 집행, 거래와 크레딧 정산, 시설 및 소환 시스템의 운영을 통합적으로 관리합니다."},
+ summon:{id:'03 / 다차원 소환',title:"다차원 엘리베이터 · 소환",desc:"다차원 엘리베이터는 아발론과 다른 차원을 연결하는 소환 시스템입니다. 코인과 프리즘 코인을 사용하는 소환을 통해 다양한 등급의 메이트를 만날 수 있습니다. 이는 세계관을 소개하기 위한 연출이며 현재 사이트에 실제 결제 기능은 없습니다."},
+ grades:{id:'04 / 메이트 등급',title:"N · R · SR · SSR · UR",desc:"아발론의 메이트는 N, R, SR, SSR, UR의 다섯 등급으로 구분됩니다. 상위 등급일수록 고유 특성과 특화 효과가 다양해지며, UR은 특별한 프리즘 색상으로 표시됩니다. 캐릭터 도감에서 등급별 인물을 확인할 수 있습니다."}
 };
 function selectWorldTopic(name){
  const record=WORLD_TOPICS[name];if(!record)return;
@@ -1612,7 +1635,7 @@ function enterSite(){
   const splash=document.getElementById('arrivalSplash');
   // 목적지 환영 화면을 엘리베이터 '뒤'에 먼저 세팅하고, 양쪽 문을 연다.
   splash.classList.remove('hidden');
-  document.getElementById('progressStatus').textContent='ARRIVAL CONFIRMED · DOORS OPENING';
+  document.getElementById('progressStatus').textContent='도착 완료 · 문이 열립니다';
   elevator.setAttribute('aria-label','아발론 도착, 엘리베이터 문 열림');
   window.setTimeout(()=>elevator.classList.add('opening'),320);
   // 문이 완전히 열린 다음부터 큰 AVALON 인트로 화면을 잠시 감상.
