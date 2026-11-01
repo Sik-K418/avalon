@@ -1182,6 +1182,46 @@
 @media(max-width:1000px){.avalon-custom-banner{grid-template-columns:130px minmax(0,1fr)}.avalon-custom-emblem{height:137px}.avalon-custom-go{grid-column:2;justify-self:start}.custom-workspace{grid-template-columns:1fr 1fr}.custom-edit-panel,.custom-output-panel{padding:22px}}
 @media(max-width:720px){.avalon-custom-banner{grid-template-columns:1fr;gap:18px;padding:23px}.avalon-custom-emblem{height:110px;width:112px}.avalon-custom-emblem span{font-size:65px}.avalon-custom-emblem b{font-size:32px}.avalon-custom-emblem small{font-size:7px;letter-spacing:.5px;margin-top:9px}.avalon-custom-go{grid-column:1;width:100%}.avalon-custom-copy h2{font-size:28px}.custom-desktop-break{display:none}.custom-topbar{gap:10px}.custom-topbar span{font-size:8px;letter-spacing:1px}.custom-heading{padding-top:43px;padding-bottom:30px}.custom-heading h1{font-size:46px}.custom-flow{grid-template-columns:1fr}.custom-intro-card{min-height:auto}.custom-workspace{grid-template-columns:1fr}.custom-input-grid{grid-template-columns:1fr}.custom-input-grid label{grid-column:1/-1}.custom-bottom{flex-direction:column;align-items:flex-start}}
 
+
+/* V9 / 다중 메이트 1000자 압축 노트 — 기존 CUSTOM 레이아웃 유지 */
+.custom-v9-small{font-size:12px;color:#abc1d0;line-height:1.75;margin:-6px 0 18px}
+.custom-roster-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 10px}
+.custom-roster-head strong{color:#f2f5fa;font-size:13px}
+.custom-roster-head small{color:#b8cad6;font-size:11px}
+.custom-roster{max-height:250px;overflow:auto;display:flex;flex-direction:column;gap:6px;margin-bottom:10px;padding-right:3px}
+.custom-roster-slot{width:100%;display:flex;align-items:center;gap:12px;text-align:left;border:1px solid #3f556c;color:#d0dce7;background:#0b1524;padding:10px 12px;cursor:pointer;min-height:48px}
+.custom-roster-slot:hover{border-color:#d0b985}
+.custom-roster-slot.active{background:#242e3c;border-color:#dbc58f}
+.custom-roster-slot b{font-size:13px;color:#e6c98c;min-width:27px}
+.custom-roster-slot .custom-slot-detail{display:flex;flex:1;flex-direction:column;gap:2px;min-width:0}
+.custom-roster-slot strong{font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.custom-roster-slot small{font-size:10px;color:#90a9ba;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.custom-roster-add{width:100%;border:1px dashed #a9916d;background:#182433;color:#ecd6a7;font-size:12px;font-weight:900;padding:13px 12px;cursor:pointer}
+.custom-roster-add:hover{background:#273341}
+.custom-roster-add:disabled{opacity:.4;cursor:not-allowed}
+.custom-editor-heading{display:flex;justify-content:space-between;align-items:center;gap:14px;border-top:1px solid #40566b;padding-top:21px;margin-top:23px;margin-bottom:18px}
+.custom-editor-heading h3{font-size:17px;margin:0;color:#edf5fa}
+.custom-editor-heading button{font-size:11px;padding:8px 12px;border:1px solid #865f66;background:transparent;color:#d5a9ad;cursor:pointer}
+.custom-editor-heading button:hover{background:#4c2632}
+.custom-input-grid input,.custom-input-grid select{min-height:41px}
+.custom-input-grid textarea{min-height:54px}
+.custom-input-grid .custom-field-wide{grid-column:1/-1}
+.custom-budget{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:15px 0 13px}
+.custom-budget-box{border:1px solid #465b70;padding:13px;background:#0a1726}
+.custom-budget-box span{font-size:10px;display:block;color:#9fb4c6;margin-bottom:6px}
+.custom-budget-box strong{font-size:25px;line-height:1;color:#e7d19e;font-weight:900;font-variant-numeric:tabular-nums}
+.custom-budget-box strong small{font-size:12px;color:#aebfcb;font-weight:500}
+.custom-budget-track{height:5px;background:#293c50;overflow:hidden;margin:12px 0 5px}
+.custom-budget-track i{display:block;width:0;height:100%;background:#d8bf88;transition:width .15s}
+.custom-note-hint{font-size:11px;color:#95b4c5;line-height:1.75;margin:10px 0 16px}
+.custom-note-hint strong{color:#e1c58d}
+.custom-note-warning{font-size:11px;color:#ffb5aa;line-height:1.6;min-height:1.6em;margin:8px 0}
+.custom-note-preview{min-height:230px;max-height:510px;overflow:auto;font-size:11px;line-height:1.8;white-space:pre-wrap;padding:17px}
+.custom-copy-button:disabled{opacity:.42;cursor:not-allowed}
+.custom-example{font-size:11px;line-height:1.8;color:#b2c5d1;background:#0b1522;padding:13px 16px;border-left:2px solid #d9c28b;margin-top:12px;overflow-wrap:anywhere}
+.custom-example b{color:#dfca9b}
+@media(max-width:720px){.custom-budget{grid-template-columns:1fr 1fr}.custom-editor-heading{flex-wrap:wrap}}
+
 </style>
 </head>
 <body>
@@ -1242,52 +1282,64 @@
     <div class="avalon-custom-copy">
       <div class="avalon-custom-overline">AVALON ARCHIVE · FREE CREATION</div>
       <h2>나만의 메이트를 <em>소환하세요.</em></h2>
-      <p>도감에 없는 캐릭터도 괜찮습니다. 이름, 종족, 성격과 능력을 직접 정해<br class="custom-desktop-break"> <strong>케이브덕 유저노트</strong>에 기록해 보세요.</p>
-      <div class="avalon-custom-foot"><span>등급 자유 선택</span><span>도감 50명과 별도</span><span>유저노트 활용</span></div>
+      <p>도감에 없는 캐릭터를 10명 이상 만들어도 괜찮습니다.<br class="custom-desktop-break"> <strong>유저노트 1,000자 안에</strong> 압축해 기록할 수 있습니다.</p>
+      <div class="avalon-custom-foot"><span>여러 명 동시 작성</span><span>1인 80자 권장</span><span>1,000자 미리보기</span></div>
     </div>
-    <button class="avalon-custom-go" type="button" onclick="showPage('custom');renderCustomNote();" aria-label="나만의 메이트 만들기 화면 열기">제작 방법 보기 <span>↗</span></button>
+    <button class="avalon-custom-go" type="button" onclick="showPage('custom');renderCustomNote();" aria-label="나만의 메이트 만들기 화면 열기">다중 메이트 제작 <span>↗</span></button>
   </div>
  </div>
 </section>
-<!-- CUSTOM 제작 안내: 도감 등급과 무관한 독립 화면 -->
+<!-- CUSTOM V9 / 복수 메이트용 초압축 유저노트 -->
 <section id="page-custom" class="page avalon-custom-page">
   <div class="container custom-topbar"><span>AVALON / CENTRAL ARCHIVE / SPECIAL ENTRY</span><button type="button" onclick="showPage('characters')">← 도감으로 돌아가기</button></div>
   <div class="container custom-heading">
-    <div class="custom-hero-chip">NO. ∞ / YOUR ORIGINAL STORY</div>
-    <h1>CREATE YOUR <span>OWN MATE.</span></h1>
-    <p>여러분이 직접 구상한 메이트를 아발론의 이야기 속으로 초대하세요.<br>도감에 등록된 기존 50명과는 별개의 <strong>자유 창작 안내</strong>입니다.</p>
+    <div class="custom-hero-chip">V9 / CUSTOM MATE / COMPACT NOTE</div>
+    <h1>CREATE YOUR <span>OWN MATES.</span></h1>
+    <p>원하는 메이트를 여러 명 만들어 <strong>유저노트 1,000자 안에</strong> 모아 보세요.<br>한 명당 약 80자를 권장하며, 10~12명도 한 번에 정리할 수 있습니다.</p>
   </div>
   <div class="container custom-flow">
-    <div class="custom-intro-card"><span>01</span><div><strong>캐릭터를 구상하세요.</strong><p>종족, 출신 차원, 외형, 말투, 고유 능력 등 자유롭게 정할 수 있습니다.</p></div></div>
-    <div class="custom-intro-card"><span>02</span><div><strong>유저노트용 설정을 만드세요.</strong><p>아래 칸을 채우면 복사할 수 있는 형태로 정리됩니다. 비워 둔 항목은 직접 수정하셔도 됩니다.</p></div></div>
-    <div class="custom-intro-card"><span>03</span><div><strong>케이브덕 유저노트에 붙여넣으세요.</strong><p>캐릭터를 사이트에 저장하는 것이 아니라 챗봇 대화에 사용할 설정을 준비하는 기능입니다.</p></div></div>
+    <div class="custom-intro-card"><span>01</span><div><strong>원하는 만큼 메이트 추가</strong><p>아래 + 버튼으로 메이트를 추가하고 목록에서 골라 수정합니다.</p></div></div>
+    <div class="custom-intro-card"><span>02</span><div><strong>짧은 키워드로 설정</strong><p>외형·성격·능력은 핵심 단어만. 출신과 특이사항은 선택입니다.</p></div></div>
+    <div class="custom-intro-card"><span>03</span><div><strong>1,000자 이하로 복사</strong><p>자동으로 압축된 명단을 케이브덕 유저노트에 붙여넣습니다.</p></div></div>
   </div>
   <div class="container custom-workspace">
-    <section class="custom-edit-panel" aria-label="커스텀 메이트 설정 입력">
-      <div class="custom-panel-kicker">YOUR CHARACTER / 01</div>
-      <h2>메이트 설정</h2>
+    <section class="custom-edit-panel" aria-label="여러 커스텀 메이트 설정 입력">
+      <div class="custom-panel-kicker">YOUR ORIGINAL / CHARACTER LIST</div>
+      <h2>나만의 메이트</h2>
+      <p class="custom-v9-small">작성한 캐릭터는 한 줄씩 기록됩니다. <strong>인물 하나당 약 80자</strong>를 권장합니다.</p>
+      <div class="custom-roster-head"><strong>메이트 목록</strong><small id="customRosterCount">0명 등록 / 1칸</small></div>
+      <div id="customRoster" class="custom-roster" aria-label="커스텀 메이트 목록"></div>
+      <button type="button" id="customAddButton" class="custom-roster-add" onclick="addCustomMate()">+ 메이트 추가하기</button>
+      <div class="custom-editor-heading"><h3 id="customEditTitle">01번 메이트 설정</h3><button type="button" onclick="removeCustomMate()">현재 메이트 삭제</button></div>
       <div class="custom-input-grid">
-        <label><span>이름</span><input id="customName" type="text" placeholder="예: 아리아" maxlength="80" oninput="renderCustomNote()"></label>
+        <label><span>이름 <small>(필수)</small></span><input id="customName" type="text" placeholder="예: 아리아" maxlength="12" oninput="renderCustomNote()"></label>
         <label><span>희망 등급</span><select id="customTier" onchange="renderCustomNote()"><option value="SR">SR</option><option value="UR">UR</option><option value="SSR">SSR</option><option value="R">R</option><option value="N">N</option></select></label>
-        <label><span>종족</span><input id="customSpecies" type="text" placeholder="예: 엘프" oninput="renderCustomNote()"></label>
-        <label><span>출신 차원</span><input id="customOrigin" type="text" placeholder="예: 고대 마법 왕국" oninput="renderCustomNote()"></label>
-        <label class="custom-field-wide"><span>외형 및 특징</span><textarea id="customAppearance" rows="2" placeholder="머리카락, 눈동자, 복장, 외형적 특징 등" oninput="renderCustomNote()"></textarea></label>
-        <label class="custom-field-wide"><span>성격 및 말투</span><textarea id="customPersonality" rows="2" placeholder="성격, 대화 방식, 버릇 등" oninput="renderCustomNote()"></textarea></label>
-        <label class="custom-field-wide"><span>고유 능력</span><textarea id="customAbility" rows="2" placeholder="기술이나 특성, 주요 장점 등" oninput="renderCustomNote()"></textarea></label>
-        <label class="custom-field-wide"><span>특이사항</span><textarea id="customNotes" rows="2" placeholder="추가로 기억시키고 싶은 설정" oninput="renderCustomNote()"></textarea></label>
+        <label><span>종족</span><input id="customSpecies" type="text" placeholder="예: 엘프" maxlength="12" oninput="renderCustomNote()"></label>
+        <label><span>출신 <small>(선택)</small></span><input id="customOrigin" type="text" placeholder="예: 엘리시온" maxlength="12" oninput="renderCustomNote()"></label>
+        <label class="custom-field-wide"><span>외형 <small>(단어 위주)</small></span><input id="customAppearance" type="text" maxlength="32" placeholder="예: 백금발·금안·장신" oninput="renderCustomNote()"></label>
+        <label class="custom-field-wide"><span>성격·말투</span><input id="customPersonality" type="text" maxlength="28" placeholder="예: 냉정·존댓말" oninput="renderCustomNote()"></label>
+        <label class="custom-field-wide"><span>능력·역할</span><input id="customAbility" type="text" maxlength="30" placeholder="예: 치유·보호막" oninput="renderCustomNote()"></label>
+        <label class="custom-field-wide"><span>특이사항 <small>(선택)</small></span><input id="customNotes" type="text" maxlength="22" placeholder="예: 길드장" oninput="renderCustomNote()"></label>
       </div>
+      <p id="customLineBudget" class="custom-note-hint" role="status">현재 메이트 0자 / 권장 80자</p>
     </section>
-    <aside class="custom-output-panel" aria-label="유저노트 복사 화면">
-      <div class="custom-panel-kicker">USER NOTE / 02</div>
+    <aside class="custom-output-panel" aria-label="다중 메이트 유저노트 복사 화면">
+      <div class="custom-panel-kicker">USER NOTE / COMPACT EXPORT</div>
       <h2>유저노트 미리보기</h2>
-      <div class="custom-note-annotation">작성한 내용이 아래에 자동으로 정리됩니다.</div>
+      <div class="custom-note-annotation">여러 명의 설정을 한 줄씩 압축합니다. 불필요한 항목은 자동 생략됩니다.</div>
+      <div class="custom-budget">
+        <div class="custom-budget-box"><span>총 글자 수 / 목표 1,000자</span><strong><span id="customTotalCount" style="display:inline;color:inherit;font:inherit">0</span><small> / 1,000</small></strong><div class="custom-budget-track"><i id="customBudgetFill"></i></div></div>
+        <div class="custom-budget-box"><span>등록 캐릭터 수</span><strong id="customValidCount">0<small>명</small></strong><div class="custom-budget-track"><i id="customMateFill"></i></div></div>
+      </div>
       <pre id="customNotePreview" class="custom-note-preview" aria-live="polite"></pre>
-      <button type="button" class="custom-copy-button" onclick="copyCustomNote()">유저노트 양식 복사 <span>↗</span></button>
-      <p id="customCopyStatus" class="custom-copy-status" role="status">복사 후 케이브덕의 유저노트에 붙여넣어 주세요.</p>
-      <div class="custom-caution">※ 이 페이지는 캐릭터를 서버에 등록하거나 챗봇에 자동 전송하지 않습니다. 실제 대화 반영 여부는 챗봇의 유저노트 처리 규칙에 따라 달라집니다.</div>
+      <p id="customBudgetWarning" class="custom-note-warning" aria-live="polite"></p>
+      <button type="button" id="customCopyButton" class="custom-copy-button" onclick="copyCustomNote()" disabled>압축 유저노트 전체 복사 <span>↗</span></button>
+      <p id="customCopyStatus" class="custom-copy-status" role="status">작성한 메이트가 있으면 전체 명단을 한 번에 복사할 수 있습니다.</p>
+      <div class="custom-example"><b>출력 예시 (복사에는 포함되지 않음)</b><br>아리아/SSR/엘프|외:백금발·금안|성:차분·존댓말|능:성광치유</div>
+      <div class="custom-caution">※ 작성 내용은 이 브라우저 화면에만 임시로 남으며, 서버나 챗봇으로 자동 전송되지 않습니다. 페이지를 새로고침하면 입력 내용이 초기화됩니다. 실제 챗봇 반영 여부는 유저노트 처리 규칙에 따릅니다.</div>
     </aside>
   </div>
-  <div class="container custom-bottom"><div><small>EVE / INFORMATION</small><p>“입성자님이 설계하신 새로운 메이트의 기록입니다.<br>완성된 설정을 유저노트에 남겨 주십시오.”</p></div><button type="button" onclick="showPage('characters')">캐릭터 도감으로 복귀 ↗</button></div>
+  <div class="container custom-bottom"><div><small>EVE / INFORMATION</small><p>“입성자님, 메이트의 외형과 성격·능력을 짧은 키워드로 정리하시면<br>더 많은 인물의 기록을 한 번에 보관하실 수 있습니다.”</p></div><button type="button" onclick="showPage('characters')">캐릭터 도감으로 복귀 ↗</button></div>
 </section>
 <!-- 캐릭터 상세 V5 유지: 좌측 정보 23% / 중앙 이미지 54% / 우측 버프 23%, 이미지 하단 그라디언트 -->
 <section id="page-detail" class="page">
@@ -3477,34 +3529,95 @@ function start(){
 }
 makeContent();applyFixedImages();renderCharacters();selectWorldTopic('avalon');initGrandPrix();start();
 
-/* CUSTOM 메이트: 사이트에 데이터를 저장하지 않고 복사용 텍스트만 구성합니다. */
+/* V9 CUSTOM: 다중 메이트, 한 줄 출력, 1,000자 실시간 예산. 로컬 임시 입력만 사용. */
+const customMateFields=['customName','customTier','customSpecies','customOrigin','customAppearance','customPersonality','customAbility','customNotes'];
+const customMateDefaults=()=>({customName:'',customTier:'SR',customSpecies:'',customOrigin:'',customAppearance:'',customPersonality:'',customAbility:'',customNotes:''});
+let customMates=[customMateDefaults()];
+let customSelectedMate=0;
+const customValue=id=>document.getElementById(id)?.value||'';
+function customSaveEditor(){
+ const mate=customMates[customSelectedMate];if(!mate)return;
+ customMateFields.forEach(id=>{mate[id]=customValue(id)});
+}
+function customLoadEditor(){
+ const mate=customMates[customSelectedMate]||customMateDefaults();
+ customMateFields.forEach(id=>{const field=document.getElementById(id);if(field)field.value=mate[id]|| (id==='customTier'?'SR':'')});
+ document.getElementById('customEditTitle').textContent=String(customSelectedMate+1).padStart(2,'0')+'번 메이트 설정';
+}
+function customSelectMate(index){
+ customSaveEditor();if(index<0||index>=customMates.length)return;
+ customSelectedMate=index;customLoadEditor();renderCustomNote();
+}
+function addCustomMate(){
+ customSaveEditor();if(customMates.length>=25)return;
+ customMates.push(customMateDefaults());customSelectedMate=customMates.length-1;
+ customLoadEditor();renderCustomNote();
+ document.getElementById('customName')?.focus();
+}
+function removeCustomMate(){
+ customSaveEditor();
+ if(customMates.length===1){customMates=[customMateDefaults()];customSelectedMate=0}
+ else{customMates.splice(customSelectedMate,1);customSelectedMate=Math.min(customSelectedMate,customMates.length-1)}
+ customLoadEditor();renderCustomNote();
+}
+function customClean(s){return (s||'').replace(/[\n\r\t|]+/g,' ').replace(/\s+/g,' ').trim()}
+function customCompactLine(mate){
+ const name=customClean(mate.customName);if(!name)return '';
+ let head=[name,customClean(mate.customTier)||'SR',customClean(mate.customSpecies)].filter(Boolean).join('/');
+ const origin=customClean(mate.customOrigin);
+ if(origin)head+='@'+origin;
+ const attributes=[
+  ['외',mate.customAppearance],['성',mate.customPersonality],['능',mate.customAbility],['특',mate.customNotes]
+ ].filter(pair=>customClean(pair[1])).map(pair=>pair[0]+':'+customClean(pair[1]));
+ return [head,...attributes].join('|');
+}
+function customDrawRoster(){
+ const roster=document.getElementById('customRoster');if(!roster)return;
+ roster.replaceChildren();
+ customMates.forEach((mate,index)=>{
+  const button=document.createElement('button');button.type='button';button.className='custom-roster-slot'+(index===customSelectedMate?' active':'');
+  button.setAttribute('aria-pressed',index===customSelectedMate?'true':'false');
+  const no=document.createElement('b');no.textContent=String(index+1).padStart(2,'0');
+  const details=document.createElement('span');details.className='custom-slot-detail';
+  const name=document.createElement('strong');name.textContent=mate.customName.trim()||'미작성 메이트';
+  const summary=document.createElement('small');summary.textContent=(mate.customTier||'SR')+' · '+(mate.customSpecies.trim()||'종족 미입력')+' · '+customCompactLine(mate).length+'자';
+  details.append(name,summary);button.append(no,details);button.onclick=()=>customSelectMate(index);roster.append(button);
+ });
+ document.getElementById('customRosterCount').textContent=customMates.filter(m=>customClean(m.customName)).length+'명 등록 / '+customMates.length+'칸';
+ document.getElementById('customAddButton').disabled=customMates.length>=25;
+}
 function renderCustomNote(){
- const value=(id)=>document.getElementById(id)?.value.trim()||'';
+ customSaveEditor();customDrawRoster();
+ const lines=customMates.map(customCompactLine).filter(Boolean);
+ const output=lines.length?'[추가메이트]\n'+lines.join('\n'):'';
+ const total=output.length;
  const preview=document.getElementById('customNotePreview');if(!preview)return;
- const lines=[
-  '[아발론 커스텀 메이트]',
-  '',
-  '이름: '+value('customName'),
-  '희망 등급: '+(value('customTier')||'SR'),
-  '종족: '+value('customSpecies'),
-  '출신 차원: '+value('customOrigin'),
-  '외형 및 신체 특징: '+value('customAppearance'),
-  '성격 및 말투: '+value('customPersonality'),
-  '고유 능력: '+value('customAbility'),
-  '특이사항: '+value('customNotes'),
-  '',
-  '[/아발론 커스텀 메이트]'
- ];
- preview.textContent=lines.join('\n');
+ preview.textContent=output||'이름을 입력하면 여기에 압축 명단이 나타납니다.';
+ document.getElementById('customTotalCount').textContent=String(total);
+ document.getElementById('customValidCount').textContent=lines.length+'명';
+ document.getElementById('customBudgetFill').style.width=Math.min(100,total/1000*100)+'%';
+ document.getElementById('customMateFill').style.width=Math.min(100,lines.length/12*100)+'%';
+ document.getElementById('customBudgetFill').style.background=total>1000?'#f18b7b':total>850?'#f2bc7c':'#d8bf88';
+ const currentLine=customCompactLine(customMates[customSelectedMate]);
+ const lineCount=document.getElementById('customLineBudget');
+ if(lineCount){lineCount.textContent='현재 메이트 '+currentLine.length+'자 / 권장 80자'+(currentLine.length>80?' — 핵심 키워드만 남겨 주세요.':'');lineCount.style.color=currentLine.length>80?'#f7b09b':'#95b4c5'}
+ const warning=document.getElementById('customBudgetWarning');
+ if(total>1000)warning.textContent='1,000자를 '+(total-1000)+'자 초과했습니다. 설정을 줄이면 복사할 수 있습니다.';
+ else if(lines.length>0 && customMates.some(m=>customCompactLine(m).length>80))warning.textContent='한 명당 약 80자를 권장합니다. 전체가 1,000자 이내라면 복사 가능합니다.';
+ else warning.textContent='';
+ document.getElementById('customCopyButton').disabled=!(lines.length>0 && total<=1000);
  const status=document.getElementById('customCopyStatus');
- if(status)status.textContent='복사 후 케이브덕의 유저노트에 붙여넣어 주세요.';
+ if(status)status.textContent=lines.length>0?(total<=1000?'복사할 수 있습니다. 붙여넣기 전에 유저노트의 남은 용량을 확인해 주세요.':'설정을 압축해 1,000자 이내로 줄여 주세요.'):'작성한 메이트가 있으면 전체 명단을 한 번에 복사할 수 있습니다.';
 }
 async function copyCustomNote(){
- const text=document.getElementById('customNotePreview')?.textContent||'';
+ customSaveEditor();
+ const lines=customMates.map(customCompactLine).filter(Boolean);
+ const output=lines.length?'[추가메이트]\n'+lines.join('\n'):'';
+ if(!output || output.length>1000)return;
  const status=document.getElementById('customCopyStatus');
  try{
-  await navigator.clipboard.writeText(text);
-  if(status)status.textContent='복사되었습니다. 케이브덕 유저노트에 붙여넣어 주세요.';
+  await navigator.clipboard.writeText(output);
+  if(status)status.textContent='메이트 '+lines.length+'명 / '+output.length+'자 복사 완료. 케이브덕 유저노트에 붙여넣어 주세요.';
  }catch(err){
   const node=document.getElementById('customNotePreview');
   const range=document.createRange();range.selectNodeContents(node);
@@ -3512,6 +3625,8 @@ async function copyCustomNote(){
   if(status)status.textContent='텍스트가 선택되었습니다. Ctrl+C로 복사해 주세요.';
  }
 }
+customLoadEditor();renderCustomNote();
+
 </script>
 </body>
 </html>
