@@ -1241,6 +1241,38 @@
 .custom-trait-warning{font-size:11px;line-height:1.7;color:#e7c48e;min-height:1.2em}
 .custom-caution b{color:#b8cad9}
 
+
+/* V9 CUSTOM / 단일 제작 및 시각적인 고유특성 예시 도감 */
+.avalon-custom-page .custom-rank-selector{display:flex;justify-content:space-between;align-items:center;gap:18px;background:#0b1523;border:1px solid #536781;padding:17px 19px;margin:22px 0 12px}
+.avalon-custom-page .custom-rank-selector>div{display:flex;flex-direction:column;gap:4px}
+.avalon-custom-page .custom-rank-selector>div>span,.avalon-custom-page .custom-trait-library-top span{font-size:9px;letter-spacing:2px;color:#e1c78b;font-weight:900}
+.avalon-custom-page .custom-rank-selector strong{font-size:15px;color:#f0f5fa}
+.avalon-custom-page .custom-rank-selector small{font-size:10px;color:#9fb5c5}
+.avalon-custom-page .custom-rank-selector label{display:flex;flex-direction:column;gap:5px;font-size:10px;color:#c5d0dc;font-weight:900}
+.avalon-custom-page .custom-rank-selector select{min-width:166px;background:#1a2c41;border:1px solid #bfab7b;color:#f2dfa9;padding:10px 12px;font-size:13px;cursor:pointer}
+.avalon-custom-page .custom-trait-library{background:linear-gradient(125deg,#111d2e,#162538);border:1px solid #465d71;padding:20px;margin:14px 0 16px}
+.avalon-custom-page .custom-trait-library-top{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:16px}
+.avalon-custom-page .custom-trait-library-top h3{font-size:21px;letter-spacing:-.5px;margin:5px 0 6px;color:#f4f1e7}
+.avalon-custom-page .custom-trait-library-top p{font-size:11px;line-height:1.65;margin:0;color:#aec2d0}
+.avalon-custom-page .custom-trait-library-top p b{color:#e5c990}
+.avalon-custom-page .custom-trait-library-top>small{font-size:9px;color:#b6c7d2;white-space:nowrap;border:1px solid #637282;padding:7px}
+.avalon-custom-page .custom-trait-categories{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.avalon-custom-page .custom-trait-category{border:1px solid #40566c;background:#0a1524;padding:13px;min-width:0}
+.avalon-custom-page .custom-trait-category-title{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+.avalon-custom-page .custom-trait-category-title strong{font-size:12px;color:#e5d1a0}
+.avalon-custom-page .custom-trait-category-title small{font-size:9px;color:#7c98ae}
+.avalon-custom-page .custom-trait-buttons{display:flex;flex-direction:column;gap:5px}
+.avalon-custom-page button.custom-trait-example{display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;min-height:36px;padding:7px 9px;background:#192b3c;border:1px solid #364a60;color:#e5eef4;font-size:11px;cursor:pointer;text-align:left}
+.avalon-custom-page button.custom-trait-example:hover,.avalon-custom-page button.custom-trait-example:focus-visible{background:#29394b;border-color:#d9bf89}
+.avalon-custom-page button.custom-trait-example:disabled{opacity:.48;cursor:not-allowed}
+.avalon-custom-page .custom-trait-example span{font-weight:850}
+.avalon-custom-page .custom-trait-example small{color:#b3cad5;font-size:10px;text-align:right}
+.avalon-custom-page .custom-trait-library-foot{margin:14px 0 0;border-top:1px solid #405266;padding-top:11px;font-size:10px;color:#a8bece;line-height:1.7}
+.avalon-custom-page .custom-trait-library-foot b{color:#e3cc93}
+.avalon-custom-page .custom-editor-heading{margin-top:16px}
+.avalon-custom-page .custom-editor-assist{color:#9ab1c1;font-size:10px}
+.avalon-custom-page .custom-note-preview{min-height:150px}
+@media(max-width:720px){.avalon-custom-page .custom-rank-selector{flex-direction:column;align-items:stretch}.avalon-custom-page .custom-trait-library{padding:13px}.avalon-custom-page .custom-trait-library-top{align-items:flex-start;flex-direction:column}.avalon-custom-page .custom-trait-categories{grid-template-columns:1fr}.avalon-custom-page .custom-rank-selector select{width:100%}}
 </style>
 </head>
 <body>
@@ -1302,74 +1334,87 @@
       <div class="avalon-custom-overline">AVALON ARCHIVE · FREE CREATION</div>
       <h2>나만의 메이트를 <em>소환하세요.</em></h2>
       <p>도감에 없는 캐릭터를 자유롭게 제작하세요.<br class="custom-desktop-break"> <strong>고유특성·특화·영지 버프</strong>를 담고 1,000자 안에 정리합니다.</p>
-      <div class="avalon-custom-foot"><span>여러 명 동시 작성</span><span>등급별 고유특성 안내</span><span>1,000자 미리보기</span></div>
+      <div class="avalon-custom-foot"><span>한 명씩 만들고 복사</span><span>고유특성 예시에서 선택</span><span>UR → N 등급별 설정</span></div>
     </div>
-    <button class="avalon-custom-go" type="button" onclick="showPage('custom');renderCustomNote();" aria-label="나만의 메이트 만들기 화면 열기">다중 메이트 제작 <span>↗</span></button>
+    <button class="avalon-custom-go" type="button" onclick="showPage('custom');renderCustomNote();" aria-label="나만의 메이트 만들기 화면 열기">나만의 메이트 만들기 <span>↗</span></button>
   </div>
  </div>
 </section>
-<!-- CUSTOM V9 / 등급별 고유특성·특화·영지 버프를 반영한 다중 메이트 제작 -->
+<!-- CUSTOM V9 / 단일 메이트 생성·특성 종류 참고·한 줄 복사 -->
 <section id="page-custom" class="page avalon-custom-page">
   <div class="container custom-topbar"><span>AVALON / CENTRAL ARCHIVE / SPECIAL ENTRY</span><button type="button" onclick="showPage('characters')">← 도감으로 돌아가기</button></div>
   <div class="container custom-heading">
     <div class="custom-hero-chip">V9 / CUSTOM MATE / COMPLETE PROFILE</div>
-    <h1>CREATE YOUR <span>OWN MATES.</span></h1>
+    <h1>CREATE YOUR <span>OWN MATE.</span></h1>
     <p>외형뿐 아니라 <strong>고유특성·특화 분야·영지 버프</strong>까지 직접 설계하세요.<br>사이트에서는 자세히 안내하고, 유저노트에는 짧게 압축합니다.</p>
   </div>
   <div class="container custom-flow">
-    <div class="custom-intro-card"><span>01</span><div><strong>등급부터 선택하기</strong><p>N~UR에 따라 고유특성 권장 개수와 특수 효과 항목이 달라집니다.</p></div></div>
+    <div class="custom-intro-card"><span>01</span><div><strong>등급부터 선택하기</strong><p>UR부터 N까지 등급에 따라 고유특성과 버프 구성이 달라집니다.</p></div></div>
     <div class="custom-intro-card"><span>02</span><div><strong>특성 이름 + 효과 쓰기</strong><p>예: 성광치유(회복↑). 버프도 대상과 효과가 드러나게 작성하세요.</p></div></div>
-    <div class="custom-intro-card"><span>03</span><div><strong>1,000자 이하로 복사</strong><p>여러 메이트를 한 줄씩 자동 요약하고, 유저노트 용량을 바로 확인합니다.</p></div></div>
+    <div class="custom-intro-card"><span>03</span><div><strong>메이트 한 명 복사</strong><p>캐릭터 한 명을 한 줄로 복사해 유저노트에 차례대로 붙여넣으세요.</p></div></div>
   </div>
   <div class="container custom-workspace">
-    <section class="custom-edit-panel" aria-label="다중 커스텀 메이트 설정 입력">
-      <div class="custom-panel-kicker">YOUR ORIGINAL / CHARACTER LIST</div>
+    <section class="custom-edit-panel" aria-label="커스텀 메이트 한 명 설정 입력">
+      <div class="custom-panel-kicker">YOUR ORIGINAL / MATE DESIGNER</div>
       <h2>나만의 메이트</h2>
-      <p class="custom-v9-small">핵심은 <strong>고유특성 → 특화 효과 → 영지 버프</strong>입니다. 글자 수가 부족하다면 출신·외형 설명부터 줄이세요.</p>
-      <div class="custom-roster-head"><strong>메이트 목록</strong><small id="customRosterCount">0명 등록 / 1칸</small></div>
-      <div id="customRoster" class="custom-roster" aria-label="커스텀 메이트 목록"></div>
-      <button type="button" id="customAddButton" class="custom-roster-add" onclick="addCustomMate()">+ 메이트 추가하기</button>
-      <div class="custom-editor-heading"><h3 id="customEditTitle">01번 메이트 설정</h3><button type="button" onclick="removeCustomMate()">현재 메이트 삭제</button></div>
-      <div class="custom-tier-guide" role="status"><span>선택 등급의 설정 기준</span><strong id="customTierGuide">SR · 고유특성 3개 · 특화 분야</strong><small>기존 아발론 도감 기준이며, 이 페이지는 설정을 작성하고 복사하는 도구입니다.</small></div>
+      <p class="custom-v9-small">핵심은 <strong>고유특성 → 특화 효과 → 영지 버프</strong>입니다. 설명을 참고해 고유특성을 고르고, 완성한 메이트는 한 줄씩 복사하세요.</p>
+      <div class="custom-rank-selector">
+        <div><span>01 / RARITY</span><strong>메이트 등급을 선택하세요</strong><small>UR → SSR → SR → R → N</small></div>
+        <label for="customTier">등급 선택
+          <select id="customTier" onchange="renderCustomNote()" aria-label="메이트 등급 선택">
+            <option value="UR">UR · 최상위</option>
+            <option value="SSR">SSR · 특별</option>
+            <option value="SR">SR · 희귀</option>
+            <option value="R">R · 기본</option>
+            <option value="N">N · 일반</option>
+          </select>
+        </label>
+      </div>
+      <div class="custom-tier-guide" role="status"><span>선택 등급의 설정 기준</span><strong id="customTierGuide">UR · 고유특성 5개 · 특화 분야 · 영지 버프 · 전속 버프</strong><small>등급별 권장 특성 수와 영지 효과는 기존 아발론 도감을 기준으로 안내합니다.</small></div>
+      <section class="custom-trait-library" aria-label="고유특성 종류와 효과 예시">
+        <div class="custom-trait-library-top"><div><span>02 / TRAIT LIBRARY</span><h3>고유특성 종류</h3><p>어떤 능력을 넣을지 모르겠다면 아래 예시를 참고하세요. <b>특성을 누르면 자동 입력</b>됩니다.</p></div><small>예시이며 자유롭게 수정 가능</small></div>
+        <div class="custom-trait-categories" id="customTraitCategories"></div>
+        <p class="custom-trait-library-foot">고유특성은 <b>해당 메이트 개인의 능력</b>입니다. <b>영지 전체 버프</b>는 SSR·UR의 별도 항목에 작성합니다. 효과를 포함해 주세요.</p>
+      </section>
+      <div class="custom-editor-heading"><h3>03 / 내 메이트 설정</h3><span class="custom-editor-assist">한 명 작성 → 복사 → 다음 인물 작성</span></div>
       <div class="custom-input-grid">
-        <div class="custom-section-label">01 / 기본 정보 <small>간단하게</small></div>
+        <div class="custom-section-label">04 / 기본 정보 <small>간단하게</small></div>
         <label><span>이름 <em>필수</em></span><input id="customName" type="text" placeholder="예: 아리아" maxlength="12" oninput="renderCustomNote()"></label>
-        <label><span>등급</span><select id="customTier" onchange="renderCustomNote()"><option value="SR">SR</option><option value="UR">UR</option><option value="SSR">SSR</option><option value="R">R</option><option value="N">N</option></select></label>
         <label><span>종족</span><input id="customSpecies" type="text" placeholder="예: 하이엘프" maxlength="12" oninput="renderCustomNote()"></label>
         <label><span>출신 <small>선택</small></span><input id="customOrigin" type="text" placeholder="예: 엘리시온" maxlength="12" oninput="renderCustomNote()"></label>
 
-        <div class="custom-section-label custom-emphasis-label">02 / 고유특성 <small id="customTraitRule">SR 권장 3개</small></div>
+        <div class="custom-section-label custom-emphasis-label">05 / 선택한 고유특성 <small id="customTraitRule">UR 권장 5개</small></div>
         <label class="custom-field-wide"><span>고유특성 이름과 효과 <em>필수</em></span><input id="customTraits" type="text" maxlength="170" placeholder="예: 치유(HP회복↑)·정화(상태이상 제거)·결계(방어↑)" oninput="renderCustomNote()"><small class="custom-field-help">특성끼리는 <b>·</b> 로 구분하세요. 이름만 쓰기보다 <b>특성명(효과)</b> 형태가 이해하기 쉽습니다.</small></label>
 
-        <div class="custom-section-label">03 / 배치·버프 <small>등급에 따라 표시</small></div>
+        <div class="custom-section-label">06 / 배치·버프 <small>등급에 따라 표시</small></div>
         <label class="custom-field-wide custom-tier-field" id="customSpecialtyWrap"><span>특화 구역·효과 <small>SR / SSR / UR</small></span><input id="customSpecialty" type="text" maxlength="70" placeholder="예: 수복실 배치 시 회복 효율↑" oninput="renderCustomNote()"><small class="custom-field-help">어느 시설에 배치할 때, 어떤 효과가 생기는지 적어주세요.</small></label>
         <label class="custom-field-wide custom-tier-field" id="customEstateBuffWrap"><span>영지 전체 버프 <small>SSR / UR</small></span><input id="customEstateBuff" type="text" maxlength="70" placeholder="예: 생명의 가호(영지 전체 HP재생↑)" oninput="renderCustomNote()"><small class="custom-field-help">영지에 적용되는 <b>버프 이름 + 적용 대상 + 효과</b>를 적어주세요.</small></label>
         <label class="custom-field-wide custom-tier-field" id="customEntrantBuffWrap"><span>입성자 전속 버프 <small>UR</small></span><input id="customEntrantBuff" type="text" maxlength="70" placeholder="예: 축복의 서약(입성자 피로회복↑)" oninput="renderCustomNote()"><small class="custom-field-help">UR에게만 있는 입성자 전속 효과입니다.</small></label>
 
-        <div class="custom-section-label">04 / 캐릭터성 <small>용량이 부족하면 축약</small></div>
+        <div class="custom-section-label">07 / 캐릭터성 <small>용량이 부족하면 축약</small></div>
         <label class="custom-field-wide"><span>외형</span><input id="customAppearance" type="text" maxlength="38" placeholder="예: 백금발·금안·장신" oninput="renderCustomNote()"></label>
         <label class="custom-field-wide"><span>성격·말투</span><input id="customPersonality" type="text" maxlength="35" placeholder="예: 차분·정중한 존댓말" oninput="renderCustomNote()"></label>
         <label class="custom-field-wide"><span>역할·기본 능력 <small>선택</small></span><input id="customAbility" type="text" maxlength="38" placeholder="예: 광역 치유사" oninput="renderCustomNote()"></label>
         <label class="custom-field-wide"><span>특이사항 <small>선택</small></span><input id="customNotes" type="text" maxlength="32" placeholder="예: 원래는 성소의 대사제" oninput="renderCustomNote()"></label>
       </div>
-      <p id="customLineBudget" class="custom-note-hint" role="status">현재 메이트 0자 / 권장 90자</p>
+      <p id="customLineBudget" class="custom-note-hint" role="status">현재 메이트 0자 / 10명 등록 목표: 1명당 약 90자</p>
       <p id="customTraitWarning" class="custom-trait-warning" aria-live="polite"></p>
     </section>
-    <aside class="custom-output-panel" aria-label="다중 메이트 유저노트 복사 화면">
+    <aside class="custom-output-panel" aria-label="커스텀 메이트 한 명 유저노트 복사 화면">
       <div class="custom-panel-kicker">USER NOTE / COMPACT EXPORT</div>
       <h2>유저노트 미리보기</h2>
-      <div class="custom-note-annotation"><strong>설명은 화면에서 충분히, 복사 내용은 간결하게.</strong> 이름별 한 줄 요약으로 출력됩니다.</div>
+      <div class="custom-note-annotation"><strong>설명은 화면에서 충분히, 복사 내용은 간결하게.</strong> 현재 작성 중인 <b>한 명의 설정만</b> 한 줄로 출력됩니다.</div>
       <div class="custom-key-legend"><b>약어 안내</b><span>고 = 고유특성</span><span>배 = 특화 배치</span><span>영 = 영지 버프</span><span>전 = 입성자 전속</span></div>
       <div class="custom-budget">
-        <div class="custom-budget-box"><span>총 글자 수 / 목표 1,000자</span><strong><span id="customTotalCount" style="display:inline;color:inherit;font:inherit">0</span><small> / 1,000</small></strong><div class="custom-budget-track"><i id="customBudgetFill"></i></div></div>
-        <div class="custom-budget-box"><span>등록 캐릭터 수</span><strong id="customValidCount">0<small>명</small></strong><div class="custom-budget-track"><i id="customMateFill"></i></div></div>
+        <div class="custom-budget-box"><span>현재 한 명 / 권장 90자</span><strong><span id="customTotalCount" style="display:inline;color:inherit;font:inherit">0</span><small>자</small></strong><div class="custom-budget-track"><i id="customBudgetFill"></i></div></div>
+        <div class="custom-budget-box"><span>같은 분량 10명 입력 시 예상</span><strong id="customValidCount">0<small>자</small></strong><div class="custom-budget-track"><i id="customMateFill"></i></div></div>
       </div>
       <pre id="customNotePreview" class="custom-note-preview" aria-live="polite"></pre>
       <p id="customBudgetWarning" class="custom-note-warning" aria-live="polite"></p>
-      <button type="button" id="customCopyButton" class="custom-copy-button" onclick="copyCustomNote()" disabled>압축 유저노트 전체 복사 <span>↗</span></button>
-      <p id="customCopyStatus" class="custom-copy-status" role="status">이름과 고유특성을 입력하면 전체 명단을 한 번에 복사할 수 있습니다.</p>
-      <div class="custom-example"><b>출력 예시 · SSR (복사에는 포함되지 않음)</b><br>아리아/SSR/엘프|고:치유(HP↑)·정화(해제)·결계(방어↑)·축복(회복↑)|배:수복실/회복↑|영:자애(영지재생↑)|외:백금발·금안|성:차분</div>
-      <div class="custom-caution">※ 기존 도감의 등급별 특성 수에 맞춘 <b>작성 안내</b>입니다. 입력한 특성·버프가 게임에 자동으로 적용되지는 않습니다. 실제 사용을 위해서는 챗봇의 유저노트 인식 규칙이 필요합니다. 작성 내용은 이 화면에서만 임시로 유지되며 새로고침하면 초기화됩니다.</div>
+      <button type="button" id="customCopyButton" class="custom-copy-button" onclick="copyCustomNote()" disabled>이 메이트 한 줄 복사 <span>↗</span></button>
+      <p id="customCopyStatus" class="custom-copy-status" role="status">이름과 고유특성을 입력하면 현재 메이트 한 줄을 복사할 수 있습니다.</p>
+      <div class="custom-example"><b>한 줄 출력 예시 · SSR (복사에는 포함되지 않음)</b><br>아리아/SSR/엘프|고:치유(HP↑)·정화(해제)·결계(방어↑)·축복(회복↑)|배:수복실/회복↑|영:자애(영지재생↑)|외:백금발·금안|성:차분</div>
+      <div class="custom-caution">※ 여러 캐릭터를 만들 때는 <b>한 명씩 복사하여 유저노트에 줄바꿈으로 이어 붙이세요.</b> 머리말 [추가메이트]는 맨 위에 한 번만 적으시면 됩니다. 기존 도감의 등급별 특성 수에 맞춘 <b>작성 안내</b>입니다. 입력한 특성·버프가 게임에 자동으로 적용되지는 않습니다. 실제 사용을 위해서는 챗봇의 유저노트 인식 규칙이 필요합니다. 작성 내용은 이 화면에서만 임시로 유지되며 새로고침하면 초기화됩니다.</div>
     </aside>
   </div>
   <div class="container custom-bottom"><div><small>EVE / INFORMATION</small><p>“입성자님, 고유특성은 이름과 효과를 함께 적어주세요.<br>영지 버프에는 누구에게 어떤 변화가 생기는지도 남겨두시는 편이 좋습니다.”</p></div><button type="button" onclick="showPage('characters')">캐릭터 도감으로 복귀 ↗</button></div>
@@ -3562,131 +3607,123 @@ function start(){
 }
 makeContent();applyFixedImages();renderCharacters();selectWorldTopic('avalon');initGrandPrix();start();
 
-/* V9 CUSTOM: 등급별 고유특성 + 특화/영지/전속 버프. 글자 수 1000 제한. */
+/* V9 CUSTOM: 한 명씩 제작 및 복사 / 고유특성 참고 예시 */
 const customMateFields=['customName','customTier','customSpecies','customOrigin','customAppearance','customPersonality','customAbility','customTraits','customSpecialty','customEstateBuff','customEntrantBuff','customNotes'];
-const customMateDefaults=()=>({customName:'',customTier:'SR',customSpecies:'',customOrigin:'',customAppearance:'',customPersonality:'',customAbility:'',customTraits:'',customSpecialty:'',customEstateBuff:'',customEntrantBuff:'',customNotes:''});
-const customTierRules={N:{traits:1,specialty:false,estate:false,entrant:false,desc:'고유특성 1개'},R:{traits:2,specialty:false,estate:false,entrant:false,desc:'고유특성 2개'},SR:{traits:3,specialty:true,estate:false,entrant:false,desc:'고유특성 3개 · 특화 구역'},SSR:{traits:4,specialty:true,estate:true,entrant:false,desc:'고유특성 4개 · 특화 구역 · 영지 버프'},UR:{traits:5,specialty:true,estate:true,entrant:true,desc:'고유특성 5개 · 특화 구역 · 영지 버프 · 전속 버프'}};
-let customMates=[customMateDefaults()];
-let customSelectedMate=0;
+const customTierRules={
+ UR:{traits:5,specialty:true,estate:true,entrant:true,desc:'고유특성 5개 · 특화 구역 · 영지 버프 · 입성자 전속 버프'},
+ SSR:{traits:4,specialty:true,estate:true,entrant:false,desc:'고유특성 4개 · 특화 구역 · 영지 버프'},
+ SR:{traits:3,specialty:true,estate:false,entrant:false,desc:'고유특성 3개 · 특화 구역'},
+ R:{traits:2,specialty:false,estate:false,entrant:false,desc:'고유특성 2개'},
+ N:{traits:1,specialty:false,estate:false,entrant:false,desc:'고유특성 1개'}
+};
+const customTraitLibrary=[
+ {name:'전투 · 공격',items:[['검술','근접공격↑'],['궁술','원거리명중↑'],['화염술','화염피해↑']]},
+ {name:'방어 · 생존',items:[['강철피부','방어↑'],['재생체질','자가회복↑'],['저항체질','상태이상저항↑']]},
+ {name:'치유 · 지원',items:[['성광치유','아군회복↑'],['정화','상태이상해제'],['전술지휘','아군효율↑']]},
+ {name:'마법 · 제어',items:[['결계술','보호막'],['빙결술','이동속도↓'],['정신감응','감지↑']]},
+ {name:'탐색 · 생산',items:[['채광감각','광물탐지↑'],['연금술','제작효율↑'],['감정안','희귀품식별↑']]},
+ {name:'경제 · 운영',items:[['협상술','거래수익↑'],['회계감각','유지비↓'],['행운체질','전리품획득↑']]}
+];
 const customValue=id=>document.getElementById(id)?.value||'';
 const customClean=s=>(s||'').replace(/[\n\r\t|]+/g,' ').replace(/\s+/g,' ').trim();
-function customSaveEditor(){
- const mate=customMates[customSelectedMate];if(!mate)return;
- customMateFields.forEach(id=>{mate[id]=customValue(id)});
-}
-function customLoadEditor(){
- const mate=customMates[customSelectedMate]||customMateDefaults();
- customMateFields.forEach(id=>{const field=document.getElementById(id);if(field)field.value=mate[id]||(id==='customTier'?'SR':'')});
- document.getElementById('customEditTitle').textContent=String(customSelectedMate+1).padStart(2,'0')+'번 메이트 설정';
- customUpdateTierUI();
-}
-function customSelectMate(index){
- customSaveEditor();if(index<0||index>=customMates.length)return;
- customSelectedMate=index;customLoadEditor();renderCustomNote();
-}
-function addCustomMate(){
- customSaveEditor();if(customMates.length>=25)return;
- customMates.push(customMateDefaults());customSelectedMate=customMates.length-1;
- customLoadEditor();renderCustomNote();
- document.getElementById('customName')?.focus();
-}
-function removeCustomMate(){
- customSaveEditor();
- if(customMates.length===1){customMates=[customMateDefaults()];customSelectedMate=0}
- else{customMates.splice(customSelectedMate,1);customSelectedMate=Math.min(customSelectedMate,customMates.length-1)}
- customLoadEditor();renderCustomNote();
-}
 function customTraitItems(s){return customClean(s).split(/[·,，;；]+/).map(v=>v.trim()).filter(Boolean)}
 function customUpdateTierUI(){
- const tier=customValue('customTier')||'SR';const rule=customTierRules[tier]||customTierRules.SR;
+ const tier=customValue('customTier')||'UR',rule=customTierRules[tier]||customTierRules.UR;
  document.getElementById('customTierGuide').textContent=tier+' · '+rule.desc;
- document.getElementById('customTraitRule').textContent=tier+' 권장 '+rule.traits+'개';
- [['customSpecialtyWrap',rule.specialty],['customEstateBuffWrap',rule.estate],['customEntrantBuffWrap',rule.entrant]].forEach(([id,show])=>{const target=document.getElementById(id);if(target)target.hidden=!show});
+ document.getElementById('customTraitRule').textContent=tier+' 등급 '+rule.traits+'개';
+ [['customSpecialtyWrap',rule.specialty],['customEstateBuffWrap',rule.estate],['customEntrantBuffWrap',rule.entrant]].forEach(([id,show])=>{const el=document.getElementById(id);if(el)el.hidden=!show});
 }
-function customCompactLine(mate){
- const name=customClean(mate.customName);if(!name)return '';
- const tier=customClean(mate.customTier)||'SR';const rule=customTierRules[tier]||customTierRules.SR;
- let head=[name,tier,customClean(mate.customSpecies)].filter(Boolean).join('/');
- const items=[['고',mate.customTraits]];
- if(rule.specialty)items.push(['배',mate.customSpecialty]);
- if(rule.estate)items.push(['영',mate.customEstateBuff]);
- if(rule.entrant)items.push(['전',mate.customEntrantBuff]);
- items.push(['외',mate.customAppearance],['성',mate.customPersonality],['능',mate.customAbility],['출',mate.customOrigin],['특',mate.customNotes]);
- return [head,...items.filter(pair=>customClean(pair[1])).map(pair=>pair[0]+':'+customClean(pair[1]))].join('|');
+function customCompactLine(){
+ const name=customClean(customValue('customName'));if(!name)return '';
+ const tier=customClean(customValue('customTier'))||'UR',rule=customTierRules[tier]||customTierRules.UR;
+ const head=[name,tier,customClean(customValue('customSpecies'))].filter(Boolean).join('/');
+ const pairs=[['고',customValue('customTraits')]];
+ if(rule.specialty)pairs.push(['배',customValue('customSpecialty')]);
+ if(rule.estate)pairs.push(['영',customValue('customEstateBuff')]);
+ if(rule.entrant)pairs.push(['전',customValue('customEntrantBuff')]);
+ pairs.push(['외',customValue('customAppearance')],['성',customValue('customPersonality')],['능',customValue('customAbility')],['출',customValue('customOrigin')],['특',customValue('customNotes')]);
+ return [head,...pairs.filter(p=>customClean(p[1])).map(p=>p[0]+':'+customClean(p[1]))].join('|');
 }
-function customDrawRoster(){
- const roster=document.getElementById('customRoster');if(!roster)return;
- roster.replaceChildren();
- customMates.forEach((mate,index)=>{
-  const button=document.createElement('button');button.type='button';button.className='custom-roster-slot'+(index===customSelectedMate?' active':'');
-  button.setAttribute('aria-pressed',index===customSelectedMate?'true':'false');
-  const no=document.createElement('b');no.textContent=String(index+1).padStart(2,'0');
-  const details=document.createElement('span');details.className='custom-slot-detail';
-  const name=document.createElement('strong');name.textContent=mate.customName.trim()||'미작성 메이트';
-  const rule=customTierRules[mate.customTier]||customTierRules.SR;
-  const summary=document.createElement('small');summary.textContent=(mate.customTier||'SR')+' · 특성 '+customTraitItems(mate.customTraits).length+'/'+rule.traits+' · '+customCompactLine(mate).length+'자';
-  details.append(name,summary);button.append(no,details);button.onclick=()=>customSelectMate(index);roster.append(button);
+function customBuildTraitLibrary(){
+ const root=document.getElementById('customTraitCategories');if(!root)return;
+ root.replaceChildren();
+ customTraitLibrary.forEach((group,g)=>{
+  const card=document.createElement('div');card.className='custom-trait-category';
+  const title=document.createElement('div');title.className='custom-trait-category-title';
+  const heading=document.createElement('strong');heading.textContent=group.name;
+  const note=document.createElement('small');note.textContent='예시 '+group.items.length+'개';title.append(heading,note);
+  const buttons=document.createElement('div');buttons.className='custom-trait-buttons';
+  group.items.forEach(([name,effect],i)=>{
+   const b=document.createElement('button');b.type='button';b.className='custom-trait-example';
+   b.title=name+'('+effect+') 입력하기';b.setAttribute('aria-label',name+' '+effect+' 고유특성 추가');
+   const t=document.createElement('span');t.textContent=name;const sub=document.createElement('small');sub.textContent=effect;
+   b.append(t,sub);b.onclick=()=>customInsertTrait(name,effect);buttons.append(b);
+  });card.append(title,buttons);root.append(card);
  });
- document.getElementById('customRosterCount').textContent=customMates.filter(m=>customClean(m.customName)).length+'명 등록 / '+customMates.length+'칸';
- document.getElementById('customAddButton').disabled=customMates.length>=25;
 }
-function customGetNote(){
- const lines=customMates.map(customCompactLine).filter(Boolean);
- return {lines,output:lines.length?'[추가메이트]\n'+lines.join('\n'):''};
+function customInsertTrait(name,effect){
+ const input=document.getElementById('customTraits');if(!input)return;
+ const rule=customTierRules[customValue('customTier')]||customTierRules.UR;
+ const traits=customTraitItems(input.value);
+ const entry=name+'('+effect+')';
+ if(traits.includes(entry)){
+  document.getElementById('customTraitWarning').textContent='이미 선택한 특성입니다. 다른 종류를 골라주세요.';return;
+ }
+ if(traits.length>=rule.traits){
+  document.getElementById('customTraitWarning').textContent=customValue('customTier')+' 등급은 고유특성 '+rule.traits+'개입니다. 기존 특성을 수정하거나 지운 뒤 선택해 주세요.';return;
+ }
+ const next=[...traits,entry].join('·');
+ if(next.length>input.maxLength){
+  document.getElementById('customTraitWarning').textContent='고유특성 입력란 글자 수를 초과합니다. 기존 설명을 줄여 주세요.';return;
+ }
+ input.value=next;renderCustomNote();
 }
 function renderCustomNote(){
- customSaveEditor();customUpdateTierUI();customDrawRoster();
- const {lines,output}=customGetNote();
- const total=output.length;
  const preview=document.getElementById('customNotePreview');if(!preview)return;
- preview.textContent=output||'이름과 고유특성을 입력하면 이곳에 압축 명단이 표시됩니다.';
+ customUpdateTierUI();
+ const line=customCompactLine(),total=line.length;
+ preview.textContent=line||'이름과 고유특성을 입력하면 이곳에 한 명의 압축 설정이 표시됩니다.';
  document.getElementById('customTotalCount').textContent=String(total);
- document.getElementById('customValidCount').textContent=lines.length+'명';
- document.getElementById('customBudgetFill').style.width=Math.min(100,total/1000*100)+'%';
- document.getElementById('customMateFill').style.width=Math.min(100,lines.length/12*100)+'%';
- document.getElementById('customBudgetFill').style.background=total>1000?'#f18b7b':total>850?'#f2bc7c':'#d8bf88';
- const mate=customMates[customSelectedMate];const rule=customTierRules[mate.customTier]||customTierRules.SR;
- const currentLine=customCompactLine(mate);const lineCount=document.getElementById('customLineBudget');
- if(lineCount){lineCount.textContent='현재 메이트 '+currentLine.length+'자 / 10명 기준 약 90자 권장';lineCount.style.color=currentLine.length>95?'#f7b09b':'#95b4c5'}
- const existing=customMates.filter(m=>customClean(m.customName));
- const missingTraits=existing.filter(m=>!customClean(m.customTraits));
- const weakTraits=existing.filter(m=>customClean(m.customTraits)&&customTraitItems(m.customTraits).length!==(customTierRules[m.customTier]||customTierRules.SR).traits);
- const missingSpecial=existing.filter(m=>{const r=customTierRules[m.customTier]||customTierRules.SR;return (r.specialty&&!customClean(m.customSpecialty))||(r.estate&&!customClean(m.customEstateBuff))||(r.entrant&&!customClean(m.customEntrantBuff))});
- const currentTraits=customTraitItems(mate.customTraits).length;
+ const estimated=total?total*10+10:0;
+ document.getElementById('customValidCount').innerHTML=String(estimated)+'<small>자</small>';
+ document.getElementById('customBudgetFill').style.width=Math.min(100,total/100*100)+'%';
+ document.getElementById('customMateFill').style.width=Math.min(100,estimated/1000*100)+'%';
+ document.getElementById('customBudgetFill').style.background=total>100?'#f18b7b':total>90?'#f2bc7c':'#d8bf88';
+ const rule=customTierRules[customValue('customTier')]||customTierRules.UR;
+ const traits=customTraitItems(customValue('customTraits'));
+ const countHint=document.getElementById('customLineBudget');
+ if(countHint){countHint.textContent='한 명 '+total+'자 · 10명 기준 1,000자 목표 (한 명당 90자 안팎 권장)';countHint.style.color=total>100?'#f7b09b':'#95b4c5'}
  let traitHint='';
- if(customClean(mate.customName)){
-  if(!currentTraits)traitHint='고유특성이 비어 있습니다. 효과를 포함해 '+rule.traits+'개를 작성해 주세요.';
-  else if(currentTraits!==rule.traits)traitHint='고유특성 '+currentTraits+'개 입력됨 · '+mate.customTier+' 등급 권장 '+rule.traits+'개';
-  else traitHint='고유특성 '+currentTraits+'개 확인 · '+mate.customTier+' 등급 기준에 맞습니다.';
- }
+ if(traits.length===0&&customClean(customValue('customName')))traitHint='고유특성 '+rule.traits+'개를 골라주세요. 위의 예시를 누르면 자동 입력됩니다.';
+ else if(traits.length<rule.traits)traitHint='고유특성 '+traits.length+'/'+rule.traits+'개 · '+(rule.traits-traits.length)+'개 더 선택할 수 있습니다.';
+ else if(traits.length>rule.traits)traitHint='고유특성 '+traits.length+'개 · '+customValue('customTier')+' 등급은 '+rule.traits+'개까지 권장합니다.';
+ else traitHint='고유특성 '+traits.length+'/'+rule.traits+'개 선택 완료. 직접 수정도 가능합니다.';
  document.getElementById('customTraitWarning').textContent=traitHint;
  const warning=document.getElementById('customBudgetWarning');
- if(total>1000)warning.textContent='1,000자를 '+(total-1000)+'자 초과했습니다. 고유특성·버프는 남기고 외형·출신·특이사항부터 줄여주세요.';
- else if(missingTraits.length)warning.textContent='고유특성을 입력하지 않은 캐릭터 '+missingTraits.length+'명이 있습니다. 핵심 설정을 작성해야 복사할 수 있습니다.';
- else if(weakTraits.length)warning.textContent='등급별 고유특성 권장 개수와 다른 캐릭터 '+weakTraits.length+'명. 복사는 가능하지만 개수를 확인해 주세요.';
- else if(missingSpecial.length)warning.textContent='특화·버프가 비어 있는 캐릭터 '+missingSpecial.length+'명. 설정에 필요하면 입력 후 복사하세요.';
- else if(lines.length>0&&customMates.some(m=>customCompactLine(m).length>95))warning.textContent='일부 캐릭터가 95자를 넘었습니다. 전체 1,000자 이내라면 복사 가능합니다.';
+ const missingBuff=(rule.specialty&&!customClean(customValue('customSpecialty')))||(rule.estate&&!customClean(customValue('customEstateBuff')))||(rule.entrant&&!customClean(customValue('customEntrantBuff')));
+ if(total>1000)warning.textContent='설정이 1,000자를 넘었습니다. 불필요한 설명을 줄여주세요.';
+ else if(total>100)warning.textContent='한 명 '+total+'자입니다. 10명을 1,000자 안에 넣으려면 특성·버프를 유지하면서 외형·출신·특이사항을 줄여주세요.';
+ else if(missingBuff&&customClean(customValue('customName')))warning.textContent='해당 등급의 특화·버프 입력란이 남아 있습니다. 빠뜨린 항목이 없는지 확인하세요.';
  else warning.textContent='';
- const canCopy=lines.length>0&&total<=1000&&missingTraits.length===0;
+ const canCopy=Boolean(customClean(customValue('customName'))&&traits.length&&total<=1000);
  document.getElementById('customCopyButton').disabled=!canCopy;
  const status=document.getElementById('customCopyStatus');
- if(status)status.textContent=canCopy?'메이트 '+lines.length+'명 준비 완료. 복사 후 케이브덕 유저노트에 붙여넣어 주세요.':missingTraits.length?'이름이 있는 모든 메이트에 고유특성을 적어주세요.':total>1000?'글자 수를 줄여 1,000자 이하로 맞춰주세요.':'이름과 고유특성을 입력하면 전체 명단을 한 번에 복사할 수 있습니다.';
+ if(status)status.textContent=canCopy?'현재 메이트 한 명의 설정만 복사됩니다. 유저노트에 한 줄씩 붙여넣으세요.':total>1000?'설정을 1,000자 이하로 줄여주세요.':'이름과 고유특성을 입력하면 현재 메이트를 복사할 수 있습니다.';
 }
 async function copyCustomNote(){
- customSaveEditor();const {lines,output}=customGetNote();
- if(!output||output.length>1000||customMates.some(m=>customClean(m.customName)&&!customClean(m.customTraits)))return;
+ const output=customCompactLine();if(!output||output.length>1000||!customTraitItems(customValue('customTraits')).length)return;
  const status=document.getElementById('customCopyStatus');
  try{
   await navigator.clipboard.writeText(output);
-  if(status)status.textContent='메이트 '+lines.length+'명 / '+output.length+'자 복사 완료. 케이브덕 유저노트에 붙여넣어 주세요.';
+  if(status)status.textContent='복사 완료! '+output.length+'자 · 유저노트에 한 줄로 붙여넣으세요.';
  }catch(err){
-  const node=document.getElementById('customNotePreview');const range=document.createRange();range.selectNodeContents(node);
+  const target=document.getElementById('customNotePreview');
+  const range=document.createRange();range.selectNodeContents(target);
   const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);
-  if(status)status.textContent='텍스트가 선택되었습니다. Ctrl+C로 복사해 주세요.';
+  if(status)status.textContent='복사할 텍스트를 선택했습니다. Ctrl+C를 눌러주세요.';
  }
 }
-customLoadEditor();renderCustomNote();
-
+customBuildTraitLibrary();renderCustomNote();
 </script>
 </body>
 </html>
