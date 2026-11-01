@@ -1283,6 +1283,12 @@
 .avalon-custom-page .custom-trait-category-title strong{font-size:12px}
 @media(max-width:720px){.avalon-custom-page .custom-trait-categories{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.avalon-custom-page .custom-trait-category{padding:9px}.avalon-custom-page .custom-trait-example{gap:4px!important;padding:8px 6px!important;flex-wrap:wrap}.avalon-custom-page .custom-trait-example small{font-size:9px}.avalon-custom-page .custom-rank-selector{flex-wrap:wrap}.avalon-custom-page .custom-rank-selector label{width:100%}.avalon-custom-page .custom-rank-selector select{width:100%}}
 @media(max-width:380px){.avalon-custom-page .custom-trait-categories{grid-template-columns:1fr}}
+/* V9 | 오프닝 스킵 버튼: 엘리베이터 및 환영 장면에서 즉시 홈으로 이동 */
+.v9-intro-skip{position:absolute;z-index:20;bottom:clamp(20px,4vw,38px);right:clamp(18px,4vw,42px);display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:46px;padding:11px 19px;border-radius:3px;border:1px solid #c0d4e6a8;background:linear-gradient(120deg,#091826ea,#101d2be8);box-shadow:0 8px 30px #0009;color:#eaf3fc;font-size:12px;font-weight:800;letter-spacing:.04em;transition:background .2s,border-color .2s,transform .2s}
+.v9-intro-skip span{font-weight:900;font-size:15px;color:#f0d6a3}
+.v9-intro-skip:hover{background:#253b50f5;border-color:#ecd7a5;transform:translateY(-2px)}
+.v9-intro-skip:focus-visible{outline:2px solid #e9d3a0;outline-offset:4px}
+@media(max-width:700px){.v9-intro-skip{right:16px;bottom:max(18px,env(safe-area-inset-bottom));min-height:45px;padding:11px 14px;font-size:11px}}
 </style>
 </head>
 <body>
@@ -1299,6 +1305,7 @@
     <div class="v6-console-progress"><div id="progressFill"></div></div>
     <div class="v6-console-bottom"><span id="progressStatus">차원 이동 진행 중</span><strong id="progressNumber">0%</strong></div>
   </div>
+  <button type="button" class="v9-intro-skip" onclick="skipIntro()" aria-label="오프닝 건너뛰고 바로 홈으로 이동">SKIP · 바로 시작 <span aria-hidden="true">↗</span></button>
 </section>
 <!-- 문 너머에 나타나는 큰 시네마틱 메인 화면. 이후 일반 아발론 홈으로 전환 -->
 <section id="arrivalSplash" class="v6-arrival-splash hidden" aria-label="아발론 입성 환영 화면">
@@ -1316,6 +1323,7 @@
     <div class="v6-arrival-sub">다차원 특구 아발론에 오신 것을 환영합니다.</div>
   </div>
   <div class="v6-arrival-footer">입성 승인 <span>◆</span> 이브 중앙 관리 시스템</div>
+  <button type="button" class="v9-intro-skip" onclick="skipIntro()" aria-label="환영 화면 건너뛰고 바로 홈으로 이동">SKIP · 바로 시작 <span aria-hidden="true">↗</span></button>
 </section>
 <div id="app" class="hidden">
 <header class="site-header"><button class="brand" onclick="showPage('home')" aria-label="메인 화면으로"><strong>AVALON</strong><small>이브 · 중앙 기록관</small></button><nav class="top-nav" aria-label="메뉴"><button class="nav-btn active" data-nav="home" onclick="showPage('home')">홈</button><button class="nav-btn" data-nav="characters" onclick="showPage('characters')">캐릭터 도감</button><button class="nav-btn" data-nav="world" onclick="showPage('world')">세계관</button><button class="nav-btn" data-nav="territory" onclick="showPage('territory')">영지</button><button class="nav-btn" data-nav="contents" onclick="showPage('contents')">콘텐츠</button><button class="nav-btn" data-nav="economy" onclick="showPage('economy')">경제 · 재화</button><button class="nav-btn" data-nav="grandprix" onclick="showPage('grandprix')">그랑프리</button></nav><div class="on-air"><i></i>시스템 가동 중</div></header>
@@ -3576,23 +3584,49 @@ function selectWorldTopic(name){
  document.getElementById('worldTopicTitle').textContent=record.title;
  document.getElementById('worldTopicDescription').textContent=record.desc;
 }
+/* 오프닝의 타이머를 모두 추적해 SKIP 시 후속 애니메이션이 재실행되지 않게 합니다. */
+let introProgressTimer=null;
+let introScheduledTimers=[];
+let introSkipped=false;
+function queueIntroAction(callback,delay){
+  const timer=window.setTimeout(()=>{
+    introScheduledTimers=introScheduledTimers.filter(id=>id!==timer);
+    if(!introSkipped)callback();
+  },delay);
+  introScheduledTimers.push(timer);
+  return timer;
+}
+function skipIntro(){
+  if(introSkipped)return;
+  introSkipped=true;
+  if(introProgressTimer!==null){window.clearInterval(introProgressTimer);introProgressTimer=null;}
+  introScheduledTimers.forEach(id=>window.clearTimeout(id));
+  introScheduledTimers=[];
+  document.getElementById('elevatorReveal').classList.add('hidden');
+  const splash=document.getElementById('arrivalSplash');
+  splash.classList.remove('leaving');
+  splash.classList.add('hidden');
+  document.getElementById('app').classList.remove('hidden');
+  showPage('home');
+}
 function enterSite(){
+  if(introSkipped)return;
   const elevator=document.getElementById('elevatorReveal');
   const splash=document.getElementById('arrivalSplash');
   // 목적지 환영 화면을 엘리베이터 '뒤'에 먼저 세팅하고, 양쪽 문을 연다.
   splash.classList.remove('hidden');
   document.getElementById('progressStatus').textContent='도착 완료 · 문이 열립니다';
   elevator.setAttribute('aria-label','아발론 도착, 엘리베이터 문 열림');
-  window.setTimeout(()=>elevator.classList.add('opening'),320);
+  queueIntroAction(()=>elevator.classList.add('opening'),320);
   // 문이 완전히 열린 다음부터 큰 AVALON 인트로 화면을 잠시 감상.
-  window.setTimeout(()=>elevator.classList.add('hidden'),2540);
+  queueIntroAction(()=>elevator.classList.add('hidden'),2540);
   // 시네마틱 환영 화면 → 실제 메인 홈 화면으로 부드럽게 전환.
-  window.setTimeout(()=>{
+  queueIntroAction(()=>{
     document.getElementById('app').classList.remove('hidden');
     showPage('home');
     splash.classList.add('leaving');
   },4350);
-  window.setTimeout(()=>splash.classList.add('hidden'),5580);
+  queueIntroAction(()=>splash.classList.add('hidden'),5580);
 }
 function start(){
   const preview=new URLSearchParams(location.search).get('preview');
@@ -3609,10 +3643,11 @@ function start(){
   const fill=document.getElementById('progressFill');
   const number=document.getElementById('progressNumber');
   // 0~100% 동안 문은 닫힌 상태. 100%가 되어야만 열림을 시작한다.
-  const ticker=window.setInterval(()=>{
+  introProgressTimer=window.setInterval(()=>{
+    if(introSkipped){window.clearInterval(introProgressTimer);introProgressTimer=null;return}
     value=Math.min(100,value+2);
     fill.style.width=value+'%';number.textContent=value+'%';
-    if(value>=100){window.clearInterval(ticker);window.setTimeout(enterSite,480)}
+    if(value>=100){window.clearInterval(introProgressTimer);introProgressTimer=null;queueIntroAction(enterSite,480)}
   },48);
 }
 makeContent();applyFixedImages();renderCharacters();selectWorldTopic('avalon');initGrandPrix();start();
