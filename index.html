@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#090d13">
-<meta name="description" content="AVALON v8 — 중앙 AI EVE가 안내하는 세계관, 영지, 콘텐츠, 경제와 메이트 도감">
+<meta name="description" content="AVALON V9 — 중앙 AI EVE가 안내하는 세계관, 영지, 콘텐츠, 경제와 메이트 도감">
 <title>AVALON — 아발론 중앙 기록관</title>
 <style>
 :root{--bg:#080c13;--panel:#0f1824;--panel2:#182333;--ink:#f1f4f7;--mute:#a6b0bd;--line:#ffffff30;--gold:#eecb82;--cyan:#79d7e7;--red:#f57573}
@@ -1273,6 +1273,16 @@
 .avalon-custom-page .custom-editor-assist{color:#9ab1c1;font-size:10px}
 .avalon-custom-page .custom-note-preview{min-height:150px}
 @media(max-width:720px){.avalon-custom-page .custom-rank-selector{flex-direction:column;align-items:stretch}.avalon-custom-page .custom-trait-library{padding:13px}.avalon-custom-page .custom-trait-library-top{align-items:flex-start;flex-direction:column}.avalon-custom-page .custom-trait-categories{grid-template-columns:1fr}.avalon-custom-page .custom-rank-selector select{width:100%}}
+
+/* V9 CUSTOM / 재적용 확인 및 특성 선택 개선 (다른 페이지 영향 없음) */
+.avalon-custom-page .custom-hero-chip{display:inline-flex;align-items:center;letter-spacing:1.3px;border:1px solid #d4c18a77;border-radius:2px;background:#c1a87715;padding:7px 11px;color:#ead19b}
+.avalon-custom-page .custom-trait-example.selected{border-color:#e0c48c!important;background:#344356!important;box-shadow:inset 3px 0 0 #e0c48c}
+.avalon-custom-page .custom-trait-example.selected::after{content:'✓';color:#efd69d;font-size:12px;font-weight:900}
+.avalon-custom-page #customCopyStatus[data-status='ok']{color:#b4e3ca;font-weight:900}
+.avalon-custom-page #customCopyStatus[data-status='manual']{color:#efd3a2}
+.avalon-custom-page .custom-trait-category-title strong{font-size:12px}
+@media(max-width:720px){.avalon-custom-page .custom-trait-categories{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.avalon-custom-page .custom-trait-category{padding:9px}.avalon-custom-page .custom-trait-example{gap:4px!important;padding:8px 6px!important;flex-wrap:wrap}.avalon-custom-page .custom-trait-example small{font-size:9px}.avalon-custom-page .custom-rank-selector{flex-wrap:wrap}.avalon-custom-page .custom-rank-selector label{width:100%}.avalon-custom-page .custom-rank-selector select{width:100%}}
+@media(max-width:380px){.avalon-custom-page .custom-trait-categories{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -1344,9 +1354,9 @@
 <section id="page-custom" class="page avalon-custom-page">
   <div class="container custom-topbar"><span>AVALON / CENTRAL ARCHIVE / SPECIAL ENTRY</span><button type="button" onclick="showPage('characters')">← 도감으로 돌아가기</button></div>
   <div class="container custom-heading">
-    <div class="custom-hero-chip">V9 / CUSTOM MATE / COMPLETE PROFILE</div>
+    <div class="custom-hero-chip">V9 · CUSTOM 개선판 / TRAIT GUIDE · SINGLE COPY</div>
     <h1>CREATE YOUR <span>OWN MATE.</span></h1>
-    <p>외형뿐 아니라 <strong>고유특성·특화 분야·영지 버프</strong>까지 직접 설계하세요.<br>사이트에서는 자세히 안내하고, 유저노트에는 짧게 압축합니다.</p>
+    <p>외형뿐 아니라 <strong>고유특성·특화 분야·영지 버프</strong>까지 직접 설계하세요.<br>오른쪽에서 완성된 한 줄을 확인하고, <strong>복사만</strong> 하면 됩니다.</p>
   </div>
   <div class="container custom-flow">
     <div class="custom-intro-card"><span>01</span><div><strong>등급부터 선택하기</strong><p>UR부터 N까지 등급에 따라 고유특성과 버프 구성이 달라집니다.</p></div></div>
@@ -1372,11 +1382,11 @@
       </div>
       <div class="custom-tier-guide" role="status"><span>선택 등급의 설정 기준</span><strong id="customTierGuide">UR · 고유특성 5개 · 특화 분야 · 영지 버프 · 전속 버프</strong><small>등급별 권장 특성 수와 영지 효과는 기존 아발론 도감을 기준으로 안내합니다.</small></div>
       <section class="custom-trait-library" aria-label="고유특성 종류와 효과 예시">
-        <div class="custom-trait-library-top"><div><span>02 / TRAIT LIBRARY</span><h3>고유특성 종류</h3><p>어떤 능력을 넣을지 모르겠다면 아래 예시를 참고하세요. <b>특성을 누르면 자동 입력</b>됩니다.</p></div><small>예시이며 자유롭게 수정 가능</small></div>
+        <div class="custom-trait-library-top"><div><span>02 / TRAIT GUIDE</span><h3>고유특성 종류 · 효과 예시</h3><p>모르는 고유특성은 여기서 고르세요. <b>특성을 누르면 자동 입력</b>되며 직접 수정도 가능합니다.</p></div><small>총 24개 예시 · 선택 자유</small></div>
         <div class="custom-trait-categories" id="customTraitCategories"></div>
         <p class="custom-trait-library-foot">고유특성은 <b>해당 메이트 개인의 능력</b>입니다. <b>영지 전체 버프</b>는 SSR·UR의 별도 항목에 작성합니다. 효과를 포함해 주세요.</p>
       </section>
-      <div class="custom-editor-heading"><h3>03 / 내 메이트 설정</h3><span class="custom-editor-assist">한 명 작성 → 복사 → 다음 인물 작성</span></div>
+      <div class="custom-editor-heading"><h3>03 / 내 메이트 설정</h3><span class="custom-editor-assist">한 명 작성 → 한 줄 복사</span></div>
       <div class="custom-input-grid">
         <div class="custom-section-label">04 / 기본 정보 <small>간단하게</small></div>
         <label><span>이름 <em>필수</em></span><input id="customName" type="text" placeholder="예: 아리아" maxlength="12" oninput="renderCustomNote()"></label>
@@ -1401,9 +1411,9 @@
       <p id="customTraitWarning" class="custom-trait-warning" aria-live="polite"></p>
     </section>
     <aside class="custom-output-panel" aria-label="커스텀 메이트 한 명 유저노트 복사 화면">
-      <div class="custom-panel-kicker">USER NOTE / COMPACT EXPORT</div>
+      <div class="custom-panel-kicker">V9 / USER NOTE / ONE-LINE COPY</div>
       <h2>유저노트 미리보기</h2>
-      <div class="custom-note-annotation"><strong>설명은 화면에서 충분히, 복사 내용은 간결하게.</strong> 현재 작성 중인 <b>한 명의 설정만</b> 한 줄로 출력됩니다.</div>
+      <div class="custom-note-annotation"><strong>설명은 화면에서 충분히, 복사 내용은 간결하게.</strong> 현재 작성 중인 <b>한 명의 설정만</b> 출력합니다. 완성되면 아래 버튼을 눌러 복사하세요.</div>
       <div class="custom-key-legend"><b>약어 안내</b><span>고 = 고유특성</span><span>배 = 특화 배치</span><span>영 = 영지 버프</span><span>전 = 입성자 전속</span></div>
       <div class="custom-budget">
         <div class="custom-budget-box"><span>현재 한 명 / 권장 90자</span><strong><span id="customTotalCount" style="display:inline;color:inherit;font:inherit">0</span><small>자</small></strong><div class="custom-budget-track"><i id="customBudgetFill"></i></div></div>
@@ -3617,12 +3627,12 @@ const customTierRules={
  N:{traits:1,specialty:false,estate:false,entrant:false,desc:'고유특성 1개'}
 };
 const customTraitLibrary=[
- {name:'전투 · 공격',items:[['검술','근접공격↑'],['궁술','원거리명중↑'],['화염술','화염피해↑']]},
- {name:'방어 · 생존',items:[['강철피부','방어↑'],['재생체질','자가회복↑'],['저항체질','상태이상저항↑']]},
- {name:'치유 · 지원',items:[['성광치유','아군회복↑'],['정화','상태이상해제'],['전술지휘','아군효율↑']]},
- {name:'마법 · 제어',items:[['결계술','보호막'],['빙결술','이동속도↓'],['정신감응','감지↑']]},
- {name:'탐색 · 생산',items:[['채광감각','광물탐지↑'],['연금술','제작효율↑'],['감정안','희귀품식별↑']]},
- {name:'경제 · 운영',items:[['협상술','거래수익↑'],['회계감각','유지비↓'],['행운체질','전리품획득↑']]}
+ {name:'전투 · 공격',items:[['검술','근접피해↑'],['궁술','원거리명중↑'],['화염술','화염피해↑'],['뇌전지배','감전확률↑']]},
+ {name:'방어 · 생존',items:[['강철피부','피해경감↑'],['재생체질','자가회복↑'],['저항체질','상태저항↑'],['불굴의지','기절저항↑']]},
+ {name:'치유 · 지원',items:[['성광치유','아군회복↑'],['정화','이상상태해제'],['전술지휘','아군효율↑'],['활력공명','회복속도↑']]},
+ {name:'마법 · 제어',items:[['결계술','보호막↑'],['빙결술','적이동↓'],['정신감응','감지↑'],['마력노심','마력회복↑']]},
+ {name:'탐사 · 생산',items:[['채광감각','광물탐지↑'],['연금술','제작효율↑'],['감정안','희귀품감별↑'],['던전감각','함정탐지↑']]},
+ {name:'경제 · 영지',items:[['협상술','거래수익↑'],['회계감각','유지비↓'],['행운체질','전리품↑'],['시설운용','생산속도↑']]}
 ];
 const customValue=id=>document.getElementById(id)?.value||'';
 const customClean=s=>(s||'').replace(/[\n\r\t|]+/g,' ').replace(/\s+/g,' ').trim();
@@ -3654,7 +3664,7 @@ function customBuildTraitLibrary(){
   const note=document.createElement('small');note.textContent='예시 '+group.items.length+'개';title.append(heading,note);
   const buttons=document.createElement('div');buttons.className='custom-trait-buttons';
   group.items.forEach(([name,effect],i)=>{
-   const b=document.createElement('button');b.type='button';b.className='custom-trait-example';
+   const b=document.createElement('button');b.type='button';b.className='custom-trait-example';b.dataset.traitEntry=name+'('+effect+')';
    b.title=name+'('+effect+') 입력하기';b.setAttribute('aria-label',name+' '+effect+' 고유특성 추가');
    const t=document.createElement('span');t.textContent=name;const sub=document.createElement('small');sub.textContent=effect;
    b.append(t,sub);b.onclick=()=>customInsertTrait(name,effect);buttons.append(b);
@@ -3681,6 +3691,13 @@ function customInsertTrait(name,effect){
 function renderCustomNote(){
  const preview=document.getElementById('customNotePreview');if(!preview)return;
  customUpdateTierUI();
+ // Make selected examples visually clear in the reference guide.
+ const selectedTraits=new Set(customTraitItems(customValue('customTraits')));
+ document.querySelectorAll('.custom-trait-example').forEach(btn=>{
+  const selected=selectedTraits.has(btn.dataset.traitEntry);
+  btn.classList.toggle('selected',selected);
+  btn.setAttribute('aria-pressed',String(selected));
+ });
  const line=customCompactLine(),total=line.length;
  preview.textContent=line||'이름과 고유특성을 입력하면 이곳에 한 명의 압축 설정이 표시됩니다.';
  document.getElementById('customTotalCount').textContent=String(total);
@@ -3696,7 +3713,7 @@ function renderCustomNote(){
  let traitHint='';
  if(traits.length===0&&customClean(customValue('customName')))traitHint='고유특성 '+rule.traits+'개를 골라주세요. 위의 예시를 누르면 자동 입력됩니다.';
  else if(traits.length<rule.traits)traitHint='고유특성 '+traits.length+'/'+rule.traits+'개 · '+(rule.traits-traits.length)+'개 더 선택할 수 있습니다.';
- else if(traits.length>rule.traits)traitHint='고유특성 '+traits.length+'개 · '+customValue('customTier')+' 등급은 '+rule.traits+'개까지 권장합니다.';
+ else if(traits.length>rule.traits)traitHint='고유특성 '+traits.length+'개 · '+customValue('customTier')+' 등급은 '+rule.traits+'개입니다. 초과 항목을 줄여 주세요.';
  else traitHint='고유특성 '+traits.length+'/'+rule.traits+'개 선택 완료. 직접 수정도 가능합니다.';
  document.getElementById('customTraitWarning').textContent=traitHint;
  const warning=document.getElementById('customBudgetWarning');
@@ -3713,16 +3730,30 @@ function renderCustomNote(){
 async function copyCustomNote(){
  const output=customCompactLine();if(!output||output.length>1000||!customTraitItems(customValue('customTraits')).length)return;
  const status=document.getElementById('customCopyStatus');
- try{
-  await navigator.clipboard.writeText(output);
-  if(status)status.textContent='복사 완료! '+output.length+'자 · 유저노트에 한 줄로 붙여넣으세요.';
- }catch(err){
-  const target=document.getElementById('customNotePreview');
-  const range=document.createRange();range.selectNodeContents(target);
+ let copied=false;
+ if(navigator.clipboard && window.isSecureContext){
+  try{await navigator.clipboard.writeText(output);copied=true;}catch(e){}
+ }
+ if(!copied){
+  // Fallback for browsers that deny Clipboard API in a local HTML preview.
+  const fallback=document.createElement('textarea');fallback.value=output;
+  fallback.setAttribute('readonly','');fallback.style.cssText='position:fixed;left:-9999px;top:0;opacity:0;';
+  document.body.appendChild(fallback);fallback.focus();fallback.select();
+  try{copied=!!document.execCommand('copy');}catch(e){}
+  fallback.remove();
+ }
+ if(copied){
+  status.textContent='복사 완료 · '+output.length+'자! 유저노트에 붙여넣으세요.';
+  status.setAttribute('data-status','ok');
+ }else{
+  const field=document.getElementById('customNotePreview');
+  const range=document.createRange();range.selectNodeContents(field);
   const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);
-  if(status)status.textContent='복사할 텍스트를 선택했습니다. Ctrl+C를 눌러주세요.';
+  status.textContent='자동 복사가 차단되어 문장을 선택했습니다. Ctrl+C로 복사해 주세요.';
+  status.setAttribute('data-status','manual');
  }
 }
+
 customBuildTraitLibrary();renderCustomNote();
 </script>
 </body>
