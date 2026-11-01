@@ -1122,6 +1122,66 @@
 @media(max-width:1100px){.grandprix-browser-grid{grid-template-columns:1fr}.grandprix-menu-panel{position:static}.grandprix-menu-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.grandprix-detail-info-grid{grid-template-columns:1fr 1fr}.grandprix-detail-visual{min-height:330px}.grandprix-detail-visual img#grandprixDetailImage{min-height:330px}}
 @media(max-width:720px){.grandprix-hero{min-height:auto;padding:68px 0 50px}.grandprix-hero h1{font-size:clamp(46px,13vw,74px)}.grandprix-hero p{font-size:12px}.grandprix-browser{padding:22px 0 60px}.grandprix-browse-head{padding-bottom:18px;margin-bottom:18px}.grandprix-menu-panel{padding:18px 14px 14px}.grandprix-menu-panel h3{font-size:24px}.grandprix-menu-grid{grid-template-columns:1fr}.grandprix-menu-card{grid-template-columns:60px minmax(0,1fr);padding:11px;min-height:78px}.grandprix-menu-icon{width:60px;height:60px}.grandprix-detail-copy{padding:22px 18px 24px}.grandprix-detail-copy h2{font-size:clamp(30px,10vw,44px)}.grandprix-detail-headline{font-size:16px}.grandprix-detail-description{font-size:12px}.grandprix-detail-info-grid{grid-template-columns:1fr}.grandprix-detail-icon-wrap{width:92px;height:92px;right:12px;bottom:12px}.grandprix-detail-status{top:12px;left:12px}.grandprix-category-filter{gap:7px}.grandprix-category-filter button{padding:9px 12px;font-size:10px}.contents-subsection{padding:14px 13px}}
 
+
+/* AVALON CUSTOM USER-NOTE PREVIEW / 독립적인 창작 안내 */
+.avalon-custom-banner{margin:36px 0 0;padding:27px 31px;display:grid;grid-template-columns:160px minmax(0,1fr) auto;gap:30px;align-items:center;position:relative;overflow:hidden;background:linear-gradient(118deg,#0c1624 0%,#18202c 56%,#15182a 100%);border:1px solid #c7b1826b;box-shadow:0 8px 30px #0003}
+.avalon-custom-banner::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 15% 45%,#d5b67b14,transparent 33%),linear-gradient(105deg,transparent 61%,#b2e3ed0c 100%)}
+.avalon-custom-emblem{height:159px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid #dbd0b24e;background:radial-gradient(circle at center,#283544,#0d1724 70%);position:relative;flex-shrink:0}
+.avalon-custom-emblem:before{content:'';position:absolute;inset:13px;border:1px solid #c1d7df25}
+.avalon-custom-emblem span{font-family:Georgia,serif;color:#e9c887;font-size:88px;line-height:.85;font-weight:normal;text-shadow:0 0 30px #e8cd7955}
+.avalon-custom-emblem b{position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);font-size:44px;color:#eff5f5;font-weight:200}
+.avalon-custom-emblem small{color:#c8d4db;letter-spacing:2px;font-size:8px;margin-top:13px}
+.avalon-custom-copy,.avalon-custom-go{position:relative;z-index:1}
+.avalon-custom-overline{font-size:10px;letter-spacing:2.5px;color:#e5cd99;font-weight:900}
+.avalon-custom-copy h2{font-size:clamp(24px,2.6vw,39px);margin:12px 0 11px;letter-spacing:-1.7px;font-weight:950}
+.avalon-custom-copy h2 em{color:#e4c892;font-style:normal}
+.avalon-custom-copy p{font-size:12px;color:#c1ced8;line-height:1.85;margin:0;word-break:keep-all}
+.avalon-custom-copy p strong{color:#fff}
+.avalon-custom-foot{display:flex;gap:17px;flex-wrap:wrap;margin-top:16px}
+.avalon-custom-foot span{font-size:10px;color:#adbfcd;border-left:2px solid #c6af7a;padding-left:8px}
+.avalon-custom-go{color:#0e1821;background:#e1c993;border:1px solid #e1c993;min-width:165px;padding:15px 18px;letter-spacing:-.2px;font-weight:900;font-size:12px;white-space:nowrap}
+.avalon-custom-go span{margin-left:11px;font-size:18px}
+.avalon-custom-go:hover{background:#f2dfb8}
+.avalon-custom-page{background:linear-gradient(180deg,#08111c 0%,#0c1420 42%,#090e17 100%);padding-bottom:90px}
+.custom-topbar{display:flex;justify-content:space-between;align-items:center;padding-top:25px;padding-bottom:22px;border-bottom:1px solid #a9b5c225}
+.custom-topbar span{font-size:10px;letter-spacing:2px;color:#889faf;font-weight:900}
+.custom-topbar button,.custom-bottom button{font-size:11px;border:1px solid #6c80927c;color:#e6eef3;background:#172431;padding:11px 16px;font-weight:800}
+.custom-topbar button:hover,.custom-bottom button:hover{border-color:#e3cb93;color:#e3cb93}
+.custom-heading{padding-top:67px;padding-bottom:48px;position:relative}
+.custom-hero-chip{font-size:11px;color:#e6c98e;letter-spacing:3px;font-weight:900}
+.custom-heading h1{font-size:clamp(38px,6.5vw,89px);letter-spacing:-.07em;line-height:1.05;margin:16px 0 23px}
+.custom-heading h1 span{color:#e1c78c}
+.custom-heading p{font-size:14px;color:#bfcbd6;line-height:1.95;word-break:keep-all}
+.custom-heading p strong{color:#f0f3f4}
+.custom-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-bottom:34px}
+.custom-intro-card{background:#101c2b;border:1px solid #5064776c;padding:21px 19px;display:flex;gap:16px;min-height:135px}
+.custom-intro-card>span{font-weight:950;color:#e4c78f;font-size:29px;line-height:1}
+.custom-intro-card strong{font-size:14px;color:#f2f6f8}
+.custom-intro-card p{font-size:11px;line-height:1.75;color:#a8bbca;word-break:keep-all;margin:10px 0 0}
+.custom-workspace{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:16px;align-items:start}
+.custom-edit-panel,.custom-output-panel{background:#111b2a;border:1px solid #54687975;padding:30px}
+.custom-panel-kicker{font-size:10px;letter-spacing:2.6px;color:#e5c990;font-weight:900}
+.custom-workspace h2{font-size:25px;margin:11px 0 21px;letter-spacing:-1px}
+.custom-input-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.custom-input-grid label{display:flex;flex-direction:column;gap:8px;min-width:0}
+.custom-input-grid label span{font-size:11px;color:#b8c9d7;font-weight:850}
+.custom-input-grid input,.custom-input-grid textarea,.custom-input-grid select{width:100%;border:1px solid #4f6278;background:#0b1421;color:#eaf2f7;padding:12px 13px;outline:none;font:inherit;font-size:12px;min-height:44px;border-radius:0}
+.custom-input-grid input:focus,.custom-input-grid textarea:focus,.custom-input-grid select:focus{border-color:#e5ce9c}
+.custom-input-grid textarea{resize:vertical;min-height:70px;line-height:1.6}
+.custom-input-grid .custom-field-wide{grid-column:1/-1}
+.custom-note-annotation{color:#97aebd;font-size:12px;margin-bottom:15px}
+.custom-note-preview{white-space:pre-wrap;overflow-wrap:anywhere;background:#09111d;border:1px solid #415971;padding:20px 17px;color:#cfe0e8;line-height:1.9;font-size:12px;min-height:340px;font-family:'Malgun Gothic',sans-serif;user-select:text}
+.custom-copy-button{width:100%;background:#e5c990;color:#0e1922;border:0;padding:16px;font-size:13px;font-weight:950;margin-top:6px}
+.custom-copy-button span{margin-left:10px}
+.custom-copy-button:hover{background:#f5ddb0}
+.custom-copy-status{font-size:11px;color:#afc3d0;margin:12px 0 0;line-height:1.7}
+.custom-caution{border-top:1px solid #4f667851;margin-top:23px;padding-top:16px;line-height:1.75;color:#879bab;font-size:11px;word-break:keep-all}
+.custom-bottom{border-top:1px solid #c7b27f3b;margin-top:41px;padding-top:27px;display:flex;justify-content:space-between;align-items:center;gap:25px}
+.custom-bottom small{font-size:10px;letter-spacing:2px;color:#e6c990;font-weight:900}
+.custom-bottom p{font-size:12px;line-height:1.85;color:#b7c9d4}
+@media(max-width:1000px){.avalon-custom-banner{grid-template-columns:130px minmax(0,1fr)}.avalon-custom-emblem{height:137px}.avalon-custom-go{grid-column:2;justify-self:start}.custom-workspace{grid-template-columns:1fr 1fr}.custom-edit-panel,.custom-output-panel{padding:22px}}
+@media(max-width:720px){.avalon-custom-banner{grid-template-columns:1fr;gap:18px;padding:23px}.avalon-custom-emblem{height:110px;width:112px}.avalon-custom-emblem span{font-size:65px}.avalon-custom-emblem b{font-size:32px}.avalon-custom-emblem small{font-size:7px;letter-spacing:.5px;margin-top:9px}.avalon-custom-go{grid-column:1;width:100%}.avalon-custom-copy h2{font-size:28px}.custom-desktop-break{display:none}.custom-topbar{gap:10px}.custom-topbar span{font-size:8px;letter-spacing:1px}.custom-heading{padding-top:43px;padding-bottom:30px}.custom-heading h1{font-size:46px}.custom-flow{grid-template-columns:1fr}.custom-intro-card{min-height:auto}.custom-workspace{grid-template-columns:1fr}.custom-input-grid{grid-template-columns:1fr}.custom-input-grid label{grid-column:1/-1}.custom-bottom{flex-direction:column;align-items:flex-start}}
+
 </style>
 </head>
 <body>
@@ -1176,7 +1236,58 @@
 <!-- 도감 -->
 <section id="page-characters" class="page">
   <div class="inner-banner art-block" data-art="charactersBackground"><div class="slot-label"><small>images/menu-characters.webp</small></div><div class="inner-title container"><div class="eyebrow">01 / 캐릭터 도감</div><h1>메이트 도감</h1><p>다차원에서 소환된 메이트들의 가치 등급별 정보</p></div></div>
-  <div class="container content-area"><div class="filter-bar"><div class="tier-controls" id="tierControls"><button class="tier-btn active" data-tier="ALL" onclick="filterTier('ALL')">전체</button><button class="tier-btn" data-tier="UR" onclick="filterTier('UR')">UR</button><button class="tier-btn" data-tier="SSR" onclick="filterTier('SSR')">SSR</button><button class="tier-btn" data-tier="SR" onclick="filterTier('SR')">SR</button><button class="tier-btn" data-tier="R" onclick="filterTier('R')">R</button><button class="tier-btn" data-tier="N" onclick="filterTier('N')">N</button></div><div class="archive-tools"><button class="tier-sort-toggle" id="tierSortToggle" type="button" onclick="toggleTierSort()" aria-label="캐릭터 등급 정렬 방향 바꾸기" aria-pressed="false"><span class="tier-sort-arrow">↕</span> <span id="tierSortLabel">UR → N</span></button><div class="filter-note" id="characterCount">50명 등록 예정</div></div></div><div class="character-grid" id="characterGrid"></div></div>
+  <div class="container content-area"><div class="filter-bar"><div class="tier-controls" id="tierControls"><button class="tier-btn active" data-tier="ALL" onclick="filterTier('ALL')">전체</button><button class="tier-btn" data-tier="UR" onclick="filterTier('UR')">UR</button><button class="tier-btn" data-tier="SSR" onclick="filterTier('SSR')">SSR</button><button class="tier-btn" data-tier="SR" onclick="filterTier('SR')">SR</button><button class="tier-btn" data-tier="R" onclick="filterTier('R')">R</button><button class="tier-btn" data-tier="N" onclick="filterTier('N')">N</button></div><div class="archive-tools"><button class="tier-sort-toggle" id="tierSortToggle" type="button" onclick="toggleTierSort()" aria-label="캐릭터 등급 정렬 방향 바꾸기" aria-pressed="false"><span class="tier-sort-arrow">↕</span> <span id="tierSortLabel">UR → N</span></button><div class="filter-note" id="characterCount">50명 등록 예정</div></div></div><div class="character-grid" id="characterGrid"></div>
+  <div class="avalon-custom-banner" aria-label="커스텀 메이트 제작 안내">
+    <div class="avalon-custom-emblem" aria-hidden="true"><span>◇</span><b>+</b><small>USER ORIGINAL</small></div>
+    <div class="avalon-custom-copy">
+      <div class="avalon-custom-overline">AVALON ARCHIVE · FREE CREATION</div>
+      <h2>나만의 메이트를 <em>소환하세요.</em></h2>
+      <p>도감에 없는 캐릭터도 괜찮습니다. 이름, 종족, 성격과 능력을 직접 정해<br class="custom-desktop-break"> <strong>케이브덕 유저노트</strong>에 기록해 보세요.</p>
+      <div class="avalon-custom-foot"><span>등급 자유 선택</span><span>도감 50명과 별도</span><span>유저노트 활용</span></div>
+    </div>
+    <button class="avalon-custom-go" type="button" onclick="showPage('custom');renderCustomNote();" aria-label="나만의 메이트 만들기 화면 열기">제작 방법 보기 <span>↗</span></button>
+  </div>
+ </div>
+</section>
+<!-- CUSTOM 제작 안내: 도감 등급과 무관한 독립 화면 -->
+<section id="page-custom" class="page avalon-custom-page">
+  <div class="container custom-topbar"><span>AVALON / CENTRAL ARCHIVE / SPECIAL ENTRY</span><button type="button" onclick="showPage('characters')">← 도감으로 돌아가기</button></div>
+  <div class="container custom-heading">
+    <div class="custom-hero-chip">NO. ∞ / YOUR ORIGINAL STORY</div>
+    <h1>CREATE YOUR <span>OWN MATE.</span></h1>
+    <p>여러분이 직접 구상한 메이트를 아발론의 이야기 속으로 초대하세요.<br>도감에 등록된 기존 50명과는 별개의 <strong>자유 창작 안내</strong>입니다.</p>
+  </div>
+  <div class="container custom-flow">
+    <div class="custom-intro-card"><span>01</span><div><strong>캐릭터를 구상하세요.</strong><p>종족, 출신 차원, 외형, 말투, 고유 능력 등 자유롭게 정할 수 있습니다.</p></div></div>
+    <div class="custom-intro-card"><span>02</span><div><strong>유저노트용 설정을 만드세요.</strong><p>아래 칸을 채우면 복사할 수 있는 형태로 정리됩니다. 비워 둔 항목은 직접 수정하셔도 됩니다.</p></div></div>
+    <div class="custom-intro-card"><span>03</span><div><strong>케이브덕 유저노트에 붙여넣으세요.</strong><p>캐릭터를 사이트에 저장하는 것이 아니라 챗봇 대화에 사용할 설정을 준비하는 기능입니다.</p></div></div>
+  </div>
+  <div class="container custom-workspace">
+    <section class="custom-edit-panel" aria-label="커스텀 메이트 설정 입력">
+      <div class="custom-panel-kicker">YOUR CHARACTER / 01</div>
+      <h2>메이트 설정</h2>
+      <div class="custom-input-grid">
+        <label><span>이름</span><input id="customName" type="text" placeholder="예: 아리아" maxlength="80" oninput="renderCustomNote()"></label>
+        <label><span>희망 등급</span><select id="customTier" onchange="renderCustomNote()"><option value="SR">SR</option><option value="UR">UR</option><option value="SSR">SSR</option><option value="R">R</option><option value="N">N</option></select></label>
+        <label><span>종족</span><input id="customSpecies" type="text" placeholder="예: 엘프" oninput="renderCustomNote()"></label>
+        <label><span>출신 차원</span><input id="customOrigin" type="text" placeholder="예: 고대 마법 왕국" oninput="renderCustomNote()"></label>
+        <label class="custom-field-wide"><span>외형 및 특징</span><textarea id="customAppearance" rows="2" placeholder="머리카락, 눈동자, 복장, 외형적 특징 등" oninput="renderCustomNote()"></textarea></label>
+        <label class="custom-field-wide"><span>성격 및 말투</span><textarea id="customPersonality" rows="2" placeholder="성격, 대화 방식, 버릇 등" oninput="renderCustomNote()"></textarea></label>
+        <label class="custom-field-wide"><span>고유 능력</span><textarea id="customAbility" rows="2" placeholder="기술이나 특성, 주요 장점 등" oninput="renderCustomNote()"></textarea></label>
+        <label class="custom-field-wide"><span>특이사항</span><textarea id="customNotes" rows="2" placeholder="추가로 기억시키고 싶은 설정" oninput="renderCustomNote()"></textarea></label>
+      </div>
+    </section>
+    <aside class="custom-output-panel" aria-label="유저노트 복사 화면">
+      <div class="custom-panel-kicker">USER NOTE / 02</div>
+      <h2>유저노트 미리보기</h2>
+      <div class="custom-note-annotation">작성한 내용이 아래에 자동으로 정리됩니다.</div>
+      <pre id="customNotePreview" class="custom-note-preview" aria-live="polite"></pre>
+      <button type="button" class="custom-copy-button" onclick="copyCustomNote()">유저노트 양식 복사 <span>↗</span></button>
+      <p id="customCopyStatus" class="custom-copy-status" role="status">복사 후 케이브덕의 유저노트에 붙여넣어 주세요.</p>
+      <div class="custom-caution">※ 이 페이지는 캐릭터를 서버에 등록하거나 챗봇에 자동 전송하지 않습니다. 실제 대화 반영 여부는 챗봇의 유저노트 처리 규칙에 따라 달라집니다.</div>
+    </aside>
+  </div>
+  <div class="container custom-bottom"><div><small>EVE / INFORMATION</small><p>“입성자님이 설계하신 새로운 메이트의 기록입니다.<br>완성된 설정을 유저노트에 남겨 주십시오.”</p></div><button type="button" onclick="showPage('characters')">캐릭터 도감으로 복귀 ↗</button></div>
 </section>
 <!-- 캐릭터 상세 V5 유지: 좌측 정보 23% / 중앙 이미지 54% / 우측 버프 23%, 이미지 하단 그라디언트 -->
 <section id="page-detail" class="page">
@@ -3069,24 +3180,7 @@ function toggleTierSort(){
  renderCharacters();
 }
 function makeFallback(label,filename){const wrap=document.createElement('div');wrap.className='slot-label';const a=document.createElement('b');a.textContent=label;const b=document.createElement('small');b.textContent=filename;wrap.append(a,b);return wrap}
-function createSrCommunityCard(){
- // 별도의 메이트가 아니라 SR 등급의 창작 확장 안내이므로 상세 열기 버튼은 두지 않습니다.
- const card=document.createElement('article');
- card.className='character-card tier-sr sr-community-card';
- card.setAttribute('aria-label','SR 등급 추가 캐릭터는 여러분이 직접 만들어 주세요');
- const art=document.createElement('div');
- art.className='char-image sr-community-art';
- const badge=document.createElement('span');badge.className='tier-badge';badge.textContent='SR +';
- const symbol=document.createElement('span');symbol.className='sr-community-symbol';symbol.textContent='＋';
- const title=document.createElement('strong');title.textContent='여러분이 직접 만들어 주세요';
- art.append(badge,symbol,title);
- const info=document.createElement('div');info.className='char-info';
- const label=document.createElement('small');label.textContent='SR · 추가 제작 안내';
- const name=document.createElement('strong');name.textContent='새로운 메이트의 자리';
- const caption=document.createElement('span');caption.textContent='이 다음 이야기는 여러분이 만듭니다.';
- info.append(label,name,caption);
- card.append(art,info);return card;
-}
+/* CUSTOM 메이트는 UR~N 등급과 별개로, 도감 하단에서 안내합니다. */
 function renderCharacters(){
  const grid=document.getElementById('characterGrid');grid.replaceChildren();
  const gradeOrder=['N','R','SR','SSR','UR'];
@@ -3103,12 +3197,9 @@ function renderCharacters(){
   const info=document.createElement('div');info.className='char-info';const code=document.createElement('small');code.textContent=ch.code+' / '+tierNames[ch.tier];
   const name=document.createElement('strong');name.textContent=ch.name;const hint=document.createElement('span');hint.textContent='프로필 열기 ↗';info.append(code,name,hint);
   btn.append(art,info);btn.addEventListener('click',()=>openCharacter(index));grid.appendChild(btn);attachArt(art,ch.card);
-  // SR 10장 다음에 안내 카드 한 장만 배치합니다. 목록 정렬 반전에도 따라갑니다.
-  if(ch.tier==='SR' && ordered[position+1]?.ch.tier!=='SR'){
-    grid.appendChild(createSrCommunityCard());
-  }
+
  });
- document.getElementById('characterCount').textContent=activeTier==='SR' ? `SR ${ordered.length}명 · 추가 제작 안내 1장` : activeTier==='ALL' ? `총 ${characters.length}명 · SR 확장 안내 1장` : `${activeTier} ${ordered.length}명 · 전체 ${characters.length}명`;
+ document.getElementById('characterCount').textContent=activeTier==='ALL' ? `총 ${characters.length}명 등록` : `${activeTier} ${ordered.length}명 · 전체 ${characters.length}명`;
 }
 function openCharacter(index){
  const ch=characters[index];
@@ -3385,6 +3476,42 @@ function start(){
   },48);
 }
 makeContent();applyFixedImages();renderCharacters();selectWorldTopic('avalon');initGrandPrix();start();
+
+/* CUSTOM 메이트: 사이트에 데이터를 저장하지 않고 복사용 텍스트만 구성합니다. */
+function renderCustomNote(){
+ const value=(id)=>document.getElementById(id)?.value.trim()||'';
+ const preview=document.getElementById('customNotePreview');if(!preview)return;
+ const lines=[
+  '[아발론 커스텀 메이트]',
+  '',
+  '이름: '+value('customName'),
+  '희망 등급: '+(value('customTier')||'SR'),
+  '종족: '+value('customSpecies'),
+  '출신 차원: '+value('customOrigin'),
+  '외형 및 신체 특징: '+value('customAppearance'),
+  '성격 및 말투: '+value('customPersonality'),
+  '고유 능력: '+value('customAbility'),
+  '특이사항: '+value('customNotes'),
+  '',
+  '[/아발론 커스텀 메이트]'
+ ];
+ preview.textContent=lines.join('\n');
+ const status=document.getElementById('customCopyStatus');
+ if(status)status.textContent='복사 후 케이브덕의 유저노트에 붙여넣어 주세요.';
+}
+async function copyCustomNote(){
+ const text=document.getElementById('customNotePreview')?.textContent||'';
+ const status=document.getElementById('customCopyStatus');
+ try{
+  await navigator.clipboard.writeText(text);
+  if(status)status.textContent='복사되었습니다. 케이브덕 유저노트에 붙여넣어 주세요.';
+ }catch(err){
+  const node=document.getElementById('customNotePreview');
+  const range=document.createRange();range.selectNodeContents(node);
+  const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);
+  if(status)status.textContent='텍스트가 선택되었습니다. Ctrl+C로 복사해 주세요.';
+ }
+}
 </script>
 </body>
 </html>
